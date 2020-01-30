@@ -1,0 +1,2 @@
+Error: Could not find or load main class com.l2jfrozen.gameserver.GameServer
+Caused by: java.lang.ClassNotFoundException: com.l2jfrozen.gameserver.GameServer

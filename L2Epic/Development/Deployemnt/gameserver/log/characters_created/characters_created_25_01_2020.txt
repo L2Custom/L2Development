@@ -1,0 +1,1 @@
+[25/01/2020 12:12:45,634] '---': Created new character : Sorceres for account: demo_sorc

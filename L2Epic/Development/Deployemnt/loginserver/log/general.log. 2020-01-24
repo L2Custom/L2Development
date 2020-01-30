@@ -1,0 +1,240 @@
+24/01/2020 12:20:18,812  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+24/01/2020 12:20:18,816  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+24/01/2020 12:20:30,081  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 12:20:30,083  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 12:20:30,116  INFO Util:121 - =======================================================-[ Database ]
+24/01/2020 12:20:30,193  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+24/01/2020 12:20:30,194  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+24/01/2020 12:20:30,201  INFO Util:121 - ================================================-[ LoginController ]
+24/01/2020 12:20:30,756  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+24/01/2020 12:20:30,789  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+24/01/2020 12:20:30,803  INFO GameServerTable:75 - Loaded 127 server names
+24/01/2020 12:20:30,841  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+24/01/2020 12:20:30,907  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+24/01/2020 12:20:30,912  INFO Util:121 - ============================================-[ Loginserver network ]
+24/01/2020 12:20:31,075  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+24/01/2020 12:20:31,077  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+24/01/2020 12:20:31,078  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+24/01/2020 12:20:31,078  INFO L2LoginServer:165 - Loginserver listening on *:2106
+24/01/2020 12:20:47,792  INFO Util:121 - ===========================================-[ Gameserver connected ]
+24/01/2020 12:20:47,794  INFO GameServerThread:600 - Server ID: 2
+24/01/2020 12:20:47,794  INFO GameServerThread:601 - Server name: Sieghardt
+24/01/2020 12:20:47,795  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
+24/01/2020 12:20:47,795  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777
+24/01/2020 12:58:58,599  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 12:58:58,615  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 12:58:58,693  INFO Util:121 - =======================================================-[ Database ]
+24/01/2020 12:58:58,818 ERROR L2DatabaseFactory:64 - HikariCP: Could not init DB connection
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:597)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.<init>(L2DatabaseFactory.java:60)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.getInstance(L2DatabaseFactory.java:22)
+	at com.l2jfrozen.loginserver.L2LoginServer.<init>(L2LoginServer.java:74)
+	at com.l2jfrozen.loginserver.L2LoginServer.main(L2LoginServer.java:38)
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:239)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1241)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:610)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:142)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:86)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	... 6 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:729)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:507)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1236)
+	... 14 more
+24/01/2020 12:59:40,375  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 12:59:40,377  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 12:59:40,400  INFO Util:121 - =======================================================-[ Database ]
+24/01/2020 12:59:40,462 ERROR L2DatabaseFactory:64 - HikariCP: Could not init DB connection
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:597)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.<init>(L2DatabaseFactory.java:60)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.getInstance(L2DatabaseFactory.java:22)
+	at com.l2jfrozen.loginserver.L2LoginServer.<init>(L2LoginServer.java:74)
+	at com.l2jfrozen.loginserver.L2LoginServer.main(L2LoginServer.java:38)
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:239)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1241)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:610)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:142)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:86)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	... 6 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:729)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:507)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1236)
+	... 14 more
+24/01/2020 12:59:43,987  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 12:59:43,989  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 12:59:44,011  INFO Util:121 - =======================================================-[ Database ]
+24/01/2020 12:59:44,074 ERROR L2DatabaseFactory:64 - HikariCP: Could not init DB connection
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:597)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.<init>(L2DatabaseFactory.java:60)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.getInstance(L2DatabaseFactory.java:22)
+	at com.l2jfrozen.loginserver.L2LoginServer.<init>(L2LoginServer.java:74)
+	at com.l2jfrozen.loginserver.L2LoginServer.main(L2LoginServer.java:38)
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:239)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1241)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:610)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:142)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:86)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	... 6 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:729)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:507)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1236)
+	... 14 more
+24/01/2020 12:59:52,704  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 12:59:52,706  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 12:59:52,728  INFO Util:121 - =======================================================-[ Database ]
+24/01/2020 12:59:52,789 ERROR L2DatabaseFactory:64 - HikariCP: Could not init DB connection
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:597)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.<init>(L2DatabaseFactory.java:60)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.getInstance(L2DatabaseFactory.java:22)
+	at com.l2jfrozen.loginserver.L2LoginServer.<init>(L2LoginServer.java:74)
+	at com.l2jfrozen.loginserver.L2LoginServer.main(L2LoginServer.java:38)
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:239)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1241)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:610)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:142)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:86)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	... 6 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:729)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:507)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1236)
+	... 14 more
+24/01/2020 12:59:59,442  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 12:59:59,444  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 12:59:59,467  INFO Util:121 - =======================================================-[ Database ]
+24/01/2020 12:59:59,530 ERROR L2DatabaseFactory:64 - HikariCP: Could not init DB connection
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:597)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.<init>(L2DatabaseFactory.java:60)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.getInstance(L2DatabaseFactory.java:22)
+	at com.l2jfrozen.loginserver.L2LoginServer.<init>(L2LoginServer.java:74)
+	at com.l2jfrozen.loginserver.L2LoginServer.main(L2LoginServer.java:38)
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:239)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1241)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:610)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:142)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:86)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	... 6 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:729)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:507)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1236)
+	... 14 more
+24/01/2020 13:12:32,385  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 13:12:32,475  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 13:12:32,518  INFO Util:121 - =======================================================-[ Database ]
+24/01/2020 13:12:32,640  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+24/01/2020 13:12:32,644  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+24/01/2020 13:12:32,655  INFO Util:121 - ================================================-[ LoginController ]
+24/01/2020 13:12:33,255  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+24/01/2020 13:12:33,296  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+24/01/2020 13:12:33,345  INFO GameServerTable:75 - Loaded 127 server names
+24/01/2020 13:12:33,516  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+24/01/2020 13:12:33,583  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+24/01/2020 13:12:33,601  INFO Util:121 - ============================================-[ Loginserver network ]
+24/01/2020 13:12:33,751  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+24/01/2020 13:12:33,752  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+24/01/2020 13:12:33,753  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+24/01/2020 13:12:33,753  INFO L2LoginServer:165 - Loginserver listening on *:2106
+24/01/2020 13:13:11,715  INFO Util:121 - ===========================================-[ Gameserver connected ]
+24/01/2020 13:13:11,716  INFO GameServerThread:600 - Server ID: 2
+24/01/2020 13:13:11,717  INFO GameServerThread:601 - Server name: Sieghardt
+24/01/2020 13:13:11,717  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
+24/01/2020 13:13:11,718  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777
+24/01/2020 22:37:38,070  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+24/01/2020 22:37:38,075  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+24/01/2020 22:41:16,512  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 22:41:16,514  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 22:41:16,549  INFO Util:121 - =======================================================-[ Database ]
+24/01/2020 22:41:16,630  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+24/01/2020 22:41:16,631  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+24/01/2020 22:41:16,638  INFO Util:121 - ================================================-[ LoginController ]
+24/01/2020 22:41:17,190  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+24/01/2020 22:41:17,223  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+24/01/2020 22:41:17,236  INFO GameServerTable:75 - Loaded 127 server names
+24/01/2020 22:41:17,289  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+24/01/2020 22:41:17,341  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+24/01/2020 22:41:17,346  INFO Util:121 - ============================================-[ Loginserver network ]
+24/01/2020 22:41:17,513  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+24/01/2020 22:41:17,515  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+24/01/2020 22:41:17,515  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+24/01/2020 22:41:17,516  INFO L2LoginServer:165 - Loginserver listening on *:2106
+24/01/2020 22:41:41,063  INFO Util:121 - ===========================================-[ Gameserver connected ]
+24/01/2020 22:41:41,064  INFO GameServerThread:600 - Server ID: 2
+24/01/2020 22:41:41,065  INFO GameServerThread:601 - Server name: Sieghardt
+24/01/2020 22:41:41,065  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
+24/01/2020 22:41:41,065  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777
+24/01/2020 22:49:26,260  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+24/01/2020 22:49:26,263  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+24/01/2020 22:49:51,320  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 22:49:51,323  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 22:49:51,352  INFO Util:121 - =======================================================-[ Database ]
+24/01/2020 22:49:51,457  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+24/01/2020 22:49:51,458  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+24/01/2020 22:49:51,469  INFO Util:121 - ================================================-[ LoginController ]
+24/01/2020 22:49:52,200  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+24/01/2020 22:49:52,237  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+24/01/2020 22:49:52,249  INFO GameServerTable:75 - Loaded 127 server names
+24/01/2020 22:49:52,306  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+24/01/2020 22:49:52,387  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+24/01/2020 22:49:52,388  INFO Util:121 - ============================================-[ Loginserver network ]
+24/01/2020 22:49:52,577  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+24/01/2020 22:49:52,578  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+24/01/2020 22:49:52,578  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+24/01/2020 22:49:52,579  INFO L2LoginServer:165 - Loginserver listening on *:2106
+24/01/2020 22:49:52,925  INFO Util:121 - ===========================================-[ Gameserver connected ]
+24/01/2020 22:49:52,927  INFO GameServerThread:600 - Server ID: 2
+24/01/2020 22:49:52,927  INFO GameServerThread:601 - Server name: Sieghardt
+24/01/2020 22:49:52,927  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
+24/01/2020 22:49:52,928  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777

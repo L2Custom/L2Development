@@ -1,0 +1,668 @@
+20/01/2020 17:06:56,492  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 17:06:56,574  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 17:06:56,574  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 17:06:56,655  INFO GameServerTable:78 - Loaded 0 registered Game Servers
+20/01/2020 17:06:56,949  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 17:06:56,950  INFO GameServerRegister:45 - Welcome to L2JFrozen GameServer Regitering
+20/01/2020 17:06:56,950  INFO GameServerRegister:46 - Enter The id of the server you want to register
+20/01/2020 17:06:56,951  INFO GameServerRegister:47 - Type 'help' to get a list of ids.
+20/01/2020 17:06:56,951  INFO GameServerRegister:48 - Type 'clean' to unregister all currently registered gameservers on this LoginServer.
+20/01/2020 17:06:56,952  INFO GameServerRegister:49 - Type 'exit' to unregister all currently registered gameservers on this LoginServer.
+20/01/2020 17:07:48,645  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 17:07:48,723  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 17:07:48,724  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 17:07:48,740  INFO GameServerTable:78 - Loaded 0 registered Game Servers
+20/01/2020 17:07:49,035  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 17:07:49,035  INFO GameServerRegister:45 - Welcome to L2JFrozen GameServer Regitering
+20/01/2020 17:07:49,035  INFO GameServerRegister:46 - Enter The id of the server you want to register
+20/01/2020 17:07:49,036  INFO GameServerRegister:47 - Type 'help' to get a list of ids.
+20/01/2020 17:07:49,036  INFO GameServerRegister:48 - Type 'clean' to unregister all currently registered gameservers on this LoginServer.
+20/01/2020 17:07:49,036  INFO GameServerRegister:49 - Type 'exit' to unregister all currently registered gameservers on this LoginServer.
+20/01/2020 17:07:52,769  INFO GameServerRegister:119 - Server Registered hexid saved to 'hexid.txt'
+20/01/2020 17:07:52,769  INFO GameServerRegister:120 - Put this file in the /config folder of your gameserver.
+20/01/2020 17:37:12,706  WARN JVM:19 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 17:37:12,708  WARN JVM:20 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 17:38:55,356  WARN JVM:19 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 17:38:55,357  WARN JVM:20 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 17:43:54,005  WARN JVM:19 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 17:43:54,007  WARN JVM:20 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 17:55:11,725  WARN JVM:18 - false
+20/01/2020 17:55:11,727  WARN JVM:19 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 17:55:11,727  WARN JVM:20 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 17:58:53,506  WARN JVM:18 - Java HotSpot(TM) 64-Bit Server VM
+20/01/2020 17:58:53,540  WARN JVM:19 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 17:58:53,542  WARN JVM:20 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 18:03:06,616  WARN JVM:18 - 13.0.1
+20/01/2020 18:03:06,650  WARN JVM:19 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 18:03:06,650  WARN JVM:20 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 18:08:39,052  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 18:08:39,066  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 18:08:39,095  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 18:08:39,171  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 18:08:39,171  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 18:08:39,178  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 18:08:39,647  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 18:08:39,678  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 18:08:39,691  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 18:08:39,706  INFO GameServerTable:78 - Loaded 1 registered Game Servers
+20/01/2020 18:08:39,761  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 18:08:39,767  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 18:08:39,908  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 18:08:39,910  INFO L2LoginServer:163 - Loginserver using external IP address: 127.0.0.1:2106
+20/01/2020 18:08:39,910  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 18:08:39,911  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 18:14:20,272  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 18:14:20,274  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 18:14:20,294  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 18:14:22,362 ERROR L2DatabaseFactory:64 - HikariCP: Could not init DB connection
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Socket fail to connect to host:127.0.0.1, port:3306. Connection refused: no further information
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:597)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.<init>(L2DatabaseFactory.java:60)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.getInstance(L2DatabaseFactory.java:22)
+	at com.l2jfrozen.loginserver.L2LoginServer.<init>(L2LoginServer.java:74)
+	at com.l2jfrozen.loginserver.L2LoginServer.main(L2LoginServer.java:38)
+Caused by: java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Socket fail to connect to host:127.0.0.1, port:3306. Connection refused: no further information
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:241)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1241)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:610)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:142)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:86)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	... 6 more
+Caused by: java.sql.SQLNonTransientConnectionException: Socket fail to connect to host:127.0.0.1, port:3306. Connection refused: no further information
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:241)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.connException(ExceptionMapper.java:87)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:218)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:474)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1236)
+	... 14 more
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:339)
+	at java.base/java.net.Socket.connect(Socket.java:603)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:213)
+	... 16 more
+20/01/2020 18:15:43,459  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 18:15:43,461  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 18:15:43,481  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 18:15:43,555  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 18:15:43,555  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 18:15:43,562  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 18:15:44,015  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 18:15:44,039  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 18:15:44,049  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 18:15:44,127  INFO GameServerTable:78 - Loaded 1 registered Game Servers
+20/01/2020 18:15:44,181  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 18:15:44,183  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 18:15:44,321  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 18:15:44,323  INFO L2LoginServer:163 - Loginserver using external IP address: 127.0.0.1:2106
+20/01/2020 18:15:44,323  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 18:15:44,324  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 18:19:12,173  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 18:19:12,175  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 18:19:12,196  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 18:19:12,269  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 18:19:12,269  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 18:19:12,276  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 18:19:12,716  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 18:19:12,741  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 18:19:12,750  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 18:19:12,812  INFO GameServerTable:78 - Loaded 1 registered Game Servers
+20/01/2020 18:19:12,882  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 18:19:12,883  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 18:19:13,022  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 18:19:13,023  INFO L2LoginServer:163 - Loginserver using external IP address: 127.0.0.1:2106
+20/01/2020 18:19:13,024  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 18:19:13,024  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 18:24:57,913  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 18:24:57,987  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 18:24:57,988  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 18:24:58,003  INFO GameServerTable:78 - Loaded 1 registered Game Servers
+20/01/2020 18:24:58,274  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 18:24:58,274  INFO GameServerRegister:45 - Welcome to L2JFrozen GameServer Regitering
+20/01/2020 18:24:58,275  INFO GameServerRegister:46 - Enter The id of the server you want to register
+20/01/2020 18:24:58,275  INFO GameServerRegister:47 - Type 'help' to get a list of ids.
+20/01/2020 18:24:58,275  INFO GameServerRegister:48 - Type 'clean' to unregister all currently registered gameservers on this LoginServer.
+20/01/2020 18:24:58,275  INFO GameServerRegister:49 - Type 'exit' to unregister all currently registered gameservers on this LoginServer.
+20/01/2020 18:25:07,170  INFO GameServerRegister:112 - This id is not free
+20/01/2020 18:25:16,291  INFO GameServerRegister:119 - Server Registered hexid saved to 'hexid.txt'
+20/01/2020 18:25:16,291  INFO GameServerRegister:120 - Put this file in the /config folder of your gameserver.
+20/01/2020 18:25:57,688  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 18:25:57,689  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 18:25:57,710  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 18:25:57,780  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 18:25:57,781  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 18:25:57,788  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 18:25:58,215  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 18:25:58,234  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 18:25:58,243  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 18:25:58,257  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 18:25:58,312  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 18:25:58,313  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 18:25:58,452  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 18:25:58,454  INFO L2LoginServer:163 - Loginserver using external IP address: 127.0.0.1:2106
+20/01/2020 18:25:58,454  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 18:25:58,455  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 18:27:37,520  INFO LoginController:702 - Created new account : caius on IP : 127.0.0.1
+20/01/2020 18:29:18,157  INFO Util:121 - ===========================================-[ Gameserver connected ]
+20/01/2020 18:29:18,158  INFO GameServerThread:600 - Server ID: 2
+20/01/2020 18:29:18,158  INFO GameServerThread:601 - Server name: Sieghardt
+20/01/2020 18:29:18,158  INFO GameServerThread:605 - Internal IP address: 127.0.0.1:7777
+20/01/2020 18:29:18,159  INFO GameServerThread:610 - External IP address: 127.0.0.1:7777
+20/01/2020 18:57:36,625  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 18:57:36,627  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 18:57:36,648  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 18:57:36,721  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 18:57:36,722  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 18:57:36,729  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 18:57:37,188  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 18:57:37,208  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 18:57:37,218  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 18:57:37,281  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 18:57:37,349  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 18:57:37,350  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 18:57:37,492  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 18:57:37,493  INFO L2LoginServer:163 - Loginserver using external IP address: 192.168.100.3:2106
+20/01/2020 18:57:37,494  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 18:57:37,494  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 18:58:02,206  INFO Util:121 - ===========================================-[ Gameserver connected ]
+20/01/2020 18:58:02,209  INFO GameServerThread:600 - Server ID: 2
+20/01/2020 18:58:02,209  INFO GameServerThread:601 - Server name: Sieghardt
+20/01/2020 18:58:02,210  INFO GameServerThread:605 - Internal IP address: 127.0.0.1:7777
+20/01/2020 18:58:02,210  INFO GameServerThread:610 - External IP address: 127.0.0.1:7777
+20/01/2020 19:21:18,103  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+20/01/2020 19:21:18,107  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+20/01/2020 19:26:01,894  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 19:26:01,896  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 19:26:01,926  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 19:26:02,004  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 19:26:02,004  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 19:26:02,012  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 19:26:02,425  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 19:26:02,454  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 19:26:02,467  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 19:26:02,818  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 19:26:02,874  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 19:26:02,879  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 19:26:03,037  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 19:26:03,039  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.174.62:2106
+20/01/2020 19:26:03,039  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 19:26:03,040  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 19:26:40,296  INFO Util:121 - ===========================================-[ Gameserver connected ]
+20/01/2020 19:26:40,298  INFO GameServerThread:600 - Server ID: 2
+20/01/2020 19:26:40,299  INFO GameServerThread:601 - Server name: Sieghardt
+20/01/2020 19:26:40,299  INFO GameServerThread:605 - Internal IP address: 127.0.0.1:7777
+20/01/2020 19:26:40,299  INFO GameServerThread:610 - External IP address: 127.0.0.1:7777
+20/01/2020 19:33:45,508  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+20/01/2020 19:33:45,512  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+20/01/2020 19:35:18,626  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 19:35:18,628  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 19:35:18,649  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 19:35:18,723  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 19:35:18,724  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 19:35:18,731  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 19:35:19,284  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 19:35:19,308  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 19:35:19,319  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 19:35:19,625  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 19:35:19,681  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 19:35:19,682  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 19:35:19,822  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 19:35:19,823  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.174.62:2106
+20/01/2020 19:35:19,823  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 19:35:19,824  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 19:35:38,585  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 19:35:38,587  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 19:35:38,608  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 19:35:38,681  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 19:35:38,681  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 19:35:38,688  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 19:35:39,260  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 19:35:39,288  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 19:35:39,300  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 19:35:39,315  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 19:35:39,379  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 19:35:39,381  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 19:35:39,519  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 19:35:39,521  INFO L2LoginServer:163 - Loginserver using external IP address: 188.215.73.109:2106
+20/01/2020 19:35:39,521  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 19:35:39,522  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 19:36:06,108  INFO Util:121 - ===========================================-[ Gameserver connected ]
+20/01/2020 19:36:06,110  INFO GameServerThread:600 - Server ID: 2
+20/01/2020 19:36:06,110  INFO GameServerThread:601 - Server name: Sieghardt
+20/01/2020 19:36:06,111  INFO GameServerThread:605 - Internal IP address: 127.0.0.1:7777
+20/01/2020 19:36:06,111  INFO GameServerThread:610 - External IP address: 127.0.0.1:7777
+20/01/2020 19:39:15,099  INFO LoginController:702 - Created new account : mama on IP : 127.0.0.1
+20/01/2020 20:15:48,497  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+20/01/2020 20:15:48,500  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+20/01/2020 20:19:18,556  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 20:19:18,558  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 20:19:18,579  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 20:19:18,653  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 20:19:18,654  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 20:19:18,661  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 20:19:19,120  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 20:19:19,142  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 20:19:19,151  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 20:19:19,217  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 20:19:19,284  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 20:19:19,285  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 20:19:19,425  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 20:19:19,426  INFO L2LoginServer:163 - Loginserver using external IP address: l2epic.hopto.org:2106
+20/01/2020 20:19:19,427  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 20:19:19,427  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 20:21:20,408  INFO Util:121 - ===========================================-[ Gameserver connected ]
+20/01/2020 20:21:20,410  INFO GameServerThread:600 - Server ID: 2
+20/01/2020 20:21:20,410  INFO GameServerThread:601 - Server name: Sieghardt
+20/01/2020 20:21:20,410  INFO GameServerThread:605 - Internal IP address: 127.0.0.1:7777
+20/01/2020 20:21:20,411  INFO GameServerThread:610 - External IP address: 127.0.0.1:7777
+20/01/2020 20:22:13,311  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+20/01/2020 20:22:13,314  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+20/01/2020 20:28:31,823  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 20:28:31,825  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 20:28:31,846  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 20:28:31,920  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 20:28:31,920  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 20:28:31,927  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 20:28:32,403  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 20:28:32,423  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 20:28:32,431  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 20:28:32,741  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 20:28:32,783  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 20:28:32,784  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 20:28:32,928  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 20:28:32,929  INFO L2LoginServer:163 - Loginserver using external IP address: l2epic.hopto.org:2106
+20/01/2020 20:28:32,929  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+20/01/2020 20:28:32,930  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 20:49:13,370  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 20:49:13,372  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 20:49:13,392  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 20:49:13,465  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 20:49:13,466  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 20:49:13,473  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 20:49:13,945  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 20:49:13,965  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 20:49:13,975  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 20:49:13,990  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 20:49:14,044  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 20:49:14,045  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 20:49:14,206  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 20:49:14,207  INFO L2LoginServer:163 - Loginserver using external IP address: l2epic.hopto.org:7777
+20/01/2020 20:49:14,208  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:7777
+20/01/2020 20:49:14,208  INFO L2LoginServer:165 - Loginserver listening on *:7777
+20/01/2020 20:52:29,275  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 20:52:29,277  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 20:52:29,298  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 20:52:29,371  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 20:52:29,371  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 20:52:29,378  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 20:52:29,840  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 20:52:29,864  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 20:52:29,873  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 20:52:29,889  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 20:52:29,946  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 20:52:29,947  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 20:52:30,110  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 20:52:30,112  INFO L2LoginServer:163 - Loginserver using external IP address: l2epic.hopto.org:7777
+20/01/2020 20:52:30,112  INFO L2LoginServer:164 - Loginserver using internal IP address: 25.75.151.11:7777
+20/01/2020 20:52:30,113  INFO L2LoginServer:165 - Loginserver listening on *:7777
+20/01/2020 20:56:46,663  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 20:56:46,665  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 20:56:46,686  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 20:56:46,757  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 20:56:46,758  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 20:56:46,765  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 20:56:47,248  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 20:56:47,270  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 20:56:47,280  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 20:56:47,296  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 20:56:47,349  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 20:56:47,351  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 20:56:47,511  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 20:56:47,512  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:7777
+20/01/2020 20:56:47,513  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:7777
+20/01/2020 20:56:47,513  INFO L2LoginServer:165 - Loginserver listening on *:7777
+20/01/2020 21:07:34,635  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 21:07:34,637  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 21:07:34,658  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 21:07:34,731  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 21:07:34,731  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 21:07:34,738  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 21:07:35,215  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 21:07:35,241  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 21:07:35,251  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 21:07:35,266  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 21:07:35,327  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 21:07:35,329  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 21:07:35,491  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 21:07:35,492  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:7777
+20/01/2020 21:07:35,493  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:7777
+20/01/2020 21:07:35,493  INFO L2LoginServer:165 - Loginserver listening on *:7777
+20/01/2020 21:11:14,384  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 21:11:14,385  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 21:11:14,406  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 21:11:14,480  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 21:11:14,480  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 21:11:14,487  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 21:11:14,993  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 21:11:15,013  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 21:11:15,023  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 21:11:15,041  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 21:11:15,107  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 21:11:15,108  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 21:11:15,271  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 21:11:15,272  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:7777
+20/01/2020 21:11:15,272  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:7777
+20/01/2020 21:11:15,273  INFO L2LoginServer:165 - Loginserver listening on *:7777
+20/01/2020 21:14:39,469  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 21:14:39,471  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 21:14:39,492  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 21:14:39,565  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 21:14:39,565  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 21:14:39,572  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 21:14:40,065  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 21:14:40,093  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 21:14:40,104  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 21:14:40,119  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 21:14:40,170  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 21:14:40,172  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 21:14:40,330 FATAL L2LoginServer:154 - Failed to start the Game Server Listenerjava.net.BindException: Address already in use: bind
+20/01/2020 21:14:56,185  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 21:14:56,187  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 21:14:56,208  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 21:14:56,279  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 21:14:56,280  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 21:14:56,287  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 21:14:56,828  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 21:14:56,861  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 21:14:56,871  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 21:14:56,885  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 21:14:56,936  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 21:14:56,937  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 21:14:57,099  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 21:14:57,101  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:7777
+20/01/2020 21:14:57,101  INFO L2LoginServer:164 - Loginserver using internal IP address: 25.75.151.11:7777
+20/01/2020 21:14:57,102  INFO L2LoginServer:165 - Loginserver listening on *:7777
+20/01/2020 21:19:03,423  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 21:19:03,425  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 21:19:03,446  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 21:19:03,520  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 21:19:03,520  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 21:19:03,527  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 21:19:04,047  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 21:19:04,069  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 21:19:04,079  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 21:19:04,095  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 21:19:04,148  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 21:19:04,150  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 21:19:04,292  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 21:19:04,294  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:7777
+20/01/2020 21:19:04,295  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.3:7777
+20/01/2020 21:19:04,295  INFO L2LoginServer:165 - Loginserver listening on *:7777
+20/01/2020 21:41:38,051  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 21:41:38,052  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 21:41:38,073  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 21:41:38,145  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 21:41:38,145  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 21:41:38,153  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 21:41:38,640  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 21:41:38,664  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 21:41:38,673  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 21:41:38,688  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 21:41:38,732  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 21:41:38,733  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 21:41:38,875  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 21:41:38,876  INFO L2LoginServer:163 - Loginserver using external IP address: 188.215.73.109:5008
+20/01/2020 21:41:38,877  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.3:5008
+20/01/2020 21:41:38,877  INFO L2LoginServer:165 - Loginserver listening on *:5008
+20/01/2020 22:13:41,609  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 22:13:41,611  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 22:13:41,633  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 22:13:41,711  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 22:13:41,712  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 22:13:41,719  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 22:13:42,220  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 22:13:42,247  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 22:13:42,257  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 22:13:42,274  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 22:13:42,346  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 22:13:42,348  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 22:13:42,494  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 22:13:42,495  INFO L2LoginServer:163 - Loginserver using external IP address: 192.168.100.150:2106
+20/01/2020 22:13:42,496  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+20/01/2020 22:13:42,496  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 22:15:24,791  INFO Util:121 - ===========================================-[ Gameserver connected ]
+20/01/2020 22:15:24,792  INFO GameServerThread:600 - Server ID: 2
+20/01/2020 22:15:24,793  INFO GameServerThread:601 - Server name: Sieghardt
+20/01/2020 22:15:24,793  INFO GameServerThread:605 - Internal IP address: 127.0.0.1:7777
+20/01/2020 22:15:24,793  INFO GameServerThread:610 - External IP address: 127.0.0.1:7777
+20/01/2020 22:22:02,072  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 22:22:02,074  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 22:22:02,096  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 22:22:02,175  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 22:22:02,175  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 22:22:02,183  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 22:22:02,671  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 22:22:02,695  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 22:22:02,704  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 22:22:02,756  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 22:22:02,819  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 22:22:02,821  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 22:22:02,966  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 22:22:02,968  INFO L2LoginServer:163 - Loginserver using external IP address: 192.168.100.150:2106
+20/01/2020 22:22:02,968  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+20/01/2020 22:22:02,968  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 22:31:04,197  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 22:31:04,199  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 22:31:04,221  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 22:31:04,300  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 22:31:04,300  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 22:31:04,308  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 22:31:04,829  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 22:31:04,853  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 22:31:04,863  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 22:31:04,879  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 22:31:04,942  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 22:31:04,944  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 22:31:05,087  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 22:31:05,088  INFO L2LoginServer:163 - Loginserver using external IP address: 192.168.100.1:2106
+20/01/2020 22:31:05,089  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+20/01/2020 22:31:05,089  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 22:35:53,304  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 22:35:53,306  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 22:35:53,326  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 22:35:53,404  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 22:35:53,405  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 22:35:53,412  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 22:35:53,918  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 22:35:53,944  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 22:35:53,953  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 22:35:53,969  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 22:35:54,028  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 22:35:54,030  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 22:35:54,175  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 22:35:54,176  INFO L2LoginServer:163 - Loginserver using external IP address: 192.168.100.1:21
+20/01/2020 22:35:54,176  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:21
+20/01/2020 22:35:54,177  INFO L2LoginServer:165 - Loginserver listening on *:21
+20/01/2020 22:39:02,591  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 22:39:02,592  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 22:39:02,614  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 22:39:02,691  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 22:39:02,692  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 22:39:02,699  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 22:39:03,156  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 22:39:03,184  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 22:39:03,194  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 22:39:03,210  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 22:39:03,279  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 22:39:03,281  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 22:39:03,424  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 22:39:03,426  INFO L2LoginServer:163 - Loginserver using external IP address: 192.168.100.150:21
+20/01/2020 22:39:03,426  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:21
+20/01/2020 22:39:03,427  INFO L2LoginServer:165 - Loginserver listening on *:21
+20/01/2020 23:11:18,228  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 23:11:18,230  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 23:11:18,253  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 23:11:18,331  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 23:11:18,332  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 23:11:18,339  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 23:11:18,901  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 23:11:18,922  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 23:11:18,932  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 23:11:18,948  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 23:11:19,018  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 23:11:19,019  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 23:11:19,188  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 23:11:19,189  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:21
+20/01/2020 23:11:19,190  INFO L2LoginServer:164 - Loginserver using internal IP address: 25.75.151.11:21
+20/01/2020 23:11:19,190  INFO L2LoginServer:165 - Loginserver listening on *:21
+20/01/2020 23:17:39,781  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 23:17:39,782  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 23:17:39,804  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 23:17:39,881  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 23:17:39,882  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 23:17:39,890  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 23:17:40,386  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 23:17:40,407  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 23:17:40,416  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 23:17:40,431  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 23:17:40,494  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 23:17:40,494  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 23:17:40,640  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 23:17:40,642  INFO L2LoginServer:163 - Loginserver using external IP address: 192.168.100.1:21
+20/01/2020 23:17:40,642  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.1:21
+20/01/2020 23:17:40,643  INFO L2LoginServer:165 - Loginserver listening on *:21
+20/01/2020 23:19:44,765  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 23:19:44,767  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 23:19:44,789  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 23:19:44,869  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 23:19:44,869  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 23:19:44,876  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 23:19:45,358  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 23:19:45,381  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 23:19:45,391  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 23:19:45,407  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 23:19:45,474  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 23:19:45,475  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 23:19:45,617 FATAL L2LoginServer:154 - Failed to start the Game Server Listenerjava.net.BindException: Address already in use: bind
+20/01/2020 23:19:54,795  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 23:19:54,797  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 23:19:54,819  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 23:19:54,897  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 23:19:54,897  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 23:19:54,905  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 23:19:55,401  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 23:19:55,431  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 23:19:55,441  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 23:19:55,457  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 23:19:55,509  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 23:19:55,510  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 23:19:55,654  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 23:19:55,655  INFO L2LoginServer:163 - Loginserver using external IP address: 192.168.100.1:2106
+20/01/2020 23:19:55,656  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+20/01/2020 23:19:55,656  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 23:24:19,044  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 23:24:19,045  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 23:24:19,068  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 23:24:19,147  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 23:24:19,147  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 23:24:19,154  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 23:24:19,628  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 23:24:19,650  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 23:24:19,659  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 23:24:19,676  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 23:24:19,736  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 23:24:19,737  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 23:24:19,880  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 23:24:19,882  INFO L2LoginServer:163 - Loginserver using external IP address: 188.215.73.109:2106
+20/01/2020 23:24:19,882  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+20/01/2020 23:24:19,883  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 23:38:42,326  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 23:38:42,328  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 23:38:42,350  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 23:38:42,427  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 23:38:42,428  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 23:38:42,435  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 23:38:42,936  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 23:38:42,963  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 23:38:42,973  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 23:38:42,989  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 23:38:43,051  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 23:38:43,052  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 23:38:43,219  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 23:38:43,220  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+20/01/2020 23:38:43,221  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+20/01/2020 23:38:43,221  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 23:39:38,593  INFO LoginController:702 - Created new account : hodajeu on IP : 25.75.174.62
+20/01/2020 23:40:14,839  INFO Util:121 - ===========================================-[ Gameserver connected ]
+20/01/2020 23:40:14,840  INFO GameServerThread:600 - Server ID: 2
+20/01/2020 23:40:14,840  INFO GameServerThread:601 - Server name: Sieghardt
+20/01/2020 23:40:14,840  INFO GameServerThread:605 - Internal IP address: 127.0.0.1:7777
+20/01/2020 23:40:14,841  INFO GameServerThread:610 - External IP address: 127.0.0.1:7777
+20/01/2020 23:42:46,385  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+20/01/2020 23:42:46,389  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+20/01/2020 23:44:11,206  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 23:44:11,208  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 23:44:11,230  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 23:44:11,308  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 23:44:11,308  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 23:44:11,315  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 23:44:11,851  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 23:44:11,880  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 23:44:11,889  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 23:44:11,938  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 23:44:12,000  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 23:44:12,002  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 23:44:12,170  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 23:44:12,171  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+20/01/2020 23:44:12,172  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+20/01/2020 23:44:12,172  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 23:44:31,436  INFO Util:121 - ===========================================-[ Gameserver connected ]
+20/01/2020 23:44:31,438  INFO GameServerThread:600 - Server ID: 2
+20/01/2020 23:44:31,438  INFO GameServerThread:601 - Server name: Sieghardt
+20/01/2020 23:44:31,438  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
+20/01/2020 23:44:31,439  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777
+20/01/2020 23:52:47,606  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 23:52:47,608  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 23:52:47,630  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 23:52:47,707  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 23:52:47,708  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 23:52:47,715  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 23:52:48,234  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 23:52:48,259  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 23:52:48,268  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 23:52:48,644  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 23:52:48,703  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 23:52:48,705  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 23:52:48,872  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+20/01/2020 23:52:48,874  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+20/01/2020 23:52:48,874  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+20/01/2020 23:52:48,874  INFO L2LoginServer:165 - Loginserver listening on *:2106
+20/01/2020 23:53:16,736  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+20/01/2020 23:53:16,738  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+20/01/2020 23:53:16,760  INFO Util:121 - =======================================================-[ Database ]
+20/01/2020 23:53:16,835  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+20/01/2020 23:53:16,836  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+20/01/2020 23:53:16,843  INFO Util:121 - ================================================-[ LoginController ]
+20/01/2020 23:53:17,358  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+20/01/2020 23:53:17,385  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+20/01/2020 23:53:17,395  INFO GameServerTable:75 - Loaded 127 server names
+20/01/2020 23:53:17,410  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+20/01/2020 23:53:17,490  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+20/01/2020 23:53:17,492  INFO Util:121 - ============================================-[ Loginserver network ]
+20/01/2020 23:53:17,655 FATAL L2LoginServer:154 - Failed to start the Game Server Listenerjava.net.BindException: Address already in use: bind
+20/01/2020 23:53:37,605  INFO Util:121 - ===========================================-[ Gameserver connected ]
+20/01/2020 23:53:37,608  INFO GameServerThread:600 - Server ID: 2
+20/01/2020 23:53:37,608  INFO GameServerThread:601 - Server name: Sieghardt
+20/01/2020 23:53:37,609  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
+20/01/2020 23:53:37,609  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777

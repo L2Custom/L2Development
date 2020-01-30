@@ -1,0 +1,16 @@
+22/01/2020 23:48:44,048  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+22/01/2020 23:48:44,051  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+22/01/2020 23:48:54,474  WARN CursedWeaponsManager:112 - Error while deleting itemId 8190 from userId 268477835
+22/01/2020 23:50:13,639  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+22/01/2020 23:52:45,283  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+22/01/2020 23:52:51,565  WARN L2Character:8404 - Balauru logs in game with AccessLevel 7.
+22/01/2020 23:53:08,181  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_admin_stats
+22/01/2020 23:53:08,182  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_admin_stats, but doesn't have access to it!
+22/01/2020 23:54:55,726  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+22/01/2020 23:54:55,728  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+22/01/2020 23:55:52,009  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+22/01/2020 23:55:52,010  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+22/01/2020 23:56:00,142  WARN CursedWeaponsManager:112 - Error while deleting itemId 8689 from userId 268477835
+22/01/2020 23:56:36,620  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+22/01/2020 23:56:43,969  WARN L2Character:8404 - Jager logs in game with AccessLevel 8.
+22/01/2020 23:57:35,100  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_admin_stats'

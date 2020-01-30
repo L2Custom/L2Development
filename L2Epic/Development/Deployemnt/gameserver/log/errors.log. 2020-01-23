@@ -1,0 +1,27 @@
+23/01/2020 01:56:56,822 ERROR L2Character:9393 - L2PcInstance.storeEffect: Could not store char effect data into character_skills_save
+java.sql.BatchUpdateException: (conn=90) Duplicate entry '268477835-438-0' for key 'PRIMARY'
+	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:309)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeBatch(ClientSidePreparedStatement.java:293)
+	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:128)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.storeEffect(L2PcInstance.java:9386)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9131)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9145)
+	at com.l2jfrozen.gameserver.network.L2GameClient$DisconnectTask.run(L2GameClient.java:883)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=90) Duplicate entry '268477835-438-0' for key 'PRIMARY'
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:236)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:164)
+	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:305)
+	... 10 more
+Caused by: java.sql.SQLException: Duplicate entry '268477835-438-0' for key 'PRIMARY'
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1599)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1461)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1424)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeBatchRewrite(AbstractQueryProtocol.java:889)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeBatchClient(AbstractQueryProtocol.java:323)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternalBatch(ClientSidePreparedStatement.java:362)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeBatch(ClientSidePreparedStatement.java:288)
+	... 9 more

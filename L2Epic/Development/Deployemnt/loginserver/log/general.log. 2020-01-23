@@ -1,0 +1,109 @@
+23/01/2020 17:20:59,135  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+23/01/2020 17:20:59,138  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+23/01/2020 17:20:59,167  INFO Util:121 - =======================================================-[ Database ]
+23/01/2020 17:21:01,230 ERROR L2DatabaseFactory:64 - HikariCP: Could not init DB connection
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Socket fail to connect to host:127.0.0.1, port:3306. Connection refused: no further information
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:597)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.<init>(L2DatabaseFactory.java:60)
+	at com.l2jfrozen.util.database.L2DatabaseFactory.getInstance(L2DatabaseFactory.java:22)
+	at com.l2jfrozen.loginserver.L2LoginServer.<init>(L2LoginServer.java:74)
+	at com.l2jfrozen.loginserver.L2LoginServer.main(L2LoginServer.java:38)
+Caused by: java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=127.0.0.1)(port=3306)(type=master) : Socket fail to connect to host:127.0.0.1, port:3306. Connection refused: no further information
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:241)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1241)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:610)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:142)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:86)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	... 6 more
+Caused by: java.sql.SQLNonTransientConnectionException: Socket fail to connect to host:127.0.0.1, port:3306. Connection refused: no further information
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:241)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.connException(ExceptionMapper.java:87)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:218)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:474)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1236)
+	... 14 more
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:339)
+	at java.base/java.net.Socket.connect(Socket.java:603)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:213)
+	... 16 more
+23/01/2020 17:21:53,750  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+23/01/2020 17:21:53,751  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+23/01/2020 17:21:53,772  INFO Util:121 - =======================================================-[ Database ]
+23/01/2020 17:21:53,847  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+23/01/2020 17:21:53,847  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+23/01/2020 17:21:53,854  INFO Util:121 - ================================================-[ LoginController ]
+23/01/2020 17:21:54,322  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+23/01/2020 17:21:54,348  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+23/01/2020 17:21:54,360  INFO GameServerTable:75 - Loaded 127 server names
+23/01/2020 17:21:54,432  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+23/01/2020 17:21:54,493  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+23/01/2020 17:21:54,499  INFO Util:121 - ============================================-[ Loginserver network ]
+23/01/2020 17:21:54,661  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+23/01/2020 17:21:54,662  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+23/01/2020 17:21:54,663  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+23/01/2020 17:21:54,663  INFO L2LoginServer:165 - Loginserver listening on *:2106
+23/01/2020 17:22:18,066  INFO Util:121 - ===========================================-[ Gameserver connected ]
+23/01/2020 17:22:18,067  INFO GameServerThread:600 - Server ID: 2
+23/01/2020 17:22:18,068  INFO GameServerThread:601 - Server name: Sieghardt
+23/01/2020 17:22:18,068  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
+23/01/2020 17:22:18,068  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777
+23/01/2020 17:36:51,967  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+23/01/2020 17:36:51,971  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+23/01/2020 17:38:41,281  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+23/01/2020 17:38:41,282  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+23/01/2020 17:38:41,305  INFO Util:121 - =======================================================-[ Database ]
+23/01/2020 17:38:41,384  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+23/01/2020 17:38:41,385  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+23/01/2020 17:38:41,392  INFO Util:121 - ================================================-[ LoginController ]
+23/01/2020 17:38:42,004  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+23/01/2020 17:38:42,027  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+23/01/2020 17:38:42,036  INFO GameServerTable:75 - Loaded 127 server names
+23/01/2020 17:38:42,061  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+23/01/2020 17:38:42,146  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+23/01/2020 17:38:42,148  INFO Util:121 - ============================================-[ Loginserver network ]
+23/01/2020 17:38:42,316  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+23/01/2020 17:38:42,317  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+23/01/2020 17:38:42,318  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+23/01/2020 17:38:42,318  INFO L2LoginServer:165 - Loginserver listening on *:2106
+23/01/2020 17:38:46,105  INFO Util:121 - ===========================================-[ Gameserver connected ]
+23/01/2020 17:38:46,106  INFO GameServerThread:600 - Server ID: 2
+23/01/2020 17:38:46,106  INFO GameServerThread:601 - Server name: Sieghardt
+23/01/2020 17:38:46,106  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
+23/01/2020 17:38:46,106  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777
+23/01/2020 23:27:10,802  INFO LoginController:702 - Created new account : demo on IP : 192.168.100.150
+23/01/2020 23:47:47,598  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+23/01/2020 23:47:47,602  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+23/01/2020 23:58:59,688  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+23/01/2020 23:58:59,690  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+23/01/2020 23:58:59,726  INFO Util:121 - =======================================================-[ Database ]
+23/01/2020 23:58:59,805  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+23/01/2020 23:58:59,805  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+23/01/2020 23:58:59,812  INFO Util:121 - ================================================-[ LoginController ]
+23/01/2020 23:59:00,384  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+23/01/2020 23:59:00,421  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+23/01/2020 23:59:00,435  INFO GameServerTable:75 - Loaded 127 server names
+23/01/2020 23:59:00,735  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+23/01/2020 23:59:00,790  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+23/01/2020 23:59:00,796  INFO Util:121 - ============================================-[ Loginserver network ]
+23/01/2020 23:59:00,967  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+23/01/2020 23:59:00,968  INFO L2LoginServer:163 - Loginserver using external IP address: 25.75.151.11:2106
+23/01/2020 23:59:00,968  INFO L2LoginServer:164 - Loginserver using internal IP address: 192.168.100.150:2106
+23/01/2020 23:59:00,969  INFO L2LoginServer:165 - Loginserver listening on *:2106
+23/01/2020 23:59:19,332  INFO Util:121 - ===========================================-[ Gameserver connected ]
+23/01/2020 23:59:19,334  INFO GameServerThread:600 - Server ID: 2
+23/01/2020 23:59:19,335  INFO GameServerThread:601 - Server name: Sieghardt
+23/01/2020 23:59:19,335  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
+23/01/2020 23:59:19,335  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777

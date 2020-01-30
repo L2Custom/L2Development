@@ -1,0 +1,4 @@
+21/01/2020 00:01:00,855  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+21/01/2020 00:01:00,857  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+21/01/2020 00:07:12,831  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+21/01/2020 00:07:12,833  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs

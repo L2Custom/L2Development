@@ -1,0 +1,117 @@
+21/01/2020 00:01:16,274  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+21/01/2020 00:01:16,277  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+21/01/2020 00:07:20,288  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+21/01/2020 00:07:20,289  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+21/01/2020 00:07:48,928  WARN L2Character:8404 - Balauru logs in game with AccessLevel 7.
+21/01/2020 00:08:05,404  WARN L2Character:8404 - Jager logs in game with AccessLevel 8.
+21/01/2020 00:15:29,875  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_Admin'
+21/01/2020 00:15:40,274  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_Admin'
+21/01/2020 00:15:47,850  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_set_hero
+21/01/2020 00:15:47,850  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_set_hero, but doesn't have access to it!
+21/01/2020 00:17:13,060  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_editcaracter'
+21/01/2020 00:18:01,371  WARN L2Character:8404 - Balauru logs in game with AccessLevel 8.
+21/01/2020 00:18:12,073  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_hero'
+21/01/2020 00:18:38,898  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_noblesse'
+21/01/2020 00:19:32,062  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_character'
+21/01/2020 00:21:14,519  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_list_spaens'
+21/01/2020 00:22:14,687  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_admin_getbufs'
+21/01/2020 00:22:38,274  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_getbufs'
+21/01/2020 00:22:57,416  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_admin_getbufs'
+21/01/2020 00:23:03,460  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_shop'
+21/01/2020 00:24:01,480  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_adminspeed 5'
+21/01/2020 00:29:05,414  WARN NpcHtmlMessage:189 - missing html page data/html/admin/help/charmanage.htm
+21/01/2020 00:30:31,429  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_edit_char'
+21/01/2020 00:31:40,513  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_admin_changelvl'
+21/01/2020 00:32:01,306  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_admin_changelvl 50'
+21/01/2020 00:33:28,096  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_moveup'
+21/01/2020 00:33:44,599  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_lvlup'
+21/01/2020 00:34:29,378  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_admin_mass_crate'
+21/01/2020 00:35:12,376  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_admin_cw_goto'
+21/01/2020 00:35:15,518  WARN RequestBypassToServer:201 - Bad RequestBypassToServer: 
+java.lang.NumberFormatException: For input string: "Pink" under radix 16
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
+	at java.base/java.lang.Integer.parseInt(Integer.java:658)
+	at java.base/java.lang.Integer.valueOf(Integer.java:963)
+	at java.base/java.lang.Integer.decode(Integer.java:1448)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminEditChar.useAdminCommand(AdminEditChar.java:695)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:99)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+21/01/2020 00:35:53,983  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_cp'
+21/01/2020 00:36:04,734  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_cp'
+21/01/2020 00:36:13,974  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_character'
+21/01/2020 00:38:52,137  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_nobless'
+21/01/2020 00:39:26,254  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_hero'
+21/01/2020 00:39:38,518  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_hero'
+21/01/2020 00:39:39,020  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_set_noblesse'
+21/01/2020 00:41:01,740  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_add_ex_sp_tocharacter'
+21/01/2020 00:45:47,778  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_add_lvl 50'
+21/01/2020 00:46:00,683  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_add_lvl'
+21/01/2020 00:53:29,232  WARN NpcHtmlMessage:189 - missing html page data/html/admin/help/charmanage.htm
+21/01/2020 00:53:41,784  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_charmanage'
+21/01/2020 00:53:54,603  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_godmode'
+21/01/2020 00:59:30,333  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_admin\'
+21/01/2020 00:59:42,429  WARN RequestBypassToServer:83 - No handler registered for admin command 'admin_changename_menu'
+21/01/2020 01:02:47,939  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_admin_setnoble'
+21/01/2020 01:14:40,025  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_add_skills'
+21/01/2020 01:21:03,722  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_madmin'
+21/01/2020 01:22:59,948  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_get_skill'
+21/01/2020 01:34:37,337  WARN NpcHtmlMessage:189 - missing html page data/html/admin/help/enchant.htm
+21/01/2020 01:37:45,887  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_gm_shop'
+21/01/2020 11:53:20,654  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+21/01/2020 11:53:27,835  WARN L2Character:8404 - Balauru logs in game with AccessLevel 7.
+21/01/2020 11:59:36,982  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_moveup
+21/01/2020 11:59:36,983  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_moveup, but doesn't have access to it!
+21/01/2020 12:00:36,903  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+21/01/2020 12:00:46,139  WARN L2Character:8404 - Jager logs in game with AccessLevel 8.
+21/01/2020 12:24:03,622  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_skills
+21/01/2020 12:24:03,622  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_skills, but doesn't have access to it!
+21/01/2020 12:24:39,147  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_skills'
+21/01/2020 12:24:53,472  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_skills
+21/01/2020 12:24:53,472  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_skills, but doesn't have access to it!
+21/01/2020 12:25:17,207  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_skills'
+21/01/2020 12:25:23,419  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_skill'
+21/01/2020 12:25:57,302  WARN L2Character:8404 - Balauru logs in game with AccessLevel 8.
+21/01/2020 12:26:13,033  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_skills'
+21/01/2020 12:52:18,962  WARN L2GamePacketHandler:166 - ATTENTION: Account caius is trying to send packet with opcode 72 without enterning in the world (online status is FALSE)..
+21/01/2020 14:04:22,975  WARN L2Character:8404 - Jager logs in game with AccessLevel 8.
+21/01/2020 14:06:10,928  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_teleport'
+21/01/2020 14:07:06,419  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_teleports'
+21/01/2020 17:50:35,464  WARN L2Character:8404 - Balauru logs in game with AccessLevel 7.
+21/01/2020 17:53:15,659  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_admin_forge
+21/01/2020 17:53:15,660  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_admin_forge, but doesn't have access to it!
+21/01/2020 17:53:29,660  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_admin_forge
+21/01/2020 17:53:29,660  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_admin_forge, but doesn't have access to it!
+21/01/2020 18:09:13,974  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_remove_skils
+21/01/2020 18:09:13,974  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_remove_skils, but doesn't have access to it!
+21/01/2020 18:09:25,677  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_remove_skils
+21/01/2020 18:09:25,678  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_remove_skils, but doesn't have access to it!
+21/01/2020 18:09:36,393  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_admin_remove_skills
+21/01/2020 18:09:36,393  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_admin_remove_skills, but doesn't have access to it!
+21/01/2020 18:10:01,069  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_skills_index
+21/01/2020 18:10:01,069  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_skills_index, but doesn't have access to it!
+21/01/2020 18:28:30,915  WARN NpcHtmlMessage:189 - missing html page data/html/admin/help/charmanage.htm
+21/01/2020 18:29:18,395  WARN L2Character:8404 - Balauru logs in game with AccessLevel 8.
+21/01/2020 18:34:09,186  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_skills'
+21/01/2020 18:36:54,707  WARN L2Character:8404 - Balauru logs in game with AccessLevel 7.
+21/01/2020 18:56:24,322  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_server_updates
+21/01/2020 18:56:24,322  WARN RequestBypassToServer:90 - Character Balauru tried to use admin command admin_server_updates, but doesn't have access to it!
+21/01/2020 19:13:14,734  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_clear
+21/01/2020 19:13:14,734  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_clear, but doesn't have access to it!
+21/01/2020 19:23:42,355  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_skills
+21/01/2020 19:23:42,355  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_skills, but doesn't have access to it!
+21/01/2020 19:23:51,762  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_give_skills
+21/01/2020 19:23:51,762  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_give_skills, but doesn't have access to it!
+21/01/2020 19:23:57,327  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_add_skills
+21/01/2020 19:23:57,328  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_add_skills, but doesn't have access to it!
+21/01/2020 19:25:13,794  WARN RequestBypassToServer:83 - No handler registered for admin command 'admin_list_groups'
+21/01/2020 19:31:56,514  WARN NpcHtmlMessage:189 - missing html page data/html/admin/help/login.htm
+21/01/2020 19:50:12,213  WARN NpcHtmlMessage:189 - missing html page data/html/admin/help/charmanage.htm
+21/01/2020 19:56:42,894  WARN L2Character:8404 - Jager logs in game with AccessLevel 8.
+21/01/2020 19:57:00,186  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_GMSPEED
+21/01/2020 19:57:00,186  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_GMSPEED, but doesn't have access to it!
+21/01/2020 21:11:00,139  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_teleport'
+21/01/2020 21:12:39,820  WARN RequestBypassToServer:83 - No handler registered for admin command 'admin_zone_reload'

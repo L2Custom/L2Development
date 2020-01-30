@@ -1,0 +1,21 @@
+24/01/2020 10:28:29,960  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+24/01/2020 12:20:33,628  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 12:20:33,630  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 13:12:36,359  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 13:12:36,390  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 18:21:39,008  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+24/01/2020 18:21:44,865  WARN L2Character:8404 - Balauru logs in game with AccessLevel 7.
+24/01/2020 19:00:36,886  WARN L2Character:8404 - Balauru logs in game with AccessLevel 8.
+24/01/2020 21:52:22,826  WARN L2Character:8404 - Balauru logs in game with AccessLevel 7.
+24/01/2020 22:17:28,163  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_cords
+24/01/2020 22:17:28,163  WARN SendBypassBuildCmd:55 - Character Balauru tried to use admin command admin_cords, but doesn't have access to it!
+24/01/2020 22:17:55,286  WARN L2Character:8404 - Balauru logs in game with AccessLevel 8.
+24/01/2020 22:17:59,861  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_cords'
+24/01/2020 22:18:35,076  WARN SendBypassBuildCmd:75 - No handler registered for admin command 'admin_cc'
+24/01/2020 22:41:25,554  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 22:41:25,556  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 22:43:00,455  WARN L2Character:8404 - Balauru logs in game with AccessLevel 7.
+24/01/2020 22:49:41,230  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+24/01/2020 22:49:41,232  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+24/01/2020 22:50:09,442  WARN L2Character:8404 - Balauru logs in game with AccessLevel 7.
+24/01/2020 23:45:13,919  WARN L2Character:8404 - Balauru logs in game with AccessLevel 8.
