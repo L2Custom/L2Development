@@ -1,0 +1,12 @@
+[27/01/2020 20:45:15,123] '---': Palibati Queen Themis(25252) defeated, next respawn at 27-01-2020 21:27:44
+[27/01/2020 20:53:35,500] '---': Hekaton Prime(25140) defeated, next respawn at 27-01-2020 21:08:33
+[27/01/2020 21:03:17,372] '---': Rahha(25051) defeated, next respawn at 27-01-2020 21:37:46
+[27/01/2020 21:08:33,560] '---': Hekaton Prime(25140) spawned in the word
+[27/01/2020 21:10:56,874] '---': Soulless Wild Boar(25089) defeated, next respawn at 27-01-2020 21:51:00
+[27/01/2020 21:12:45,343] '---': Fierce Tiger King Angel(25125) defeated, next respawn at 27-01-2020 21:25:01
+[27/01/2020 21:15:34,555] '---': Harit Hero Tamash(25241) defeated, next respawn at 27-01-2020 21:56:16
+[27/01/2020 21:25:01,349] '---': Fierce Tiger King Angel(25125) spawned in the word
+[27/01/2020 21:27:44,450] '---': Palibati Queen Themis(25252) spawned in the word
+[27/01/2020 21:37:46,079] '---': Rahha(25051) spawned in the word
+[27/01/2020 21:51:00,897] '---': Soulless Wild Boar(25089) spawned in the word
+[27/01/2020 21:56:16,091] '---': Harit Hero Tamash(25241) spawned in the word
