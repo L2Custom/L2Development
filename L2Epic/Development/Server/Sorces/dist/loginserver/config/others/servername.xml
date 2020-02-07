@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<servers_list>
+<list>
 	<!-- server list from c3 (only English names) -->
 	<server id="1" name="Bartz" />
 	<server id="2" name="Sieghardt" />
@@ -128,4 +128,4 @@
 	<server id="125" name="125" />
 	<server id="126" name="126" />
 	<server id="127" name="??" />
-</servers_list>
+</list>

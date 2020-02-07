@@ -29,7 +29,7 @@ public final class RequestEvaluate extends L2GameClientPacket
 		
 		if (!(activeChar.getTarget() instanceof L2PcInstance))
 		{
-			sm = new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT);
+			sm = new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET);
 			activeChar.sendPacket(sm);
 			sm = null;
 			return;
@@ -37,7 +37,7 @@ public final class RequestEvaluate extends L2GameClientPacket
 		
 		if (activeChar.getLevel() < 10)
 		{
-			sm = new SystemMessage(SystemMessageId.ONLY_LEVEL_SUP_10_CAN_RECOMMEND);
+			sm = new SystemMessage(SystemMessageId.ONLY_CHARACTERS_OF_LEVEL_10_OR_ABOVE_ARE_AUTHORIZED_TO_MAKE_RECOMMENDATIONS);
 			activeChar.sendPacket(sm);
 			sm = null;
 			return;
@@ -53,7 +53,7 @@ public final class RequestEvaluate extends L2GameClientPacket
 		
 		if (activeChar.getRecomLeft() <= 0)
 		{
-			sm = new SystemMessage(SystemMessageId.NO_MORE_RECOMMENDATIONS_TO_HAVE);
+			sm = new SystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_MAKE_FURTHER_RECOMMENDATIONS_AT_THIS_TIME);
 			activeChar.sendPacket(sm);
 			sm = null;
 			return;
@@ -71,7 +71,7 @@ public final class RequestEvaluate extends L2GameClientPacket
 		
 		if (!activeChar.canRecom(target))
 		{
-			sm = new SystemMessage(SystemMessageId.THAT_CHARACTER_IS_RECOMMENDED);
+			sm = new SystemMessage(SystemMessageId.THAT_CHARACTER_HAS_ALREADY_BEEN_RECOMMENDED);
 			activeChar.sendPacket(sm);
 			sm = null;
 			return;
@@ -79,12 +79,12 @@ public final class RequestEvaluate extends L2GameClientPacket
 		
 		activeChar.giveRecom(target);
 		
-		sm = new SystemMessage(SystemMessageId.YOU_HAVE_RECOMMENDED);
+		sm = new SystemMessage(SystemMessageId.YOU_HAVE_RECOMMENDED_S1_YOU_ARE_AUTHORIZED_TO_MAKE_S2_MORE_RECOMMENDATIONS);
 		sm.addString(target.getName());
 		sm.addNumber(activeChar.getRecomLeft());
 		activeChar.sendPacket(sm);
 		
-		sm = new SystemMessage(SystemMessageId.YOU_HAVE_BEEN_RECOMMENDED);
+		sm = new SystemMessage(SystemMessageId.YOU_HAVE_BEEN_RECOMMENDED_BY_S1);
 		sm.addString(activeChar.getName());
 		target.sendPacket(sm);
 		sm = null;

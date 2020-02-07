@@ -168,9 +168,9 @@ public class Baium extends Quest implements Runnable
 					npcBaium.broadcastPacket(new SocialAction(npcBaium.getObjectId(), 2));
 					startQuestTimer("baium_wakeup", 15000, npcBaium, null);
 				}
-				catch (final Exception e)
+				catch (Exception e)
 				{
-					e.printStackTrace();
+					LOGGER.error("Baium AI error", e);
 				}
 			}, 100L);
 		}
@@ -563,9 +563,9 @@ public class Baium extends Quest implements Runnable
 				npc.stopMove(null);
 				npc.doCast(skill);
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				e.printStackTrace();
+				LOGGER.error("Baium AI error", e);
 			}
 		}
 		else

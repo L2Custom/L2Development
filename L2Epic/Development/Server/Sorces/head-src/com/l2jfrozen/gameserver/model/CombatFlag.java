@@ -91,7 +91,7 @@ public class CombatFlag
 		combatItem = item;
 		playerFlag.getInventory().equipItemAndRecord(combatItem);
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.S1_EQUIPPED);
+		SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_EQUIPPED_YOUR_S1);
 		sm.addItemName(combatItem.getItemId());
 		playerFlag.sendPacket(sm);
 		sm = null;

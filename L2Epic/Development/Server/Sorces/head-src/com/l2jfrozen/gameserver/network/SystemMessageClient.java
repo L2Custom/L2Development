@@ -2113,26 +2113,74 @@ public class SystemMessageClient
 	 */
 	public void parseToJavaFile()
 	{
-		for (SystemMessageId sm : SystemMessageId.values())
+		for (int i=1010; i < 1100; i++)
 		{
 			StringBuilder sb = new StringBuilder();
-			if (messages.get(sm.getId()) != null && sm.getId() <= 1000)
+			String message = messages.get(i);
+			
+			if(message == null)
+				continue;
+			
+			if(SystemMessageId.getMessage(i) != null)
+				continue;
+			
+			String varName = "";
+			
+			if(message.endsWith("."))
 			{
-				sb.append("/**\n");
-				sb.append(" * ID: ");
-				sb.append(sm.getId());
-				sb.append("<br>\n");
-				sb.append(" * Message: ");
-				sb.append(messages.get(sm.getId()));
-				sb.append("\n");
-				sb.append(" */\n");
-				sb.append(sm);
-				sb.append("(");
-				sb.append(sm.getId());
-				sb.append("),\n");
-				
-				System.out.println(sb.toString());
+				varName = message.substring(0, message.length()-1);
 			}
+			else
+			{
+				varName = message;
+			}
+			
+			varName = varName.replace("$", "");
+			varName = varName.replace("(s)", "");
+			varName = varName.replace("(n)", "");
+			varName = varName.replace(".", "_");
+			varName = varName.replace(",", "_");
+			varName = varName.replace("-", "_");
+			varName = varName.replace(" ", "_");
+			varName = varName.replace("'", "_");
+			varName = varName.replace(":", "_");
+			varName = varName.replace(";", "_");
+			varName = varName.replace("#", "_");
+			varName = varName.replace("\"", "_");
+			varName = varName.replace("!", "");
+			varName = varName.replace("?", "");
+			varName = varName.replace("*", "X");
+			varName = varName.replace("+", "PLUS_");
+			varName = varName.replace("/", "");
+			varName = varName.replace("(", "");
+			varName = varName.replace(")", "");
+			varName = varName.replaceAll("[_]{2,}", "_");
+			varName = varName.toUpperCase();
+			
+			if(varName.length() > 81)
+			{
+				varName = varName.substring(0, 81);
+			}
+			
+			sb.append("/**\n");
+			sb.append(" * ID: ");
+			sb.append(i);
+			sb.append("<br>\n");
+			sb.append(" * Message: ");
+			sb.append(message);
+			sb.append("\n");
+			sb.append(" */\n");
+			sb.append(varName);
+			sb.append("(");
+			sb.append(i);
+			sb.append("),\n");
+			
+			System.out.println(sb.toString());
 		}
+	}
+	
+	public static void main(String[] args)
+	{
+		SystemMessageClient.getInstance().parseToJavaFile();
 	}
 }

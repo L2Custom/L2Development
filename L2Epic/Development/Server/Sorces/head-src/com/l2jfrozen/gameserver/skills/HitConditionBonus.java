@@ -105,9 +105,9 @@ public class HitConditionBonus
 								bonus = Integer.parseInt(cond.getAttributes().getNamedItem("val").getNodeValue());
 							}
 						}
-						catch (final Exception e)
+						catch (Exception e)
 						{
-							LOGGER.warn("[HitConditionBonus] Could not parse condition: " + e.getMessage(), e);
+							LOGGER.warn("[HitConditionBonus] Could not parse file hitConditionBonus.xml", e);
 						}
 						finally
 						{

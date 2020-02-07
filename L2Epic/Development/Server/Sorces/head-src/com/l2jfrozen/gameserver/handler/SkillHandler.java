@@ -5,7 +5,6 @@ import java.util.TreeMap;
 
 import org.apache.log4j.Logger;
 
-import com.l2jfrozen.gameserver.GameServer;
 import com.l2jfrozen.gameserver.handler.skillhandlers.BalanceLife;
 import com.l2jfrozen.gameserver.handler.skillhandlers.BeastFeed;
 import com.l2jfrozen.gameserver.handler.skillhandlers.Blow;
@@ -43,12 +42,11 @@ import com.l2jfrozen.gameserver.handler.skillhandlers.ZakenSelf;
 import com.l2jfrozen.gameserver.model.L2Skill.SkillType;
 
 /**
- * This class ...
- * @version $Revision: 1.1.4.4 $ $Date: 2005/04/03 15:55:06 $
+ * @author ReynalDev
  */
 public class SkillHandler
 {
-	private static final Logger LOGGER = Logger.getLogger(GameServer.class);
+	private static final Logger LOGGER = Logger.getLogger(SkillHandler.class);
 	
 	private static SkillHandler instance;
 	
@@ -101,29 +99,25 @@ public class SkillHandler
 		registerSkillHandler(new GetPlayer());
 		registerSkillHandler(new ZakenPlayer());
 		registerSkillHandler(new ZakenSelf());
-		LOGGER.info("SkillHandler: Loaded " + dataTable.size() + " handlers.");
 		
+		LOGGER.info("SkillHandler: Loaded " + dataTable.size() + " handlers.");
 	}
 	
-	public void registerSkillHandler(final ISkillHandler handler)
+	public void registerSkillHandler(ISkillHandler handler)
 	{
 		SkillType[] types = handler.getSkillIds();
 		
-		for (final SkillType t : types)
+		for (SkillType t : types)
 		{
 			dataTable.put(t, handler);
 		}
-		types = null;
 	}
 	
-	public ISkillHandler getSkillHandler(final SkillType skillType)
+	public ISkillHandler getSkillHandler(SkillType skillType)
 	{
 		return dataTable.get(skillType);
 	}
 	
-	/**
-	 * @return
-	 */
 	public int size()
 	{
 		return dataTable.size();

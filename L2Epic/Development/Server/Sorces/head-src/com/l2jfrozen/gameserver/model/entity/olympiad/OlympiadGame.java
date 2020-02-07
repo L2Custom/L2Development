@@ -2,7 +2,7 @@ package com.l2jfrozen.gameserver.model.entity.olympiad;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 
@@ -298,8 +298,8 @@ class OlympiadGame
 				player.checkItemRestriction();
 				
 				// Remove shot automation
-				final Map<Integer, Integer> activeSoulShots = player.getAutoSoulShot();
-				for (final int itemId : activeSoulShots.values())
+				final Set<Integer> activeSoulShots = player.getAutoSoulShot();
+				for (final int itemId : activeSoulShots)
 				{
 					player.removeAutoSoulShot(itemId);
 					final ExAutoSoulShot atk = new ExAutoSoulShot(itemId, 0);
@@ -427,7 +427,7 @@ class OlympiadGame
 				skill = SkillTable.getInstance().getInfo(1204, 2);
 				skill.getEffects(player, player);
 				player.broadcastPacket(new MagicSkillUser(player, player, skill.getId(), 2, skill.getHitTime(), 0));
-				sm = new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+				sm = new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU);
 				sm.addSkillName(1204);
 				player.sendPacket(sm);
 				if (!player.isMageClass())
@@ -436,7 +436,7 @@ class OlympiadGame
 					skill = SkillTable.getInstance().getInfo(1086, 1);
 					skill.getEffects(player, player);
 					player.broadcastPacket(new MagicSkillUser(player, player, skill.getId(), 1, skill.getHitTime(), 0));
-					sm = new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+					sm = new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU);
 					sm.addSkillName(1086);
 					player.sendPacket(sm);
 				}
@@ -446,7 +446,7 @@ class OlympiadGame
 					skill = SkillTable.getInstance().getInfo(1085, 1);
 					skill.getEffects(player, player);
 					player.broadcastPacket(new MagicSkillUser(player, player, skill.getId(), 1, skill.getHitTime(), 0));
-					sm = new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+					sm = new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU);
 					sm.addSkillName(1085);
 					player.sendPacket(sm);
 				}
@@ -842,7 +842,7 @@ class OlympiadGame
 				iu.addModifiedItem(item);
 				playerOne.sendPacket(iu);
 				
-				final SystemMessage sm = new SystemMessage(SystemMessageId.EARNED_S2_S1_S);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S);
 				sm.addItemName(item.getItemId());
 				sm.addNumber(gpreward);
 				playerOne.sendPacket(sm);
@@ -878,7 +878,7 @@ class OlympiadGame
 				iu.addModifiedItem(item);
 				playerTwo.sendPacket(iu);
 				
-				final SystemMessage sm = new SystemMessage(SystemMessageId.EARNED_S2_S1_S);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S);
 				sm.addItemName(item.getItemId());
 				sm.addNumber(gpreward);
 				playerTwo.sendPacket(sm);

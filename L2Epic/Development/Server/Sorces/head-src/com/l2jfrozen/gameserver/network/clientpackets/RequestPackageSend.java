@@ -183,7 +183,7 @@ public final class RequestPackageSend extends L2GameClientPacket
 		// Check if enough adena and charge the fee
 		if (currentAdena < fee || !player.reduceAdena("Warehouse", fee, player.getLastFolkNPC(), false))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA));
 			return;
 		}
 		

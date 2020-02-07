@@ -115,14 +115,14 @@ public class L2FolkInstance extends L2NpcInstance
 			
 			if (minlevel > 0)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN);
+				SystemMessage sm = new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ANY_FURTHER_SKILLS_TO_LEARN_COME_BACK_WHEN_YOU_REACHED_LEVEL_S1);
 				sm.addNumber(minlevel);
 				player.sendPacket(sm);
 				sm = null;
 			}
 			else
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);
+				SystemMessage sm = new SystemMessage(SystemMessageId.THERE_ARE_NO_OTHER_SKILLS_TO_LEARN);
 				player.sendPacket(sm);
 				sm = null;
 			}
@@ -220,7 +220,7 @@ public class L2FolkInstance extends L2NpcInstance
 			
 			if (level < 74)
 			{
-				final SystemMessage sm = new SystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ANY_FURTHER_SKILLS_TO_LEARN_COME_BACK_WHEN_YOU_REACHED_LEVEL_S1);
 				sm.addNumber(level);
 				player.sendPacket(sm);
 			}

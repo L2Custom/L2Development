@@ -416,7 +416,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 				statement.executeUpdate();
 			}
 			
-			try (PreparedStatement statement = con.prepareStatement("DELETE FROM character_skills_save WHERE char_obj_id=?"))
+			try (PreparedStatement statement = con.prepareStatement("DELETE FROM character_skill_effects WHERE char_obj_id=?"))
 			{
 				statement.setInt(1, playerObjId);
 				statement.executeUpdate();
@@ -1096,9 +1096,9 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 				{
 					packet.run();
 				}
-				catch (final Exception e)
+				catch (Exception e)
 				{
-					LOGGER.error("Exception during execution " + packet.getClass().getSimpleName() + ", client: " + toString() + "," + e.getMessage(), e);
+					LOGGER.error("Exception during execution " + packet.getClass().getSimpleName() + ", client: " + toString(), e);
 				}
 				
 				count++;

@@ -203,7 +203,7 @@ public class ClanHall
 		
 		public void dbSave(boolean newFunction)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();)
+			try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 			{
 				if (newFunction)
 				{

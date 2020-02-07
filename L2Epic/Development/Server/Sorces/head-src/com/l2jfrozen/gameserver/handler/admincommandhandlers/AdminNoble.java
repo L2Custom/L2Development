@@ -34,7 +34,7 @@ public class AdminNoble implements IAdminCommandHandler
 			
 			if (target == null)
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 				return false;
 			}
 			

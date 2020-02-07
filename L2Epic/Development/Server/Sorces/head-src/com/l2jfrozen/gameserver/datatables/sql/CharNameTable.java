@@ -37,7 +37,7 @@ public class CharNameTable
 		boolean result = true;
 		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(SELECT_CHARACTER_ACCOUNT_NAME);)
+			PreparedStatement statement = con.prepareStatement(SELECT_CHARACTER_ACCOUNT_NAME))
 		{
 			statement.setString(1, name);
 			

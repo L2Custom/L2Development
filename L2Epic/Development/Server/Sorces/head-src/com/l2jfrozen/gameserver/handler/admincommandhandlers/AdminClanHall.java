@@ -67,7 +67,7 @@ public class AdminClanHall implements IAdminCommandHandler
 			{
 				if (player == null || player.getClan() == null)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				}
 				else if (!ClanHallManager.getInstance().isFree(clanhall.getId()))
 				{

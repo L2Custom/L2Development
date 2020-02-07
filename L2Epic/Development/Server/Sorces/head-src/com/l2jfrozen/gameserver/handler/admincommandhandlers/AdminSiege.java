@@ -82,7 +82,7 @@ public class AdminSiege implements IAdminCommandHandler
 			{
 				if (player == null)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				}
 				else if (SiegeManager.getInstance().checkIsRegistered(player.getClan(), castle.getCastleId()))
 				{
@@ -97,7 +97,7 @@ public class AdminSiege implements IAdminCommandHandler
 			{
 				if (player == null)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				}
 				else
 				{
@@ -151,7 +151,7 @@ public class AdminSiege implements IAdminCommandHandler
 			{
 				if (player == null || player.getClan() == null)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				}
 				else
 				{

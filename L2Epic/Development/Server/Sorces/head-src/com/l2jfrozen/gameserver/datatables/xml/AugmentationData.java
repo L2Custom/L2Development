@@ -24,7 +24,10 @@ import com.l2jfrozen.util.random.Rnd;
 
 /**
  * This class manages the augmentation data and can also create new augmentations.
- * @author programmos & Incognito, sword dev
+ * @author programmos
+ * @author Incognito
+ * @author sword dev
+ * @author ReynalDev
  */
 public class AugmentationData
 {
@@ -293,19 +296,10 @@ public class AugmentationData
 			{
 				LOGGER.info("AugmentationData: " + badAugmantData + " bad skill(s) were skipped.");
 			}
-			
-			doc = null;
-			file = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.error("Error parsing augmentation_skillmap.xml.", e);
-			
+			LOGGER.error("Error parsing augmentation_skillmap.xml", e);
 			return;
 		}
 		
@@ -394,18 +388,9 @@ public class AugmentationData
 						}
 					}
 				}
-				
-				doc = null;
-				file = null;
-				factory = null;
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
 				LOGGER.error("Error parsing augmentation_stats" + i + ".xml.", e);
 				return;
 			}

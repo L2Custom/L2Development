@@ -6,7 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -15,12 +14,10 @@ import org.apache.log4j.Logger;
 import com.l2jfrozen.Config;
 import com.l2jfrozen.gameserver.model.L2World;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jfrozen.gameserver.network.SystemMessageId;
 import com.l2jfrozen.gameserver.network.clientpackets.Say2;
 import com.l2jfrozen.gameserver.network.serverpackets.CreatureSay;
 import com.l2jfrozen.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
-import com.l2jfrozen.gameserver.script.DateRange;
 
 import javolution.text.TextBuilder;
 
@@ -33,7 +30,6 @@ public class Announcements
 	
 	private static Announcements instance;
 	private final List<String> announcements = new ArrayList<>();
-	private final List<List<Object>> eventAnnouncements = new ArrayList<>();
 	
 	public Announcements()
 	{
@@ -73,33 +69,6 @@ public class Announcements
 			CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, activeChar.getName(), announcement.replace("%name%", activeChar.getName()));
 			activeChar.sendPacket(cs);
 		}
-		
-		for (List<Object> entry : eventAnnouncements)
-		{
-			DateRange validDateRange = (DateRange) entry.get(0);
-			String[] msg = (String[]) entry.get(1);
-			Date currentDate = new Date();
-			
-			if (!validDateRange.isValid() || validDateRange.isWithinRange(currentDate))
-			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_S2);
-				
-				for (final String element : msg)
-				{
-					sm.addString(element);
-				}
-				
-				activeChar.sendPacket(sm);
-			}
-		}
-	}
-	
-	public void addEventAnnouncement(DateRange validDateRange, String[] msg)
-	{
-		List<Object> entry = new ArrayList<>();
-		entry.add(validDateRange);
-		entry.add(msg);
-		eventAnnouncements.add(entry);
 	}
 	
 	public void listAnnouncements(final L2PcInstance activeChar)

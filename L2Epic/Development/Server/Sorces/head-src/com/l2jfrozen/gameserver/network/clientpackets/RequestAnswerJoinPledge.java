@@ -38,10 +38,10 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 		
 		if (answer == 0)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_DID_NOT_RESPOND_TO_S1_CLAN_INVITATION);
+			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_DIDNT_RESPOND_TO_S1S_INVITATION_JOINING_HAS_BEEN_CANCELLED);
 			sm.addString(requestor.getName());
 			activeChar.sendPacket(sm);
-			sm = new SystemMessage(SystemMessageId.S1_DID_NOT_RESPOND_TO_CLAN_INVITATION);
+			sm = new SystemMessage(SystemMessageId.S1_DID_NOT_RESPOND_INVITATION_TO_THE_CLAN_HAS_BEEN_CANCELLED);
 			sm.addString(activeChar.getName());
 			requestor.sendPacket(sm);
 		}
@@ -76,12 +76,13 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 				activeChar.setClanPrivileges(activeChar.getClan().getRankPrivs(activeChar.getPowerGrade()));
 				
 				activeChar.sendPacket(new SystemMessage(SystemMessageId.ENTERED_THE_CLAN));
+				activeChar.getClan().addSkillEffects(activeChar);
 				
-				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_JOINED_CLAN);
+				SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_JOINED_THE_CLAN);
 				sm.addString(activeChar.getName());
 				clan.broadcastToOnlineMembers(sm);
 				
-				clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListAdd(activeChar), activeChar);
+				clan.broadcastToOnlineMembersExcept(new PledgeShowMemberListAdd(activeChar), activeChar);
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 				
 				// this activates the clan tab on the new member

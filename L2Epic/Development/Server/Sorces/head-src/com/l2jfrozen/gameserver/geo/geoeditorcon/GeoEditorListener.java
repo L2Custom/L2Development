@@ -31,13 +31,8 @@ public class GeoEditorListener extends Thread
 		{
 			serverSocket = new ServerSocket(Config.GEOEDITOR_PORT);
 		}
-		catch (final IOException e)
+		catch (IOException e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
 			LOGGER.error("Error creating geoeditor listener! ", e);
 			System.exit(1);
 		}
@@ -79,14 +74,9 @@ public class GeoEditorListener extends Thread
 				geoEditor.start();
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.warn("GeoEditorListener: ", e);
+			LOGGER.error("GeoEditorListener error ", e);
 			try
 			{
 				if (connection != null)
@@ -96,11 +86,7 @@ public class GeoEditorListener extends Thread
 			}
 			catch (final Exception e2)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e2.printStackTrace();
-				}
-				
+				LOGGER.error("GeoEditorListener error while closing connection", e2);
 			}
 		}
 		finally
@@ -109,16 +95,13 @@ public class GeoEditorListener extends Thread
 			{
 				serverSocket.close();
 			}
-			catch (final IOException io)
+			catch (IOException io)
 			{
 				if (Config.ENABLE_ALL_EXCEPTIONS)
 				{
-					io.printStackTrace();
+					LOGGER.error("GeoEditorListener error while closing server socket", io);
 				}
-				
-				LOGGER.warn("", io);
 			}
-			LOGGER.warn("GeoEditorListener Closed!");
 		}
 	}
 }

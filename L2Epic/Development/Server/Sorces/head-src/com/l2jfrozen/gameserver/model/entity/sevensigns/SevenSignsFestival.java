@@ -38,8 +38,6 @@ import com.l2jfrozen.gameserver.templates.L2NpcTemplate;
 import com.l2jfrozen.gameserver.templates.StatsSet;
 import com.l2jfrozen.gameserver.thread.ThreadPoolManager;
 import com.l2jfrozen.gameserver.util.Util;
-import com.l2jfrozen.util.CloseUtil;
-import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 import com.l2jfrozen.util.random.Rnd;
 
@@ -3430,68 +3428,46 @@ public class SevenSignsFestival implements SpawnListener
 	 * Stores current festival data, basic settings to the properties file and past high score data to the database. If updateSettings = true, then all Seven Signs data is updated in the database.
 	 * @param updateSettings the update settings
 	 */
-	public void saveFestivalData(final boolean updateSettings)
+	public void saveFestivalData(boolean updateSettings)
 	{
-		Connection con = null;
-		
-		if (Config.DEBUG)
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			LOGGER.info("SevenSignsFestival: Saving festival data to disk.");
-		}
-		
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = null;
-			
-			for (final Map<Integer, StatsSet> currCycleData : festivalData.values())
+			for (Map<Integer, StatsSet> currCycleData : festivalData.values())
 			{
-				for (final StatsSet festivalDat : currCycleData.values())
+				for (StatsSet festivalDat : currCycleData.values())
 				{
-					final int festivalCycle = festivalDat.getInteger("cycle");
-					final int festivalId = festivalDat.getInteger("festivalId");
+					int festivalCycle = festivalDat.getInteger("cycle");
+					int festivalId = festivalDat.getInteger("festivalId");
 					String cabal = festivalDat.getString("cabal");
 					
 					// Try to update an existing record.
-					statement = con.prepareStatement("UPDATE seven_signs_festival SET date=?, score=?, members=? WHERE cycle=? AND cabal=? AND festivalId=?");
-					statement.setLong(1, Long.valueOf(festivalDat.getString("date")));
-					statement.setInt(2, festivalDat.getInteger("score"));
-					statement.setString(3, festivalDat.getString("members"));
-					statement.setInt(4, festivalCycle);
-					statement.setString(5, cabal);
-					statement.setInt(6, festivalId);
-					
-					// If there was no record to update, assume it doesn't exist and add a new one,
-					// otherwise continue with the next record to store.
-					if (statement.executeUpdate() > 0)
+					try(PreparedStatement statement = con.prepareStatement("UPDATE seven_signs_festival SET date=?, score=?, members=? WHERE cycle=? AND cabal=? AND festivalId=?"))
 					{
-						if (Config.DEBUG)
-						{
-							LOGGER.info("SevenSignsFestival: Updated data in DB (Cycle = " + festivalCycle + ", Cabal = " + cabal + ", FestID = " + festivalId + ")");
-						}
+						statement.setLong(1, Long.valueOf(festivalDat.getString("date")));
+						statement.setInt(2, festivalDat.getInteger("score"));
+						statement.setString(3, festivalDat.getString("members"));
+						statement.setInt(4, festivalCycle);
+						statement.setString(5, cabal);
+						statement.setInt(6, festivalId);
 						
-						DatabaseUtils.close(statement);
-						continue;
+						// If there was no record to update, assume it doesn't exist and add a new one,
+						// otherwise continue with the next record to store.
+						if (statement.executeUpdate() > 0)
+						{
+							continue;
+						}
 					}
 					
-					DatabaseUtils.close(statement);
-					
-					statement = con.prepareStatement("INSERT INTO seven_signs_festival (festivalId, cabal, cycle, date, score, members) VALUES (?,?,?,?,?,?)");
-					statement.setInt(1, festivalId);
-					statement.setString(2, cabal);
-					statement.setInt(3, festivalCycle);
-					statement.setLong(4, Long.valueOf(festivalDat.getString("date")));
-					statement.setInt(5, festivalDat.getInteger("score"));
-					statement.setString(6, festivalDat.getString("members"));
-					statement.execute();
-					DatabaseUtils.close(statement);
-					statement = null;
-					
-					if (Config.DEBUG)
+					try(PreparedStatement statement = con.prepareStatement("INSERT INTO seven_signs_festival (festivalId, cabal, cycle, date, score, members) VALUES (?,?,?,?,?,?)"))
 					{
-						LOGGER.info("SevenSignsFestival: Inserted data in DB (Cycle = " + festivalCycle + ", Cabal = " + cabal + ", FestID = " + festivalId + ")");
+						statement.setInt(1, festivalId);
+						statement.setString(2, cabal);
+						statement.setInt(3, festivalCycle);
+						statement.setLong(4, Long.valueOf(festivalDat.getString("date")));
+						statement.setInt(5, festivalDat.getInteger("score"));
+						statement.setString(6, festivalDat.getString("members"));
+						statement.executeUpdate();
 					}
-					cabal = null;
 				}
 			}
 			
@@ -3501,14 +3477,9 @@ public class SevenSignsFestival implements SpawnListener
 				SevenSigns.getInstance().saveSevenSignsData(null, true);
 			}
 		}
-		catch (final SQLException e)
+		catch (Exception e)
 		{
 			LOGGER.error("SevenSignsFestival: Failed to save configuration", e);
-		}
-		finally
-		{
-			CloseUtil.close(con);
-			con = null;
 		}
 	}
 	
@@ -3599,7 +3570,7 @@ public class SevenSignsFestival implements SpawnListener
 		else
 		{
 			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-				PreparedStatement statement = con.prepareStatement(GET_CLAN_NAME);)
+				PreparedStatement statement = con.prepareStatement(GET_CLAN_NAME))
 			{
 				statement.setString(1, partyMemberName);
 				

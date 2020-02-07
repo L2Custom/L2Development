@@ -14,6 +14,7 @@ import com.l2jfrozen.crypt.nProtect;
 import com.l2jfrozen.crypt.nProtect.RestrictionType;
 import com.l2jfrozen.gameserver.communitybbs.Manager.RegionBBSManager;
 import com.l2jfrozen.gameserver.controllers.GameTimeController;
+import com.l2jfrozen.gameserver.datatables.CastleCircletTable;
 import com.l2jfrozen.gameserver.datatables.GmListTable;
 import com.l2jfrozen.gameserver.datatables.SkillTable;
 import com.l2jfrozen.gameserver.datatables.csv.MapRegionTable;
@@ -22,7 +23,6 @@ import com.l2jfrozen.gameserver.datatables.xml.AdminCommandAccessRights;
 import com.l2jfrozen.gameserver.managers.CastleManager;
 import com.l2jfrozen.gameserver.managers.ClanHallManager;
 import com.l2jfrozen.gameserver.managers.CoupleManager;
-import com.l2jfrozen.gameserver.managers.CrownManager;
 import com.l2jfrozen.gameserver.managers.DimensionalRiftManager;
 import com.l2jfrozen.gameserver.managers.FortSiegeManager;
 import com.l2jfrozen.gameserver.managers.OlympiadStadiaManager;
@@ -155,11 +155,6 @@ public class EnterWorld extends L2GameClientPacket
 		activeChar.loadVariables();
 		activeChar.loadAccountVariables();
 		
-		if (Config.PLAYER_SPAWN_PROTECTION > 0)
-		{
-			activeChar.setProtection(true);
-		}
-		
 		activeChar.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
 		
 		if (SevenSigns.getInstance().isSealValidationPeriod())
@@ -248,15 +243,25 @@ public class EnterWorld extends L2GameClientPacket
 		activeChar.getInventory().reloadEquippedItems();
 		
 		// Welcome to Lineage II
-		sendPacket(new SystemMessage(SystemMessageId.WELCOME_TO_LINEAGE));
+		sendPacket(new SystemMessage(SystemMessageId.WELCOME_TO_THE_WORLD_OF_LINEAGE_II));
 		
 		SevenSigns.getInstance().sendCurrentPeriodMsg(activeChar);
 		Announcements.getInstance().showAnnouncements(activeChar);
 		
 		loadTutorial(activeChar);
 		
-		// Check for crowns
-		CrownManager.getInstance().checkCrowns(activeChar);
+		for(int circletId : CastleCircletTable.getCrownList())
+		{
+			if(activeChar.isItemEquippedByItemId(circletId))
+			{
+				if(activeChar.getClan() == null || !activeChar.getClan().hasCastle())
+				{
+					L2ItemInstance circlet = activeChar.getInventory().getItemByItemId(circletId);
+					activeChar.getInventory().unEquipItemInSlotAndRecord(circlet.getEquipSlot());
+					activeChar.broadcastUserInfo();
+				}
+			}
+		}
 		
 		// Check player skills
 		if (Config.CHECK_SKILLS_ON_ENTER && !Config.ALT_GAME_SKILL_LEARN)
@@ -298,7 +303,7 @@ public class EnterWorld extends L2GameClientPacket
 			
 			if (friend != null)
 			{
-				friend.sendPacket(new SystemMessage(SystemMessageId.FRIEND_S1_HAS_LOGGED_IN).addString(activeChar.getName()));
+				friend.sendPacket(new SystemMessage(SystemMessageId.S1_FRIEND_HAS_LOGGED_IN).addString(activeChar.getName()));
 			}
 		}
 		
@@ -333,7 +338,7 @@ public class EnterWorld extends L2GameClientPacket
 		
 		if (activeChar.getClanJoinExpiryTime() > System.currentTimeMillis())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CLAN_MEMBERSHIP_TERMINATED));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_RECENTLY_DIMISSED_FROM_A_CLAN_YOU_ARE_NOT_ALLOWD_TO_JOIN_ANOTHER_CLAN_FOR_24_HOURS));
 		}
 		
 		if (activeChar.getClan() != null)
@@ -659,8 +664,8 @@ public class EnterWorld extends L2GameClientPacket
 		if (clan != null)
 		{
 			clan.getClanMember(activeChar.getObjectId()).setPlayerInstance(activeChar);
-			clan.broadcastToOtherOnlineMembers(new SystemMessage(SystemMessageId.CLAN_MEMBER_S1_LOGGED_IN).addString(activeChar.getName()), activeChar);
-			clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListUpdate(activeChar), activeChar);
+			clan.broadcastToOnlineMembersExcept(new SystemMessage(SystemMessageId.CLAN_MEMBER_S1_LOGGED_INTO_GAME).addString(activeChar.getName()), activeChar);
+			clan.broadcastToOnlineMembersExcept(new PledgeShowMemberListUpdate(activeChar), activeChar);
 		}
 	}
 	

@@ -1,6 +1,7 @@
 package com.l2jfrozen.gameserver.util;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -17,7 +18,6 @@ import com.l2jfrozen.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jfrozen.gameserver.templates.L2NpcTemplate;
 import com.l2jfrozen.util.random.Rnd;
 
-import javolution.util.FastSet;
 import main.data.memory.ObjectData;
 import main.holders.objects.ObjectHolder;
 
@@ -88,8 +88,8 @@ public class MinionList
 	
 	public int lazyCountSpawnedMinionsGroups()
 	{
-		final Set<Integer> seenGroups = new FastSet<>();
-		for (final L2MinionInstance minion : getSpawnedMinions())
+		Set<Integer> seenGroups = new HashSet<>();
+		for (L2MinionInstance minion : getSpawnedMinions())
 		{
 			seenGroups.add(minion.getNpcId());
 		}

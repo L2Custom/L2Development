@@ -83,7 +83,7 @@ public class AdminMonsterRace implements IAdminCommandHandler
 		{
 			state++;
 			
-			SystemMessage sm = new SystemMessage(SystemMessageId.MONSRACE_RACE_START);
+			SystemMessage sm = new SystemMessage(SystemMessageId.THEY_RE_OFF);
 			sm.addNumber(0);
 			activeChar.sendPacket(sm);
 			sm = null;

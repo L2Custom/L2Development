@@ -224,7 +224,7 @@ public class Lottery
 			
 			isSellingTickets = false;
 			
-			Announcements.getInstance().announceToAll(new SystemMessage(SystemMessageId.LOTTERY_TICKET_SALES_TEMP_SUSPENDED));
+			Announcements.getInstance().announceToAll(new SystemMessage(SystemMessageId.LOTTERY_TICKET_SALES_HAVE_BEEN_TEMPORARILY_SUSPENDED));
 		}
 	}
 	

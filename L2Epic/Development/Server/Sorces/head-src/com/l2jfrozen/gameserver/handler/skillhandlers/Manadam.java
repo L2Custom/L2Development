@@ -58,7 +58,7 @@ public class Manadam implements ISkillHandler
 			final boolean acted = Formulas.getInstance().calcMagicAffected(activeChar, target, skill);
 			if (target.isInvul() || !acted)
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.MISSED_TARGET));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_MISSED));
 			}
 			else
 			{
@@ -80,7 +80,7 @@ public class Manadam implements ISkillHandler
 				target.sendPacket(sump);
 				sump = null;
 				
-				SystemMessage sm = new SystemMessage(SystemMessageId.S2_MP_HAS_BEEN_DRAINED_BY_S1);
+				SystemMessage sm = new SystemMessage(SystemMessageId.S2S_MP_HAS_BEEN_DRAINED_BY_S1);
 				
 				if (activeChar instanceof L2NpcInstance)
 				{

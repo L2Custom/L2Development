@@ -49,7 +49,7 @@ public class L2ArenaZone extends L2ZoneType
 		
 		if (character instanceof L2PcInstance)
 		{
-			((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
+			((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE));
 		}
 	}
 	
@@ -60,7 +60,7 @@ public class L2ArenaZone extends L2ZoneType
 		
 		if (character instanceof L2PcInstance)
 		{
-			((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+			((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE));
 		}
 	}
 	

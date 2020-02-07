@@ -10,13 +10,14 @@ import org.apache.log4j.Logger;
 
 import com.l2jfrozen.gameserver.communitybbs.BB.Forum;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jfrozen.util.CloseUtil;
-import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 public class ForumsBBSManager extends BaseBBSManager
 {
-	private static Logger LOGGER = Logger.getLogger(ForumsBBSManager.class);
+	private static final Logger LOGGER = Logger.getLogger(ForumsBBSManager.class);
+	
+	private static final String SELECT_FORUM_ID = "SELECT forum_id FROM forums WHERE forum_type=0";
+	
 	private final List<Forum> table = new CopyOnWriteArrayList<>();
 	private static ForumsBBSManager instance;
 	private int lastid = 1;
@@ -50,36 +51,21 @@ public class ForumsBBSManager extends BaseBBSManager
 		}
 	}
 	
-	/**
-	 *
-	 */
 	private void load()
 	{
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(SELECT_FORUM_ID);
+			ResultSet result = statement.executeQuery())
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT forum_id FROM forums WHERE forum_type=0");
-			ResultSet result = statement.executeQuery();
 			while (result.next())
 			{
-				final Forum f = new Forum(result.getInt("forum_id"), null);
+				Forum f = new Forum(result.getInt("forum_id"), null);
 				addForum(f);
 			}
-			result.close();
-			DatabaseUtils.close(statement);
-			
-			result = null;
-			statement = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("data error on Forum (root): " + e);
-			e.printStackTrace();
-		}
-		finally
-		{
-			CloseUtil.close(con);
+			LOGGER.error("data error on Forum (root)", e);
 		}
 	}
 	

@@ -22,19 +22,21 @@ import com.l2jfrozen.gameserver.model.spawn.L2Spawn;
 import com.l2jfrozen.gameserver.model.spawn.SpawnListener;
 import com.l2jfrozen.gameserver.network.serverpackets.CreatureSay;
 import com.l2jfrozen.gameserver.thread.ThreadPoolManager;
-import com.l2jfrozen.util.CloseUtil;
-import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 import com.l2jfrozen.util.random.Rnd;
 
 /**
  * Auto Chat Handler Allows NPCs to automatically send messages to nearby players at a set time interval.
  * @author Tempy
+ * @author ReynalDev
  */
 public class AutoChatHandler implements SpawnListener
 {
 	protected static final Logger LOGGER = Logger.getLogger(AutoChatHandler.class);
 	private static AutoChatHandler instance;
+	
+	private static final String SELECT_AUTO_CHAT = "SELECT groupId, npcId, chatDelay FROM auto_chat ORDER BY groupId ASC";
+	private static final String SELECT_AUTO_CHAT_TEXT = "SELECT groupId, chatText FROM auto_chat_text WHERE groupId=?";
 	
 	private static final long DEFAULT_CHAT_DELAY = 30000; // 30 secs by default
 	
@@ -49,62 +51,39 @@ public class AutoChatHandler implements SpawnListener
 	
 	private void restoreChatData()
 	{
-		int numLoaded = 0;
-		
-		Connection con = null;
-		
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(SELECT_AUTO_CHAT);
+			ResultSet rs = statement.executeQuery())
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM auto_chat ORDER BY groupId ASC");
-			final ResultSet rs = statement.executeQuery();
-			
 			while (rs.next())
 			{
-				numLoaded++;
-				
-				PreparedStatement statement2 = con.prepareStatement("SELECT * FROM auto_chat_text WHERE groupId=?");
-				statement2.setInt(1, rs.getInt("groupId"));
-				ResultSet rs2 = statement2.executeQuery();
-				
-				rs2.last();
-				final String[] chatTexts = new String[rs2.getRow()];
-				
-				int i = 0;
-				
-				rs2.first();
-				
-				while (rs2.next())
+				try(PreparedStatement statement2 = con.prepareStatement(SELECT_AUTO_CHAT_TEXT))
 				{
-					chatTexts[i] = rs2.getString("chatText");
-					i++;
+					statement2.setInt(1, rs.getInt("groupId"));
+					
+					try(ResultSet rs2 = statement2.executeQuery())
+					{
+						rs2.last();
+						String[] chatTexts = new String[rs2.getRow()];
+						
+						int i = 0;
+						
+						rs2.first();
+						
+						while (rs2.next())
+						{
+							chatTexts[i] = rs2.getString("chatText");
+							i++;
+						}
+						
+						registerGlobalChat(rs.getInt("npcId"), chatTexts, rs.getLong("chatDelay"));
+					}
 				}
-				
-				registerGlobalChat(rs.getInt("npcId"), chatTexts, rs.getLong("chatDelay"));
-				
-				statement2.close();
-				rs2.close();
-				statement2 = null;
-				rs2 = null;
-			}
-			
-			rs.close();
-			DatabaseUtils.close(statement);
-			statement = null;
-			
-			if (Config.DEBUG)
-			{
-				LOGGER.debug("AutoChatHandler: Loaded " + numLoaded + " chat group(s) from the database.");
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("AutoSpawnHandler: Could not restore chat data: " + e);
-		}
-		finally
-		{
-			CloseUtil.close(con);
-			con = null;
+			LOGGER.error("AutoChatHandler: Could not restore chat data", e);
 		}
 	}
 	

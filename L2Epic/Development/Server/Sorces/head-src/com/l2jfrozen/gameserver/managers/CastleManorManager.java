@@ -21,19 +21,18 @@ import com.l2jfrozen.gameserver.model.entity.siege.Castle;
 import com.l2jfrozen.gameserver.network.SystemMessageId;
 import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
 import com.l2jfrozen.gameserver.thread.ThreadPoolManager;
-import com.l2jfrozen.util.CloseUtil;
 import com.l2jfrozen.util.L2Log;
-import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 import com.l2jfrozen.util.random.Rnd;
 
 /**
  * Class For Castle Manor Manager Load manor data from DB Update/Reload/Delete Handles all schedule for manor
  * @author l3x
+ * @author ReynalDev
  */
 public class CastleManorManager
 {
-	protected static Logger LOGGER = Logger.getLogger(CastleManorManager.class);
+	protected static final Logger LOGGER = Logger.getLogger(CastleManorManager.class);
 	
 	private static CastleManorManager instance;
 	
@@ -183,96 +182,88 @@ public class CastleManorManager
 	
 	private void load()
 	{
-		Connection con = null;
-		ResultSet rs = null;
-		PreparedStatement statement = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			// Get Connection
-			con = L2DatabaseFactory.getInstance().getConnection();
-			for (final Castle castle : CastleManager.getInstance().getCastles())
+			for (Castle castle : CastleManager.getInstance().getCastles())
 			{
-				final List<SeedProduction> production = new ArrayList<>();
-				final List<SeedProduction> productionNext = new ArrayList<>();
-				final List<CropProcure> procure = new ArrayList<>();
-				final List<CropProcure> procureNext = new ArrayList<>();
+				List<SeedProduction> production = new ArrayList<>();
+				List<SeedProduction> productionNext = new ArrayList<>();
+				List<CropProcure> procure = new ArrayList<>();
+				List<CropProcure> procureNext = new ArrayList<>();
 				
 				// restore seed production info
-				statement = con.prepareStatement(CASTLE_MANOR_LOAD_PRODUCTION);
-				statement.setInt(1, castle.getCastleId());
-				rs = statement.executeQuery();
-				while (rs.next())
+				try(PreparedStatement statement = con.prepareStatement(CASTLE_MANOR_LOAD_PRODUCTION))
 				{
-					final int seedId = rs.getInt("seed_id");
-					final int canProduce = rs.getInt("can_produce");
-					final int startProduce = rs.getInt("start_produce");
-					final int price = rs.getInt("seed_price");
-					final int period = rs.getInt("period");
-					if (period == PERIOD_CURRENT)
+					statement.setInt(1, castle.getCastleId());
+					
+					try(ResultSet rs = statement.executeQuery())
 					{
-						production.add(new SeedProduction(seedId, canProduce, price, startProduce));
-					}
-					else
-					{
-						productionNext.add(new SeedProduction(seedId, canProduce, price, startProduce));
+						while (rs.next())
+						{
+							final int seedId = rs.getInt("seed_id");
+							final int canProduce = rs.getInt("can_produce");
+							final int startProduce = rs.getInt("start_produce");
+							final int price = rs.getInt("seed_price");
+							final int period = rs.getInt("period");
+							if (period == PERIOD_CURRENT)
+							{
+								production.add(new SeedProduction(seedId, canProduce, price, startProduce));
+							}
+							else
+							{
+								productionNext.add(new SeedProduction(seedId, canProduce, price, startProduce));
+							}
+						}
 					}
 				}
-				DatabaseUtils.close(statement);
-				rs.close();
-				statement = null;
-				rs = null;
 				
 				castle.setSeedProduction(production, PERIOD_CURRENT);
 				castle.setSeedProduction(productionNext, PERIOD_NEXT);
 				
-				// restore procure info
-				statement = con.prepareStatement(CASTLE_MANOR_LOAD_PROCURE);
-				statement.setInt(1, castle.getCastleId());
-				rs = statement.executeQuery();
-				while (rs.next())
+				if (!production.isEmpty() || !productionNext.isEmpty())
 				{
-					final int cropId = rs.getInt("crop_id");
-					final int canBuy = rs.getInt("can_buy");
-					final int startBuy = rs.getInt("start_buy");
-					final int rewardType = rs.getInt("reward_type");
-					final int price = rs.getInt("price");
-					final int period = rs.getInt("period");
-					if (period == PERIOD_CURRENT)
+					LOGGER.info("Castle " + castle.getName() + " seed production loaded");
+				}
+				
+				// restore procure info
+				try(PreparedStatement statement = con.prepareStatement(CASTLE_MANOR_LOAD_PROCURE))
+				{
+					statement.setInt(1, castle.getCastleId());
+					
+					try(ResultSet rs = statement.executeQuery())
 					{
-						procure.add(new CropProcure(cropId, canBuy, rewardType, startBuy, price));
-					}
-					else
-					{
-						procureNext.add(new CropProcure(cropId, canBuy, rewardType, startBuy, price));
+						while (rs.next())
+						{
+							final int cropId = rs.getInt("crop_id");
+							final int canBuy = rs.getInt("can_buy");
+							final int startBuy = rs.getInt("start_buy");
+							final int rewardType = rs.getInt("reward_type");
+							final int price = rs.getInt("price");
+							final int period = rs.getInt("period");
+							if (period == PERIOD_CURRENT)
+							{
+								procure.add(new CropProcure(cropId, canBuy, rewardType, startBuy, price));
+							}
+							else
+							{
+								procureNext.add(new CropProcure(cropId, canBuy, rewardType, startBuy, price));
+							}
+						}
 					}
 				}
-				DatabaseUtils.close(statement);
-				rs.close();
-				statement = null;
-				rs = null;
 				
 				castle.setCropProcure(procure, PERIOD_CURRENT);
 				castle.setCropProcure(procureNext, PERIOD_NEXT);
 				
-				if (!procure.isEmpty() || !procureNext.isEmpty() || !production.isEmpty() || !productionNext.isEmpty())
+				if (!procure.isEmpty() || !procureNext.isEmpty())
 				{
-					LOGGER.info(castle.getName() + ": Data loaded");
+					LOGGER.info("Castle " + castle.getName() + " procure loaded");
 				}
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.info("Error restoring manor data: " + e.getMessage());
-		}
-		finally
-		{
-			CloseUtil.close(con);
-			con = null;
+			LOGGER.error("Error restoring manor data", e);
 		}
 	}
 	

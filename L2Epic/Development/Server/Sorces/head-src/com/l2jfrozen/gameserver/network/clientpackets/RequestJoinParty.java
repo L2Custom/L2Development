@@ -43,7 +43,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 		
 		if (target == null)
 		{
-			requestor.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+			requestor.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 			return;
 		}
 		
@@ -57,13 +57,13 @@ public final class RequestJoinParty extends L2GameClientPacket
 		
 		if (target == requestor)
 		{
-			requestor.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			requestor.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
 		if (target.isCursedWeaponEquiped() || requestor.isCursedWeaponEquiped())
 		{
-			requestor.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			requestor.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
@@ -82,7 +82,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 		
 		if (target.getBlockList().isInBlockList(requestor.getName()))
 		{
-			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_ADDED_YOU_TO_IGNORE_LIST);
+			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_PLACED_YOU_ON_HIS_HER_IGNORE_LIST);
 			sm.addString(target.getName());
 			requestor.sendPacket(sm);
 			return;
@@ -127,13 +127,13 @@ public final class RequestJoinParty extends L2GameClientPacket
 		// summary of ppl already in party and ppl that get invitation
 		if (requestor.getParty().getMemberCount() >= 9)
 		{
-			requestor.sendPacket(new SystemMessage(SystemMessageId.PARTY_FULL));
+			requestor.sendPacket(new SystemMessage(SystemMessageId.THE_PARTY_IS_FULL));
 			return;
 		}
 		
 		if (!requestor.getParty().isLeader(requestor))
 		{
-			requestor.sendPacket(new SystemMessage(SystemMessageId.ONLY_LEADER_CAN_INVITE));
+			requestor.sendPacket(new SystemMessage(SystemMessageId.ONLY_THE_LEADER_CAN_GIVE_OUT_INVITATIONS));
 			return;
 		}
 		
@@ -154,13 +154,13 @@ public final class RequestJoinParty extends L2GameClientPacket
 				LOGGER.debug("sent out a party invitation to:" + target.getName());
 			}
 			
-			msg = new SystemMessage(SystemMessageId.YOU_INVITED_S1_TO_PARTY);
+			msg = new SystemMessage(SystemMessageId.YOU_HAVE_INVITED_S1_TO_YOUR_PARTY);
 			msg.addString(target.getName());
 			requestor.sendPacket(msg);
 		}
 		else
 		{
-			msg = new SystemMessage(SystemMessageId.S1_IS_BUSY_TRY_LATER);
+			msg = new SystemMessage(SystemMessageId.S1_IS_BUSY_PLEASE_TRY_AGAIN_LATER);
 			msg.addString(target.getName());
 			requestor.sendPacket(msg);
 			
@@ -193,13 +193,13 @@ public final class RequestJoinParty extends L2GameClientPacket
 				LOGGER.debug("sent out a party invitation to:" + target.getName());
 			}
 			
-			msg = new SystemMessage(SystemMessageId.YOU_INVITED_S1_TO_PARTY);
+			msg = new SystemMessage(SystemMessageId.YOU_HAVE_INVITED_S1_TO_YOUR_PARTY);
 			msg.addString(target.getName());
 			requestor.sendPacket(msg);
 		}
 		else
 		{
-			msg = new SystemMessage(SystemMessageId.S1_IS_BUSY_TRY_LATER);
+			msg = new SystemMessage(SystemMessageId.S1_IS_BUSY_PLEASE_TRY_AGAIN_LATER);
 			msg.addString(target.getName());
 			requestor.sendPacket(msg);
 			

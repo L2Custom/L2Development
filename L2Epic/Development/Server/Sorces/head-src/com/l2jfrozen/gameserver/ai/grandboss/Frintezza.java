@@ -1988,7 +1988,7 @@ public class Frintezza extends Quest implements Runnable
 					if (cha instanceof L2PcInstance && Rnd.get(100) < 80)
 					{
 						skill.getEffects(frintezza, cha, false, false, false);
-						cha.sendPacket(new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(5008, 4));
+						cha.sendPacket(new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU).addSkillName(5008, 4));
 					}
 				}
 			}
@@ -2007,7 +2007,7 @@ public class Frintezza extends Quest implements Runnable
 						cha.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 						skill.getEffects(frintezza, cha, false, false, false);
 						cha.startAbnormalEffect(L2Character.ABNORMAL_EFFECT_DANCE_STUNNED);
-						cha.sendPacket(new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(5008, 5));
+						cha.sendPacket(new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU).addSkillName(5008, 5));
 					}
 				}
 				startQuestTimer("stop_effect", 25000, frintezza, null);

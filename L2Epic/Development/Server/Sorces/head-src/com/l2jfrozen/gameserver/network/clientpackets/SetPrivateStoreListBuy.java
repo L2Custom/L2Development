@@ -1,7 +1,6 @@
 package com.l2jfrozen.gameserver.network.clientpackets;
 
 import com.l2jfrozen.Config;
-import com.l2jfrozen.gameserver.model.L2Character;
 import com.l2jfrozen.gameserver.model.TradeList;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jfrozen.gameserver.network.SystemMessageId;
@@ -110,14 +109,6 @@ public class SetPrivateStoreListBuy extends L2GameClientPacket
 			return;
 		}
 		
-		if (player.isInsideZone(L2Character.ZONE_NOSTORE))
-		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_OPEN_A_PRIVATE_STORE_HERE);
-			player.sendPacket(new PrivateStoreManageListBuy(player));
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
 		TradeList tradeList = player.getBuyList();
 		tradeList.clear();
 		
@@ -127,7 +118,7 @@ public class SetPrivateStoreListBuy extends L2GameClientPacket
 			totalCost += item.getCost();
 			if (totalCost > player.getAdena())
 			{
-				player.sendPacket(SystemMessageId.THE_PURCHASE_PRICE_IS_HIGHER_THAN_MONEY);
+				player.sendPacket(SystemMessageId.THE_PURCHASE_PRICE_IS_HIGHER_THAN_THE_AMOUNT_OF_MONEY_THAT_YOU_HAVE_AND_SO_YOU_CANNOT_OPEN_A_PERSONAL_STORE);
 				player.sendPacket(new PrivateStoreManageListBuy(player));
 				return;
 			}
@@ -169,7 +160,7 @@ public class SetPrivateStoreListBuy extends L2GameClientPacket
 			if (totalCost > player.getItemCount(Config.SELL_ITEM, -1) || totalCost <= 0)
 			{
 				player.sendPacket(new PrivateStoreManageListBuy(player));
-				player.sendPacket(new SystemMessage(SystemMessageId.THE_PURCHASE_PRICE_IS_HIGHER_THAN_MONEY));
+				player.sendPacket(new SystemMessage(SystemMessageId.THE_PURCHASE_PRICE_IS_HIGHER_THAN_THE_AMOUNT_OF_MONEY_THAT_YOU_HAVE_AND_SO_YOU_CANNOT_OPEN_A_PERSONAL_STORE));
 				return;
 			}
 		}
@@ -178,7 +169,7 @@ public class SetPrivateStoreListBuy extends L2GameClientPacket
 			if (totalCost > player.getAdena() || totalCost <= 0)
 			{
 				player.sendPacket(new PrivateStoreManageListBuy(player));
-				player.sendPacket(new SystemMessage(SystemMessageId.THE_PURCHASE_PRICE_IS_HIGHER_THAN_MONEY));
+				player.sendPacket(new SystemMessage(SystemMessageId.THE_PURCHASE_PRICE_IS_HIGHER_THAN_THE_AMOUNT_OF_MONEY_THAT_YOU_HAVE_AND_SO_YOU_CANNOT_OPEN_A_PERSONAL_STORE));
 				return;
 			}
 		}

@@ -149,14 +149,14 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 		// Item Max Limit Check
 		if (!player.getInventory().validateCapacity(slots))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.SLOTS_FULL));
+			sendPacket(new SystemMessage(SystemMessageId.YOUR_INVENTORY_IS_FULL));
 			return;
 		}
 		
 		// Like L2OFF enchant window must close
 		if (player.getActiveEnchantItem() != null)
 		{
-			sendPacket(new SystemMessage(SystemMessageId.ENCHANT_SCROLL_CANCELLED));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_CANCELLED_THE_ENCHANTING_PROCESS));
 			player.sendPacket(new EnchantResult(0));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -165,7 +165,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 		// Weight limit Check
 		if (!player.getInventory().validateWeight(weight))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_EXCEED_THE_WEIGHT_LIMIT));
 			return;
 		}
 		

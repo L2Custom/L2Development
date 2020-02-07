@@ -209,7 +209,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			npc2 = (L2Character) activeChar.getTarget();
 			if (npc2 == null)
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 				return;
 			}
 		}

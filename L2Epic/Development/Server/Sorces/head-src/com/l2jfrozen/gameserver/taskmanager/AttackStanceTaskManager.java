@@ -107,11 +107,11 @@ public class AttackStanceTaskManager
 					}
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
 				// TODO: Find out the reason for exception. Unless caught here,
 				// players remain in attack positions.
-				LOGGER.warn("Error in FightModeScheduler: " + e.getMessage(), e);
+				LOGGER.error("Error in FightModeScheduler", e);
 			}
 		}
 	}

@@ -43,7 +43,7 @@ public class Unlock implements ISkillHandler
 				L2DoorInstance door = (L2DoorInstance) target;
 				if (!door.isUnlockable())
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.UNABLE_TO_UNLOCK_DOOR));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THIS_DOOR_CANNOT_BE_UNLOCKED));
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
@@ -59,7 +59,7 @@ public class Unlock implements ISkillHandler
 				}
 				else
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.FAILED_TO_UNLOCK_DOOR));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_UNLOCK_THE_DOOR));
 				}
 				door = null;
 			}

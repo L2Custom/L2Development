@@ -71,7 +71,7 @@ public class L2OlympiadStadiumZone extends L2ZoneType
 		if (character instanceof L2PcInstance)
 		{
 			L2PcInstance player = (L2PcInstance) character;
-			player.sendPacket(new SystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE));
 		}
 	}
 	

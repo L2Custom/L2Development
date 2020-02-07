@@ -14,6 +14,9 @@ import com.l2jfrozen.gameserver.network.SystemMessageId;
 import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
+/**
+ * @author ReynalDev
+ */
 public final class RequestSetPledgeCrest extends L2GameClientPacket
 {
 	static Logger LOGGER = Logger.getLogger(RequestSetPledgeCrest.class);
@@ -53,7 +56,7 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 		
 		if (clan.getDissolvingExpiryTime() > System.currentTimeMillis())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_SET_CREST_WHILE_DISSOLUTION_IN_PROGRESS));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.DURING_THE_GRACE_PERIOD_FOR_DISSOLVING_A_CLAN_THE_REGISTRATION_OR_DELETION_OF_A_CLANS_CREST_IS_NOT_ALLOWED));
 			return;
 		}
 		
@@ -76,7 +79,7 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 			clan.setHasCrest(false);
 			activeChar.sendPacket(new SystemMessage(SystemMessageId.CLAN_CREST_HAS_BEEN_DELETED));
 			
-			for (final L2PcInstance member : clan.getOnlineMembers(""))
+			for (final L2PcInstance member : clan.getOnlineMembers())
 			{
 				member.broadcastUserInfo();
 			}
@@ -88,7 +91,7 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 		{
 			if (clan.getLevel() < 3)
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.CLAN_LVL_3_NEEDED_TO_SET_CREST));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.A_CLAN_CREST_CAN_ONLY_BE_REGISTERED_WHEN_THE_CLANS_SKILL_LEVEL_IS_3_OR_ABOVE));
 				return;
 			}
 			
@@ -122,7 +125,7 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 			clan.setCrestId(newId);
 			clan.setHasCrest(true);
 			
-			for (L2PcInstance member : clan.getOnlineMembers(""))
+			for (L2PcInstance member : clan.getOnlineMembers())
 			{
 				member.broadcastUserInfo();
 			}

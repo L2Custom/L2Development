@@ -40,12 +40,12 @@ public class RequestAskJoinPartyRoom extends L2GameClientPacket
 			}
 			else
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.S1_IS_BUSY_TRY_LATER).addString(target.getName()));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.S1_IS_BUSY_PLEASE_TRY_AGAIN_LATER).addString(target.getName()));
 			}
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE));
 		}
 	}
 	

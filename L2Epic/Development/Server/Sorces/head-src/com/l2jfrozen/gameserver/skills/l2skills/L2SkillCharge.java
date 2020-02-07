@@ -26,8 +26,8 @@ public class L2SkillCharge extends L2Skill
 			final EffectCharge e = (EffectCharge) activeChar.getFirstEffect(this);
 			if ((e != null) && (e.numCharges >= getNumCharges()))
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.FORCE_MAXLEVEL_REACHED));
-				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_FORCE_HAS_REACHED_MAXIMUM_CAPACITY));
+				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 				sm.addSkillName(getId());
 				activeChar.sendPacket(sm);
 				return false;
@@ -63,7 +63,7 @@ public class L2SkillCharge extends L2Skill
 				if (caster instanceof L2PcInstance)
 				{
 					caster.sendPacket(new EtcStatusUpdate((L2PcInstance) caster));
-					final SystemMessage sm = new SystemMessage(SystemMessageId.FORCE_INCREASED_TO_S1);
+					final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FORCE_HAS_INCREASED_TO_S1_LEVEL);
 					sm.addNumber(effect.numCharges);
 					caster.sendPacket(sm);
 				}

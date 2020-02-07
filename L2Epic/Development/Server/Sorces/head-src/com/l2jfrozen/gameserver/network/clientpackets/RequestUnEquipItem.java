@@ -112,7 +112,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			}
 			else
 			{
-				sm = new SystemMessage(SystemMessageId.S1_DISARMED);
+				sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_DISARMED);
 				sm.addItemName(unequiped[0].getItemId());
 			}
 			activeChar.sendPacket(sm);

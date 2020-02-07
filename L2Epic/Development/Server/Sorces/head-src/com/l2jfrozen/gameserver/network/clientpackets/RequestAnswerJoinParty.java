@@ -39,7 +39,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 		
 		if (player.isCursedWeaponEquiped() || requestor.isCursedWeaponEquiped())
 		{
-			requestor.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			requestor.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
@@ -51,7 +51,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 			{
 				if (requestor.getParty().getMemberCount() >= 9)
 				{
-					final SystemMessage sm = new SystemMessage(SystemMessageId.PARTY_FULL);
+					final SystemMessage sm = new SystemMessage(SystemMessageId.THE_PARTY_IS_FULL);
 					player.sendPacket(sm);
 					requestor.sendPacket(sm);
 					return;

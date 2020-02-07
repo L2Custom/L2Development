@@ -8,8 +8,12 @@ import java.util.List;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
+import org.apache.log4j.Logger;
+
 public class NetcoreConfig
 {
+	private static final Logger LOGGER = Logger.getLogger(NetcoreConfig.class);
+	
 	public boolean PACKET_HANDLER_DEBUG;
 	
 	/** MMO settings */
@@ -224,10 +228,9 @@ public class NetcoreConfig
 			DUMP_CLOSE_CONNECTIONS = Boolean.parseBoolean(mmoSetting.getProperty("DumpCloseConnectionLogs", "false"));
 			
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			e.printStackTrace();
-			throw new Error("Failed to Load " + MMO_CONFIG + " File.");
+			LOGGER.error("Failed to Load " + MMO_CONFIG + " File.", e);
 		}
 	}
 }

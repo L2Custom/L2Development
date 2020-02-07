@@ -162,7 +162,7 @@ public class L2FishermanInstance extends L2FolkInstance
 			if (minlevel > 0)
 			{
 				// No more skills to learn, come back when you level.
-				SystemMessage sm = new SystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN);
+				SystemMessage sm = new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ANY_FURTHER_SKILLS_TO_LEARN_COME_BACK_WHEN_YOU_REACHED_LEVEL_S1);
 				sm.addNumber(minlevel);
 				player.sendPacket(sm);
 				sm = null;

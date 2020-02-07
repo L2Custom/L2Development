@@ -43,6 +43,9 @@ import com.l2jfrozen.gameserver.templates.L2NpcTemplate;
 import com.l2jfrozen.gameserver.thread.ThreadPoolManager;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
+/**
+ * @author ReynalDev
+ */
 public class Siege
 {
 	// Message to add/check
@@ -558,7 +561,7 @@ public class Siege
 				}
 				else
 				{
-					sm = new SystemMessage(SystemMessageId.S1_SIEGE_WAS_CANCELED_BECAUSE_NO_CLANS_PARTICIPATED);
+					sm = new SystemMessage(SystemMessageId.S1S_SIEGE_WAS_CANCELED_BECAUSE_THERE_WERE_NO_CLANS_THAT_PARTICIPATED);
 				}
 				
 				sm.addString(getCastle().getName());
@@ -654,7 +657,7 @@ public class Siege
 		{
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 			
-			for (final L2PcInstance member : clan.getOnlineMembers(""))
+			for (final L2PcInstance member : clan.getOnlineMembers())
 			{
 				if (clear)
 				{
@@ -677,7 +680,7 @@ public class Siege
 		{
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 			
-			for (final L2PcInstance member : clan.getOnlineMembers(""))
+			for (final L2PcInstance member : clan.getOnlineMembers())
 			{
 				if (clear)
 				{
@@ -837,7 +840,7 @@ public class Siege
 		{
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 			
-			for (L2PcInstance player : clan.getOnlineMembers(""))
+			for (L2PcInstance player : clan.getOnlineMembers())
 			{
 				if (checkIfInZone(player.getX(), player.getY(), player.getZ()))
 				{
@@ -867,7 +870,7 @@ public class Siege
 				continue;
 			}
 			
-			for (L2PcInstance player : clan.getOnlineMembers(""))
+			for (L2PcInstance player : clan.getOnlineMembers())
 			{
 				if (checkIfInZone(player.getX(), player.getY(), player.getZ()))
 				{
@@ -906,7 +909,7 @@ public class Siege
 				continue;
 			}
 			
-			for (L2PcInstance player : clan.getOnlineMembers(""))
+			for (L2PcInstance player : clan.getOnlineMembers())
 			{
 				if (checkIfInZone(player.getX(), player.getY(), player.getZ()))
 				{
@@ -1225,7 +1228,7 @@ public class Siege
 		}
 		else if (player.getClan().getClanId() == getCastle().getOwnerId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.CLAN_THAT_OWNS_CASTLE_IS_AUTOMATICALLY_REGISTERED_DEFENDING));
+			player.sendPacket(new SystemMessage(SystemMessageId.THE_CLAN_THAT_OWNS_THE_CASTLE_IS_AUTOMATICALLY_REGISTERED_ON_THE_DEFENDING_SIDE));
 		}
 		else if (SiegeManager.getInstance().checkIsRegistered(player.getClan(), getCastle().getCastleId()))
 		{
@@ -1454,14 +1457,14 @@ public class Siege
 	 * @param typeId               -1 = owner 0 = defender, 1 = attacker, 2 = defender waiting
 	 * @param isUpdateRegistration the is update registration
 	 */
-	private void saveSiegeClan(final L2Clan clan, final int typeId, final boolean isUpdateRegistration)
+	private void saveSiegeClan(L2Clan clan, int typeId, boolean isUpdateRegistration)
 	{
 		if (clan.getCastleId() > 0)
 		{
 			return;
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();)
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			if (typeId == 0 || typeId == 2 || typeId == -1)
 			{

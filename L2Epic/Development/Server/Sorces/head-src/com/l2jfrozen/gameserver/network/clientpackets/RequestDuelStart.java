@@ -137,7 +137,7 @@ public final class RequestDuelStart extends L2GameClientPacket
 				}
 				else
 				{
-					final SystemMessage msg = new SystemMessage(SystemMessageId.S1_IS_BUSY_TRY_LATER);
+					final SystemMessage msg = new SystemMessage(SystemMessageId.S1_IS_BUSY_PLEASE_TRY_AGAIN_LATER);
 					msg.addString(partyLeader.getName());
 					activeChar.sendPacket(msg);
 				}
@@ -166,7 +166,7 @@ public final class RequestDuelStart extends L2GameClientPacket
 			}
 			else
 			{
-				final SystemMessage msg = new SystemMessage(SystemMessageId.S1_IS_BUSY_TRY_LATER);
+				final SystemMessage msg = new SystemMessage(SystemMessageId.S1_IS_BUSY_PLEASE_TRY_AGAIN_LATER);
 				msg.addString(targetChar.getName());
 				activeChar.sendPacket(msg);
 			}

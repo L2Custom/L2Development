@@ -15,7 +15,7 @@ import org.apache.log4j.PropertyConfigurator;
 import com.l2jfrozen.Config;
 import com.l2jfrozen.FService;
 import com.l2jfrozen.ServerType;
-import com.l2jfrozen.gameserver.datatables.GameServerTable;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable;
 import com.l2jfrozen.netcore.NetcoreConfig;
 import com.l2jfrozen.netcore.SelectorConfig;
 import com.l2jfrozen.netcore.SelectorThread;
@@ -23,12 +23,15 @@ import com.l2jfrozen.util.JVM;
 import com.l2jfrozen.util.Util;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
+/**
+ * @author ReynalDev
+ */
 public class L2LoginServer
 {
 	public static final int PROTOCOL_REV = 0x0102;
 	
 	private static L2LoginServer instance;
-	private final Logger LOGGER = Logger.getLogger(L2LoginServer.class);
+	private static final Logger LOGGER = Logger.getLogger(L2LoginServer.class);
 	private GameServerListener gameServerListener;
 	private SelectorThread<L2LoginClient> selectorThread;
 	
@@ -75,7 +78,7 @@ public class L2LoginServer
 		}
 		catch (Exception e)
 		{
-			LOGGER.fatal("Failed initializing database", e);
+			LOGGER.error("Failed initializing database", e);
 			System.exit(1);
 		}
 		
@@ -83,9 +86,9 @@ public class L2LoginServer
 		{
 			LoginController.load();
 		}
-		catch (final GeneralSecurityException e)
+		catch (GeneralSecurityException e)
 		{
-			LOGGER.fatal("Failed initializing LoginController", e);
+			LOGGER.error("Failed initializing LoginController", e);
 			System.exit(1);
 		}
 		
@@ -93,22 +96,12 @@ public class L2LoginServer
 		{
 			GameServerTable.load();
 		}
-		catch (final GeneralSecurityException e)
+		catch (Exception e)
 		{
-			LOGGER.fatal("Failed to load GameServerTable", e);
+			LOGGER.error("Failed to load GameServerTable", e);
 			System.exit(1);
 		}
-		catch (final Exception e)
-		{
-			LOGGER.fatal("Failed to load GameServerTable", e);
-			
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			System.exit(1);
-		}
+		
 		
 		InetAddress bindAddress = null;
 		if (!Config.LOGIN_BIND_ADDRESS.equals("*"))
@@ -137,9 +130,9 @@ public class L2LoginServer
 		{
 			selectorThread = new SelectorThread<>(sc, sh, lph, sh, sh);
 		}
-		catch (final IOException e)
+		catch (Exception e)
 		{
-			LOGGER.fatal("Failed to open Selector", e);
+			LOGGER.error("Failed to open Selector", e);
 			System.exit(1);
 		}
 		

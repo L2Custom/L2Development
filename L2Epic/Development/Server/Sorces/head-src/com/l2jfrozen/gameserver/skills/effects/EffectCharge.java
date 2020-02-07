@@ -18,7 +18,7 @@ public class EffectCharge extends L2Effect
 		if (env.target instanceof L2PcInstance)
 		{
 			env.target.sendPacket(new EtcStatusUpdate((L2PcInstance) env.target));
-			final SystemMessage sm = new SystemMessage(SystemMessageId.FORCE_INCREASED_TO_S1);
+			final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FORCE_HAS_INCREASED_TO_S1_LEVEL);
 			sm.addNumber(numCharges);
 			getEffected().sendPacket(sm);
 		}

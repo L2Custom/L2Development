@@ -78,7 +78,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 								sm.addString(item.getItemName());
 								activeChar.sendPacket(sm);
 								
-								activeChar.rechargeAutoSoulShot(true, true, true, 0);
+								activeChar.rechargeAutoSoulShot(true, true, true);
 							}
 							else
 							{
@@ -114,15 +114,15 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 							{
 								if (itemId >= 2509 && itemId <= 2514 || itemId >= 3947 && itemId <= 3952 || itemId == 5790)
 								{
-									activeChar.sendPacket(new SystemMessage(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH));
+									activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_SPIRITSHOT_DOES_NOT_MATCH_THE_WEAPONS_GRADE));
 								}
 								else
 								{
-									activeChar.sendPacket(new SystemMessage(SystemMessageId.SOULSHOTS_GRADE_MISMATCH));
+									activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_SOULSHOT_YOU_ARE_ATTEMPTING_TO_USE_DOES_NOT_MATCH_THE_GRADE_OF_YOUR_EQUIPPED_WEAPON));
 								}
 							}
 							
-							activeChar.rechargeAutoSoulShot(true, true, false, 0);
+							activeChar.rechargeAutoSoulShot(true, true, false);
 							
 						}
 					}

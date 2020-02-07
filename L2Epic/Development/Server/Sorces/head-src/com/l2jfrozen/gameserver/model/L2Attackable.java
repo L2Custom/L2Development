@@ -13,6 +13,7 @@ import com.l2jfrozen.gameserver.ai.L2CharacterAI;
 import com.l2jfrozen.gameserver.ai.L2FortSiegeGuardAI;
 import com.l2jfrozen.gameserver.ai.L2SiegeGuardAI;
 import com.l2jfrozen.gameserver.datatables.sql.ItemTable;
+import com.l2jfrozen.gameserver.datatables.xml.GlobalDropData;
 import com.l2jfrozen.gameserver.managers.CursedWeaponsManager;
 import com.l2jfrozen.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2FolkInstance;
@@ -39,9 +40,9 @@ import com.l2jfrozen.gameserver.network.clientpackets.Say2;
 import com.l2jfrozen.gameserver.network.serverpackets.CreatureSay;
 import com.l2jfrozen.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
-import com.l2jfrozen.gameserver.script.EventDroplist;
-import com.l2jfrozen.gameserver.script.EventDroplist.DateDrop;
 import com.l2jfrozen.gameserver.skills.Stats;
+import com.l2jfrozen.gameserver.templates.DropData;
+import com.l2jfrozen.gameserver.templates.DropDataItem;
 import com.l2jfrozen.gameserver.templates.L2EtcItemType;
 import com.l2jfrozen.gameserver.templates.L2Item;
 import com.l2jfrozen.gameserver.templates.L2NpcTemplate;
@@ -53,16 +54,9 @@ import com.l2jfrozen.util.random.Rnd;
 import main.EngineModsManager;
 
 /**
- * This class manages all NPC that can be attacked.<BR>
- * <BR>
- * L2Attackable :<BR>
- * <BR>
- * <li>L2ArtefactInstance</li>
- * <li>L2FriendlyMobInstance</li>
- * <li>L2MonsterInstance</li>
- * <li>L2SiegeGuardInstance</li>
- * @version $Revision: 1.24.2.3.2.16 $ $Date: 2009/04/13 02:11:03 $
+ * This class manages all NPC that can be attacked
  * @author  scoria dev
+ * @author ReynalDev
  */
 public class L2Attackable extends L2NpcInstance
 {
@@ -1814,7 +1808,7 @@ public class L2Attackable extends L2NpcInstance
 							
 							if (!player.getInventory().validateCapacity(item_templ) || !Config.AUTO_LOOT_BOSS && this instanceof L2RaidBossInstance || !Config.AUTO_LOOT_BOSS && this instanceof L2GrandBossInstance)
 							{
-								DropItem(player, item);
+								dropItem(player, item);
 							}
 							else
 							{
@@ -1826,7 +1820,7 @@ public class L2Attackable extends L2NpcInstance
 					}
 					else
 					{
-						DropItem(player, item); // drop the item on the ground
+						dropItem(player, item); // drop the item on the ground
 					}
 					
 					// Broadcast message if RaidBoss was defeated
@@ -1868,7 +1862,7 @@ public class L2Attackable extends L2NpcInstance
 					
 					if (!player.getInventory().validateCapacity(item_templ))
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					else
 					{
@@ -1877,7 +1871,7 @@ public class L2Attackable extends L2NpcInstance
 				}
 				else
 				{
-					DropItem(player, item);
+					dropItem(player, item);
 				}
 				
 				item = null;
@@ -1916,7 +1910,7 @@ public class L2Attackable extends L2NpcInstance
 							
 							if (!player.getInventory().validateCapacity(item_templ))
 							{
-								DropItem(player, item);
+								dropItem(player, item);
 							}
 							else
 							{
@@ -1925,7 +1919,7 @@ public class L2Attackable extends L2NpcInstance
 						}
 						else
 						{
-							DropItem(player, item);
+							dropItem(player, item);
 						}
 						break;
 					}
@@ -1945,7 +1939,7 @@ public class L2Attackable extends L2NpcInstance
 					
 					if (!player.getInventory().validateCapacity(item_templ))
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					else
 					{
@@ -1954,7 +1948,7 @@ public class L2Attackable extends L2NpcInstance
 				}
 				else
 				{
-					DropItem(player, item);
+					dropItem(player, item);
 				}
 				
 				item = null;
@@ -1987,7 +1981,7 @@ public class L2Attackable extends L2NpcInstance
 							
 							if (!player.getInventory().validateCapacity(item_templ))
 							{
-								DropItem(player, item);
+								dropItem(player, item);
 							}
 							else
 							{
@@ -1996,7 +1990,7 @@ public class L2Attackable extends L2NpcInstance
 						}
 						else
 						{
-							DropItem(player, item);
+							dropItem(player, item);
 						}
 						break;
 					}
@@ -2016,7 +2010,7 @@ public class L2Attackable extends L2NpcInstance
 					
 					if (!player.getInventory().validateCapacity(item_templ))
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					else
 					{
@@ -2025,7 +2019,7 @@ public class L2Attackable extends L2NpcInstance
 				}
 				else
 				{
-					DropItem(player, item);
+					dropItem(player, item);
 				}
 				
 				item = null;
@@ -2048,7 +2042,7 @@ public class L2Attackable extends L2NpcInstance
 						
 						if (!player.getInventory().validateCapacity(item_templ))
 						{
-							DropItem(player, item);
+							dropItem(player, item);
 						}
 						else
 						{
@@ -2057,7 +2051,7 @@ public class L2Attackable extends L2NpcInstance
 					}
 					else
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					
 					item = null;
@@ -2078,7 +2072,7 @@ public class L2Attackable extends L2NpcInstance
 						
 						if (!player.getInventory().validateCapacity(item_templ))
 						{
-							DropItem(player, item);
+							dropItem(player, item);
 						}
 						else
 						{
@@ -2087,7 +2081,7 @@ public class L2Attackable extends L2NpcInstance
 					}
 					else
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					
 					item = null;
@@ -2108,7 +2102,7 @@ public class L2Attackable extends L2NpcInstance
 						
 						if (!player.getInventory().validateCapacity(item_templ))
 						{
-							DropItem(player, item);
+							dropItem(player, item);
 						}
 						else
 						{
@@ -2117,7 +2111,7 @@ public class L2Attackable extends L2NpcInstance
 					}
 					else
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					
 					item = null;
@@ -2138,7 +2132,7 @@ public class L2Attackable extends L2NpcInstance
 						
 						if (!player.getInventory().validateCapacity(item_templ))
 						{
-							DropItem(player, item);
+							dropItem(player, item);
 						}
 						else
 						{
@@ -2147,7 +2141,7 @@ public class L2Attackable extends L2NpcInstance
 					}
 					else
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					
 					item = null;
@@ -2168,7 +2162,7 @@ public class L2Attackable extends L2NpcInstance
 						
 						if (!player.getInventory().validateCapacity(item_templ))
 						{
-							DropItem(player, item);
+							dropItem(player, item);
 						}
 						else
 						{
@@ -2177,7 +2171,7 @@ public class L2Attackable extends L2NpcInstance
 					}
 					else
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					
 					item = null;
@@ -2198,7 +2192,7 @@ public class L2Attackable extends L2NpcInstance
 						
 						if (!player.getInventory().validateCapacity(item_templ))
 						{
-							DropItem(player, item);
+							dropItem(player, item);
 						}
 						else
 						{
@@ -2207,7 +2201,7 @@ public class L2Attackable extends L2NpcInstance
 					}
 					else
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					
 					item = null;
@@ -2226,7 +2220,7 @@ public class L2Attackable extends L2NpcInstance
 					
 					if (!player.getInventory().validateCapacity(item_templ))
 					{
-						DropItem(player, item);
+						dropItem(player, item);
 					}
 					else
 					{
@@ -2235,7 +2229,7 @@ public class L2Attackable extends L2NpcInstance
 				}
 				else
 				{
-					DropItem(player, item);
+					dropItem(player, item);
 				}
 				
 				item = null;
@@ -2284,45 +2278,37 @@ public class L2Attackable extends L2NpcInstance
 		}
 		
 		// Go through DateDrop of EventDroplist allNpcDateDrops within the date range
-		for (final DateDrop drop : EventDroplist.getInstance().getAllDrops())
+		for (DropData drop : GlobalDropData.getInstance().getAllDrops())
 		{
-			if (Rnd.get(L2DropData.MAX_CHANCE) < drop.chance)
+			for(DropDataItem item : drop.getItemList())
 			{
-				RewardHolder item = new RewardHolder(drop.items[Rnd.get(drop.items.length)], Rnd.get(drop.min, drop.max));
-				
-				if (Config.AUTO_LOOT)
+				if (Rnd.get(L2DropData.MAX_CHANCE) < item.getChance())
 				{
-					final L2Item item_templ = ItemTable.getInstance().getTemplate(item.getRewardId());
+					RewardHolder reward = new RewardHolder(item.getItemId(), item.getRandomAmount());
 					
-					if (!player.getInventory().validateCapacity(item_templ))
+					if (Config.AUTO_LOOT)
 					{
-						DropItem(player, item);
+						L2Item itemTemplate= ItemTable.getInstance().getTemplate(reward.getRewardId());
+						
+						if (player.getInventory().validateCapacity(itemTemplate))
+						{
+							player.doAutoLoot(this, reward); // Give this or these Item(s) to the L2PcInstance that has killed the L2Attackable
+						}
+						else
+						{
+							dropItem(player, reward);
+						}
 					}
 					else
 					{
-						player.doAutoLoot(this, item); // Give this or these Item(s) to the L2PcInstance that has killed the L2Attackable
+						dropItem(player, reward); // drop the item on the ground
 					}
 				}
-				else
-				{
-					DropItem(player, item); // drop the item on the ground
-				}
-				
-				item = null;
 			}
 		}
-		
-		player = null;
 	}
 	
-	/**
-	 * Drop reward item.<BR>
-	 * <BR>
-	 * @param  mainDamageDealer
-	 * @param  item
-	 * @return
-	 */
-	public L2ItemInstance DropItem(final L2PcInstance mainDamageDealer, final RewardHolder item)
+	public L2ItemInstance dropItem(final L2PcInstance mainDamageDealer, final RewardHolder item)
 	{
 		final int randDropLim = 70;
 		
@@ -2360,9 +2346,9 @@ public class L2Attackable extends L2NpcInstance
 		return ditem;
 	}
 	
-	public L2ItemInstance DropItem(final L2PcInstance lastAttacker, final int itemId, final int itemCount)
+	public L2ItemInstance dropItem(final L2PcInstance lastAttacker, final int itemId, final int itemCount)
 	{
-		return DropItem(lastAttacker, new RewardHolder(itemId, itemCount));
+		return dropItem(lastAttacker, new RewardHolder(itemId, itemCount));
 	}
 	
 	/**
@@ -2799,13 +2785,13 @@ public class L2Attackable extends L2NpcInstance
 				// Too many crystals in inventory.
 				if (crystalQTY > 1)
 				{
-					player.sendPacket(new SystemMessage(SystemMessageId.SOUL_CRYSTAL_ABSORBING_FAILED_RESONATION));
+					player.sendPacket(new SystemMessage(SystemMessageId.THE_SOUL_CRYSTALS_CAUSED_RESONATION_AND_FAILED_AT_ABSORBING_A_SOUL));
 				}
 				// The soul crystal stage of the player is way too high
 				// Like L2OFF message must not appear if char hasn't crystal on inventory
 				else if (!doLevelup && crystalQTY > 0)
 				{
-					player.sendPacket(new SystemMessage(SystemMessageId.SOUL_CRYSTAL_ABSORBING_REFUSED));
+					player.sendPacket(new SystemMessage(SystemMessageId.THE_SOUL_CRUSTAL_IS_REFUSING_TO_ABSORB_A_SOUL));
 				}
 				
 				crystalQTY = 0;
@@ -2847,7 +2833,7 @@ public class L2Attackable extends L2NpcInstance
 			}
 			else
 			{
-				player.sendPacket(new SystemMessage(SystemMessageId.SOUL_CRYSTAL_ABSORBING_FAILED));
+				player.sendPacket(new SystemMessage(SystemMessageId.THE_SOUL_CRYSTAL_WAS_NOT_ABLE_TO_ABSORB_A_SOUL));
 			}
 		}
 		
@@ -2874,15 +2860,15 @@ public class L2Attackable extends L2NpcInstance
 			// Send a sound event and text message to the player
 			if (broke)
 			{
-				player.sendPacket(new SystemMessage(SystemMessageId.SOUL_CRYSTAL_BROKE));
+				player.sendPacket(new SystemMessage(SystemMessageId.THE_SOUL_CRYSTAL_BROKE_BECAUSE_IT_WAS_NOT_ABLE_TO_ENDURE_THE_SOUL_ENERGY));
 			}
 			else
 			{
-				player.sendPacket(new SystemMessage(SystemMessageId.SOUL_CRYSTAL_ABSORBING_SUCCEEDED));
+				player.sendPacket(new SystemMessage(SystemMessageId.THE_SOUL_CRYSTAL_SUCEEDED_IN_ABSORBING_A_SOUL));
 			}
 			
 			// Send system message
-			SystemMessage sms = new SystemMessage(SystemMessageId.EARNED_ITEM);
+			SystemMessage sms = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1);
 			sms.addItemName(giveid);
 			player.sendPacket(sms);
 			sms = null;

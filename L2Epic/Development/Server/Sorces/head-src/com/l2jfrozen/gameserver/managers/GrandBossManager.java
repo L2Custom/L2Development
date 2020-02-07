@@ -206,7 +206,7 @@ public class GrandBossManager
 	
 	private void fastStoreToDb()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();)
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			for (int bossId : storedInfo.keySet())
 			{
@@ -344,7 +344,7 @@ public class GrandBossManager
 	
 	private void updateDb(int bossId, boolean statusOnly)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();)
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			L2GrandBossInstance boss = bosses.get(bossId);
 			StatsSet info = storedInfo.get(bossId);

@@ -186,13 +186,8 @@ public class IceFairySirra extends Quest implements Runnable
 				mob.getSpawn().stopRespawn();
 				mob.deleteMe();
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
 				LOGGER.error("IceFairySirraManager: Failed deleting mob.", e);
 			}
 		}
@@ -229,13 +224,8 @@ public class IceFairySirra extends Quest implements Runnable
 					LOGGER.warn("IceFairySirraManager: Attempted to open undefined door. doorId: " + i);
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
 				LOGGER.error("IceFairySirraManager: Failed closing door", e);
 			}
 		}
@@ -257,13 +247,8 @@ public class IceFairySirra extends Quest implements Runnable
 					LOGGER.warn("IceFairySirraManager: Attempted to close undefined door. doorId: " + i);
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
 				LOGGER.error("IceFairySirraManager: Failed closing door", e);
 			}
 		}
@@ -403,14 +388,9 @@ public class IceFairySirra extends Quest implements Runnable
 				}
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.warn("IceFairySirraManager: Spawns could not be initialized: " + e);
+			LOGGER.error("IceFairySirraManager: Spawns could not be initialized", e);
 		}
 	}
 	

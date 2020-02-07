@@ -1,5 +1,7 @@
 package com.l2jfrozen.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import com.l2jfrozen.gameserver.datatables.sql.ClanTable;
 import com.l2jfrozen.gameserver.model.L2Clan;
 import com.l2jfrozen.gameserver.model.L2ClanMember;
@@ -44,8 +46,8 @@ public class GMViewPledgeInfo extends L2GameServerPacket
 		writeD(clan.getAllyCrestId()); // c2
 		writeD(clan.isAtWar() ? 1 : 0); // c3
 		
-		final L2ClanMember[] members = clan.getMembers();
-		writeD(members.length);
+		final Collection<L2ClanMember> members = clan.getMembers();
+		writeD(members.size());
 		
 		for (final L2ClanMember member : members)
 		{

@@ -178,7 +178,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 		{
 			if (player.getAdena() < priceTotal)
 			{
-				sendPacket(new SystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
+				sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA));
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}

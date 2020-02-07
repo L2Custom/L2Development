@@ -5,6 +5,9 @@ import com.l2jfrozen.gameserver.model.L2Clan;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jfrozen.gameserver.network.SystemMessageId;
 
+/**
+ * @author ReynalDev
+ */
 public class AllyInfo extends L2GameServerPacket
 {
 	private final L2PcInstance character;
@@ -25,7 +28,7 @@ public class AllyInfo extends L2GameServerPacket
 		
 		if (activeChar.getAllyId() == 0)
 		{
-			character.sendPacket(new SystemMessage(SystemMessageId.NO_CURRENT_ALLIANCES));
+			character.sendPacket(new SystemMessage(SystemMessageId.YOU_ARE_NOT_CURRENT_ALLIED_WITH_ANY_CLANS));
 			return;
 		}
 		
@@ -44,8 +47,8 @@ public class AllyInfo extends L2GameServerPacket
 			if (clan.getAllyId() == character.getAllyId())
 			{
 				clancount++;
-				online += clan.getOnlineMembers("").length;
-				count += clan.getMembers().length;
+				online += clan.getOnlineMembers().size();
+				count += clan.getMembers().size();
 			}
 		}
 		// Connection
@@ -59,7 +62,7 @@ public class AllyInfo extends L2GameServerPacket
 		sm.addString(leaderclan.getLeaderName());
 		character.sendPacket(sm);
 		// clan count
-		sm = new SystemMessage(SystemMessageId.ALLIANCE_CLAN_TOTAL_S1);
+		sm = new SystemMessage(SystemMessageId.AFFILIATED_CLANS_TOTAL_S1_CLANS);
 		sm.addString("" + clancount);
 		character.sendPacket(sm);
 		// clan information
@@ -70,24 +73,24 @@ public class AllyInfo extends L2GameServerPacket
 			if (clan.getAllyId() == character.getAllyId())
 			{
 				// clan name
-				sm = new SystemMessage(SystemMessageId.CLAN_INFO_NAME);
+				sm = new SystemMessage(SystemMessageId.CLAN_NAME_S1);
 				sm.addString(clan.getName());
 				character.sendPacket(sm);
 				// clan leader name
-				sm = new SystemMessage(SystemMessageId.CLAN_INFO_LEADER);
+				sm = new SystemMessage(SystemMessageId.CLAN_LEADER_S1);
 				sm.addString(clan.getLeaderName());
 				character.sendPacket(sm);
 				// clan level
-				sm = new SystemMessage(SystemMessageId.CLAN_INFO_LEVEL);
+				sm = new SystemMessage(SystemMessageId.CLAN_LEVEL_S1);
 				sm.addNumber(clan.getLevel());
 				character.sendPacket(sm);
 				// ---------
-				sm = new SystemMessage(SystemMessageId.CLAN_INFO_SEPARATOR);
+				sm = new SystemMessage(SystemMessageId.SEPARATOR);
 				character.sendPacket(sm);
 			}
 		}
 		// =========================
-		sm = new SystemMessage(SystemMessageId.CLAN_INFO_FOOT);
+		sm = new SystemMessage(SystemMessageId.FOOTER_3);
 		character.sendPacket(sm);
 	}
 	

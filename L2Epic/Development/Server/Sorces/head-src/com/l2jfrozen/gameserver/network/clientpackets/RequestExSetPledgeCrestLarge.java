@@ -17,6 +17,7 @@ import com.l2jfrozen.util.database.L2DatabaseFactory;
 /**
  * Format : chdb c (id) 0xD0 h (subid) 0x11 d data size b raw data (picture i think ;) )
  * @author -Wooden-
+ * @author ReynalDev
  */
 public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 {
@@ -66,7 +67,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 			clan.setHasCrestLarge(false);
 			activeChar.sendMessage("The insignia has been removed.");
 			
-			for (final L2PcInstance member : clan.getOnlineMembers(""))
+			for (final L2PcInstance member : clan.getOnlineMembers())
 			{
 				member.broadcastUserInfo();
 			}
@@ -120,7 +121,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 			
 			activeChar.sendPacket(new SystemMessage(SystemMessageId.CLAN_EMBLEM_WAS_SUCCESSFULLY_REGISTERED));
 			
-			for (L2PcInstance member : clan.getOnlineMembers(""))
+			for (L2PcInstance member : clan.getOnlineMembers())
 			{
 				member.broadcastUserInfo();
 			}

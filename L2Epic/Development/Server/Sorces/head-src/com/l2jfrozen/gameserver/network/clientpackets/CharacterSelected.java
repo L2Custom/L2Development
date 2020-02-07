@@ -14,7 +14,7 @@ import com.l2jfrozen.gameserver.util.DualBox;
 @SuppressWarnings("unused")
 public class CharacterSelected extends L2GameClientPacket
 {
-	private static Logger LOGGER = Logger.getLogger(CharacterSelected.class);
+	private static final Logger LOGGER = Logger.getLogger(CharacterSelected.class);
 	private int charSlot;
 	private int unk1, unk2, unk3, unk4; // new in C4
 	
@@ -42,14 +42,18 @@ public class CharacterSelected extends L2GameClientPacket
 		}
 		
 		String ipAddress = getClient().getIPAddress();
-		int boxes = DualBox.getDualBoxCount(ipAddress);
-		if(boxes >= Config.DUALBOX_AMOUNT_ALLOWED)
+		
+		if(Config.DUALBOX_AMOUNT_ALLOWED > 0)
 		{
-			ConfirmDlg dlg = new ConfirmDlg(614);
-			dlg.addString("Maximum " + Config.DUALBOX_AMOUNT_ALLOWED + " boxes allowed");
-			getClient().sendPacket(dlg);
-			getClient().sendPacket(ActionFailed.STATIC_PACKET);
-			return;
+			int boxes = DualBox.getDualBoxCount(ipAddress);
+			if(boxes >= Config.DUALBOX_AMOUNT_ALLOWED)
+			{
+				ConfirmDlg dlg = new ConfirmDlg(614);
+				dlg.addString("Maximum " + Config.DUALBOX_AMOUNT_ALLOWED + " boxes allowed");
+				getClient().sendPacket(dlg);
+				getClient().sendPacket(ActionFailed.STATIC_PACKET);
+				return;
+			}
 		}
 		
 		// we should always be abble to acquire the lock but if we cant lock then nothing should be done (ie repeated packet)
@@ -90,9 +94,9 @@ public class CharacterSelected extends L2GameClientPacket
 					sendPacket(new CharSelected(cha, getClient().getSessionId().playOkID1));
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				e.printStackTrace();
+				LOGGER.error(e);
 			}
 			finally
 			{

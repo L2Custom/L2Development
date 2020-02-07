@@ -110,7 +110,7 @@ public class Pdam implements ISkillHandler
 			// Formulas.getInstance();
 			if (Formulas.calcPhysicalSkillEvasion(target, skill))
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.ATTACK_FAILED));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.YOUR_ATTACK_HAS_FAILED));
 				continue;
 			}
 			
@@ -170,7 +170,7 @@ public class Pdam implements ISkillHandler
 				}
 				else
 				{
-					final SystemMessage smsg = new SystemMessage(SystemMessageId.S1_HIT_YOU_S2_DMG);
+					final SystemMessage smsg = new SystemMessage(SystemMessageId.S1_HIT_YOU_FOR_S2_DAMAGE);
 					smsg.addString(target.getName());
 					smsg.addNumber(damage);
 					activeChar.sendPacket(smsg);
@@ -186,7 +186,7 @@ public class Pdam implements ISkillHandler
 							activeChar.stopSkillEffects(skill.getId());
 							
 							skill.getEffects(null, activeChar, ss, sps, bss);
-							SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+							SystemMessage sm = new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU);
 							sm.addSkillName(skill.getId());
 							activeChar.sendPacket(sm);
 							sm = null;
@@ -199,14 +199,14 @@ public class Pdam implements ISkillHandler
 								// Like L2OFF must remove the first effect if the second effect lands
 								// target.stopSkillEffects(skill.getId());
 								skill.getEffects(activeChar, target, ss, sps, bss);
-								SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+								SystemMessage sm = new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU);
 								sm.addSkillName(skill.getId());
 								target.sendPacket(sm);
 								sm = null;
 							}
 							else
 							{
-								SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+								SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 								sm.addString(target.getName());
 								sm.addSkillName(skill.getDisplayId());
 								activeChar.sendPacket(sm);
@@ -300,7 +300,7 @@ public class Pdam implements ISkillHandler
 									player.setCurrentHp(player.getCurrentHp() - damage);
 								}
 							}
-							SystemMessage smsg = new SystemMessage(SystemMessageId.S1_HIT_YOU_S2_DMG);
+							SystemMessage smsg = new SystemMessage(SystemMessageId.S1_HIT_YOU_FOR_S2_DAMAGE);
 							smsg.addString(activeChar.getName());
 							smsg.addNumber(damage);
 							player.sendPacket(smsg);
@@ -350,7 +350,7 @@ public class Pdam implements ISkillHandler
 			else
 			// No - damage
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.ATTACK_FAILED));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.YOUR_ATTACK_HAS_FAILED));
 			}
 			
 			target = null;
@@ -369,13 +369,13 @@ public class Pdam implements ISkillHandler
 						effect.addNumCharges(1);
 						
 						activeChar.sendPacket(new EtcStatusUpdate((L2PcInstance) activeChar));
-						final SystemMessage sm = new SystemMessage(SystemMessageId.FORCE_INCREASED_TO_S1);
+						final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FORCE_HAS_INCREASED_TO_S1_LEVEL);
 						sm.addNumber(effectcharge);
 						activeChar.sendPacket(sm);
 					}
 					else
 					{
-						final SystemMessage sm = new SystemMessage(SystemMessageId.FORCE_MAXLEVEL_REACHED);
+						final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
 						activeChar.sendPacket(sm);
 					}
 				}

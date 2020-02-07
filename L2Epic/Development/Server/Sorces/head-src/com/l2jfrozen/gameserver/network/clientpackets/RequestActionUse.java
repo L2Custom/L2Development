@@ -33,7 +33,7 @@ import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
 
 public final class RequestActionUse extends L2GameClientPacket
 {
-	private static Logger LOGGER = Logger.getLogger(RequestActionUse.class);
+	private static final Logger LOGGER = Logger.getLogger(RequestActionUse.class);
 	
 	private int actionId;
 	private boolean ctrlPressed;
@@ -181,7 +181,7 @@ public final class RequestActionUse extends L2GameClientPacket
 					
 					if (target instanceof L2PcInstance && !activeChar.getAccessLevel().allowPeaceAttack() && L2Character.isInsidePeaceZone(pet, target))
 					{
-						activeChar.sendPacket(SystemMessageId.TARGET_IN_PEACEZONE);
+						activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_ATTACK_THIS_TARGET_IN_PEACEFUL_ZONE);
 						return;
 					}
 					
@@ -216,7 +216,7 @@ public final class RequestActionUse extends L2GameClientPacket
 					// returns pet to control item
 					if (pet.isDead())
 					{
-						activeChar.sendPacket(new SystemMessage(SystemMessageId.DEAD_PET_CANNOT_BE_RETURNED));
+						activeChar.sendPacket(new SystemMessage(SystemMessageId.A_DEAD_PET_CANNOT_SENT_BACK));
 					}
 					else if (pet.isAttackingNow() || pet.isRooted())
 					{
@@ -240,7 +240,7 @@ public final class RequestActionUse extends L2GameClientPacket
 							}
 							else
 							{
-								activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_RESTORE_HUNGRY_PETS));
+								activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_MAY_NOT_RESTORE_A_HUNGRY_PET));
 							}
 						}
 					}
@@ -253,13 +253,13 @@ public final class RequestActionUse extends L2GameClientPacket
 					if (activeChar.isDead())
 					{
 						// A strider cannot be ridden when dead
-						final SystemMessage msg = new SystemMessage(SystemMessageId.STRIDER_CANT_BE_RIDDEN_WHILE_DEAD);
+						final SystemMessage msg = new SystemMessage(SystemMessageId.A_STRIDER_CANNOT_BE_RIDDEN_WHEN_DEAD);
 						activeChar.sendPacket(msg);
 					}
 					else if (pet.isDead())
 					{
 						// A dead strider cannot be ridden.
-						final SystemMessage msg = new SystemMessage(SystemMessageId.DEAD_STRIDER_CANT_BE_RIDDEN);
+						final SystemMessage msg = new SystemMessage(SystemMessageId.A_DEAD_STRIDER_CANNOT_BE_RIDDEN);
 						activeChar.sendPacket(msg);
 					}
 					else if (pet.isInCombat() || pet.isRooted())
@@ -607,7 +607,8 @@ public final class RequestActionUse extends L2GameClientPacket
 				}
 				break;
 			default:
-				LOGGER.warn(activeChar.getName() + ": unhandled action type " + actionId);
+				LOGGER.warn("Player " + activeChar + " sent unhandled action type to server, action id: " + actionId + " will be kicked.");
+				activeChar.kick();
 		}
 	}
 	
@@ -636,7 +637,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			
 			if (skills.size() == 0)
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.SKILL_NOT_AVAILABLE));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE));
 				return;
 			}
 			

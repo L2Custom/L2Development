@@ -67,8 +67,6 @@ public class CursedWeapon
 		skillMaxLevel = SkillTable.getInstance().getMaxLevel(this.skillId, 0);
 	}
 	
-	// =========================================================
-	// Private
 	public void endOfLife()
 	{
 		if (isActivated)
@@ -99,7 +97,7 @@ public class CursedWeapon
 				// Remove from DB
 				LOGGER.info(name + " being removed offline.");
 				
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection();)
+				try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 				{
 					// Delete the item
 					try (PreparedStatement statement = con.prepareStatement(DELETE_CURSED_WEAPON))
@@ -161,7 +159,7 @@ public class CursedWeapon
 			}
 		}
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_DISAPPEARED);
+		SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_DISAPPEARED_2);
 		sm.addItemName(itemId);
 		CursedWeaponsManager.announce(sm);
 		sm = null;
@@ -218,7 +216,7 @@ public class CursedWeapon
 		if (fromMonster)
 		{
 			
-			cursedWeaponItem = attackable.DropItem(player, itemId, 1);
+			cursedWeaponItem = attackable.dropItem(player, itemId, 1);
 			cursedWeaponItem.setDropTime(0); // Prevent item from being removed by ItemsAutoDestroy
 			
 			// RedSky and Earthquake
@@ -408,7 +406,7 @@ public class CursedWeapon
 		// L2ItemInstance[] items =
 		cursedWeaponPlayer.getInventory().equipItemAndRecord(cursedWeaponItem);
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.S1_EQUIPPED);
+		SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_EQUIPPED_YOUR_S1);
 		sm.addItemName(cursedWeaponItem.getItemId());
 		cursedWeaponPlayer.sendPacket(sm);
 		sm = null;

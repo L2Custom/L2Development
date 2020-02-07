@@ -43,7 +43,7 @@ public final class TradeRequest extends L2GameClientPacket
 		final L2Object target = L2World.getInstance().findObject(objectId);
 		if (target == null || !player.getKnownList().knowsObject(target) || !(target instanceof L2PcInstance) || target.getObjectId() == player.getObjectId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+			player.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -229,7 +229,7 @@ public final class TradeRequest extends L2GameClientPacket
 				LOGGER.debug("Already trading with someone");
 			}
 			
-			player.sendPacket(new SystemMessage(SystemMessageId.ALREADY_TRADING));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_ARE_ALREADY_TRADING_WITH_SOMEONE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -241,7 +241,7 @@ public final class TradeRequest extends L2GameClientPacket
 				LOGGER.info("Transaction already in progress.");
 			}
 			
-			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_BUSY_TRY_LATER);
+			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_BUSY_PLEASE_TRY_AGAIN_LATER);
 			sm.addString(partner.getName());
 			player.sendPacket(sm);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -258,7 +258,7 @@ public final class TradeRequest extends L2GameClientPacket
 		
 		player.onTransactionRequest(partner);
 		partner.sendPacket(new SendTradeRequest(player.getObjectId()));
-		final SystemMessage sm = new SystemMessage(SystemMessageId.REQUEST_S1_FOR_TRADE);
+		final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_REQUESTED_A_TRADE_WITH_S1);
 		sm.addString(partner.getName());
 		player.sendPacket(sm);
 	}

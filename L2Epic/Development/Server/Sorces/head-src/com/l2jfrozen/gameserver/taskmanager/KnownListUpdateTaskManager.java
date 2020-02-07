@@ -2,7 +2,6 @@ package com.l2jfrozen.gameserver.taskmanager;
 
 import org.apache.log4j.Logger;
 
-import com.l2jfrozen.Config;
 import com.l2jfrozen.gameserver.model.L2Character;
 import com.l2jfrozen.gameserver.model.L2Object;
 import com.l2jfrozen.gameserver.model.L2World;
@@ -12,7 +11,7 @@ import com.l2jfrozen.gameserver.thread.ThreadPoolManager;
 
 public class KnownListUpdateTaskManager
 {
-	protected static final Logger LOGGER = Logger.getLogger(DecayTaskManager.class);
+	protected static final Logger LOGGER = Logger.getLogger(KnownListUpdateTaskManager.class);
 	
 	private static KnownListUpdateTaskManager instance;
 	
@@ -70,14 +69,9 @@ public class KnownListUpdateTaskManager
 				}
 				
 			}
-			catch (final Throwable e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
-				LOGGER.warn(e.toString());
+				LOGGER.error("Runnable KnownListUpdate: error", e);
 			}
 		}
 	}

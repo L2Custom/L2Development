@@ -1,7 +1,9 @@
 package com.l2jfrozen.gameserver.model.entity.olympiad;
 
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jfrozen.util.L2FastList;
 
 /**
  * @author GodKratos
@@ -10,8 +12,8 @@ import com.l2jfrozen.util.L2FastList;
 class OlympiadStadium
 {
 	private boolean freeToUse = true;
-	private final int[] coords = new int[3];
-	private final L2FastList<L2PcInstance> spectators;
+	private int[] coords = new int[3];
+	private List<L2PcInstance> spectators;
 	
 	public boolean isFreeToUse()
 	{
@@ -34,26 +36,26 @@ class OlympiadStadium
 		return coords;
 	}
 	
-	public OlympiadStadium(final int x, final int y, final int z)
+	public OlympiadStadium(int x, int y, int z)
 	{
 		coords[0] = x;
 		coords[1] = y;
 		coords[2] = z;
-		spectators = new L2FastList<>();
+		spectators = new CopyOnWriteArrayList<>();
 	}
 	
-	protected void addSpectator(final int id, final L2PcInstance spec, final boolean storeCoords)
+	protected void addSpectator(int id, L2PcInstance spec, boolean storeCoords)
 	{
 		spec.enterOlympiadObserverMode(getCoordinates()[0], getCoordinates()[1], getCoordinates()[2], id, storeCoords);
 		spectators.add(spec);
 	}
 	
-	protected L2FastList<L2PcInstance> getSpectators()
+	protected List<L2PcInstance> getSpectators()
 	{
 		return spectators;
 	}
 	
-	protected void removeSpectator(final L2PcInstance spec)
+	protected void removeSpectator(L2PcInstance spec)
 	{
 		if (spectators != null && spectators.contains(spec))
 		{

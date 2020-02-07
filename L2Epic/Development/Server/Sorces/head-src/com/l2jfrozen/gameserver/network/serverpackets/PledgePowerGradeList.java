@@ -1,18 +1,23 @@
 package com.l2jfrozen.gameserver.network.serverpackets;
 
-import com.l2jfrozen.gameserver.model.L2Clan.RankPrivs;
+import java.util.Collection;
+import java.util.Set;
+
+import com.l2jfrozen.gameserver.model.L2ClanMember;
 
 /**
  * sample 0000: 9c c10c0000 48 00 61 00 6d 00 62 00 75 00 72 .....H.a.m.b.u.r 0010: 00 67 00 00 00 00000000 00000000 00000000 00000000 00000000 00000000 00 00 00000000 ... format dd ??
- * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
+ * @author ReynalDev
  */
 public class PledgePowerGradeList extends L2GameServerPacket
 {
-	private final RankPrivs[] privs;
+	private Set<Integer> ranks;
+	private Collection<L2ClanMember> members;
 	
-	public PledgePowerGradeList(final RankPrivs[] privs)
+	public PledgePowerGradeList(Set<Integer> ranks, Collection<L2ClanMember> members)
 	{
-		this.privs = privs;
+		this.ranks = ranks;
+		this.members = members;
 	}
 	
 	@Override
@@ -20,12 +25,11 @@ public class PledgePowerGradeList extends L2GameServerPacket
 	{
 		writeC(0xFE);
 		writeH(0x3b);
-		writeD(privs.length);
-		for (final RankPrivs priv : privs)
+		writeD(ranks.size());
+		for (int rank: ranks)
 		{
-			writeD(priv.getRank());
-			writeD(priv.getParty());
-			// LOGGER.warn("rank: "+_privs[i].getRank()+" party: "+_privs[i].getParty());
+			writeD(rank);
+			writeD((int) members.stream().filter(member -> member.getPowerGrade() == rank).count());
 		}
 		
 	}

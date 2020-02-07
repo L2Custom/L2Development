@@ -20,8 +20,8 @@ import org.apache.log4j.Logger;
 import com.l2jfrozen.Config;
 import com.l2jfrozen.crypt.Base64;
 import com.l2jfrozen.crypt.ScrambledKeyPair;
-import com.l2jfrozen.gameserver.datatables.GameServerTable;
-import com.l2jfrozen.gameserver.datatables.GameServerTable.GameServerInfo;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable.GameServerInfo;
 import com.l2jfrozen.loginserver.network.gameserverpackets.ServerStatus;
 import com.l2jfrozen.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import com.l2jfrozen.util.L2Log;
@@ -539,7 +539,7 @@ public class LoginController
 			if (loginOk && client.getLastServer() != serverId)
 			{
 				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-					PreparedStatement statement = con.prepareStatement(UPDATE_ACCOUNT_LAST_SERVER_BY_LOGIN);)
+					PreparedStatement statement = con.prepareStatement(UPDATE_ACCOUNT_LAST_SERVER_BY_LOGIN))
 				{
 					statement.setInt(1, serverId);
 					statement.setString(2, client.getAccount());
@@ -557,7 +557,7 @@ public class LoginController
 	
 	public void setAccountAccessLevel(final String account, final int banLevel)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();)
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement statement = con.prepareStatement(UPDATE_ACCOUNT_ACCESS_LEVEL_BY_LOGIN);
 			statement.setInt(1, banLevel);
@@ -793,7 +793,7 @@ public class LoginController
 	public boolean loginBanned(final String user)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(SELECT_ACCOUNT_ACCESS_LEVEL_BY_LOGIN);)
+			PreparedStatement statement = con.prepareStatement(SELECT_ACCOUNT_ACCESS_LEVEL_BY_LOGIN))
 		{
 			statement.setString(1, user);
 			

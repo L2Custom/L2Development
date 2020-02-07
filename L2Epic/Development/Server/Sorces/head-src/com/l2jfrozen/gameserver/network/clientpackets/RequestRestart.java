@@ -81,7 +81,7 @@ public final class RequestRestart extends L2GameClientPacket
 				LOGGER.debug("Player " + player.getName() + " tried to logout while fighting.");
 			}
 			
-			player.sendPacket(new SystemMessage(SystemMessageId.CANT_RESTART_WHILE_FIGHTING));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_RESTART_WHILE_IN_COMBAT));
 			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}

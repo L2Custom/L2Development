@@ -8,11 +8,11 @@ import javax.crypto.Cipher;
 import org.apache.log4j.Logger;
 
 import com.l2jfrozen.Config;
-import com.l2jfrozen.gameserver.datatables.GameServerTable.GameServerInfo;
 import com.l2jfrozen.loginserver.L2LoginClient;
 import com.l2jfrozen.loginserver.L2LoginClient.LoginClientState;
 import com.l2jfrozen.loginserver.LoginController;
 import com.l2jfrozen.loginserver.LoginController.AuthLoginResult;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable.GameServerInfo;
 import com.l2jfrozen.loginserver.network.serverpackets.AccountKicked;
 import com.l2jfrozen.loginserver.network.serverpackets.AccountKicked.AccountKickedReason;
 import com.l2jfrozen.loginserver.network.serverpackets.LoginFail.LoginFailReason;

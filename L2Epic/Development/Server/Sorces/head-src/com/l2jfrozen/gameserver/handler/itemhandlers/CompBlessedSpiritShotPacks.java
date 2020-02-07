@@ -59,7 +59,7 @@ public class CompBlessedSpiritShotPacks implements IItemHandler
 		activeChar.getInventory().destroyItem("Extract", item, activeChar, null);
 		activeChar.getInventory().addItem("Extract", itemToCreateId, amount, activeChar, item);
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.EARNED_S2_S1_S);
+		SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S);
 		sm.addItemName(itemToCreateId);
 		sm.addNumber(amount);
 		activeChar.sendPacket(sm);

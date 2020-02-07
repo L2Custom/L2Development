@@ -36,11 +36,6 @@ public class SkillTable
 		SkillsEngine.getInstance().loadAllSkills(skills);
 	}
 	
-	public void reload()
-	{
-		instance = new SkillTable();
-	}
-	
 	public boolean isInitialized()
 	{
 		return initialized;

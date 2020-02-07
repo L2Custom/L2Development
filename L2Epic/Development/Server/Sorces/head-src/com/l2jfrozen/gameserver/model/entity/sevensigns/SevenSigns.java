@@ -895,7 +895,7 @@ public class SevenSigns
 	 */
 	protected void restoreSevenSignsData()
 	{
-		try(Connection con = L2DatabaseFactory.getInstance().getConnection();)
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			try(PreparedStatement statement = con.prepareStatement(SELECT_7_SIGNS_CONTRIBUTION);
 				ResultSet rset = statement.executeQuery())
@@ -960,8 +960,6 @@ public class SevenSigns
 		{
 			LOGGER.error("SevenSigns: Unable to load Seven Signs data from database", e);
 		}
-		
-		// Festival data is loaded now after the Seven Signs engine data.
 	}
 	
 	/**

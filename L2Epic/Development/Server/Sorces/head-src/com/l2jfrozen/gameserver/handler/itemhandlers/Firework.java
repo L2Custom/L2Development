@@ -39,7 +39,7 @@ public class Firework implements IItemHandler
 		
 		if (!activeChar.getFloodProtectors().getFirework().tryPerformAction("firework"))
 		{
-			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 			sm.addItemName(itemId);
 			activeChar.sendPacket(sm);
 			return;

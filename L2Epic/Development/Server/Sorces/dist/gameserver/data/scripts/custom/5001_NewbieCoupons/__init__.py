@@ -1,7 +1,7 @@
 #Newbie Weapon/Accesories Coupons for the Hellbound opening event.
 #written by Vice, based in the Miss Queen script.
 import sys
-from com.l2jfrozen.gameserver.model.multisell import L2Multisell
+from com.l2jfrozen.gameserver.datatables.xml import L2Multisell
 from com.l2jfrozen.gameserver.model.quest import State
 from com.l2jfrozen.gameserver.model.quest import QuestState
 from com.l2jfrozen.gameserver.model.quest.jython import QuestJython as JQuest

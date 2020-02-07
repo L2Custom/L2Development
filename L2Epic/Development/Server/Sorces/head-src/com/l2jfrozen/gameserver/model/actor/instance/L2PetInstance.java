@@ -435,7 +435,7 @@ public class L2PetInstance extends L2Summon
 		{
 			if (sendMessage)
 			{
-				getOwner().sendPacket(new SystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
+				getOwner().sendPacket(new SystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT_2));
 			}
 			
 			return false;
@@ -449,7 +449,7 @@ public class L2PetInstance extends L2Summon
 		
 		if (sendMessage)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_DISSAPEARED_ITEM);
+			SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_HAS_DISAPPEARED);
 			sm.addNumber(count);
 			sm.addItemName(item.getItemId());
 			getOwner().sendPacket(sm);
@@ -478,7 +478,7 @@ public class L2PetInstance extends L2Summon
 		{
 			if (sendMessage)
 			{
-				getOwner().sendPacket(new SystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
+				getOwner().sendPacket(new SystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT_2));
 			}
 			return false;
 		}
@@ -492,7 +492,7 @@ public class L2PetInstance extends L2Summon
 		
 		if (sendMessage)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_DISSAPEARED_ITEM);
+			SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_HAS_DISAPPEARED);
 			sm.addNumber(count);
 			sm.addItemName(itemId);
 			getOwner().sendPacket(sm);
@@ -529,7 +529,7 @@ public class L2PetInstance extends L2Summon
 		// Herbs
 		if (target.getItemId() > 8599 && target.getItemId() < 8615)
 		{
-			SystemMessage smsg = new SystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1);
+			SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
 			smsg.addItemName(target.getItemId());
 			getOwner().sendPacket(smsg);
 			smsg = null;
@@ -538,7 +538,7 @@ public class L2PetInstance extends L2Summon
 		// Cursed weapons
 		if (CursedWeaponsManager.getInstance().isCursed(target.getItemId()))
 		{
-			SystemMessage smsg = new SystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1);
+			SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
 			smsg.addItemName(target.getItemId());
 			getOwner().sendPacket(smsg);
 			smsg = null;
@@ -556,7 +556,7 @@ public class L2PetInstance extends L2Summon
 			if (!target.getDropProtection().tryPickUp(this))
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
-				final SystemMessage smsg = new SystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1);
+				final SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
 				smsg.addItemName(target.getItemId());
 				getOwner().sendPacket(smsg);
 				return;
@@ -568,14 +568,14 @@ public class L2PetInstance extends L2Summon
 				
 				if (target.getItemId() == 57)
 				{
-					SystemMessage smsg = new SystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1_ADENA);
+					SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1_ADENA);
 					smsg.addNumber(target.getCount());
 					getOwner().sendPacket(smsg);
 					smsg = null;
 				}
 				else if (target.getCount() > 1)
 				{
-					SystemMessage smsg = new SystemMessage(SystemMessageId.FAILED_TO_PICKUP_S2_S1_S);
+					SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S2_S1S);
 					smsg.addItemName(target.getItemId());
 					smsg.addNumber(target.getCount());
 					getOwner().sendPacket(smsg);
@@ -583,7 +583,7 @@ public class L2PetInstance extends L2Summon
 				}
 				else
 				{
-					SystemMessage smsg = new SystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1);
+					SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
 					smsg.addItemName(target.getItemId());
 					getOwner().sendPacket(smsg);
 					smsg = null;
@@ -998,7 +998,7 @@ public class L2PetInstance extends L2Summon
 		}
 		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(sql);)
+			PreparedStatement statement = con.prepareStatement(sql))
 		{
 			statement.setString(1, getName());
 			statement.setInt(2, getStat().getLevel());
@@ -1024,7 +1024,6 @@ public class L2PetInstance extends L2Summon
 			itemInst.setEnchantLevel(getStat().getLevel());
 			itemInst.updateDatabase();
 		}
-		itemInst = null;
 	}
 	
 	/**

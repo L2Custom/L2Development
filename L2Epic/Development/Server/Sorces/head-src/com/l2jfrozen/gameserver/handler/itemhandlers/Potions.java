@@ -24,8 +24,7 @@ import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
 import com.l2jfrozen.gameserver.thread.ThreadPoolManager;
 
 /**
- * This class ...
- * @version $Revision: 1.2.4.4 $ $Date: 2005/03/27 15:30:07 $
+ * @author ReynalDev
  */
 
 public class Potions implements IItemHandler
@@ -637,7 +636,7 @@ public class Potions implements IItemHandler
 					{
 						return true;
 					}
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE);
+					SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE);
 					sm.addItemName(itemId);
 					activeChar.sendPacket(sm);
 					sm = null;
@@ -673,24 +672,9 @@ public class Potions implements IItemHandler
 					// so is not destroyed from inventory
 					if (activeChar.isSkillDisabled(skill))
 					{
-						if (!(skill.getId() == 2166))
-						{
-							final SystemMessage sm = new SystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE);
-							sm.addSkillName(skill.getId(), skill.getLevel());
-							activeChar.sendPacket(sm);
-						}
-						// Cp potion message
-						else if (skill.getId() == 2166)
-						{
-							if (skill.getLevel() == 2)
-							{
-								activeChar.sendMessage("Greater CP Potion is not available at this time: being prepared for reuse.");
-							}
-							else if (skill.getLevel() == 1)
-							{
-								activeChar.sendMessage("CP Potion is not available at this time: being prepared for reuse.");
-							}
-						}
+						SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE);
+						sm.addSkillName(skill.getId(), skill.getLevel());
+						activeChar.sendPacket(sm);
 						
 						return false;
 					}
@@ -722,7 +706,7 @@ public class Potions implements IItemHandler
 				{
 					if (!(skill.getId() == 2166))
 					{
-						final SystemMessage sm = new SystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE);
+						final SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE);
 						sm.addSkillName(skill.getId(), skill.getLevel());
 						activeChar.sendPacket(sm);
 					}

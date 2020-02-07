@@ -1,27 +1,25 @@
-25/01/2020 00:34:54,428 ERROR L2Character:9393 - L2PcInstance.storeEffect: Could not store char effect data into character_skills_save
-java.sql.BatchUpdateException: (conn=489) Duplicate entry '268479775-4322' for key 'PRIMARY'
-	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:309)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeBatch(ClientSidePreparedStatement.java:293)
-	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:128)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java)
-	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.storeEffect(L2PcInstance.java:9360)
-	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9131)
-	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9145)
-	at com.l2jfrozen.gameserver.network.L2GameClient$DisconnectTask.run(L2GameClient.java:883)
+05/02/2020 23:12:51,808 ERROR L2GameClientPacket:78 - Client: [Character: Jager - Account: caius - IP: 127.0.0.1] - Failed reading: [C] 21 RequestBypassToServer ; main/util/UtilInventory
+java.lang.NoClassDefFoundError: main/util/UtilInventory
+	at main.engine.npc.NpcBufferScheme.onEvent(NpcBufferScheme.java:461)
+	at main.EngineModsManager.lambda$onEvent$13(EngineModsManager.java:611)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValueSpliterator.forEachRemaining(ConcurrentHashMap.java:3605)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at main.EngineModsManager.onEvent(EngineModsManager.java:602)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:199)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:830)
-Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=489) Duplicate entry '268479775-4322' for key 'PRIMARY'
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:236)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:164)
-	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:305)
-	... 10 more
-Caused by: java.sql.SQLException: Duplicate entry '268479775-4322' for key 'PRIMARY'
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1599)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1461)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1424)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeBatchRewrite(AbstractQueryProtocol.java:889)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeBatchClient(AbstractQueryProtocol.java:323)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternalBatch(ClientSidePreparedStatement.java:362)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeBatch(ClientSidePreparedStatement.java:288)
-	... 9 more
+Caused by: java.lang.ClassNotFoundException: main.util.UtilInventory
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 18 more

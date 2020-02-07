@@ -146,13 +146,13 @@ public class RequestProcureCropList extends L2GameClientPacket
 		
 		if (!player.getInventory().validateWeight(weight))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_EXCEED_THE_WEIGHT_LIMIT));
 			return;
 		}
 		
 		if (!player.getInventory().validateCapacity(slots))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.SLOTS_FULL));
+			sendPacket(new SystemMessage(SystemMessageId.YOUR_INVENTORY_IS_FULL));
 			return;
 		}
 		
@@ -234,7 +234,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 				sm.addItemName(cropId);
 				sm.addNumber(count);
 				player.sendPacket(sm);
-				sm = new SystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA);
+				sm = new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
 				player.sendPacket(sm);
 				continue;
 			}
@@ -304,19 +304,19 @@ public class RequestProcureCropList extends L2GameClientPacket
 				player.sendPacket(sm);
 			}
 			
-			sm = new SystemMessage(SystemMessageId.S2_S1_DISSAPEARED_ITEM);
+			sm = new SystemMessage(SystemMessageId.S2_S1_HAS_DISAPPEARED);
 			sm.addItemName(cropId);
 			sm.addNumber(count);
 			player.sendPacket(sm);
 			
 			if (fee > 0)
 			{
-				sm = new SystemMessage(SystemMessageId.DISSAPEARED_ADENA);
+				sm = new SystemMessage(SystemMessageId.S1_ADENA_DISSAPEARED);
 				sm.addNumber(fee);
 				player.sendPacket(sm);
 			}
 			
-			sm = new SystemMessage(SystemMessageId.EARNED_S2_S1_S);
+			sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S);
 			sm.addItemName(rewardItem);
 			sm.addNumber(rewardItemCount);
 			player.sendPacket(sm);

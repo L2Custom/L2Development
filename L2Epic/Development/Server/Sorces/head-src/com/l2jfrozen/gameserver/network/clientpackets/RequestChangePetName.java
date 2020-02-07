@@ -38,12 +38,12 @@ public final class RequestChangePetName extends L2GameClientPacket
 		
 		if (pet.getName() != null)
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.NAMING_YOU_CANNOT_SET_NAME_OF_THE_PET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_SET_THE_NAME_OF_THE_PET));
 			return;
 		}
 		else if (PetNameTable.getInstance().doesPetNameExist(name, pet.getTemplate().npcId))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.NAMING_ALREADY_IN_USE_BY_ANOTHER_PET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THIS_IS_ALREADY_IN_USE_BY_ANOTHER_PET));
 			return;
 		}
 		else if (name.length() < 3 || name.length() > 16)
@@ -58,7 +58,7 @@ public final class RequestChangePetName extends L2GameClientPacket
 		}
 		else if (!PetNameTable.getInstance().isValidPetName(name))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.NAMING_PETNAME_CONTAINS_INVALID_CHARS));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.AN_INVALID_CHARACTER_IS_INCLUDED_IN_THE_PETS_NAME));
 			return;
 		}
 		

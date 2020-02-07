@@ -16,8 +16,6 @@ import org.apache.log4j.Logger;
 import com.l2jfrozen.Config;
 import com.l2jfrozen.util.StringUtil;
 
-import javolution.util.FastSet;
-
 /**
  * <p>
  * This class is made to handle all the ThreadPools used in L2j.
@@ -380,9 +378,6 @@ public class ThreadPoolManager
 			" |- CompletedTasks:  " + generalThreadPool.getCompletedTaskCount(),
 			" |- QueuedTasks:     " + generalThreadPool.getQueue().size(),
 			" | -------",
-			" + Javolution stats:",
-			" |- FastSet:        " + FastSet.report(),
-			" | -------"
 		};
 	}
 	

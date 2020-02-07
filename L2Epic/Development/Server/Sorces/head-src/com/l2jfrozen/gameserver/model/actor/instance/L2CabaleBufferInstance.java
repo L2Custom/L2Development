@@ -162,7 +162,7 @@ public class L2CabaleBufferInstance extends L2NpcInstance
 			{
 				skill.getEffects(caster, player, false, false, false);
 				broadcastPacket(new MagicSkillUser(caster, player, skill.getId(), skillLevel, skill.getHitTime(), 0));
-				final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU);
 				sm.addSkillName(skillId);
 				player.sendPacket(sm);
 				skill = null;

@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 import com.l2jfrozen.Config;
 import com.l2jfrozen.gameserver.ai.CtrlIntention;
+import com.l2jfrozen.gameserver.datatables.CastleCircletTable;
 import com.l2jfrozen.gameserver.datatables.ShotsTable;
 import com.l2jfrozen.gameserver.datatables.SkillTable;
 import com.l2jfrozen.gameserver.handler.IItemHandler;
@@ -113,7 +114,7 @@ public final class UseItem extends L2GameClientPacket
 		
 		if (item.getItem().getType2() == L2Item.TYPE2_QUEST)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.CANNOT_USE_QUEST_ITEMS);
+			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_CANNOT_USE_QUEST_ITEMS);
 			activeChar.sendPacket(sm);
 			sm = null;
 			return;
@@ -161,9 +162,8 @@ public final class UseItem extends L2GameClientPacket
 		
 		if (activeChar.getPkKills() > 0 && (itemId >= 7816 && itemId <= 7831))
 		{
-			// Retail messages... same L2OFF
-			activeChar.sendMessage("You do not meet the required condition to equip that item.");
-			activeChar.sendMessage("You are unable to equip this item when your PK count is greater than or equal to one.");
+			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
+			activeChar.sendPacket(SystemMessageId.YOUT_ARE_UNABLE_TO_EQUIP_THIS_ITEM_WHEN_YOU_PK);
 			return;
 		}
 		
@@ -171,35 +171,35 @@ public final class UseItem extends L2GameClientPacket
 		// A shield that can only be used by the members of a clan that owns a castle.
 		if ((cl == null || cl.getCastleId() == 0) && itemId == 7015 && Config.CASTLE_SHIELD && !activeChar.isGM())
 		{
-			activeChar.sendMessage("You can't equip that");
+			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 			return;
 		}
 		
 		// A shield that can only be used by the members of a clan that owns a clan hall.
 		if ((cl == null || cl.getHasHideout() == 0) && itemId == 6902 && Config.CLANHALL_SHIELD && !activeChar.isGM())
 		{
-			activeChar.sendMessage("You can't equip that");
+			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 			return;
 		}
 		
 		// Apella armor used by clan members may be worn by a Baron or a higher level Aristocrat.
 		if (itemId >= 7860 && itemId <= 7879 && Config.APELLA_ARMORS && (cl == null || activeChar.getPledgeClass() < 5) && !activeChar.isGM())
 		{
-			activeChar.sendMessage("You can't equip that");
+			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 			return;
 		}
 		
 		// Clan Oath armor used by all clan members
 		if (itemId >= 7850 && itemId <= 7859 && Config.OATH_ARMORS && cl == null && !activeChar.isGM())
 		{
-			activeChar.sendMessage("You can't equip that");
+			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 			return;
 		}
 		
 		// The Lord's Crown used by castle lords only
-		if (itemId == 6841 && Config.CASTLE_CROWN && (cl == null || cl.getCastleId() == 0 || !activeChar.isClanLeader()) && !activeChar.isGM())
+		if (itemId == CastleCircletTable.THE_LORDS_CROWN && (cl == null || cl.getCastleId() == 0 || !activeChar.isClanLeader()) && !activeChar.isGM())
 		{
-			activeChar.sendMessage("You can't equip that");
+			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 			return;
 		}
 		
@@ -236,7 +236,7 @@ public final class UseItem extends L2GameClientPacket
 		// Char cannot use item when dead
 		if (activeChar.isDead())
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 			sm.addItemName(itemId);
 			getClient().getActiveChar().sendPacket(sm);
 			sm = null;
@@ -246,7 +246,7 @@ public final class UseItem extends L2GameClientPacket
 		// Char cannot use pet items
 		if (item.getItem().isForWolf() || item.getItem().isForHatchling() || item.getItem().isForStrider() || item.getItem().isForBabyPet())
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.CANNOT_EQUIP_PET_ITEM); // You cannot equip a pet item.
+			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_MAY_NOT_EQUIP_A_PET_ITEM); // You cannot equip a pet item.
 			sm.addItemName(itemId);
 			getClient().getActiveChar().sendPacket(sm);
 			sm = null;
@@ -281,7 +281,7 @@ public final class UseItem extends L2GameClientPacket
 			// Like L2OFF you can't use equips while you are casting
 			if ((activeChar.isCastingNow() || activeChar.isCastingPotionNow() || activeChar.isMounted()))
 			{
-				final SystemMessage sm = new SystemMessage(SystemMessageId.CANNOT_USE_ITEM_WHILE_USING_MAGIC);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_MAY_NOT_EQUIP_ITEMS_WHILE_CASTING_OR_PERFORMING_A_SKILL);
 				activeChar.sendPacket(sm);
 				return;
 			}
@@ -381,7 +381,7 @@ public final class UseItem extends L2GameClientPacket
 				}
 				else
 				{
-					sm = new SystemMessage(SystemMessageId.S1_DISARMED);
+					sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_DISARMED);
 					sm.addItemName(itemId);
 				}
 				
@@ -501,13 +501,13 @@ public final class UseItem extends L2GameClientPacket
 				
 				if (item.getEnchantLevel() > 0)
 				{
-					sm = new SystemMessage(SystemMessageId.S1_S2_EQUIPPED);
+					sm = new SystemMessage(SystemMessageId.EQUIPPED_PLUS_S1_S2);
 					sm.addNumber(item.getEnchantLevel());
 					sm.addItemName(itemId);
 				}
 				else
 				{
-					sm = new SystemMessage(SystemMessageId.S1_EQUIPPED);
+					sm = new SystemMessage(SystemMessageId.YOU_HAVE_EQUIPPED_YOUR_S1);
 					sm.addItemName(itemId);
 				}
 				activeChar.sendPacket(sm);
@@ -539,7 +539,7 @@ public final class UseItem extends L2GameClientPacket
 				{
 					
 					// charge Soulshot/Spiritshot like L2OFF
-					activeChar.rechargeAutoSoulShot(true, true, false, 0);
+					activeChar.rechargeAutoSoulShot(true, true, false);
 				}
 				// Consume mana - will start a task if required; returns if item is not a shadow item
 				item.decreaseMana(false);

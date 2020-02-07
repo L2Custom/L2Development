@@ -1,5 +1,7 @@
 package com.l2jfrozen.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import com.l2jfrozen.gameserver.datatables.sql.ClanTable;
 import com.l2jfrozen.gameserver.model.L2Clan;
 import com.l2jfrozen.gameserver.model.L2Clan.SubPledge;
@@ -17,7 +19,7 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 {
 	private final L2Clan clan;
 	private final L2PcInstance activeChar;
-	private final L2ClanMember[] members;
+	private final Collection<L2ClanMember> members;
 	private int pledgeType;
 	
 	// private static Logger LOGGER = Logger.getLogger(PledgeShowMemberListAll.class);

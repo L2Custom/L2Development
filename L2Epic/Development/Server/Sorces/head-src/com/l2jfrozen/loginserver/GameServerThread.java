@@ -19,8 +19,8 @@ import org.apache.log4j.Logger;
 
 import com.l2jfrozen.Config;
 import com.l2jfrozen.crypt.NewCrypt;
-import com.l2jfrozen.gameserver.datatables.GameServerTable;
-import com.l2jfrozen.gameserver.datatables.GameServerTable.GameServerInfo;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable.GameServerInfo;
 import com.l2jfrozen.loginserver.network.gameserverpackets.BlowFishKey;
 import com.l2jfrozen.loginserver.network.gameserverpackets.ChangeAccessLevel;
 import com.l2jfrozen.loginserver.network.gameserverpackets.GameServerAuth;
@@ -177,16 +177,11 @@ public class GameServerThread extends Thread
 				
 			}
 		}
-		catch (final IOException e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
 			String serverName = getServerId() != -1 ? "[" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) : "(" + connectionIPAddress + ")";
-			String msg = "GameServer " + serverName + ": Connection lost: " + e.getMessage();
-			LOGGER.info(msg);
+			String msg = "GameServer " + serverName + ": Connection lost";
+			LOGGER.error(msg, e);
 			serverName = null;
 			msg = null;
 		}

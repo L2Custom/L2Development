@@ -9,10 +9,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.l2jfrozen.gameserver.model.L2Clan;
-import com.l2jfrozen.gameserver.model.L2ClanMember;
 import com.l2jfrozen.gameserver.model.L2Object;
-import com.l2jfrozen.gameserver.model.actor.instance.L2ItemInstance;
-import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jfrozen.gameserver.model.entity.sevensigns.SevenSigns;
 import com.l2jfrozen.gameserver.model.entity.siege.Castle;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
@@ -22,7 +19,7 @@ public class CastleManager
 	protected static final Logger LOGGER = Logger.getLogger(CastleManager.class);
 	
 	private static final String SELECT_CASTLES_ID = "SELECT id FROM castle ORDER by id";
-	private static final String DELETE_CASTLE_CIRCLET = "DELETE FROM items WHERE owner_id = ? AND (item_id = ? OR item_id = ?)";
+	int castleId = 1; // from this castle
 	
 	public static final CastleManager getInstance()
 	{
@@ -236,8 +233,6 @@ public class CastleManager
 		}
 	}
 	
-	int castleId = 1; // from this castle
-	
 	public int getCirclet()
 	{
 		return getCircletByCastleId(castleId);
@@ -251,82 +246,6 @@ public class CastleManager
 		}
 		
 		return 0;
-	}
-	
-	// remove this castle's circlets from the clan
-	public void removeCirclet(L2Clan clan, int castleId)
-	{
-		for (L2ClanMember member : clan.getMembers())
-		{
-			removeCirclet(member, castleId);
-		}
-	}
-	
-	public void removeCirclet(L2ClanMember member, int castleId)
-	{
-		if (member == null)
-		{
-			return;
-		}
-		
-		L2PcInstance player = member.getPlayerInstance();
-		
-		if (player == null)
-		{
-			return;
-		}
-		
-		int circletId = getCircletByCastleId(castleId);
-		
-		if (circletId == 0)
-		{
-			return;
-		}
-		
-		if (player.isOnline())
-		{
-			if (player.isClanLeader())
-			{
-				L2ItemInstance crown = player.getInventory().getItemByItemId(6841);
-				
-				if (crown != null)
-				{
-					if (crown.isEquipped())
-					{
-						player.getInventory().unEquipItemInSlotAndRecord(crown.getEquipSlot());
-					}
-					
-					player.destroyItemByItemId("CastleCrownRemoval", 6841, 1, player, true);
-				}
-			}
-			
-			L2ItemInstance circlet = player.getInventory().getItemByItemId(circletId);
-			if (circlet != null)
-			{
-				if (circlet.isEquipped())
-				{
-					player.getInventory().unEquipItemInSlotAndRecord(circlet.getEquipSlot());
-				}
-				
-				player.destroyItemByItemId("CastleCircletRemoval", circletId, 1, player, true);
-			}
-		}
-		else
-		{
-			// offline-player circlet removal
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-				PreparedStatement statement = con.prepareStatement(DELETE_CASTLE_CIRCLET))
-			{
-				statement.setInt(1, member.getObjectId());
-				statement.setInt(2, 6841); // The Lord's Crown
-				statement.setInt(3, circletId);
-				statement.executeUpdate();
-			}
-			catch (Exception e)
-			{
-				LOGGER.error("CastleManager.removeCirclet : Failed to remove castle circlets offline for player " + member.getName(), e);
-			}
-		}
 	}
 	
 	private static class SingletonHolder

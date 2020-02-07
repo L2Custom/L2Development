@@ -1,6 +1,6 @@
 package com.l2jfrozen.gameserver.model.actor.instance;
 
-import com.l2jfrozen.gameserver.model.multisell.L2Multisell;
+import com.l2jfrozen.gameserver.datatables.xml.L2Multisell;
 import com.l2jfrozen.gameserver.templates.L2NpcTemplate;
 
 /**

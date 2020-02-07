@@ -1,6 +1,6 @@
 package com.l2jfrozen.loginserver.network.loginserverpackets;
 
-import com.l2jfrozen.gameserver.datatables.GameServerTable;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable;
 import com.l2jfrozen.loginserver.network.serverpackets.ServerBasePacket;
 
 /**

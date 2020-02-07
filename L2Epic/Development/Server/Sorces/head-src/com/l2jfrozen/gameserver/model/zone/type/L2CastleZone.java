@@ -68,7 +68,7 @@ public class L2CastleZone extends L2ZoneType
 			
 			if (character instanceof L2PcInstance)
 			{
-				((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
+				((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE));
 			}
 		}
 	}
@@ -83,7 +83,7 @@ public class L2CastleZone extends L2ZoneType
 			
 			if (character instanceof L2PcInstance)
 			{
-				((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+				((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE));
 				
 				// Set pvp flag
 				if (((L2PcInstance) character).getPvpFlag() == 0)
@@ -138,7 +138,7 @@ public class L2CastleZone extends L2ZoneType
 					
 					if (character instanceof L2PcInstance)
 					{
-						((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+						((L2PcInstance) character).sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE));
 					}
 					
 					if (character instanceof L2SiegeSummonInstance)

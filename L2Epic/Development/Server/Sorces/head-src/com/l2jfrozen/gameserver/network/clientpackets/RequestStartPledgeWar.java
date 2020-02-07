@@ -75,7 +75,7 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 		}
 		else if (clanInstance.isAtWarWith(clan.getClanId()))
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.ALREADY_AT_WAR_WITH_S1_WAIT_5_DAYS); // msg id 628
+			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_ALREADY_BEEN_AT_WAR_WITH_THE_S1_CLAN_5_DAYYS_MUST_PASS_BEFORE_YOU_CAN_DECLARE_WAR_AGAIN); // msg id 628
 			sm.addString(clan.getName());
 			player.sendPacket(sm);
 			player.sendPacket(ActionFailed.STATIC_PACKET);

@@ -61,7 +61,7 @@ public class Olympiad
 	private static final String INSERT_OLYMPIAD_NOBLES = "INSERT INTO olympiad_nobles (`charId`,`class_id`,`olympiad_points`,`competitions_done`,`competitions_won`,`competitions_lost`,`competitions_drawn`) VALUES (?,?,?,?,?,?,?)";
 	private static final String UPDATE_OLYMPIAD_NOBLES = "UPDATE olympiad_nobles SET olympiad_points = ?, competitions_done = ?, competitions_won = ?, competitions_lost = ?, competitions_drawn = ? WHERE charId=?";
 	
-	private static final String SELECT_CANDIDATES_TO_HERO = "SELECT charId, characters.char_name  FROM olympiad_nobles LEFT JOIN characters ON charId=characters.obj_Id WHERE class_id = ? AND competitions_done >= 0 AND competitions_won >= 0 ORDER BY olympiad_points DESC, competitions_won/competitions_done DESC LIMIT ?";
+	private static final String SELECT_CANDIDATES_TO_HERO = "SELECT charId, characters.char_name FROM olympiad_nobles LEFT JOIN characters ON charId=characters.obj_Id WHERE class_id = ? AND competitions_done >= 0 AND competitions_won >= 0 ORDER BY olympiad_points DESC, competitions_won/competitions_done DESC, competitions_done DESC LIMIT ?";
 	
 	private static final String SELECT_CLASS_LEADER_BY_CLASS_ID = "SELECT characters.char_name FROM olympiad_nobles_eom LEFT JOIN characters ON charId = characters.obj_Id WHERE class_id = ? AND competitions_done >= 9 ORDER BY olympiad_points DESC, competitions_done DESC LIMIT 10";
 	private static final String SELECT_CURRENT_CLASS_LEADER_BY_CLASS_ID = "SELECT characters.char_name FROM olympiad_nobles LEFT JOIN characters ON charId=characters.obj_Id WHERE class_id = ? AND competitions_done >= 9 ORDER BY olympiad_points DESC, competitions_done DESC LIMIT 10";
@@ -1136,7 +1136,7 @@ public class Olympiad
 	{
 		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement pstDelete = con.prepareStatement(DELETE_OLYMPIAD_DATA);
-			PreparedStatement pstInsert = con.prepareStatement(INSERT_OLYMPIAD_DATA);)
+			PreparedStatement pstInsert = con.prepareStatement(INSERT_OLYMPIAD_DATA))
 		{
 			pstDelete.executeUpdate();
 			

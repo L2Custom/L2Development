@@ -45,7 +45,7 @@ public class SummonItems implements IItemHandler
 		
 		if (activeChar.isSitting())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_MOVE_SITTING));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_MOVE_WHILE_SITTING));
 			return;
 		}
 		
@@ -78,7 +78,7 @@ public class SummonItems implements IItemHandler
 		// Like L2OFF you can't summon pet in combat
 		if (activeChar.isAttackingNow() || activeChar.isInCombat())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_SUMMON_IN_COMBAT));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_SUMMON_DURING_COMBAT));
 			return;
 		}
 		
@@ -137,7 +137,7 @@ public class SummonItems implements IItemHandler
 				// Skill 2046 used only for animation
 				final L2Skill skill = SkillTable.getInstance().getInfo(2046, 1);
 				activeChar.useMagic(skill, true, true);
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.SUMMON_A_PET));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.SUMMONING_YOUR_PET));
 				ThreadPoolManager.getInstance().scheduleGeneral(new PetSummonFinalizer(activeChar, npcTemplate, item), 4800);
 				
 				break;

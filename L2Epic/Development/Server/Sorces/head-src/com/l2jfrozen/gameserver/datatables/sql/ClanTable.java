@@ -33,12 +33,11 @@ import com.l2jfrozen.gameserver.util.Util;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 /**
- * This class ...
- * @version $Revision: 1.11.2.5.2.5 $ $Date: 2005/03/27 15:29:18 $
+ * @author ReynalDev
  */
 public class ClanTable
 {
-	private static Logger LOGGER = Logger.getLogger(ClanTable.class);
+	private static final Logger LOGGER = Logger.getLogger(ClanTable.class);
 	private static final String SELECT_CLAN_ID = "SELECT clan_id FROM clan_data";
 	private static final String SELECT_CLAN_WARS = "SELECT clan1, clan2, wantspeace1, wantspeace2 FROM clan_wars";
 	private static final String DELETE_CLAN_WAR = "DELETE FROM clan_wars WHERE clan1=? AND clan2=? ";
@@ -183,19 +182,19 @@ public class ClanTable
 		
 		if (10 > player.getLevel())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_MEET_CRITERIA_IN_ORDER_TO_CREATE_A_CLAN));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_MEET_THE_CRITERIA_IN_ORDER_TO_CREATE_A_CLAN));
 			return null;
 		}
 		
 		if (0 != player.getClanId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.FAILED_TO_CREATE_CLAN));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_CREATE_A_CLAN));
 			return null;
 		}
 		
 		if (System.currentTimeMillis() < player.getClanCreateExpiryTime())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.YOU_MUST_WAIT_XX_DAYS_BEFORE_CREATING_A_NEW_CLAN));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_MUST_WAIT_10_DAYS_BEFORE_CREATING_A_NEW_CLAN));
 			return null;
 		}
 		
@@ -224,7 +223,7 @@ public class ClanTable
 		player.sendPacket(new PledgeShowMemberListAll(clan, player));
 		player.sendPacket(new UserInfo(player));
 		player.sendPacket(new PledgeShowMemberListUpdate(player));
-		player.sendPacket(new SystemMessage(SystemMessageId.CLAN_CREATED));
+		player.sendPacket(new SystemMessage(SystemMessageId.YOUR_CLAN_HAS_BEEN_CREATED));
 		
 		return clan;
 	}
@@ -233,13 +232,13 @@ public class ClanTable
 	{
 		if (!Util.isAlphaNumeric(clanName) || clanName.length() < 2)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.CLAN_NAME_INCORRECT));
+			player.sendPacket(new SystemMessage(SystemMessageId.CLAN_NAME_IS_INVALID));
 			return false;
 		}
 		
 		if (clanName.length() > 16)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.CLAN_NAME_TOO_LONG));
+			player.sendPacket(new SystemMessage(SystemMessageId.CLAN_NAMES_LENGTH_IS_INCORRECT));
 			return false;
 		}
 		
@@ -266,7 +265,7 @@ public class ClanTable
 		
 		if (!match.matches())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.CLAN_NAME_INCORRECT));
+			player.sendPacket(new SystemMessage(SystemMessageId.CLAN_NAME_IS_INVALID));
 			return false;
 		}
 		
@@ -523,7 +522,7 @@ public class ClanTable
 			}
 		}
 		
-		if (count == clan1.getMembers().length - 1)
+		if (count == clan1.getMembers().size() - 1)
 		{
 			clan1.deleteEnemyClan(clan2);
 			clan2.deleteEnemyClan(clan1);

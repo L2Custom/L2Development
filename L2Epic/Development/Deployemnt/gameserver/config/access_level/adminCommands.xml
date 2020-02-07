@@ -115,7 +115,8 @@
 	<admin command="admin_setname" accessLevel="7" />
 	<admin command="admin_settitle" accessLevel="7" />
 	<admin command="admin_setsex" accessLevel="7" />
-	<admin command="admin_setcolor" accessLevel="7" />
+	<admin command="admin_setnamecolor" accessLevel="7" />
+	<admin command="admin_settitlecolor" accessLevel="7" />
 	<admin command="admin_fullfood" accessLevel="7" />
 	<admin command="admin_remclanwait" accessLevel="7" />
 	<admin command="admin_setcp" accessLevel="7" />

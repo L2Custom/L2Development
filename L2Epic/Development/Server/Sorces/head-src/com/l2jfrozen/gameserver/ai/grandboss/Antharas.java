@@ -192,9 +192,9 @@ public class Antharas extends Quest implements Runnable
 			SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
 			monsterSpawn.put(29068, tempSpawn);
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn(e.getMessage());
+			LOGGER.error(e);
 		}
 		
 		// Setting spawn data of teleport cube.
@@ -216,9 +216,9 @@ public class Antharas extends Quest implements Runnable
 				teleportCubeSpawn.add(spawnDat);
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn(e.getMessage());
+			LOGGER.error(e);
 		}
 		
 		Integer status = GrandBossManager.getInstance().getBossStatus(ANTHARASOLDID);
@@ -623,9 +623,9 @@ public class Antharas extends Quest implements Runnable
 					monsters.add(tempSpawn.doSpawn());
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				LOGGER.warn(e.getMessage());
+				LOGGER.error(e);
 			}
 		}
 	}
@@ -949,11 +949,11 @@ public class Antharas extends Quest implements Runnable
 			final int countMPHerb = Rnd.get(6, 18);
 			for (int i = 0; i < countHPHerb; i++)
 			{
-				((L2MonsterInstance) npc).DropItem(killer, 8602, 1);
+				((L2MonsterInstance) npc).dropItem(killer, 8602, 1);
 			}
 			for (int i = 0; i < countMPHerb; i++)
 			{
-				((L2MonsterInstance) npc).DropItem(killer, 8605, 1);
+				((L2MonsterInstance) npc).dropItem(killer, 8605, 1);
 			}
 		}
 		if (monsters.contains(npc))

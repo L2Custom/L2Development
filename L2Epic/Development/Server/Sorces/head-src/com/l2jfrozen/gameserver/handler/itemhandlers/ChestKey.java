@@ -44,7 +44,7 @@ public class ChestKey implements IItemHandler
 		
 		if (!(target instanceof L2ChestInstance))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 		else

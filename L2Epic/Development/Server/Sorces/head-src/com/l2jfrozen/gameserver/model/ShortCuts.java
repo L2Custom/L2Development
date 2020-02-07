@@ -108,7 +108,7 @@ public class ShortCuts
 		
 		owner.sendPacket(new ShortCutInit(owner));
 		
-		for (int shotId : owner.getAutoSoulShot().values())
+		for (int shotId : owner.getAutoSoulShot())
 		{
 			owner.sendPacket(new ExAutoSoulShot(shotId, 1));
 		}

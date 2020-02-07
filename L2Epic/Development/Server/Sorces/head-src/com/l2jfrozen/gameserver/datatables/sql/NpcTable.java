@@ -26,12 +26,11 @@ import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 /**
- * This class ...
- * @version $Revision: 1.8.2.6.2.9 $ $Date: 2005/04/06 16:13:25 $
+ * @author ReynalDev
  */
 public class NpcTable
 {
-	private final static Logger LOGGER = Logger.getLogger(NpcTable.class);
+	private static final Logger LOGGER = Logger.getLogger(NpcTable.class);
 	private static final String SELECT_DROPLIST_ORDER = "SELECT mobId, itemId, min, max, category, chance FROM droplist ORDER BY mobId, category, chance";
 	private static final String SELECT_CUSTOM_DROPLIST_ORDER = "SELECT mobId, itemId, min, max, category, chance FROM custom_droplist ORDER BY mobId, category, chance";
 	private static final String SELECT_MINIONS = "SELECT boss_id, minion_id, amount_min, amount_max FROM minions";
@@ -254,6 +253,11 @@ public class NpcTable
 						continue;
 					}
 					
+					if(Config.ITEM_IDS_IGNORED_IN_DROP_LIST.contains(dropData.getInt("itemId")))
+					{
+						continue;
+					}
+					
 					final L2DropData dropDat = new L2DropData();
 					dropDat.setItemId(dropData.getInt("itemId"));
 					dropDat.setMinDrop(dropData.getInt("min"));
@@ -299,6 +303,11 @@ public class NpcTable
 					if (npcDat == null)
 					{
 						LOGGER.info("NPCTable: While loading from droplist table, NPC ID " + mobId + " it does not exist in 'npc' or 'custom_npc' table ");
+						continue;
+					}
+					
+					if(Config.ITEM_IDS_IGNORED_IN_DROP_LIST.contains(dropData.getInt("itemId")))
+					{
 						continue;
 					}
 					

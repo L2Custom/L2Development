@@ -2,7 +2,6 @@ package com.l2jfrozen.gameserver;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.URI;
@@ -56,7 +55,9 @@ import com.l2jfrozen.gameserver.datatables.xml.AccessLevels;
 import com.l2jfrozen.gameserver.datatables.xml.AdminCommandAccessRights;
 import com.l2jfrozen.gameserver.datatables.xml.AugmentationData;
 import com.l2jfrozen.gameserver.datatables.xml.ExperienceData;
+import com.l2jfrozen.gameserver.datatables.xml.GlobalDropData;
 import com.l2jfrozen.gameserver.datatables.xml.HennaTable;
+import com.l2jfrozen.gameserver.datatables.xml.L2Multisell;
 import com.l2jfrozen.gameserver.datatables.xml.NewbieGuideBuffTable;
 import com.l2jfrozen.gameserver.datatables.xml.RecipeTable;
 import com.l2jfrozen.gameserver.datatables.xml.SkillSpellbookTable;
@@ -80,7 +81,6 @@ import com.l2jfrozen.gameserver.managers.CastleManorManager;
 import com.l2jfrozen.gameserver.managers.ClanHallManager;
 import com.l2jfrozen.gameserver.managers.ClassDamageManager;
 import com.l2jfrozen.gameserver.managers.CoupleManager;
-import com.l2jfrozen.gameserver.managers.CrownManager;
 import com.l2jfrozen.gameserver.managers.CursedWeaponsManager;
 import com.l2jfrozen.gameserver.managers.DayNightSpawnManager;
 import com.l2jfrozen.gameserver.managers.DimensionalRiftManager;
@@ -110,11 +110,9 @@ import com.l2jfrozen.gameserver.model.entity.sevensigns.SevenSignsFestival;
 import com.l2jfrozen.gameserver.model.entity.siege.clanhalls.BanditStrongholdSiege;
 import com.l2jfrozen.gameserver.model.entity.siege.clanhalls.DevastatedCastle;
 import com.l2jfrozen.gameserver.model.entity.siege.clanhalls.FortressOfResistance;
-import com.l2jfrozen.gameserver.model.multisell.L2Multisell;
 import com.l2jfrozen.gameserver.model.spawn.AutoSpawn;
 import com.l2jfrozen.gameserver.network.L2GameClient;
 import com.l2jfrozen.gameserver.network.L2GamePacketHandler;
-import com.l2jfrozen.gameserver.script.EventDroplist;
 import com.l2jfrozen.gameserver.scripting.CompiledScriptCache;
 import com.l2jfrozen.gameserver.scripting.L2ScriptEngineManager;
 import com.l2jfrozen.gameserver.skills.HitConditionBonus;
@@ -136,6 +134,9 @@ import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 import main.EngineModsManager;
 
+/**
+ * @author ReynalDev
+ */
 public class GameServer
 {
 	private static final Logger LOGGER = Logger.getLogger(GameServer.class);
@@ -341,7 +342,7 @@ public class GameServer
 		Util.printSection("Misc");
 		RecipeTable.getInstance();
 		RecipeController.getInstance();
-		EventDroplist.getInstance();
+		GlobalDropData.getInstance();
 		AugmentationData.getInstance();
 		MonsterRace.getInstance();
 		MercTicketManager.getInstance();
@@ -371,7 +372,6 @@ public class GameServer
 		SiegeManager.getInstance();
 		FortManager.getInstance();
 		FortSiegeManager.getInstance();
-		CrownManager.getInstance();
 		
 		Util.printSection("Boat");
 		BoatManager.getInstance();
@@ -607,14 +607,9 @@ public class GameServer
 		{
 			selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
 		}
-		catch (final IOException e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.fatal("Failed to open server socket. Reason: ", e);
+			LOGGER.error("Failed to open server socket", e);
 			System.exit(1);
 		}
 		selectorThread.start();

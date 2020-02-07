@@ -87,7 +87,7 @@ final class EffectCancel extends L2Effect
 		{
 			if (getEffector() instanceof L2PcInstance)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+				SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 				sm.addString(getEffected().getName());
 				sm.addSkillName(getSkill().getDisplayId());
 				getEffector().sendPacket(sm);

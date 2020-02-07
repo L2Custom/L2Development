@@ -70,19 +70,19 @@ public final class RequestOustPledgeMember extends L2GameClientPacket
 		clan.setCharPenaltyExpiryTime(System.currentTimeMillis() + Config.ALT_CLAN_JOIN_DAYS * 86400000L); // 24*60*60*1000 = 86400000
 		clan.updateClanInDB();
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.CLAN_MEMBER_S1_EXPELLED);
+		SystemMessage sm = new SystemMessage(SystemMessageId.CLAN_MEMBER_S1_HAS_BEEN_EXPELLED);
 		sm.addString(member.getName());
 		clan.broadcastToOnlineMembers(sm);
 		sm = null;
 		activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_IN_EXPELLING_CLAN_MEMBER));
-		activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_MUST_WAIT_BEFORE_ACCEPTING_A_NEW_MEMBER));
+		activeChar.sendPacket(new SystemMessage(SystemMessageId.AFTER_A_CLAN_MEMBER_IS_DISMISSED_FROM_A_CLAN_THE_CLAN_MUST_WAIT_AT_LEAST_A_DAY_BE));
 		
 		// Remove the Player From the Member list
 		clan.broadcastToOnlineMembers(new PledgeShowMemberListDelete(target));
 		if (member.isOnline())
 		{
 			final L2PcInstance player = member.getPlayerInstance();
-			player.sendPacket(new SystemMessage(SystemMessageId.CLAN_MEMBERSHIP_TERMINATED));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_RECENTLY_DIMISSED_FROM_A_CLAN_YOU_ARE_NOT_ALLOWD_TO_JOIN_ANOTHER_CLAN_FOR_24_HOURS));
 			player.setActiveWarehouse(null);
 		}
 	}

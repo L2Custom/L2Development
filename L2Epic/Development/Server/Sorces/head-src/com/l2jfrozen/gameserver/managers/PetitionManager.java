@@ -124,7 +124,7 @@ public final class PetitionManager
 				else
 				{
 					// Ending petition consultation with <Player>.
-					SystemMessage sm = new SystemMessage(SystemMessageId.PETITION_ENDED_WITH_S1);
+					SystemMessage sm = new SystemMessage(SystemMessageId.ENDING_PETITION_CONSULTATION_WITH_S1);
 					sm.addString(getPetitioner().getName());
 					getResponder().sendPacket(sm);
 					sm = null;
@@ -132,7 +132,7 @@ public final class PetitionManager
 					if (endState == PetitionState.Petitioner_Cancel)
 					{
 						// Receipt No. <ID> petition cancelled.
-						sm = new SystemMessage(SystemMessageId.RECENT_NO_S1_CANCELED);
+						sm = new SystemMessage(SystemMessageId.RECEIPT_NO_S1_PETITION_CANCELLED);
 						sm.addNumber(getId());
 						getResponder().sendPacket(sm);
 						sm = null;
@@ -143,7 +143,7 @@ public final class PetitionManager
 			// End petition consultation and inform them, if they are still online.
 			if (getPetitioner() != null && getPetitioner().isOnline())
 			{
-				getPetitioner().sendPacket(new SystemMessage(SystemMessageId.THIS_END_THE_PETITION_PLEASE_PROVIDE_FEEDBACK));
+				getPetitioner().sendPacket(new SystemMessage(SystemMessageId.THIS_ENDS_THE_GM_PETITION_CONSULTATION));
 			}
 			
 			getCompletedPetitions().put(getId(), this);
@@ -268,15 +268,15 @@ public final class PetitionManager
 		currPetition.setState(PetitionState.In_Process);
 		
 		// Petition application accepted. (Send to Petitioner)
-		currPetition.sendPetitionerPacket(new SystemMessage(SystemMessageId.PETITION_APP_ACCEPTED));
+		currPetition.sendPetitionerPacket(new SystemMessage(SystemMessageId.PETITION_APPLICATION_ACCEPTED));
 		
 		// Petition application accepted. Reciept No. is <ID>
-		SystemMessage sm = new SystemMessage(SystemMessageId.PETITION_ACCEPTED_RECENT_NO_S1);
+		SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_PETITION_APPLICATION_HAS_BEEN_ACCEPTED_RECEIPT_NO_IS_S1);
 		sm.addNumber(currPetition.getId());
 		currPetition.sendResponderPacket(sm);
 		
 		// Petition consultation with <Player> underway.
-		sm = new SystemMessage(SystemMessageId.PETITION_WITH_S1_UNDER_WAY);
+		sm = new SystemMessage(SystemMessageId.PETITION_CONSULTATION_WITH_S1_UNDER_WAY);
 		sm.addString(currPetition.getPetitioner().getName());
 		currPetition.sendResponderPacket(sm);
 		sm = null;

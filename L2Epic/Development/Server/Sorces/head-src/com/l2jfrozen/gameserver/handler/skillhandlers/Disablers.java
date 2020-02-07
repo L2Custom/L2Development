@@ -29,11 +29,13 @@ import com.l2jfrozen.gameserver.skills.Stats;
 import com.l2jfrozen.util.random.Rnd;
 
 /**
- * This Handles Disabler skills
  * @author drunk
+ * @author ReynalDev
  */
 public class Disablers implements ISkillHandler
 {
+	protected static final Logger LOGGER = Logger.getLogger(Disablers.class);
+	
 	private static final SkillType[] SKILL_IDS =
 	{
 		L2Skill.SkillType.STUN,
@@ -58,7 +60,6 @@ public class Disablers implements ISkillHandler
 		L2Skill.SkillType.BETRAY
 	};
 	
-	protected static final Logger LOGGER = Logger.getLogger(L2Skill.class);
 	private String[] negateSkillTypes = null;
 	private String[] negateEffectTypes = null;
 	private float negatePower = 0.f;
@@ -103,7 +104,7 @@ public class Disablers implements ISkillHandler
 					}
 					else
 					{
-						SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+						SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 						sm.addString(target.getName());
 						sm.addSkillName(skill.getId());
 						activeChar.sendPacket(sm);
@@ -121,7 +122,7 @@ public class Disablers implements ISkillHandler
 					// Calculate skill evasion
 					if (Formulas.calcPhysicalSkillEvasion(target, skill))
 					{
-						activeChar.sendPacket(new SystemMessage(SystemMessageId.ATTACK_FAILED));
+						activeChar.sendPacket(new SystemMessage(SystemMessageId.YOUR_ATTACK_HAS_FAILED));
 						break;
 					}
 					// Calculate vengeance
@@ -129,6 +130,23 @@ public class Disablers implements ISkillHandler
 					{
 						target = activeChar;
 					}
+					
+					if (Formulas.getInstance().calcSkillSuccess(activeChar, target, skill, ss, sps, bss))
+					{
+						skill.getEffects(activeChar, target, ss, sps, bss);
+					}
+					else
+					{
+						if (activeChar instanceof L2PcInstance)
+						{
+							SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
+							sm.addString(target.getName());
+							sm.addSkillName(skill.getDisplayId());
+							activeChar.sendPacket(sm);
+						}
+					}
+					
+					break;
 				case ROOT:
 				{
 					if (target.reflectSkill(skill))
@@ -144,7 +162,7 @@ public class Disablers implements ISkillHandler
 					{
 						if (activeChar instanceof L2PcInstance)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+							SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 							sm.addString(target.getName());
 							sm.addSkillName(skill.getDisplayId());
 							activeChar.sendPacket(sm);
@@ -169,7 +187,7 @@ public class Disablers implements ISkillHandler
 					{
 						if (activeChar instanceof L2PcInstance)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+							SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 							sm.addString(target.getName());
 							sm.addSkillName(skill.getDisplayId());
 							activeChar.sendPacket(sm);
@@ -194,7 +212,7 @@ public class Disablers implements ISkillHandler
 					{
 						if (activeChar instanceof L2PcInstance)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+							SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 							sm.addString(target.getName());
 							sm.addSkillName(skill.getDisplayId());
 							activeChar.sendPacket(sm);
@@ -222,7 +240,7 @@ public class Disablers implements ISkillHandler
 					{
 						if (activeChar instanceof L2PcInstance)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+							SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 							activeChar.sendPacket(sm);
 							sm = null;
 						}
@@ -301,7 +319,7 @@ public class Disablers implements ISkillHandler
 					{
 						if (activeChar instanceof L2PcInstance)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+							SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 							sm.addString(target.getName());
 							sm.addSkillName(skill.getId());
 							activeChar.sendPacket(sm);
@@ -333,7 +351,7 @@ public class Disablers implements ISkillHandler
 						{
 							if (activeChar instanceof L2PcInstance)
 							{
-								SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+								SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 								sm.addString(target.getName());
 								sm.addSkillName(skill.getId());
 								activeChar.sendPacket(sm);
@@ -373,7 +391,7 @@ public class Disablers implements ISkillHandler
 					{
 						if (activeChar instanceof L2PcInstance)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+							SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 							sm.addString(target.getName());
 							sm.addSkillName(skill.getId());
 							activeChar.sendPacket(sm);
@@ -447,7 +465,7 @@ public class Disablers implements ISkillHandler
 						{
 							if (activeChar instanceof L2PcInstance)
 							{
-								SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+								SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 								sm.addString(target.getName());
 								sm.addSkillName(skill.getDisplayId());
 								activeChar.sendPacket(sm);
@@ -459,7 +477,7 @@ public class Disablers implements ISkillHandler
 						{
 							if (activeChar instanceof L2PcInstance)
 							{
-								SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+								SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 								sm.addString(target.getName());
 								sm.addSkillName(skill.getDisplayId());
 								activeChar.sendPacket(sm);
@@ -537,7 +555,7 @@ public class Disablers implements ISkillHandler
 						{
 							if (activeChar instanceof L2PcInstance)
 							{
-								SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+								SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 								sm.addString(target.getName());
 								sm.addSkillName(skill.getDisplayId());
 								activeChar.sendPacket(sm);
@@ -604,7 +622,7 @@ public class Disablers implements ISkillHandler
 					{
 						if (activeChar instanceof L2PcInstance)
 						{
-							SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+							SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 							sm.addString(target.getName());
 							sm.addSkillName(skill.getDisplayId());
 							activeChar.sendPacket(sm);

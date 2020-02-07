@@ -279,7 +279,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		if (!destroyed)
 		{
 			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar + " tried to enchant with a scroll he doesnt have", Config.DEFAULT_PUNISH);
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT_2));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -322,13 +322,13 @@ public final class RequestEnchantItem extends L2GameClientPacket
 				
 				if (item.getEnchantLevel() == 0)
 				{
-					sm = new SystemMessage(SystemMessageId.S1_SUCCESSFULLY_ENCHANTED);
+					sm = new SystemMessage(SystemMessageId.YOU_S1_HAS_BEEN_SUCCESSFULLY_ENCHANTED);
 					sm.addItemName(item.getItemId());
 					activeChar.sendPacket(sm);
 				}
 				else
 				{
-					sm = new SystemMessage(SystemMessageId.S1_S2_SUCCESSFULLY_ENCHANTED);
+					sm = new SystemMessage(SystemMessageId.YOUR_PLUS_S1_S2_HAS_BEEN_SUCCESSFULLY_ENCHANTED);
 					sm.addNumber(item.getEnchantLevel());
 					sm.addItemName(item.getItemId());
 					activeChar.sendPacket(sm);
@@ -359,7 +359,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 				{
 					if (item.getEnchantLevel() > 0)
 					{
-						sm = new SystemMessage(SystemMessageId.ENCHANTMENT_FAILED_S1_S2_EVAPORATED);
+						sm = new SystemMessage(SystemMessageId.THE_ENCHANTMENT_HAS_FAILED_YOU_PLUS_S1_S2_HAS_BEEN_CRYSTALLIZED);
 						sm.addNumber(item.getEnchantLevel());
 						sm.addItemName(item.getItemId());
 						activeChar.sendPacket(sm);
@@ -374,13 +374,13 @@ public final class RequestEnchantItem extends L2GameClientPacket
 					}
 					else
 					{
-						sm = new SystemMessage(SystemMessageId.ENCHANTMENT_FAILED_S1_EVAPORATED);
+						sm = new SystemMessage(SystemMessageId.THE_ENCHANTMENT_HAS_FAILED_YOU_S1_HAS_BEEN_CRYSTALLIZED);
 						sm.addItemName(item.getItemId());
 						activeChar.sendPacket(sm);
 						
 						if(item.isEquipped())
 						{
-							sm = new SystemMessage(SystemMessageId.S1_DISARMED);
+							sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_DISARMED);
 							sm.addItemName(item.getItemId());
 							activeChar.sendPacket(sm);
 						}
@@ -426,7 +426,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 					
 					L2ItemInstance crystals = activeChar.getInventory().addItem("Enchant", item.getItem().getCrystalItemId(), count, activeChar, destroyItem);
 					
-					sm = new SystemMessage(SystemMessageId.EARNED_S2_S1_S);
+					sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S);
 					sm.addItemName(crystals.getItemId());
 					sm.addNumber(count);
 					activeChar.sendPacket(sm);

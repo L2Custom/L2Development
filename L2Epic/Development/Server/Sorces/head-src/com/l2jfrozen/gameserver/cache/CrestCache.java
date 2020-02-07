@@ -3,7 +3,6 @@ package com.l2jfrozen.gameserver.cache;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,10 +20,11 @@ import javolution.util.FastMap;
 
 /**
  * @author Layane
+ * @author ReynalDev
  */
 public class CrestCache
 {
-	private static Logger LOGGER = Logger.getLogger(CrestCache.class);
+	private static final Logger LOGGER = Logger.getLogger(CrestCache.class);
 	private static final String UPDATE_CLAN_CREST = "UPDATE clan_data SET crest_id=? WHERE clan_id=?";
 	
 	private static CrestCache instance;
@@ -77,14 +77,12 @@ public class CrestCache
 		final FastMap<Integer, byte[]> mapPledgeLarge = cachePledgeLarge.getContentMap();
 		final FastMap<Integer, byte[]> mapAlly = cacheAlly.getContentMap();
 		
-		for (final File file : files)
+		for (File file : files)
 		{
-			RandomAccessFile f = null;
 			synchronized (this)
 			{
-				try
+				try(RandomAccessFile f = new RandomAccessFile(file, "r");)
 				{
-					f = new RandomAccessFile(file, "r");
 					content = new byte[(int) f.length()];
 					f.readFully(content);
 					
@@ -104,28 +102,9 @@ public class CrestCache
 					loadedFiles++;
 					bytesBuffLen += content.length;
 				}
-				catch (final Exception e)
+				catch (Exception e)
 				{
-					if (Config.ENABLE_ALL_EXCEPTIONS)
-					{
-						e.printStackTrace();
-					}
-					
-					LOGGER.warn("problem with crest bmp file " + e);
-				}
-				finally
-				{
-					if (f != null)
-					{
-						try
-						{
-							f.close();
-						}
-						catch (final Exception e1)
-						{
-							e1.printStackTrace();
-						}
-					}
+					LOGGER.error("problem with crest bmp file", e);
 				}
 			}
 		}
@@ -215,7 +194,7 @@ public class CrestCache
 		return cacheAlly.get(id);
 	}
 	
-	public void removePledgeCrest(final int id)
+	public void removePledgeCrest(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, "data/crests/Crest_" + id + ".bmp");
 		cachePledge.remove(id);
@@ -223,19 +202,14 @@ public class CrestCache
 		try
 		{
 			crestFile.delete();
-			crestFile = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
+			LOGGER.error("Error while removing clan crest from disk", e);
 		}
 	}
 	
-	public void removePledgeCrestLarge(final int id)
+	public void removePledgeCrestLarge(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, "data/crests/Crest_Large_" + id + ".bmp");
 		cachePledgeLarge.remove(id);
@@ -243,38 +217,28 @@ public class CrestCache
 		try
 		{
 			crestFile.delete();
-			crestFile = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
+			LOGGER.error("Error while removing clan crest large from disk", e);
 		}
 	}
 	
-	public void removeOldPledgeCrest(final int id)
+	public void removeOldPledgeCrest(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, "data/crests/Pledge_" + id + ".bmp");
 		
 		try
 		{
 			crestFile.delete();
-			crestFile = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
+			LOGGER.error("Error while removing old clan crest from disk", e);
 		}
 	}
 	
-	public void removeAllyCrest(final int id)
+	public void removeAllyCrest(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, "data/crests/AllyCrest_" + id + ".bmp");
 		cacheAlly.remove(id);
@@ -282,51 +246,28 @@ public class CrestCache
 		try
 		{
 			crestFile.delete();
-			crestFile = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
+			LOGGER.error("Error while removing clan crest from disk", e);
 		}
 	}
 	
-	public boolean savePledgeCrest(final int newId, final byte[] data)
+	public boolean savePledgeCrest(int newId, byte[] data)
 	{
 		boolean output = false;
 		final File crestFile = new File(Config.DATAPACK_ROOT, "data/crests/Crest_" + newId + ".bmp");
 		
-		FileOutputStream out = null;
-		try
+		try(FileOutputStream out = new FileOutputStream(crestFile);)
 		{
-			out = new FileOutputStream(crestFile);
 			out.write(data);
 			cachePledge.getContentMap().put(newId, data);
 			
 			output = true;
 		}
-		catch (final IOException e)
+		catch (Exception e)
 		{
 			LOGGER.error("Error saving pledge crest" + crestFile, e);
-		}
-		finally
-		{
-			
-			if (out != null)
-			{
-				try
-				{
-					out.close();
-				}
-				catch (final IOException e)
-				{
-					e.printStackTrace();
-				}
-			}
-			
 		}
 		
 		return output;
@@ -336,35 +277,17 @@ public class CrestCache
 	{
 		boolean output = false;
 		final File crestFile = new File(Config.DATAPACK_ROOT, "data/crests/Crest_Large_" + newId + ".bmp");
-		FileOutputStream out = null;
-		try
+		
+		try(FileOutputStream out = new FileOutputStream(crestFile);)
 		{
-			out = new FileOutputStream(crestFile);
 			out.write(data);
 			cachePledgeLarge.getContentMap().put(newId, data);
 			
 			output = true;
 		}
-		catch (final IOException e)
+		catch (Exception e)
 		{
-			LOGGER.error("Error saving Large pledge crest" + crestFile, e);
-			
-		}
-		finally
-		{
-			
-			if (out != null)
-			{
-				try
-				{
-					out.close();
-				}
-				catch (final IOException e)
-				{
-					e.printStackTrace();
-				}
-			}
-			
+			LOGGER.error("Error saving pledge crest large" + crestFile, e);
 		}
 		
 		return output;
@@ -374,35 +297,17 @@ public class CrestCache
 	{
 		boolean output = false;
 		final File crestFile = new File(Config.DATAPACK_ROOT, "data/crests/AllyCrest_" + newId + ".bmp");
-		FileOutputStream out = null;
-		try
+		
+		try(FileOutputStream out = new FileOutputStream(crestFile);)
 		{
-			out = new FileOutputStream(crestFile);
 			out.write(data);
 			cacheAlly.getContentMap().put(newId, data);
 			
 			output = true;
 		}
-		catch (final IOException e)
+		catch (Exception e)
 		{
-			LOGGER.error("Error saving ally crest" + crestFile, e);
-			
-		}
-		finally
-		{
-			
-			if (out != null)
-			{
-				try
-				{
-					out.close();
-				}
-				catch (final IOException e)
-				{
-					e.printStackTrace();
-				}
-			}
-			
+			LOGGER.error("Error saving pledge ally crest" + crestFile, e);
 		}
 		
 		return output;

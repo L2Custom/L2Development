@@ -25,7 +25,6 @@ import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
 import com.l2jfrozen.gameserver.network.serverpackets.UserInfo;
 import com.l2jfrozen.gameserver.templates.L2Item;
 import com.l2jfrozen.gameserver.templates.StatsSet;
-import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 /**
@@ -381,7 +380,7 @@ public class Hero
 			else
 			{
 				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-					PreparedStatement statement = con.prepareStatement(SELECT_CLAN_NAME);)
+					PreparedStatement statement = con.prepareStatement(SELECT_CLAN_NAME))
 				{
 					statement.setString(1, name);
 					
@@ -416,84 +415,85 @@ public class Hero
 	
 	public void updateHeroes(boolean setDefault)
 	{
-		Connection con = null;
-		PreparedStatement statement = null;
-		PreparedStatement statement2 = null;
-		ResultSet rset2 = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
 			if (setDefault)
 			{
-				statement = con.prepareStatement(UPDATE_HEROES_SET_PLAYED_0);
-				statement.executeUpdate();
-				DatabaseUtils.close(statement);
+				try(PreparedStatement statement = con.prepareStatement(UPDATE_HEROES_SET_PLAYED_0))
+				{
+					statement.executeUpdate();
+				}
 			}
 			else
 			{
-				for (final Integer heroId : heroesMap.keySet())
+				for (Integer heroId : heroesMap.keySet())
 				{
-					final StatsSet hero = heroesMap.get(heroId);
+					StatsSet hero = heroesMap.get(heroId);
 					if (completeHeroes == null || !completeHeroes.containsKey(heroId))
 					{
-						statement = con.prepareStatement(INSERT_HERO);
-						statement.setInt(1, heroId);
-						statement.setString(2, hero.getString(Olympiad.CHAR_NAME));
-						statement.setInt(3, hero.getInteger(Olympiad.CLASS_ID));
-						statement.setInt(4, hero.getInteger(COUNT));
-						statement.setInt(5, hero.getInteger(PLAYED));
-						statement.executeUpdate();
-						statement2 = con.prepareStatement(SELECT_CLAN_AND_ALLY);
-						statement2.setInt(1, heroId);
-						rset2 = statement2.executeQuery();
-						if (rset2.next())
+						try(PreparedStatement statement = con.prepareStatement(INSERT_HERO))
 						{
-							final int clanId = rset2.getInt("clanid");
-							final int allyId = rset2.getInt("allyId");
-							String clanName = "";
-							String allyName = "";
-							int clanCrest = 0;
-							int allyCrest = 0;
-							if (clanId > 0)
+							statement.setInt(1, heroId);
+							statement.setString(2, hero.getString(Olympiad.CHAR_NAME));
+							statement.setInt(3, hero.getInteger(Olympiad.CLASS_ID));
+							statement.setInt(4, hero.getInteger(COUNT));
+							statement.setInt(5, hero.getInteger(PLAYED));
+							statement.executeUpdate();
+						}
+						
+						try(PreparedStatement statement2 = con.prepareStatement(SELECT_CLAN_AND_ALLY))
+						{
+							statement2.setInt(1, heroId);
+							
+							try(ResultSet rset2 = statement2.executeQuery())
 							{
-								clanName = ClanTable.getInstance().getClan(clanId).getName();
-								clanCrest = ClanTable.getInstance().getClan(clanId).getCrestId();
-								if (allyId > 0)
+								if (rset2.next())
 								{
-									allyName = ClanTable.getInstance().getClan(clanId).getAllyName();
-									allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
+									int clanId = rset2.getInt("clanid");
+									int allyId = rset2.getInt("allyId");
+									String clanName = "";
+									String allyName = "";
+									int clanCrest = 0;
+									int allyCrest = 0;
+									
+									if (clanId > 0)
+									{
+										clanName = ClanTable.getInstance().getClan(clanId).getName();
+										clanCrest = ClanTable.getInstance().getClan(clanId).getCrestId();
+										if (allyId > 0)
+										{
+											allyName = ClanTable.getInstance().getClan(clanId).getAllyName();
+											allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
+										}
+									}
+									
+									hero.set(CLAN_CREST, clanCrest);
+									hero.set(CLAN_NAME, clanName);
+									hero.set(ALLY_CREST, allyCrest);
+									hero.set(ALLY_NAME, allyName);
 								}
 							}
-							hero.set(CLAN_CREST, clanCrest);
-							hero.set(CLAN_NAME, clanName);
-							hero.set(ALLY_CREST, allyCrest);
-							hero.set(ALLY_NAME, allyName);
 						}
-						rset2.close();
-						statement2.close();
+						
 						heroesMap.put(heroId, hero);
 						completeHeroes.put(heroId, hero);
 					}
 					else
 					{
-						statement = con.prepareStatement(UPDATE_HERO_BY_CHAR_ID);
-						statement.setInt(1, hero.getInteger(COUNT));
-						statement.setInt(2, hero.getInteger(PLAYED));
-						statement.setInt(3, heroId);
-						statement.executeUpdate();
+						try(PreparedStatement statement = con.prepareStatement(UPDATE_HERO_BY_CHAR_ID))
+						{
+							statement.setInt(1, hero.getInteger(COUNT));
+							statement.setInt(2, hero.getInteger(PLAYED));
+							statement.setInt(3, heroId);
+							statement.executeUpdate();
+						}
 					}
-					DatabaseUtils.close(statement);
 				}
 			}
 		}
 		catch (Exception e)
 		{
 			LOGGER.error("Hero System: Couldnt update Heroes", e);
-		}
-		finally
-		{
-			DatabaseUtils.closeDatabaseSR(statement2, rset2);
-			DatabaseUtils.closeDatabaseCS(con, statement);
 		}
 	}
 	
@@ -505,7 +505,7 @@ public class Hero
 	private void deleteItemsInDb()
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(DELETE_HERO_ITEMS);)
+			PreparedStatement statement = con.prepareStatement(DELETE_HERO_ITEMS))
 		{
 			statement.executeUpdate();
 		}

@@ -22,7 +22,7 @@ import com.l2jfrozen.gameserver.templates.L2Item;
  */
 public class AdminCreateItem implements IAdminCommandHandler
 {
-	private static Logger LOGGER = Logger.getLogger(AdminCreateItem.class);
+	private static final Logger LOGGER = Logger.getLogger(AdminCreateItem.class);
 	private static final NumberFormat NF = NumberFormat.getInstance();
 	private static final int MAX_ITEMS_PER_PAGE = 15;
 	
@@ -231,7 +231,8 @@ public class AdminCreateItem implements IAdminCommandHandler
 				}
 				catch (Exception e)
 				{
-					LOGGER.error("Invalid number", e);
+					LOGGER.error("Invalid page number format", e);
+					return false;
 				}
 				
 				List<L2Item> list = ItemTable.getInstance().getAllTemplatesByText(itemName);

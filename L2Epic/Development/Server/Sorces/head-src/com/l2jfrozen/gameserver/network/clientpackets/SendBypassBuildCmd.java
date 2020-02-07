@@ -7,7 +7,7 @@ import com.l2jfrozen.gameserver.datatables.xml.AdminCommandAccessRights;
 import com.l2jfrozen.gameserver.handler.AdminCommandHandler;
 import com.l2jfrozen.gameserver.handler.IAdminCommandHandler;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jfrozen.gameserver.util.GMAudit;
+import com.l2jfrozen.util.L2Log;
 
 import main.EngineModsManager;
 
@@ -64,7 +64,10 @@ public final class SendBypassBuildCmd extends L2GameClientPacket
 		{
 			if (Config.GMAUDIT)
 			{
-				GMAudit.auditGMAction(activeChar.getName() + "_" + activeChar.getObjectId(), command, activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
+				String target = activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target";
+				String message = "GM: " + activeChar + ", Target: [" + target + "], Command: [" + command + "], Params: [" + command.replace(command, "") + "]";
+				String fileName = activeChar.getName() + "_" + activeChar.getObjectId(); // ReynalDev_268477761
+				L2Log.add(message, "gm_commands", fileName);
 			}
 			
 			ach.useAdminCommand(command, activeChar);

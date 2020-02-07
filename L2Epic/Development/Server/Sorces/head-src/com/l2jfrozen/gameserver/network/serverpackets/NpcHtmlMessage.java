@@ -137,7 +137,7 @@ public class NpcHtmlMessage extends L2GameServerPacket
 	@Override
 	public void runImpl()
 	{
-		if (Config.BYPASS_VALIDATION && validate)
+		if (validate)
 		{
 			buildBypassCache(getClient().getActiveChar());
 			buildLinksCache(getClient().getActiveChar());

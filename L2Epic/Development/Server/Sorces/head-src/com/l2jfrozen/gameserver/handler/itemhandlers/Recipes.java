@@ -47,7 +47,7 @@ public class Recipes implements IItemHandler
 		
 		if (activeChar.hasRecipeList(recipe.getId()))
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.RECIPE_ALREADY_REGISTERED);
+			SystemMessage sm = new SystemMessage(SystemMessageId.THAT_RECIPE_IS_ALREADY_REGISTERED);
 			activeChar.sendPacket(sm);
 		}
 		else
@@ -59,7 +59,7 @@ public class Recipes implements IItemHandler
 					if (recipe.getLevel() > activeChar.getDwarvenCraft())
 					{
 						// can't add recipe, becouse create item level too low
-						SystemMessage sm = new SystemMessage(SystemMessageId.CREATE_LVL_TOO_LOW_TO_REGISTER);
+						SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_CREATE_ITEM_LEVEL_IS_TOO_LOW_TO_REGISTER_THIS_RECIPE);
 						activeChar.sendPacket(sm);
 					}
 					else if (activeChar.getDwarvenRecipeBook().length >= activeChar.GetDwarfRecipeLimit())
@@ -73,7 +73,7 @@ public class Recipes implements IItemHandler
 						activeChar.registerDwarvenRecipeList(recipe);
 						activeChar.saveRecipeIntoDB(recipe);
 						activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false);
-						SystemMessage sm = new SystemMessage(SystemMessageId.S1_ADDED);
+						SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_ADDED);
 						sm.addString(item.getItemName());
 						activeChar.sendPacket(sm);
 					}
@@ -91,7 +91,7 @@ public class Recipes implements IItemHandler
 					if (recipe.getLevel() > activeChar.getCommonCraft())
 					{
 						// can't add recipe, becouse create item level too low
-						SystemMessage sm = new SystemMessage(SystemMessageId.CREATE_LVL_TOO_LOW_TO_REGISTER);
+						SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_CREATE_ITEM_LEVEL_IS_TOO_LOW_TO_REGISTER_THIS_RECIPE);
 						activeChar.sendPacket(sm);
 					}
 					else if (activeChar.getCommonRecipeBook().length >= activeChar.GetCommonRecipeLimit())
@@ -105,7 +105,7 @@ public class Recipes implements IItemHandler
 						activeChar.registerCommonRecipeList(recipe);
 						activeChar.saveRecipeIntoDB(recipe);
 						activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false);
-						SystemMessage sm = new SystemMessage(SystemMessageId.S1_ADDED);
+						SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_ADDED);
 						sm.addString(item.getItemName());
 						activeChar.sendPacket(sm);
 					}

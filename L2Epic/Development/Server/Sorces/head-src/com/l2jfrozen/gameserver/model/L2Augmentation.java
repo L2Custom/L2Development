@@ -144,13 +144,12 @@ public final class L2Augmentation
 		
 		// delete the augmentation from the database
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(DELETE_AUGMENTATION_BY_ITEM_OBJECT_ID);)
+			PreparedStatement statement = con.prepareStatement(DELETE_AUGMENTATION_BY_ITEM_OBJECT_ID))
 		{
-			
 			statement.setInt(1, item.getObjectId());
 			statement.executeUpdate();
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
 			LOGGER.error("Could not delete augmentation for item: " + item.getObjectId() + " from DB:", e);
 		}

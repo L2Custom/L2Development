@@ -12,6 +12,9 @@ import com.l2jfrozen.gameserver.managers.DayNightSpawnManager;
 import com.l2jfrozen.gameserver.model.L2Character;
 import com.l2jfrozen.gameserver.thread.ThreadPoolManager;
 
+/**
+ * @author ReynalDev
+ */
 public class GameTimeController
 {
 	static final Logger LOGGER = Logger.getLogger(GameTimeController.class);
@@ -51,12 +54,7 @@ public class GameTimeController
 		{
 			if (!timer.isAlive())
 			{
-				LOGGER.error("TimerThread stop with following error and will be restarted., e");
-				if (timer.error != null)
-				{
-					timer.error.printStackTrace();
-				}
-				
+				LOGGER.error("TimerThread stop with following error and will be restarted", timer.error);
 				timer = new TimerThread();
 				timer.start();
 			}

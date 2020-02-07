@@ -93,11 +93,11 @@ public class TownWar
 				
 				if (isInWar)
 				{
-					player.sendPacket(new SystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
+					player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE));
 				}
 				else
 				{
-					player.sendPacket(new SystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+					player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE));
 				}
 			}
 		}

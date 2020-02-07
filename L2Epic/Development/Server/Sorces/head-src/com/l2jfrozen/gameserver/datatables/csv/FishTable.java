@@ -48,7 +48,7 @@ public class FishTable
 		
 		try (FileReader reader = new FileReader(fileData);
 			BufferedReader buff = new BufferedReader(reader);
-			LineNumberReader lnr = new LineNumberReader(buff);)
+			LineNumberReader lnr = new LineNumberReader(buff))
 		{
 			String line = null;
 			

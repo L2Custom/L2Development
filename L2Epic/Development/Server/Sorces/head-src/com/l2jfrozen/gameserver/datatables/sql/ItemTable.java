@@ -9,8 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
 
 import org.apache.log4j.Logger;
 
@@ -44,8 +42,7 @@ import com.l2jfrozen.util.database.L2DatabaseFactory;
  */
 public class ItemTable
 {
-	private final static Logger LOGGER = Logger.getLogger(ItemTable.class);
-	private final static java.util.logging.Logger logItems = java.util.logging.Logger.getLogger("item");
+	private static final Logger LOGGER = Logger.getLogger(ItemTable.class);
 	
 	private static final Map<String, Integer> crystalTypes = new HashMap<>();
 	private static final Map<String, L2WeaponType> weaponTypes = new HashMap<>();
@@ -738,18 +735,6 @@ public class ItemTable
 			item.setCount(count);
 		}
 		
-		if (Config.LOG_ITEMS)
-		{
-			final LogRecord record = new LogRecord(Level.INFO, "CREATE:" + process);
-			record.setLoggerName("item");
-			record.setParameters(new Object[]
-			{
-				item,
-				actor,
-				reference
-			});
-			logItems.log(record);
-		}
 		return item;
 	}
 	
@@ -766,7 +751,7 @@ public class ItemTable
 	 * @param  itemId : int designating the item
 	 * @return        L2ItemInstance designating the dummy item created
 	 */
-	public L2ItemInstance createDummyItem(final int itemId)
+	public L2ItemInstance createDummyItem(int itemId)
 	{
 		final L2Item item = getTemplate(itemId);
 		
@@ -781,19 +766,9 @@ public class ItemTable
 		{
 			temp = new L2ItemInstance(0, itemId);
 		}
-		catch (final ArrayIndexOutOfBoundsException e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			// this can happen if the item templates were not initialized
-		}
-		
-		if (temp.getItem() == null)
-		{
-			LOGGER.warn("ItemTable: Item Template missing for Id: {}" + " " + itemId);
+			LOGGER.error("ItemTable: Item Template missing for ID: " + itemId, e);
 		}
 		
 		return temp;

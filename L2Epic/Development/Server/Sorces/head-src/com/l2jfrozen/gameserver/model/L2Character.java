@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.Future;
 
 import org.apache.log4j.Logger;
@@ -179,63 +179,29 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 	private double hpUpdateDecCheck = .0;
 	private double hpUpdateInterval = .0;
 	private Calculator[] calculators;
-	protected final Map<Integer, L2Skill> skills;
+	protected Map<Integer, L2Skill> skills = new ConcurrentSkipListMap<>();
 	protected final Map<Integer, L2Skill> triggeredSkills;
 	protected ChanceSkillList chanceSkills;
 	protected ForceBuff forceBuff;
 	private boolean blocked;
 	private boolean meditated;
 	
-	/**
-	 * Zone system<br>
-	 * x^2 or x*x.
-	 */
+	// Zone IDS should be x^2
 	public static final int ZONE_PVP = 1;
-	
-	/** The Constant ZONE_PEACE. */
 	public static final int ZONE_PEACE = 2;
-	
-	/** The Constant ZONE_SIEGE. */
 	public static final int ZONE_SIEGE = 4;
-	
-	/** The Constant ZONE_MOTHERTREE. */
 	public static final int ZONE_MOTHERTREE = 8;
-	
-	/** The Constant ZONE_CLANHALL. */
 	public static final int ZONE_CLANHALL = 16;
-	
-	/** The Constant ZONE_UNUSED. */
 	public static final int ZONE_UNUSED = 32;
-	
-	/** The Constant ZONE_NOLANDING. */
 	public static final int ZONE_NOLANDING = 64;
-	
-	/** The Constant ZONE_WATER. */
 	public static final int ZONE_WATER = 128;
-	
-	/** The Constant ZONE_JAIL. */
 	public static final int ZONE_JAIL = 256;
-	
-	/** The Constant ZONE_MONSTERTRACK. */
 	public static final int ZONE_MONSTERTRACK = 512;
-	
-	/** The Constant ZONE_SWAMP. */
 	public static final int ZONE_SWAMP = 1024;
-	
-	/** The Constant ZONE_NOSUMMONFRIEND. */
 	public static final int ZONE_NOSUMMONFRIEND = 2048;
-	
-	/** The Constant ZONE_OLY. */
 	public static final int ZONE_OLY = 4096;
-	
-	/** The Constant ZONE_NOHQ. */
 	public static final int ZONE_NOHQ = 8192;
-	
-	/** The Constant ZONE_DANGERAREA. */
 	public static final int ZONE_DANGERAREA = 16384;
-	
-	/** The Constant ZONE_NOSTORE. */
-	public static final int ZONE_NOSTORE = 32768;
 	
 	private int currentZones = 0;
 	private boolean advanceFlag = false;
@@ -342,9 +308,6 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		else
 		// not L2NpcInstance
 		{
-			// Initialize the ConcurrentHashMap skills to null
-			skills = new ConcurrentHashMap<>();
-			
 			// If L2Character is a L2PcInstance or a L2Summon, create the basic calculator set
 			calculators = new Calculator[Stats.NUM_STATS];
 			Formulas.getInstance().addFuncsToNewCharacter(this);
@@ -1043,7 +1006,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		{
 			if (Math.abs(getClientZ() - target.getZ()) > 200)
 			{
-				sendPacket(new SystemMessage(SystemMessageId.CANT_SEE_TARGET));
+				sendPacket(new SystemMessage(SystemMessageId.CANNOT_SEE_TARGET));
 				getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -1053,7 +1016,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		// GeoData Los Check here (or dz > 1000)
 		if (!GeoData.getInstance().canSeeTarget(this, target))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.CANT_SEE_TARGET));
+			sendPacket(new SystemMessage(SystemMessageId.CANNOT_SEE_TARGET));
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -1069,7 +1032,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 				getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				
 				sendPacket(ActionFailed.STATIC_PACKET);
-				sendPacket(new SystemMessage(SystemMessageId.NOT_ENOUGH_ARROWS));
+				sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_RUN_OUT_OF_ARROWS));
 				return;
 			}
 			
@@ -1135,16 +1098,14 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		// Add the L2PcInstance to knownObjects and knownPlayer of the target
 		target.getKnownList().addKnownObject(this);
 		
-		final int timeAtk = calculateTimeBetweenAttacks(target, weaponItem);
-		
 		// Recharge any active auto soulshot tasks for player (or player's summon if one exists).
 		if (this instanceof L2PcInstance)
 		{
-			((L2PcInstance) this).rechargeAutoSoulShot(true, false, false, timeAtk);
+			((L2PcInstance) this).rechargeAutoSoulShot(true, false, false);
 		}
 		else if (this instanceof L2Summon)
 		{
-			((L2Summon) this).getOwner().rechargeAutoSoulShot(true, false, true, timeAtk);
+			((L2Summon) this).getOwner().rechargeAutoSoulShot(true, false, true);
 		}
 		
 		// Verify if soulshots are charged.
@@ -1161,6 +1122,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		
 		// Get the Attack Speed of the L2Character (delay (in milliseconds) before next attack)
 		// the hit is calculated to happen halfway to the animation - might need further tuning e.g. in bow case
+		final int timeAtk = calculateTimeBetweenAttacks(target, weaponItem);
 		final int timeToHit = timeAtk / 2;
 		attackEndTime = GameTimeController.getGameTicks();
 		attackEndTime += timeAtk / GameTimeController.MILLIS_IN_TICK;
@@ -1230,7 +1192,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		if (!hitted)
 		{
 			// MAJAX fix
-			sendPacket(new SystemMessage(SystemMessageId.MISSED_TARGET));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_MISSED));
 			// Abort the attack of the L2Character and send Server->Client ActionFailed packet
 			abortAttack();
 		}
@@ -1363,7 +1325,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		if (this instanceof L2PcInstance)
 		{
 			// Send a system message
-			sendPacket(new SystemMessage(SystemMessageId.GETTING_READY_TO_SHOOT_AN_ARROW));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_CAREFULLY_NOCK_AN_ARROW));
 			
 			// Send a Server->Client packet SetupGauge
 			SetupGauge sg = new SetupGauge(SetupGauge.RED, sAtk + reuse);
@@ -1719,7 +1681,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 			}
 			if (!canCast)
 			{
-				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 				sm.addSkillName(skill.getId());
 				sendPacket(sm);
 				return;
@@ -1727,17 +1689,15 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		}
 		
 		// Recharge AutoSoulShot
-		
-		final int atkTime = Formulas.getInstance().calcMAtkSpd(activeChar, skill, skill.getHitTime());
 		if (skill.useSoulShot())
 		{
 			if (activeChar instanceof L2PcInstance)
 			{
-				((L2PcInstance) activeChar).rechargeAutoSoulShot(true, false, false, atkTime);
+				((L2PcInstance) activeChar).rechargeAutoSoulShot(true, false, false);
 			}
 			else if (this instanceof L2Summon)
 			{
-				((L2Summon) activeChar).getOwner().rechargeAutoSoulShot(true, false, true, atkTime);
+				((L2Summon) activeChar).getOwner().rechargeAutoSoulShot(true, false, true);
 			}
 		}
 		
@@ -1936,7 +1896,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		{
 			if (skill.isPotion())
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.USE_S1_);
+				SystemMessage sm = new SystemMessage(SystemMessageId.USE_S1);
 				if (magicId == 2005)
 				{
 					sm.addItemName(728);
@@ -1962,7 +1922,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 			}
 			else
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.USE_S1);
+				SystemMessage sm = new SystemMessage(SystemMessageId.YOU_USE_S1);
 				if (magicId == 2005)
 				{
 					sm.addItemName(728);
@@ -1994,7 +1954,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		}
 		
 		// Skill reuse check
-		if (reuseDelay > 30000)
+		if (reuseDelay > 1600) // 1,600 milisecods = 1.6 seconds
 		{
 			addTimeStamp(skill, reuseDelay);
 		}
@@ -6816,7 +6776,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		{
 			if (target instanceof L2PcInstance)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.AVOIDED_S1S_ATTACK);
+				SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_AVOIDED_S1S_ATTACK);
 				
 				if (this instanceof L2Summon)
 				{
@@ -7011,7 +6971,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 				// Check if shield is efficient
 				if (shld)
 				{
-					enemy.sendPacket(new SystemMessage(SystemMessageId.SHIELD_DEFENCE_SUCCESSFULL));
+					enemy.sendPacket(new SystemMessage(SystemMessageId.YOUR_SHIELD_DEFENSE_HAS_SUCCEDED));
 					// else if (!miss && damage < 1)
 					// enemy.sendMessage("You hit the target's armor.");
 				}
@@ -7172,7 +7132,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 				sendPacket(ActionFailed.STATIC_PACKET);
 				
 				// Send a system message
-				sendPacket(new SystemMessage(SystemMessageId.ATTACK_FAILED));
+				sendPacket(new SystemMessage(SystemMessageId.YOUR_ATTACK_HAS_FAILED));
 			}
 		}
 	}
@@ -7192,7 +7152,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 			if (this instanceof L2PcInstance)
 			{
 				// Send a system message
-				sendPacket(new SystemMessage(SystemMessageId.CASTING_INTERRUPTED));
+				sendPacket(new SystemMessage(SystemMessageId.YOU_CASTING_HAS_BEEN_INTERRUPTED));
 			}
 		}
 	}
@@ -7235,7 +7195,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		if (isInsidePeaceZone(player))
 		{
 			// If L2Character or target is in a peace zone, send a system message TARGET_IN_PEACEZONE a Server->Client packet ActionFailed
-			player.sendPacket(new SystemMessage(SystemMessageId.TARGET_IN_PEACEZONE));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_MAY_NOT_ATTACK_THIS_TARGET_IN_PEACEFUL_ZONE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -7273,7 +7233,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		// GeoData Los Check or dz > 1000
 		if (!GeoData.getInstance().canSeeTarget(player, this))
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.CANT_SEE_TARGET));
+			player.sendPacket(new SystemMessage(SystemMessageId.CANNOT_SEE_TARGET));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -8176,7 +8136,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 				{
 					for (int i = 0; i < skipped; i++)
 					{
-						sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_SEE_TARGET));
+						sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_SEE_TARGET));
 					}
 					
 				}
@@ -8332,7 +8292,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 						
 						if (skill.getSkillType() == SkillType.BUFF || skill.getSkillType() == SkillType.SEED)
 						{
-							SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+							SystemMessage smsg = new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU);
 							smsg.addString(skill.getName());
 							target.sendPacket(smsg);
 							smsg = null;
@@ -8738,7 +8698,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 					activeChar.sendPacket(new SystemMessage(SystemMessageId.FISHING_POLE_NOT_EQUIPPED));
 				}
 				
-				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 				sm.addString(skill.getName());
 				activeChar.sendPacket(sm);
 				return true;
@@ -8746,7 +8706,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 			
 			if ((skill.getSkillType() == SkillType.FISHING || skill.getSkillType() == SkillType.REELING || skill.getSkillType() == SkillType.PUMPING) && activeChar.getActiveWeaponItem() == null)
 			{
-				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 				sm.addString(skill.getName());
 				activeChar.sendPacket(sm);
 				return true;
@@ -8765,7 +8725,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 					activeChar.sendPacket(new SystemMessage(SystemMessageId.CAN_USE_REELING_ONLY_WHILE_FISHING));
 				}
 				
-				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 				sm.addString(skill.getName());
 				activeChar.sendPacket(sm);
 				return true;

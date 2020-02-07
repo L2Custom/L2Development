@@ -25,7 +25,7 @@ public class CompactionIDFactory extends IdFactory
 		curOID = FIRST_OID;
 		freeSize = 0;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();)
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			final int[] tmp_obj_ids = extractUsedObjectIDTable();
 			

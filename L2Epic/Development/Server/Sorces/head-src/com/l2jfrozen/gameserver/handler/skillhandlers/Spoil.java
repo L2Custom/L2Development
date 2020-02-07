@@ -47,7 +47,7 @@ public class Spoil implements ISkillHandler
 			
 			if (target.isSpoil())
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.ALREDAY_SPOILED));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.IT_HAS_ALREDAY_BEEN_SPOILED));
 				continue;
 			}
 			
@@ -61,11 +61,11 @@ public class Spoil implements ISkillHandler
 				{
 					target.setSpoil(true);
 					target.setIsSpoiledBy(activeChar.getObjectId());
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.SPOIL_SUCCESS));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_SPOIL_CONDITION_HAS_BEEN_ACTIVATED));
 				}
 				else
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_WAS_UNAFFECTED_BY_S2);
+					SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_RESISTED_YOUR_S2);
 					sm.addString(target.getName());
 					sm.addSkillName(skill.getDisplayId());
 					activeChar.sendPacket(sm);

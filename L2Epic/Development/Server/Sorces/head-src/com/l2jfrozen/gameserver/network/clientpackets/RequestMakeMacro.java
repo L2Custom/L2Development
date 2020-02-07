@@ -79,7 +79,7 @@ public final class RequestMakeMacro extends L2GameClientPacket
 		if (commandsLenght > 255)
 		{
 			// Invalid macro. Refer to the Help file for instructions.
-			player.sendPacket(new SystemMessage(SystemMessageId.INVALID_MACRO));
+			player.sendPacket(new SystemMessage(SystemMessageId.INVALID_MACRO_REFER_TO_HELP_FILE_FOR_INSTRUCTIONS));
 			return;
 		}
 		
@@ -93,14 +93,14 @@ public final class RequestMakeMacro extends L2GameClientPacket
 		if (macro.name.length() == 0)
 		{
 			// Enter the name of the macro.
-			player.sendPacket(new SystemMessage(SystemMessageId.ENTER_THE_MACRO_NAME));
+			player.sendPacket(new SystemMessage(SystemMessageId.ENTER_THE_NAME_OF_THE_MACRO));
 			return;
 		}
 		
 		if (macro.descr.length() > 32)
 		{
 			// Macro descriptions may contain up to 32 characters.
-			player.sendPacket(new SystemMessage(SystemMessageId.MACRO_DESCRIPTION_MAX_32_CHARS));
+			player.sendPacket(new SystemMessage(SystemMessageId.MACRO_DESCRIPTIONS_MAY_CONTAIN_UP_TO_32_CHARACTERS));
 			return;
 		}
 		
@@ -112,7 +112,7 @@ public final class RequestMakeMacro extends L2GameClientPacket
 			{
 				
 				// Invalid macro. Refer to the Help file for instructions.
-				player.sendPacket(new SystemMessage(SystemMessageId.INVALID_MACRO));
+				player.sendPacket(new SystemMessage(SystemMessageId.INVALID_MACRO_REFER_TO_HELP_FILE_FOR_INSTRUCTIONS));
 				player.sendMessage("SecurityCheck: not more then 2x ',' or 2x ';' in the same command");
 				return;
 				

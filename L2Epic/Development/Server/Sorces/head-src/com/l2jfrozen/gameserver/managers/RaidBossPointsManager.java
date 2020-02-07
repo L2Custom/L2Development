@@ -67,7 +67,7 @@ public class RaidBossPointsManager
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("RaidPointsManager.init : Couldnt load raid points " + e.getMessage());
+			LOGGER.error("RaidPointsManager.init : Couldnt load raid points", e);
 		}
 	}
 	

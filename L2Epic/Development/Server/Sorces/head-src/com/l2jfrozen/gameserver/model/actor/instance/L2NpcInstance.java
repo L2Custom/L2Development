@@ -14,6 +14,7 @@ import com.l2jfrozen.gameserver.datatables.SkillTable;
 import com.l2jfrozen.gameserver.datatables.sql.ClanTable;
 import com.l2jfrozen.gameserver.datatables.sql.ItemTable;
 import com.l2jfrozen.gameserver.datatables.sql.SpawnTable;
+import com.l2jfrozen.gameserver.datatables.xml.L2Multisell;
 import com.l2jfrozen.gameserver.datatables.xml.NewbieGuideBuffTable;
 import com.l2jfrozen.gameserver.idfactory.IdFactory;
 import com.l2jfrozen.gameserver.managers.CastleManager;
@@ -40,7 +41,6 @@ import com.l2jfrozen.gameserver.model.entity.sevensigns.SevenSignsFestival;
 import com.l2jfrozen.gameserver.model.entity.siege.Castle;
 import com.l2jfrozen.gameserver.model.entity.siege.Fort;
 import com.l2jfrozen.gameserver.model.holder.NewbieGuideBuffHolder;
-import com.l2jfrozen.gameserver.model.multisell.L2Multisell;
 import com.l2jfrozen.gameserver.model.quest.Quest;
 import com.l2jfrozen.gameserver.model.quest.QuestState;
 import com.l2jfrozen.gameserver.model.scripts.L2RBManager;
@@ -2084,13 +2084,13 @@ public class L2NpcInstance extends L2Character
 			if (!Lottery.getInstance().isStarted())
 			{
 				// tickets can't be sold
-				player.sendPacket(new SystemMessage(SystemMessageId.NO_LOTTERY_TICKETS_CURRENT_SOLD));
+				player.sendPacket(new SystemMessage(SystemMessageId.LOTTERY_TICKETS_ARE_NOT_CURRENTLY_BEING_SOLD));
 				return;
 			}
 			if (!Lottery.getInstance().isSellableTickets())
 			{
 				// tickets can't be sold
-				player.sendPacket(new SystemMessage(SystemMessageId.NO_LOTTERY_TICKETS_AVAILABLE));
+				player.sendPacket(new SystemMessage(SystemMessageId.TICKETS_FOR_THE_CURRENT_LOTTERY_ARE_NO_LONGER_AVAILABLE));
 				return;
 			}
 			
@@ -2157,13 +2157,13 @@ public class L2NpcInstance extends L2Character
 			if (!Lottery.getInstance().isStarted())
 			{
 				// tickets can't be sold
-				player.sendPacket(new SystemMessage(SystemMessageId.NO_LOTTERY_TICKETS_CURRENT_SOLD));
+				player.sendPacket(new SystemMessage(SystemMessageId.LOTTERY_TICKETS_ARE_NOT_CURRENTLY_BEING_SOLD));
 				return;
 			}
 			if (!Lottery.getInstance().isSellableTickets())
 			{
 				// tickets can't be sold
-				player.sendPacket(new SystemMessage(SystemMessageId.NO_LOTTERY_TICKETS_AVAILABLE));
+				player.sendPacket(new SystemMessage(SystemMessageId.TICKETS_FOR_THE_CURRENT_LOTTERY_ARE_NO_LONGER_AVAILABLE));
 				return;
 			}
 			
@@ -2190,7 +2190,7 @@ public class L2NpcInstance extends L2Character
 			}
 			if (player.getAdena() < price)
 			{
-				sm = new SystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA);
+				sm = new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
 				player.sendPacket(sm);
 				return;
 			}
@@ -2200,7 +2200,7 @@ public class L2NpcInstance extends L2Character
 			}
 			Lottery.getInstance().increasePrize(price);
 			
-			sm = new SystemMessage(SystemMessageId.ACQUIRED);
+			sm = new SystemMessage(SystemMessageId.ACQUIRED_PLUS_S1_S2);
 			sm.addNumber(lotonumber);
 			sm.addItemName(4442);
 			player.sendPacket(sm);
@@ -2290,7 +2290,7 @@ public class L2NpcInstance extends L2Character
 			}
 			final int[] check = Lottery.getInstance().checkTicket(item);
 			
-			sm = new SystemMessage(SystemMessageId.S2_S1_DISSAPEARED_ITEM);
+			sm = new SystemMessage(SystemMessageId.S2_S1_HAS_DISAPPEARED);
 			sm.addItemName(4442);
 			player.sendPacket(sm);
 			sm = null;

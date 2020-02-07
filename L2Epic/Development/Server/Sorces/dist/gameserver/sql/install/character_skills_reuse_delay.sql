@@ -1,8 +1,8 @@
 -- ----------------------------
--- Table structure for character_skills_reuse_delay
+-- Table structure for character_skill_reuse_delays
 -- ----------------------------
-DROP TABLE IF EXISTS `character_skills_reuse_delay`;
-CREATE TABLE `character_skills_reuse_delay` (
+DROP TABLE IF EXISTS `character_skill_reuse_delays`;
+CREATE TABLE `character_skill_reuse_delays` (
   `char_obj_id` int(11) NOT NULL,
   `skill_id` int(11) NOT NULL,
   `skill_level` int(11) DEFAULT NULL,

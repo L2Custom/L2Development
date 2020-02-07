@@ -186,12 +186,12 @@ public class L2TeleporterInstance extends L2FolkInstance
 			// you cannot teleport to village that is in siege
 			if (!SiegeManager.getInstance().is_teleport_to_siege_allowed() && SiegeManager.getInstance().getSiege(teleportLocation.getLocX(), teleportLocation.getLocY(), teleportLocation.getLocZ()) != null && !player.isNoble())
 			{
-				player.sendPacket(new SystemMessage(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE));
+				player.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_TELEPORT_TO_A_VILLAGE_THAT_IS_IN_A_SIEGE));
 				return;
 			}
 			else if (!SiegeManager.getInstance().is_teleport_to_siege_town_allowed() && TownManager.getInstance().townHasCastleInSiege(teleportLocation.getLocX(), teleportLocation.getLocY()) && !player.isNoble())
 			{
-				player.sendPacket(new SystemMessage(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE));
+				player.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_TELEPORT_TO_A_VILLAGE_THAT_IS_IN_A_SIEGE));
 				return;
 			}
 			else if (!player.isGM() && !Config.FLAGED_PLAYER_CAN_USE_GK && player.getPvpFlag() > 0)

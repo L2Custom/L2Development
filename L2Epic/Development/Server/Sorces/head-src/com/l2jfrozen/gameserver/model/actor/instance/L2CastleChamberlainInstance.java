@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 import com.l2jfrozen.Config;
 import com.l2jfrozen.gameserver.ai.CtrlIntention;
 import com.l2jfrozen.gameserver.controllers.TradeController;
+import com.l2jfrozen.gameserver.datatables.CastleCircletTable;
 import com.l2jfrozen.gameserver.datatables.sql.ClanTable;
 import com.l2jfrozen.gameserver.managers.CastleManager;
 import com.l2jfrozen.gameserver.managers.CastleManorManager;
@@ -236,10 +237,7 @@ public class L2CastleChamberlainInstance extends L2FolkInstance
 			{
 				if ((player.getClanPrivileges() & L2Clan.CP_CS_USE_FUNCTIONS) == L2Clan.CP_CS_USE_FUNCTIONS)
 				{
-					if (val == "")
-					{
-						return;
-					}
+					val = String.valueOf(getNpcId());
 					
 					player.tempInvetoryDisable();
 					
@@ -286,6 +284,34 @@ public class L2CastleChamberlainInstance extends L2FolkInstance
 					return;
 				}
 			}
+			else if(actualCommand.equalsIgnoreCase("castle_lord_crown"))
+			{
+				if(player.isClanLeader())
+				{
+					if(player.getInventory().getItemByItemId(CastleCircletTable.THE_LORDS_CROWN) == null && player.getWarehouse().getItemByItemId(CastleCircletTable.THE_LORDS_CROWN) == null)
+					{
+						player.addItem("Castle Lord's Crown", CastleCircletTable.THE_LORDS_CROWN, 1, this, true);
+						
+						NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+						html.setFile("data/html/chamberlain/chamberlain-leader-got-crown.htm");
+						html.replace("%player_name%", player.getName());
+						html.replace("%castle_name%", getCastle().getName());
+						player.sendPacket(html);
+					}
+					else
+					{
+						NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+						html.setFile("data/html/chamberlain/chamberlain-leader-has-crown.htm");
+						player.sendPacket(html);
+					}
+				}
+				else
+				{
+					NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+					html.setFile("data/html/chamberlain/chamberlain-noprivs.htm");
+					player.sendPacket(html);
+				}
+			}
 			else if (actualCommand.equalsIgnoreCase("manage_vault"))
 			{
 				if ((player.getClanPrivileges() & L2Clan.CP_CS_TAXES) == L2Clan.CP_CS_TAXES)
@@ -313,7 +339,7 @@ public class L2CastleChamberlainInstance extends L2FolkInstance
 							}
 							else
 							{
-								sendPacket(new SystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
+								sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA));
 							}
 						}
 					}
@@ -597,7 +623,6 @@ public class L2CastleChamberlainInstance extends L2FolkInstance
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		html.setFile(filename);
 		html.replace("%objectId%", String.valueOf(getObjectId()));
-		html.replace("%npcId%", String.valueOf(getNpcId()));
 		html.replace("%npcname%", getName());
 		player.sendPacket(html);
 		filename = null;

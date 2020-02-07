@@ -6,8 +6,8 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import com.l2jfrozen.Config;
+import com.l2jfrozen.gameserver.datatables.xml.L2Multisell;
 import com.l2jfrozen.gameserver.model.entity.olympiad.Olympiad;
-import com.l2jfrozen.gameserver.model.multisell.L2Multisell;
 import com.l2jfrozen.gameserver.network.SystemMessageId;
 import com.l2jfrozen.gameserver.network.serverpackets.ExHeroList;
 import com.l2jfrozen.gameserver.network.serverpackets.InventoryUpdate;
@@ -110,7 +110,7 @@ public class L2OlympiadManagerInstance extends L2FolkInstance
 						iu.addModifiedItem(item);
 						player.sendPacket(iu);
 						
-						final SystemMessage sm = new SystemMessage(SystemMessageId.EARNED_ITEM);
+						final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1);
 						sm.addNumber(passes);
 						sm.addItemName(item.getItemId());
 						player.sendPacket(sm);

@@ -249,7 +249,7 @@ public class RegionBBSManager extends BaseBBSManager
 					}
 					else
 					{
-						SystemMessage sm = new SystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE);
+						SystemMessage sm = new SystemMessage(SystemMessageId.THAT_PERSON_IS_IN_MESSAGE_REFUSAL_MODE);
 						activeChar.sendPacket(sm);
 						sm = null;
 						parsecmd("_bbsloc;playerinfo;" + receiver.getName(), activeChar);
@@ -257,7 +257,7 @@ public class RegionBBSManager extends BaseBBSManager
 				}
 				else
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_ONLINE);
+					SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_CURRENTLY_LOGGED_IN);
 					sm.addString(receiver.getName());
 					activeChar.sendPacket(sm);
 					sm = null;

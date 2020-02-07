@@ -84,7 +84,7 @@ public class ScrollOfEscape implements IItemHandler
 		// Check to see if player is sitting
 		if (activeChar.isSitting())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_MOVE_SITTING));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_MOVE_WHILE_SITTING));
 			return;
 		}
 		
@@ -134,7 +134,7 @@ public class ScrollOfEscape implements IItemHandler
 		// Check if this is a blessed scroll, if it is then shorten the cast time.
 		final int itemId = item.getItemId();
 		
-		final SystemMessage sm3 = new SystemMessage(SystemMessageId.USE_S1);
+		final SystemMessage sm3 = new SystemMessage(SystemMessageId.YOU_USE_S1);
 		sm3.addItemName(itemId);
 		activeChar.sendPacket(sm3);
 		
@@ -162,7 +162,7 @@ public class ScrollOfEscape implements IItemHandler
 		// End SoE Animation section
 		activeChar.setTarget(null);
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.S1_DISAPPEARED);
+		SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_DISAPPEARED);
 		sm.addItemName(itemId);
 		activeChar.sendPacket(sm);
 		sm = null;
@@ -232,7 +232,7 @@ public class ScrollOfEscape implements IItemHandler
 				}
 				else if (itemId == 5858) // do nothing
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.CLAN_HAS_NO_CLAN_HALL));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_CLAN_DOES_NOT_OWN_A_CLAN_HALL));
 					return;
 				}
 				else if (activeChar.getKarma() > 0 && Config.ALT_KARMA_TELEPORT_TO_FLORAN)

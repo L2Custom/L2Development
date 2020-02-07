@@ -30,7 +30,7 @@ public abstract class IdFactory
 		"UPDATE character_shortcuts   SET shortcut_id = ? WHERE shortcut_id = ? AND type = 1", // items
 		"UPDATE character_macroses    SET char_obj_id = ? WHERE char_obj_id = ?",
 		"UPDATE character_skills      SET char_obj_id = ? WHERE char_obj_id = ?",
-		"UPDATE character_skills_save SET char_obj_id = ? WHERE char_obj_id = ?",
+		"UPDATE character_skill_effects SET char_obj_id = ? WHERE char_obj_id = ?",
 		"UPDATE character_subclasses  SET char_obj_id = ? WHERE char_obj_id = ?",
 		"UPDATE characters            SET obj_Id = ?      WHERE obj_Id = ?",
 		"UPDATE characters            SET clanid = ?      WHERE clanid = ?",
@@ -58,7 +58,7 @@ public abstract class IdFactory
 		"SELECT char_obj_id FROM character_shortcuts   WHERE char_obj_id >= ? AND char_obj_id < ?",
 		"SELECT char_obj_id FROM character_macroses    WHERE char_obj_id >= ? AND char_obj_id < ?",
 		"SELECT char_obj_id FROM character_skills      WHERE char_obj_id >= ? AND char_obj_id < ?",
-		"SELECT char_obj_id FROM character_skills_save WHERE char_obj_id >= ? AND char_obj_id < ?",
+		"SELECT char_obj_id FROM character_skill_effects WHERE char_obj_id >= ? AND char_obj_id < ?",
 		"SELECT char_obj_id FROM character_subclasses  WHERE char_obj_id >= ? AND char_obj_id < ?",
 		"SELECT obj_Id      FROM characters            WHERE obj_Id >= ?      AND obj_Id < ?",
 		"SELECT clanid      FROM characters            WHERE clanid >= ?      AND clanid < ?",
@@ -101,7 +101,7 @@ public abstract class IdFactory
 	
 	private void cleanUpDB()
 	{
-		try (Connection conn = L2DatabaseFactory.getInstance().getConnection();)
+		try (Connection conn = L2DatabaseFactory.getInstance().getConnection())
 		{
 			int cleanCount = 0;
 			
@@ -114,7 +114,7 @@ public abstract class IdFactory
 			cleanCount += stmt.executeUpdate("DELETE FROM character_recipes WHERE character_recipes.char_id NOT IN (SELECT obj_Id FROM characters)");
 			cleanCount += stmt.executeUpdate("DELETE FROM character_shortcuts WHERE character_shortcuts.char_obj_id NOT IN (SELECT obj_Id FROM characters)");
 			cleanCount += stmt.executeUpdate("DELETE FROM character_skills WHERE character_skills.char_obj_id NOT IN (SELECT obj_Id FROM characters)");
-			cleanCount += stmt.executeUpdate("DELETE FROM character_skills_save WHERE character_skills_save.char_obj_id NOT IN (SELECT obj_Id FROM characters)");
+			cleanCount += stmt.executeUpdate("DELETE FROM character_skill_effects WHERE character_skill_effects.char_obj_id NOT IN (SELECT obj_Id FROM characters)");
 			cleanCount += stmt.executeUpdate("DELETE FROM character_subclasses WHERE character_subclasses.char_obj_id NOT IN (SELECT obj_Id FROM characters)");
 			cleanCount += stmt.executeUpdate("DELETE FROM character_seven_signs WHERE character_seven_signs.char_obj_id NOT IN (SELECT obj_Id FROM characters)");
 			cleanCount += stmt.executeUpdate("DELETE FROM cursed_weapons WHERE cursed_weapons.playerId NOT IN (SELECT obj_Id FROM characters)");
@@ -158,7 +158,7 @@ public abstract class IdFactory
 	 */
 	protected int[] extractUsedObjectIDTable() throws SQLException
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();)
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			// create a temporary table
 			final Statement s = con.createStatement();

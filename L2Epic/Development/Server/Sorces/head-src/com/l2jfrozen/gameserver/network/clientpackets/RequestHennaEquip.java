@@ -71,7 +71,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 		
 		if (!cheater && count >= temp.getAmountDyeRequire() && activeChar.getAdena() >= temp.getPrice() && activeChar.addHenna(temp))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.SYMBOL_ADDED));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_SYMBOL_HAS_BEEN_ADDED));
 			
 			// HennaInfo hi = new HennaInfo(temp,activeChar);
 			// activeChar.sendPacket(hi);
@@ -91,7 +91,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_DRAW_SYMBOL));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_SYMBOL_CANNOT_BE_DRAWN));
 			
 			if (!activeChar.isGM() && cheater)
 			{

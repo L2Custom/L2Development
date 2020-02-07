@@ -6,7 +6,6 @@ import java.io.LineNumberReader;
 import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -15,10 +14,13 @@ import org.apache.log4j.PropertyConfigurator;
 import com.l2jfrozen.Config;
 import com.l2jfrozen.FService;
 import com.l2jfrozen.ServerType;
-import com.l2jfrozen.gameserver.datatables.GameServerTable;
 import com.l2jfrozen.gameserver.thread.LoginServerThread;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
+/**
+ * @author ReynalDev
+ */
 public class GameServerRegister
 {
 	private static final Logger LOGGER = Logger.getLogger(GameServerRegister.class);
@@ -26,23 +28,24 @@ public class GameServerRegister
 	private static String choice;
 	private static boolean choiceOk;
 	
-	public static void main(final String[] args) throws IOException
+	public static void main(String[] args) throws IOException
 	{
 		PropertyConfigurator.configure(FService.LOG4J_CONF_FILE);
 		ServerType.serverMode = ServerType.MODE_LOGINSERVER;
 		Config.load();
-		final LineNumberReader in = new LineNumberReader(new InputStreamReader(System.in));
+		
+		LineNumberReader in = new LineNumberReader(new InputStreamReader(System.in));
 		try
 		{
 			GameServerTable.load();
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.info("FATAL: Failed loading gameservers table. Reason: ", e);
+			LOGGER.error("Failed loading gameservers table in loginserver database", e);
 			System.exit(1);
 		}
+		
 		final GameServerTable gameServerTable = GameServerTable.getInstance();
-		LOGGER.info("Welcome to L2JFrozen GameServer Regitering");
 		LOGGER.info("Enter The id of the server you want to register");
 		LOGGER.info("Type 'help' to get a list of ids.");
 		LOGGER.info("Type 'clean' to unregister all currently registered gameservers on this LoginServer.");
@@ -136,7 +139,7 @@ public class GameServerRegister
 		{
 			statement.executeUpdate();
 		}
-		catch (final SQLException e)
+		catch (Exception e)
 		{
 			LOGGER.error("GameServerRegister.cleanRegisteredGameServersFromDB : Could not delete from gameservers table", e);
 		}

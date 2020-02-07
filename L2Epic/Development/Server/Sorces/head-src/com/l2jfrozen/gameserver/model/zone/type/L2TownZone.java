@@ -106,7 +106,7 @@ public class L2TownZone extends L2ZoneType
 			
 			if (character.isPlayer())
 			{
-				character.sendPacket(new SystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
+				character.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE));
 			}
 		}
 		else
@@ -129,7 +129,7 @@ public class L2TownZone extends L2ZoneType
 			
 			if (character.isPlayer())
 			{
-				character.sendPacket(new SystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+				character.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE));
 			}
 		}
 		else

@@ -756,7 +756,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 			// LOGGER.warn("AttackableAI: Attack target is NULL.");
 			if (Config.ENABLE_ALL_EXCEPTIONS)
 			{
-				e.printStackTrace();
+				LOGGER.error("Attack target is NULL", e);
 			}
 			
 			setIntention(AI_INTENTION_ACTIVE);

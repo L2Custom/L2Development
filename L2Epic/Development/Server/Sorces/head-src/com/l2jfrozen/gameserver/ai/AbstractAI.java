@@ -8,7 +8,6 @@ import java.util.concurrent.Future;
 
 import org.apache.log4j.Logger;
 
-import com.l2jfrozen.Config;
 import com.l2jfrozen.gameserver.controllers.GameTimeController;
 import com.l2jfrozen.gameserver.model.L2Attackable;
 import com.l2jfrozen.gameserver.model.L2Character;
@@ -87,14 +86,9 @@ abstract class AbstractAI implements Ctrl
 					actor.broadcastPacket(new MoveToPawn(actor, follow, range));
 				}
 			}
-			catch (final Throwable t)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					t.printStackTrace();
-				}
-				
-				LOGGER.warn("", t);
+				LOGGER.error("Runnable FollowTask: ", e);
 			}
 		}
 	}

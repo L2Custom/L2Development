@@ -44,7 +44,7 @@ public class TerritoryTable
 		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(SELECT_TERRITORIES);
-			ResultSet rset = statement.executeQuery();)
+			ResultSet rset = statement.executeQuery())
 		{
 			while (rset.next())
 			{

@@ -10,8 +10,8 @@ import com.l2jfrozen.gameserver.model.L2World;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * This class handles following admin commands: - recallparty - recallclan - recallally
  * @author Yamaneko
+ * @author ReynalDev
  */
 public class AdminMassRecall implements IAdminCommandHandler
 {
@@ -39,24 +39,10 @@ public class AdminMassRecall implements IAdminCommandHandler
 					return true;
 				}
 				
-				val = null;
-				L2PcInstance[] m = clan.getOnlineMembers("");
-				
-				for (final L2PcInstance element : m)
-				{
-					Teleport(element, activeChar.getX(), activeChar.getY(), activeChar.getZ(), "Admin is teleporting you");
-				}
-				
-				clan = null;
-				m = null;
+				clan.getOnlineMembers().forEach(member -> teleport(member, activeChar.getX(), activeChar.getY(), activeChar.getZ(), "Admin is teleporting you"));
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
 				activeChar.sendMessage("Error in recallclan command.");
 			}
 		}
@@ -78,35 +64,18 @@ public class AdminMassRecall implements IAdminCommandHandler
 				if (ally == 0)
 				{
 					
-					L2PcInstance[] m = clan.getOnlineMembers("");
-					
-					for (final L2PcInstance element : m)
-					{
-						Teleport(element, activeChar.getX(), activeChar.getY(), activeChar.getZ(), "Admin is teleporting you");
-					}
-					
-					m = null;
+					clan.getOnlineMembers().forEach(member -> teleport(member, activeChar.getX(), activeChar.getY(), activeChar.getZ(), "Admin is teleporting you"));
 				}
 				else
 				{
-					for (final L2Clan aclan : ClanTable.getInstance().getClans())
+					for (L2Clan aclan : ClanTable.getInstance().getClans())
 					{
 						if (aclan.getAllyId() == ally)
 						{
-							L2PcInstance[] m = aclan.getOnlineMembers("");
-							
-							for (final L2PcInstance element : m)
-							{
-								Teleport(element, activeChar.getX(), activeChar.getY(), activeChar.getZ(), "Admin is teleporting you");
-							}
-							
-							m = null;
+							aclan.getOnlineMembers().forEach(member -> teleport(member, activeChar.getX(), activeChar.getY(), activeChar.getZ(), "Admin is teleporting you"));
 						}
 					}
 				}
-				
-				clan = null;
-				val = null;
 			}
 			catch (final Exception e)
 			{
@@ -141,7 +110,7 @@ public class AdminMassRecall implements IAdminCommandHandler
 				
 				for (final L2PcInstance ppl : p.getPartyMembers())
 				{
-					Teleport(ppl, activeChar.getX(), activeChar.getY(), activeChar.getZ(), "Admin is teleporting you");
+					teleport(ppl, activeChar.getX(), activeChar.getY(), activeChar.getZ(), "Admin is teleporting you");
 				}
 				
 				p = null;
@@ -162,7 +131,7 @@ public class AdminMassRecall implements IAdminCommandHandler
 		return true;
 	}
 	
-	private void Teleport(final L2PcInstance player, final int X, final int Y, final int Z, final String Message)
+	private void teleport(final L2PcInstance player, final int X, final int Y, final int Z, final String Message)
 	{
 		player.sendMessage(Message);
 		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);

@@ -121,13 +121,13 @@ public class Blow implements ISkillHandler
 					{
 						// skill.getEffects(activeChar, target, new Env(shld, false, false, false));
 						skill.getEffects(activeChar, target, ss, sps, bss);
-						final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+						final SystemMessage sm = new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU);
 						sm.addSkillName(skill);
 						target.sendPacket(sm);
 					}
 					else
 					{
-						final SystemMessage sm = new SystemMessage(SystemMessageId.ATTACK_FAILED);
+						final SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 						sm.addSkillName(skill);
 						activeChar.sendPacket(sm);
 						return;
@@ -232,7 +232,7 @@ public class Blow implements ISkillHandler
 								player.setCurrentHp(player.getCurrentHp() - damage);
 							}
 						}
-						final SystemMessage smsg = new SystemMessage(SystemMessageId.S1_HIT_YOU_S2_DMG);
+						final SystemMessage smsg = new SystemMessage(SystemMessageId.S1_HIT_YOU_FOR_S2_DAMAGE);
 						smsg.addString(activeChar.getName());
 						smsg.addNumber((int) damage);
 						player.sendPacket(smsg);
@@ -284,13 +284,13 @@ public class Blow implements ISkillHandler
 				{
 					if (target instanceof L2PcInstance)
 					{
-						final SystemMessage sm = new SystemMessage(SystemMessageId.AVOIDED_S1S_ATTACK);
+						final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_AVOIDED_S1S_ATTACK);
 						sm.addString(activeChar.getName());
 						((L2PcInstance) target).sendPacket(sm);
 					}
 				}
 				
-				final SystemMessage sm = new SystemMessage(SystemMessageId.ATTACK_FAILED);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 				sm.addSkillName(skill);
 				activeChar.sendPacket(sm);
 				return;

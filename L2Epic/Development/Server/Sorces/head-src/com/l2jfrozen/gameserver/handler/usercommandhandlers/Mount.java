@@ -38,14 +38,14 @@ public class Mount implements IUserCommandHandler
 			if (activeChar.isDead())
 			{
 				// A strider cannot be ridden when player is dead.
-				SystemMessage msg = new SystemMessage(SystemMessageId.STRIDER_CANT_BE_RIDDEN_WHILE_DEAD);
+				SystemMessage msg = new SystemMessage(SystemMessageId.A_STRIDER_CANNOT_BE_RIDDEN_WHEN_DEAD);
 				activeChar.sendPacket(msg);
 				msg = null;
 			}
 			else if (pet.isDead())
 			{
 				// A dead strider cannot be ridden.
-				SystemMessage msg = new SystemMessage(SystemMessageId.DEAD_STRIDER_CANT_BE_RIDDEN);
+				SystemMessage msg = new SystemMessage(SystemMessageId.A_DEAD_STRIDER_CANNOT_BE_RIDDEN);
 				activeChar.sendPacket(msg);
 				msg = null;
 			}
@@ -70,7 +70,7 @@ public class Mount implements IUserCommandHandler
 			}
 			else if (!GeoData.getInstance().canSeeTarget(activeChar, pet))
 			{
-				final SystemMessage msg = new SystemMessage(SystemMessageId.CANT_SEE_TARGET);
+				final SystemMessage msg = new SystemMessage(SystemMessageId.CANNOT_SEE_TARGET);
 				activeChar.sendPacket(msg);
 				return false;
 			}

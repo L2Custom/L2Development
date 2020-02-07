@@ -64,7 +64,7 @@ public class L2Log
 		
 		File file = new File(pathName);
 		
-		try (FileWriter save = new FileWriter(file, true);)
+		try (FileWriter save = new FileWriter(file, true))
 		{
 			String out = "[" + date + "] '---': " + text + "\n";
 			save.write(out);

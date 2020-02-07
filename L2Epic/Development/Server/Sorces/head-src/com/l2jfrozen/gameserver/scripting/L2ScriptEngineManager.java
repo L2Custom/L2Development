@@ -654,12 +654,11 @@ public final class L2ScriptEngineManager
 				final String errorHeader = "Error on: " + file.getCanonicalPath() + "\r\nLine: " + e.getLineNumber() + " - Column: " + e.getColumnNumber() + "\r\n\r\n";
 				fos.write(errorHeader.getBytes());
 				fos.write(e.getMessage().getBytes());
-				LOGGER.warn("Failed executing script: " + script.getAbsolutePath() + ". See " + file.getName() + " for details.");
+				LOGGER.error("Failed executing script: " + script.getAbsolutePath() + ". See " + file.getName() + " for details.");
 			}
-			catch (final IOException ioe)
+			catch (IOException ioe)
 			{
-				LOGGER.warn("Failed executing script: " + script.getAbsolutePath() + "\r\n" + e.getMessage() + "Additionally failed when trying to write an error report on script directory. Reason: " + ioe.getMessage());
-				ioe.printStackTrace();
+				LOGGER.error("Failed executing script: " + script.getAbsolutePath() + "\r\n" + e.getMessage() + "Additionally failed when trying to write an error report on script directory.", ioe);
 			}
 			finally
 			{
@@ -678,7 +677,7 @@ public final class L2ScriptEngineManager
 		}
 		else
 		{
-			LOGGER.warn("Failed executing script: " + script.getAbsolutePath() + "\r\n" + e.getMessage() + "Additionally failed when trying to write an error report on script directory.");
+			LOGGER.error("Failed executing script: " + script.getAbsolutePath() + "\r\nAdditionally failed when trying to write an error report on script directory.", e);
 		}
 	}
 	

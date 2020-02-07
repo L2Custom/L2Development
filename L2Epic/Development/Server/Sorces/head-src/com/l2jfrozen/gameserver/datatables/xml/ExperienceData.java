@@ -48,9 +48,9 @@ public class ExperienceData
 		{
 			doc = factory.newDocumentBuilder().parse(xml);
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("Could not parse experience.xml: " + e.getMessage());
+			LOGGER.error("Could not parse experience.xml ", e);
 			return;
 		}
 		

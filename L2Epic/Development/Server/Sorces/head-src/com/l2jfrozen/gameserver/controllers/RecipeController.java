@@ -66,7 +66,7 @@ public class RecipeController
 			return;
 		}
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.CANT_ALTER_RECIPEBOOK_WHILE_CRAFTING);
+		SystemMessage sm = new SystemMessage(SystemMessageId.YOU_MAY_NOT_ALTER_YOU_RECIPEBOOK_WHILE_ENGAGED_IN_MANUFACTURING);
 		player.sendPacket(sm);
 		maker = null;
 		sm = null;
@@ -273,7 +273,7 @@ public class RecipeController
 						price = temp.getCost();
 						if (target.getAdena() < price) // check price
 						{
-							target.sendPacket(new SystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
+							target.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA));
 							abort();
 							return;
 						}
@@ -441,7 +441,7 @@ public class RecipeController
 				
 				if (adenatransfer == null)
 				{
-					target.sendPacket(new SystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
+					target.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA));
 					abort();
 					return;
 				}
@@ -535,7 +535,7 @@ public class RecipeController
 				if (target == player)
 				{
 					// you equipped ...
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_S2_EQUIPPED);
+					SystemMessage sm = new SystemMessage(SystemMessageId.EQUIPPED_PLUS_S1_S2);
 					sm.addNumber(count);
 					sm.addItemName(item.getItemId());
 					player.sendPacket(sm);
@@ -637,14 +637,14 @@ public class RecipeController
 			SystemMessage sm = null;
 			if (itemCount > 1)
 			{
-				sm = new SystemMessage(SystemMessageId.EARNED_S2_S1_S);
+				sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S);
 				sm.addItemName(itemId);
 				sm.addNumber(itemCount);
 				target.sendPacket(sm);
 			}
 			else
 			{
-				sm = new SystemMessage(SystemMessageId.EARNED_ITEM);
+				sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1);
 				sm.addItemName(itemId);
 				target.sendPacket(sm);
 			}
@@ -652,7 +652,7 @@ public class RecipeController
 			if (target != player)
 			{
 				// inform manufacturer of earned profit
-				sm = new SystemMessage(SystemMessageId.EARNED_ADENA);
+				sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1_ADENA);
 				sm.addNumber(price);
 				player.sendPacket(sm);
 			}

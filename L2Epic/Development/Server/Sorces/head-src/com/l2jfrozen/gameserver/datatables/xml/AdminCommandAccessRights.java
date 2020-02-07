@@ -62,7 +62,7 @@ public class AdminCommandAccessRights
 				}
 			}
 			
-			LOGGER.info("Admin Access Rights: Loaded " + adminCommandAccessRights.size() + " Access Rigths from database.");
+			LOGGER.info("AdminCommandAccessRights: Loaded " + adminCommandAccessRights.size());
 			
 		}
 		catch (Exception e)

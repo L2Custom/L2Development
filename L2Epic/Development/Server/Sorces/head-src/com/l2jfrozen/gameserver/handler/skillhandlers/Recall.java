@@ -44,7 +44,7 @@ public class Recall implements ISkillHandler
 				
 				if (activeChar.isInsideZone(L2Character.ZONE_PVP))
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_SUMMON_IN_COMBAT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_SUMMON_DURING_COMBAT));
 					return;
 				}
 				

@@ -50,7 +50,7 @@ public final class RequestPetitionCancel extends L2GameClientPacket
 				{
 					final int numRemaining = Config.MAX_PETITIONS_PER_PLAYER - PetitionManager.getInstance().getPlayerTotalPetitionCount(activeChar);
 					
-					SystemMessage sm = new SystemMessage(SystemMessageId.PETITION_CANCELED_SUBMIT_S1_MORE_TODAY);
+					SystemMessage sm = new SystemMessage(SystemMessageId.THE_PETITION_WAS_CANCELED_YOU_MAY_SUBMIT_S1_MORE_PETITIONS_TODAY);
 					sm.addString(String.valueOf(numRemaining));
 					activeChar.sendPacket(sm);
 					sm = null;

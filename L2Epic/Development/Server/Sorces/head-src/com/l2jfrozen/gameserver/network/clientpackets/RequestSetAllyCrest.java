@@ -13,6 +13,9 @@ import com.l2jfrozen.gameserver.model.L2Clan;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
+/**
+ * @author ReynalDev
+ */
 public final class RequestSetAllyCrest extends L2GameClientPacket
 {
 	public static Logger LOGGER = Logger.getLogger(RequestSetAllyCrest.class);
@@ -96,7 +99,7 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 				if (clan.getAllyId() == activeChar.getAllyId())
 				{
 					clan.setAllyCrestId(newId);
-					for (final L2PcInstance member : clan.getOnlineMembers(""))
+					for (final L2PcInstance member : clan.getOnlineMembers())
 					{
 						member.broadcastUserInfo();
 					}

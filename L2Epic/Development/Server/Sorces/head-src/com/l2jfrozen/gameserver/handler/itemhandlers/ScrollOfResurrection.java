@@ -41,7 +41,7 @@ public class ScrollOfResurrection implements IItemHandler
 		
 		if (activeChar.isSitting())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_MOVE_SITTING));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_MOVE_WHILE_SITTING));
 			return;
 		}
 		
@@ -184,7 +184,7 @@ public class ScrollOfResurrection implements IItemHandler
 							return;
 						}
 						
-						final SystemMessage sm = new SystemMessage(SystemMessageId.S1_DISAPPEARED);
+						final SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_DISAPPEARED);
 						sm.addItemName(itemId);
 						activeChar.sendPacket(sm);
 					}
@@ -193,7 +193,7 @@ public class ScrollOfResurrection implements IItemHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 		}
 		
 		activeChar = null;

@@ -101,7 +101,7 @@ public class L2SignsPriestInstance extends L2FolkInstance
 				case 2: // Purchase Record of the Seven Signs
 					if (!player.getInventory().validateCapacity(1))
 					{
-						player.sendPacket(new SystemMessage(SystemMessageId.INVENTORY_VOLUME));
+						player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_EXCEEDED_YOUR_INVENTORY_VOLUME_LIMIT_AND_CANNOT_TAKE_THIS_TIME));
 						break;
 					}
 					
@@ -178,7 +178,7 @@ public class L2SignsPriestInstance extends L2FolkInstance
 									
 									if (player.destroyItemByItemId("SevenSigns", SevenSigns.CERTIFICATE_OF_APPROVAL_ID, 1, this, false))
 									{
-										sm = new SystemMessage(SystemMessageId.S2_S1_DISSAPEARED_ITEM);
+										sm = new SystemMessage(SystemMessageId.S2_S1_HAS_DISAPPEARED);
 										sm.addNumber(1);
 										sm.addItemName(SevenSigns.CERTIFICATE_OF_APPROVAL_ID);
 										player.sendPacket(sm);
@@ -186,7 +186,7 @@ public class L2SignsPriestInstance extends L2FolkInstance
 									}
 									else if (player.reduceAdena("SevenSigns", SevenSigns.ADENA_JOIN_DAWN_COST, this, false))
 									{
-										sm = new SystemMessage(SystemMessageId.DISSAPEARED_ADENA);
+										sm = new SystemMessage(SystemMessageId.S1_ADENA_DISSAPEARED);
 										sm.addNumber(SevenSigns.ADENA_JOIN_DAWN_COST);
 										player.sendPacket(sm);
 										allowJoinDawn = true;

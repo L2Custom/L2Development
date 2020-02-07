@@ -282,9 +282,9 @@ public enum BaseStats
 			{
 				doc = factory.newDocumentBuilder().parse(file);
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				LOGGER.warn("[BaseStats] Could not parse file: " + e.getMessage(), e);
+				LOGGER.warn("[BaseStats] Could not parse file statBonus,xml", e);
 			}
 			
 			if (doc != null)

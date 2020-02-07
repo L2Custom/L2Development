@@ -13,10 +13,11 @@ import com.l2jfrozen.gameserver.util.Util;
 
 /**
  * @author Layane
+ * @author ReynalDev
  */
 public class HtmCache
 {
-	private static Logger LOGGER = Logger.getLogger(HtmCache.class);
+	private static final Logger LOGGER = Logger.getLogger(HtmCache.class);
 	private static HtmCache instance;
 	
 	private final HashMap<Integer, String> cache;
@@ -114,18 +115,17 @@ public class HtmCache
 	
 	public String loadFile(final File file)
 	{
-		final HtmFilter filter = new HtmFilter();
+		HtmFilter filter = new HtmFilter();
 		
 		String content = null;
 		
 		if (file.exists() && filter.accept(file) && !file.isDirectory())
 		{
-			FileInputStream fis = null;
-			BufferedInputStream bis = null;
-			try
+			try(FileInputStream fis = new FileInputStream(file);
+				BufferedInputStream bis = new BufferedInputStream(fis);)
 			{
-				fis = new FileInputStream(file);
-				bis = new BufferedInputStream(fis);
+				
+				
 				final int bytes = bis.available();
 				final byte[] raw = new byte[bytes];
 				
@@ -158,36 +158,9 @@ public class HtmCache
 				cache.put(hashcode, content);
 				
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				LOGGER.warn("problem with htm file " + e);
-				e.printStackTrace();
-			}
-			finally
-			{
-				if (bis != null)
-				{
-					try
-					{
-						bis.close();
-					}
-					catch (final Exception e1)
-					{
-						e1.printStackTrace();
-					}
-				}
-				
-				if (fis != null)
-				{
-					try
-					{
-						fis.close();
-					}
-					catch (final Exception e1)
-					{
-						e1.printStackTrace();
-					}
-				}
+				LOGGER.error("Error loading HTM file", e);
 			}
 			
 		}

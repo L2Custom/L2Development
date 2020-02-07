@@ -276,7 +276,7 @@ public abstract class L2Summon extends L2PlayableInstance
 	{
 		if (getOwner() != null && getOwner() == target && !getOwner().isBetrayed())
 		{
-			sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+			sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 			return;
 		}
 		if (isInsidePeaceZone(this, target))
@@ -637,7 +637,7 @@ public abstract class L2Summon extends L2PlayableInstance
 		{
 			if (getOwner() != null)
 			{
-				getOwner().sendPacket(new SystemMessage(SystemMessageId.TARGET_CANT_FOUND));
+				getOwner().sendPacket(new SystemMessage(SystemMessageId.YOU_TARGET_CANNOT_BE_FOUND));
 			}
 			return;
 		}
@@ -647,7 +647,7 @@ public abstract class L2Summon extends L2PlayableInstance
 		// Check if this skill is enabled (ex : reuse time)
 		if (isSkillDisabled(skill) && getOwner() != null)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.SKILL_NOT_AVAILABLE);
+			SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE);
 			sm.addString(skill.getName());
 			getOwner().sendPacket(sm);
 			sm = null;
@@ -693,14 +693,14 @@ public abstract class L2Summon extends L2PlayableInstance
 		{
 			if (getOwner() != null && getOwner() == target && !getOwner().isBetrayed())
 			{
-				sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+				sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				return;
 			}
 			
 			if (isInsidePeaceZone(this, target) && getOwner() != null && !getOwner().getAccessLevel().allowPeaceAttack())
 			{
 				// If summon or target is in a peace zone, send a system message TARGET_IN_PEACEZONE
-				sendPacket(new SystemMessage(SystemMessageId.TARGET_IN_PEACEZONE));
+				sendPacket(new SystemMessage(SystemMessageId.YOU_MAY_NOT_ATTACK_THIS_TARGET_IN_PEACEFUL_ZONE));
 				return;
 			}
 			

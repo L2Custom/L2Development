@@ -37,6 +37,7 @@ public class L2SkillSummon extends L2Skill
 	// What is the total lifetime of summons (in millisecs)
 	private final int summonTotalLifeTime;
 	
+	
 	public L2SkillSummon(final StatsSet set)
 	{
 		super(set);
@@ -101,6 +102,7 @@ public class L2SkillSummon extends L2Skill
 	@Override
 	public void useSkill(final L2Character caster, final L2Object[] targets)
 	{
+		System.out.println("Debug4 - useSkill ");
 		if (caster.isAlikeDead() || !(caster instanceof L2PcInstance))
 		{
 			return;
@@ -122,6 +124,7 @@ public class L2SkillSummon extends L2Skill
 		
 		if (isCubic)
 		{
+			System.out.println("Debug4 - useSkill - isCubic ->then ");
 			// Gnacik :
 			// If skill is enchanted calculate cubic skill level based on enchant
 			// 8 at 101 (+1 Power)
@@ -270,6 +273,26 @@ public class L2SkillSummon extends L2Skill
 		// if someone comes into range now, the animation shouldnt show any more
 		activeChar.sendPacket(new PetInfo(summon));
 	}
+	
+	
+//	public void useSkillNpcBuffer( final L2PcInstance Player, final String SkillID, final String SkillLvl)
+//	{
+//		System.out.println("Debug4 - useSkillNpcBuffer ");
+//		
+//		// Skill 2046 only used for animation
+//		if (getId() == 2046)
+//		{
+//			return;
+//		}
+//
+//		System.out.println("Debug4 - useSkillNpcBuffer - isCubic ->then ");
+//				
+//
+//	    Player.addCubic(Integer.parseInt(SkillID), Integer.parseInt(SkillLvl) , getPower(), activationtime, activationchance, summonTotalLifeTime, false);
+//		
+//	return;	
+//		
+//	}
 	
 	public final boolean isCubic()
 	{

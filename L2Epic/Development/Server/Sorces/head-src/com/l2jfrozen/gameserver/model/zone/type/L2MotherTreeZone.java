@@ -26,7 +26,7 @@ public class L2MotherTreeZone extends L2ZoneType
 			if (player.getRace() == Race.elf)
 			{
 				player.setInsideZone(L2Character.ZONE_MOTHERTREE, true);
-				player.sendPacket(new SystemMessage(SystemMessageId.ENTER_SHADOW_MOTHER_TREE));
+				player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_ENTERED_THE_SHADOW_OF_THE_MOTHER_TREE));
 			}
 		}
 	}
@@ -40,7 +40,7 @@ public class L2MotherTreeZone extends L2ZoneType
 			if (player.getRace() == Race.elf)
 			{
 				player.setInsideZone(L2Character.ZONE_MOTHERTREE, false);
-				player.sendPacket(new SystemMessage(SystemMessageId.EXIT_SHADOW_MOTHER_TREE));
+				player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_LEFT_THE_SHADOW_OF_THE_MOTHER_TREE));
 			}
 		}
 	}

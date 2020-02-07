@@ -62,9 +62,6 @@
 	<buff type="CHANT" id="1253" lvl="3" />
 	<buff type="CHANT" id="1284" lvl="3" />
 	<buff type="CHANT" id="1308" lvl="3" />
-	<buff type="CHANT" id="1309" lvl="3" />
-	<buff type="CHANT" id="1310" lvl="4" />
-	<buff type="CHANT" id="1362" lvl="1" />
 	<buff type="CUBIC" id="67" lvl="7" />
 	<buff type="CUBIC" id="10" lvl="8" />
 	<buff type="CUBIC" id="22" lvl="7" />
@@ -73,9 +70,6 @@
 	<buff type="CUBIC" id="1279" lvl="9" />
 	<buff type="CUBIC" id="1280" lvl="9" />
 	<buff type="CUBIC" id="1281" lvl="9" />
-	<buff type="CUBIC" id="1328" lvl="8" />
-	<buff type="CUBIC" id="1329" lvl="9" />
-	<buff type="CUBIC" id="1330" lvl="8" />
 	<buff type="SPECIAL" id="1062" lvl="2" />
 	<buff type="SPECIAL" id="1355" lvl="1" />
 	<buff type="SPECIAL" id="1356" lvl="1" />

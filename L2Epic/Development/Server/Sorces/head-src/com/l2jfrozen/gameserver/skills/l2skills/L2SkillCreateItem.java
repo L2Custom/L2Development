@@ -41,7 +41,7 @@ public class L2SkillCreateItem extends L2Skill
 		}
 		if (createItemId == null || createItemCount == 0)
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.SKILL_NOT_AVAILABLE));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE));
 			return;
 		}
 		final L2PcInstance player = (L2PcInstance) activeChar;
@@ -69,14 +69,14 @@ public class L2SkillCreateItem extends L2Skill
 		
 		if (count > 1)
 		{
-			final SystemMessage smsg = new SystemMessage(SystemMessageId.EARNED_S2_S1_S);
+			final SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S);
 			smsg.addItemName(item.getItemId());
 			smsg.addNumber(count);
 			activeChar.sendPacket(smsg);
 		}
 		else
 		{
-			final SystemMessage smsg = new SystemMessage(SystemMessageId.EARNED_ITEM);
+			final SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1);
 			smsg.addItemName(item.getItemId());
 			activeChar.sendPacket(smsg);
 		}

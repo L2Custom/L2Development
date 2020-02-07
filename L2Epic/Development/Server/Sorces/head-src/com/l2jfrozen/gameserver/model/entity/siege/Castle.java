@@ -12,23 +12,25 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import com.l2jfrozen.Config;
+import com.l2jfrozen.gameserver.datatables.CastleCircletTable;
 import com.l2jfrozen.gameserver.datatables.csv.DoorTable;
 import com.l2jfrozen.gameserver.datatables.sql.ClanTable;
 import com.l2jfrozen.gameserver.managers.CastleManager;
 import com.l2jfrozen.gameserver.managers.CastleManorManager;
 import com.l2jfrozen.gameserver.managers.CastleManorManager.CropProcure;
 import com.l2jfrozen.gameserver.managers.CastleManorManager.SeedProduction;
-import com.l2jfrozen.gameserver.managers.CrownManager;
 import com.l2jfrozen.gameserver.model.L2Character;
 import com.l2jfrozen.gameserver.model.L2Clan;
 import com.l2jfrozen.gameserver.model.L2Manor;
 import com.l2jfrozen.gameserver.model.L2Object;
 import com.l2jfrozen.gameserver.model.actor.instance.L2DoorInstance;
+import com.l2jfrozen.gameserver.model.actor.instance.L2ItemInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jfrozen.gameserver.model.entity.Announcements;
 import com.l2jfrozen.gameserver.model.entity.sevensigns.SevenSigns;
 import com.l2jfrozen.gameserver.model.zone.type.L2CastleTeleportZone;
 import com.l2jfrozen.gameserver.model.zone.type.L2CastleZone;
+import com.l2jfrozen.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jfrozen.gameserver.network.serverpackets.PlaySound;
 import com.l2jfrozen.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import com.l2jfrozen.gameserver.thread.ThreadPoolManager;
@@ -37,9 +39,12 @@ import com.l2jfrozen.util.CloseUtil;
 import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
+/**
+ * @author ReynalDev
+ */
 public class Castle
 {
-	protected static Logger LOGGER = Logger.getLogger(Castle.class);
+	protected static final Logger LOGGER = Logger.getLogger(Castle.class);
 	
 	private List<CropProcure> procure = new ArrayList<>();
 	private List<SeedProduction> production = new ArrayList<>();
@@ -353,7 +358,7 @@ public class Castle
 		removeDoorUpgrade();
 	}
 	
-	public void setOwner(final L2Clan clan)
+	public void setOwner(L2Clan clan)
 	{
 		// Remove old owner
 		if (getOwnerId() > 0 && (clan == null || clan.getClanId() != getOwnerId()))
@@ -365,19 +370,12 @@ public class Castle
 				if (formerOwner == null)
 				{
 					formerOwner = oldOwner;
-					if (Config.REMOVE_CASTLE_CIRCLETS)
-					{
-						CastleManager.getInstance().removeCirclet(formerOwner, getCastleId());
-					}
 				}
-				oldOwner.setHasCastle(0); // Unset has castle flag for old owner
-				Announcements.getInstance().announceToAll(oldOwner.getName() + " has lost " + getName() + " castle!");
 				
-				// remove crowns
-				CrownManager.getInstance().checkCrowns(oldOwner);
+				oldOwner.setHasCastle(0); // Unset has castle flag for old owner
+				removeCastleCirclets(oldOwner);
+				Announcements.getInstance().announceToAll(oldOwner.getName() + " has lost " + getName() + " castle!");
 			}
-			
-			oldOwner = null;
 		}
 		
 		updateOwnerInDB(clan); // Update in database
@@ -396,13 +394,8 @@ public class Castle
 		{
 			formerOwner = clan;
 			
-			if (Config.REMOVE_CASTLE_CIRCLETS)
-			{
-				CastleManager.getInstance().removeCirclet(formerOwner, getCastleId());
-			}
-			
 			clan.setHasCastle(0);
-			
+			removeCastleCirclets(clan);
 			Announcements.getInstance().announceToAll(clan.getName() + " has lost " + getName() + " castle");
 			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 		}
@@ -702,8 +695,6 @@ public class Castle
 				Announcements.getInstance().announceToAll(clan.getName() + " has taken " + getName() + " castle!");
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 				clan.broadcastToOnlineMembers(new PlaySound(1, "Siege_Victory", 0, 0, 0, 0, 0));
-				// give crowns
-				CrownManager.getInstance().checkCrowns(clan);
 				
 				ThreadPoolManager.getInstance().scheduleGeneral(new CastleUpdater(clan, 1), 3600000); // Schedule owner tasks to start running
 			}
@@ -975,14 +966,9 @@ public class Castle
 				values = null;
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.info("Error adding seed production data for castle " + getName() + ": " + e.getMessage());
+			LOGGER.error("Error adding seed production data for castle " + getName(), e);
 		}
 		finally
 		{
@@ -1041,14 +1027,9 @@ public class Castle
 			
 			prod = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.info("Error adding seed production data for castle " + getName() + ": " + e.getMessage());
+			LOGGER.error("Error adding seed production data for castle " + getName(), e);
 		}
 		finally
 		{
@@ -1134,14 +1115,9 @@ public class Castle
 				values = null;
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.info("Error adding crop data for castle " + getName() + ": " + e.getMessage());
+			LOGGER.error("Error adding crop data for castle " + getName(), e);
 		}
 		finally
 		{
@@ -1202,14 +1178,9 @@ public class Castle
 			
 			proc = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.info("Error adding crop data for castle " + getName() + ": " + e.getMessage());
+			LOGGER.error("Error adding crop data for castle " + getName(), e);
 		}
 		finally
 		{
@@ -1221,7 +1192,7 @@ public class Castle
 	public void updateCrop(int cropId, int amount, int period)
 	{
 		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(CASTLE_UPDATE_CROP);)
+			PreparedStatement statement = con.prepareStatement(CASTLE_UPDATE_CROP))
 		{
 			statement.setInt(1, amount);
 			statement.setInt(2, cropId);
@@ -1319,7 +1290,6 @@ public class Castle
 	 * This method must always be called before using gate coordinate retrieval methods! Optimized as much as possible.
 	 * @return is a Clan Gate available
 	 */
-	
 	public boolean isGateOpen()
 	{
 		return gate[0] != Integer.MIN_VALUE;
@@ -1354,9 +1324,6 @@ public class Castle
 		getTeleZone().oustAllPlayers();
 	}
 	
-	/**
-	 * @return
-	 */
 	public boolean isSiegeInProgress()
 	{
 		if (siege != null)
@@ -1365,5 +1332,41 @@ public class Castle
 		}
 		
 		return false;
+	}
+	
+	public void removeCastleCirclets(L2Clan clan)
+	{
+		for(L2PcInstance member: clan.getOnlineMembers())
+		{
+			removeCastleCirclet(member);
+		}
+	}
+	
+	public void removeCastleCirclet(L2PcInstance clanMember)
+	{
+		int circletId = CastleCircletTable.getCircletByCastleId(getCastleId()); 
+		
+		if(clanMember.isClanLeader())
+		{
+			if(clanMember.isItemEquippedByItemId(CastleCircletTable.THE_LORDS_CROWN))
+			{
+				L2ItemInstance circlet = clanMember.getInventory().getItemByItemId(CastleCircletTable.THE_LORDS_CROWN);
+				clanMember.getInventory().unEquipItemInSlotAndRecord(circlet.getEquipSlot());
+				InventoryUpdate iu = new InventoryUpdate();
+				iu.addModifiedItem(circlet);
+				clanMember.sendPacket(iu);
+				clanMember.broadcastUserInfo();
+			}
+		}
+		
+		if(clanMember.isItemEquippedByItemId(circletId))
+		{
+			L2ItemInstance circlet = clanMember.getInventory().getItemByItemId(circletId);
+			clanMember.getInventory().unEquipItemInSlotAndRecord(circlet.getEquipSlot());
+			InventoryUpdate iu = new InventoryUpdate();
+			iu.addModifiedItem(circlet);
+			clanMember.sendPacket(iu);
+			clanMember.broadcastUserInfo();
+		}
 	}
 }

@@ -8,6 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import com.l2jfrozen.gameserver.model.L2Character;
 import com.l2jfrozen.gameserver.model.L2Object;
+import com.l2jfrozen.gameserver.model.L2Summon;
 import com.l2jfrozen.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
@@ -154,6 +155,13 @@ public class CharKnownList extends ObjectKnownList
 				if (Util.checkIfInRange((int) radius, getActiveChar(), obj, true))
 				{
 					result.add((L2NpcInstance) obj);
+				}
+			}
+			else if(obj instanceof L2Summon)
+			{
+				if (Util.checkIfInRange((int) radius, getActiveChar(), obj, true))
+				{
+					result.add((L2Summon) obj);
 				}
 			}
 		}

@@ -127,13 +127,13 @@ public class RequestBuyProcure extends L2GameClientPacket
 		
 		if (!player.getInventory().validateWeight(weight))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_EXCEED_THE_WEIGHT_LIMIT));
 			return;
 		}
 		
 		if (!player.getInventory().validateCapacity(slots))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.SLOTS_FULL));
+			sendPacket(new SystemMessage(SystemMessageId.YOUR_INVENTORY_IS_FULL));
 			return;
 		}
 		
@@ -177,7 +177,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 			}
 			
 			// Send Char Buy Messages
-			SystemMessage sm = new SystemMessage(SystemMessageId.EARNED_S2_S1_S);
+			SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S);
 			sm.addItemName(rewradItemId);
 			sm.addNumber(rewradItemCount);
 			player.sendPacket(sm);

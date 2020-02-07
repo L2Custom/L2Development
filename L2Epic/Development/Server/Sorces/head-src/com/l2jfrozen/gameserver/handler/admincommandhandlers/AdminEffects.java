@@ -192,7 +192,7 @@ public class AdminEffects implements IAdminCommandHandler
 					}
 					else
 					{
-						activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+						activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 						
 						return false;
 					}
@@ -395,7 +395,7 @@ public class AdminEffects implements IAdminCommandHandler
 				
 				if (val == 0 && sendMessage)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED).addSkillName(7029));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_EFFECT_OF_S1_HAS_BEEN_REMOVED).addSkillName(7029));
 				}
 				else if (val >= 1 && val <= 4)
 				{
@@ -799,7 +799,7 @@ public class AdminEffects implements IAdminCommandHandler
 				
 				if (!(obj instanceof L2Character))
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 				}
 				else
 				{

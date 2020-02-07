@@ -19,12 +19,11 @@ import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 /**
- * This class ...
- * @version $Revision: 1.5.4.13 $ $Date: 2005/04/06 16:13:38 $
+ * @author ReynalDev
  */
 public class TradeController
 {
-	private static Logger LOGGER = Logger.getLogger(TradeController.class);
+	private static final Logger LOGGER = Logger.getLogger(TradeController.class);
 	private static final String SELECT_MERCHANT_SHOP_IDS = "SELECT shop_id, npc_id FROM merchant_shopids";
 	private static final String SELECT_CUSTOM_MERCHANT_SHOP_IDS = "SELECT shop_id,npc_id FROM custom_merchant_shopids";
 	
@@ -33,6 +32,9 @@ public class TradeController
 	
 	private static final String UPDATE_MERCHANT_BUY_LIST_BY_TIMER = "UPDATE merchant_buylists SET savetimer =? WHERE time=? ";
 	private static final String UPDATE_MERCHANT_BUY_LIST_BY_SHOP_ID = "UPDATE merchant_buylists SET currentCount=? WHERE item_id=? AND shop_id=? ";
+	
+	private static final String SELECT_DISTINC_MERCHANT_BUY_LIST = "SELECT DISTINCT time, savetimer FROM merchant_buylists WHERE time <> 0 ORDER BY time";
+	private static final String SELECT_DISTINC_CUSTOM_MERCHANT_BUY_LIST = "SELECT DISTINCT time, savetimer FROM custom_merchant_buylists WHERE time <> 0 ORDER BY time";
 	
 	private static TradeController instance;
 	
@@ -95,7 +97,7 @@ public class TradeController
 			while (rset1.next())
 			{
 				PreparedStatement statement = con.prepareStatement(SELECT_MERCHANT_BUY_LIST);
-				statement.setString(1, String.valueOf(rset1.getInt("shop_id")));
+				statement.setInt(1, rset1.getInt("shop_id"));
 				ResultSet rset = statement.executeQuery();
 				if (rset.next())
 				{
@@ -130,7 +132,7 @@ public class TradeController
 					if (!rset1.getString("npc_id").equals("gm") && price < (item.getReferencePrice() / 2))
 					{
 						
-						LOGGER.warn("L2TradeList " + buy1.getListId() + " itemId  " + itemId + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
+						LOGGER.warn("TradeController: L2TradeList " + buy1.getListId() + " item  " + item + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
 						price = item.getReferencePrice();
 					}
 					
@@ -177,7 +179,7 @@ public class TradeController
 							if (!rset1.getString("npc_id").equals("gm") && price < item2.getReferencePrice() / 2)
 							{
 								
-								LOGGER.warn("L2TradeList " + buy1.getListId() + " itemId  " + itemId + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
+								LOGGER.warn("L2TradeList " + buy1.getListId() + " item  " + item2 + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
 								price = item2.getReferencePrice();
 							}
 							
@@ -196,14 +198,9 @@ public class TradeController
 							buy1.addItem(item2);
 						}
 					}
-					catch (final Exception e)
+					catch (Exception e)
 					{
-						if (Config.ENABLE_ALL_EXCEPTIONS)
-						{
-							e.printStackTrace();
-						}
-						
-						LOGGER.warn("TradeController: Problem with buylist " + buy1.getListId() + " item " + itemId);
+						LOGGER.error("TradeController: Problem with buylist " + buy1.getListId() + " item " + itemId, e);
 					}
 					if (LimitedItem)
 					{
@@ -238,45 +235,33 @@ public class TradeController
 			/*
 			 * Restore Task for reinitialyze count of buy item
 			 */
-			try
+			try(PreparedStatement statement2 = con.prepareStatement(SELECT_DISTINC_MERCHANT_BUY_LIST);
+				ResultSet rset2 = statement2.executeQuery())
 			{
-				int time = 0;
-				long savetimer = 0;
-				final long currentMillis = System.currentTimeMillis();
-				
-				PreparedStatement statement2 = con.prepareStatement("SELECT DISTINCT time, savetimer FROM merchant_buylists WHERE time <> 0 ORDER BY time");
-				ResultSet rset2 = statement2.executeQuery();
-				
 				while (rset2.next())
 				{
-					time = rset2.getInt("time");
-					savetimer = rset2.getLong("savetimer");
+					int time = rset2.getInt("time");
+					long savetimer = rset2.getLong("savetimer");
+					long currentMillis = System.currentTimeMillis();
+					
 					if (savetimer - currentMillis > 0)
 					{
-						ThreadPoolManager.getInstance().scheduleGeneral(new RestoreCount(time), savetimer - System.currentTimeMillis());
+						ThreadPoolManager.getInstance().scheduleGeneral(new RestoreCount(time), savetimer - currentMillis);
 					}
 					else
 					{
 						ThreadPoolManager.getInstance().scheduleGeneral(new RestoreCount(time), 0);
 					}
 				}
-				rset2.close();
-				statement2.close();
-				
-				rset2 = null;
-				statement2 = null;
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				LOGGER.warn("TradeController: Could not restore Timer for Item count.");
-				e.printStackTrace();
+				LOGGER.error("TradeController: Could not restore Timer for Item count.", e);
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			// problem with initializing spawn, go to next one
-			LOGGER.warn("TradeController: Buylists could not be initialized.");
-			e.printStackTrace();
+			LOGGER.error("TradeController: Buylists could not be initialized.", e);
 		}
 		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
@@ -290,7 +275,7 @@ public class TradeController
 			{
 				PreparedStatement statement = con.prepareStatement(SELECT_CUSTOM_MERCHANT_BUY_LIST);
 				
-				statement.setString(1, String.valueOf(rset1.getInt("shop_id")));
+				statement.setInt(1, rset1.getInt("shop_id"));
 				ResultSet rset = statement.executeQuery();
 				
 				if (rset.next())
@@ -323,7 +308,7 @@ public class TradeController
 					if (!rset1.getString("npc_id").equals("gm") && price < (item.getReferencePrice() / 2))
 					{
 						
-						LOGGER.warn("L2TradeList " + buy1.getListId() + " itemId  " + itemId + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
+						LOGGER.warn("L2TradeList " + buy1.getListId() + " item  " + item + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
 						price = item.getReferencePrice();
 					}
 					
@@ -368,7 +353,7 @@ public class TradeController
 							if (!rset1.getString("npc_id").equals("gm") && price < item2.getReferencePrice() / 2)
 							{
 								
-								LOGGER.warn("L2TradeList " + buy1.getListId() + " itemId  " + itemId + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
+								LOGGER.warn("L2TradeList " + buy1.getListId() + " item  " + item2 + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
 								price = item2.getReferencePrice();
 							}
 							
@@ -388,14 +373,9 @@ public class TradeController
 							item2 = null;
 						}
 					}
-					catch (final Exception e)
+					catch (Exception e)
 					{
-						if (Config.ENABLE_ALL_EXCEPTIONS)
-						{
-							e.printStackTrace();
-						}
-						
-						LOGGER.warn("TradeController: Problem with buylist " + buy1.getListId() + " item " + itemId);
+						LOGGER.error("TradeController: Problem with buylist " + buy1.getListId() + " item " + itemId, e);
 					}
 					if (LimitedItem)
 					{
@@ -435,44 +415,32 @@ public class TradeController
 			/**
 			 * Restore Task for reinitialyze count of buy item
 			 */
-			try
+			try(PreparedStatement statement2 = con.prepareStatement(SELECT_DISTINC_CUSTOM_MERCHANT_BUY_LIST);
+				ResultSet rset2 = statement2.executeQuery())
 			{
-				int time = 0;
-				long savetimer = 0;
-				final long currentMillis = System.currentTimeMillis();
-				
-				PreparedStatement statement2 = con.prepareStatement("SELECT DISTINCT time, savetimer FROM custom_merchant_buylists WHERE time <> 0 ORDER BY time");
-				ResultSet rset2 = statement2.executeQuery();
-				
 				while (rset2.next())
 				{
-					time = rset2.getInt("time");
-					savetimer = rset2.getLong("savetimer");
+					int time = rset2.getInt("time");
+					long savetimer = rset2.getLong("savetimer");
+					long currentMillis = System.currentTimeMillis();
+					
 					if (savetimer - currentMillis > 0)
 					{
-						ThreadPoolManager.getInstance().scheduleGeneral(new RestoreCount(time), savetimer - System.currentTimeMillis());
+						ThreadPoolManager.getInstance().scheduleGeneral(new RestoreCount(time), savetimer - currentMillis);
 					}
 					else
 					{
 						ThreadPoolManager.getInstance().scheduleGeneral(new RestoreCount(time), 0);
 					}
 				}
-				rset2.close();
-				statement2.close();
-				
-				rset2 = null;
-				statement2 = null;
-				
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				LOGGER.warn("TradeController: Could not restore Timer for Item count.");
-				e.printStackTrace();
+				LOGGER.error("TradeController: Could not restore Timer for Item count.", e);
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			// problem with initializing spawn, go to next one
 			LOGGER.error("TradeController: Buylists could not be initialized", e);
 		}
 	}
@@ -601,11 +569,4 @@ public class TradeController
 		return nextListId++;
 	}
 	
-	/**
-	 * This will reload buylists info from DataBase
-	 */
-	public static void reload()
-	{
-		instance = new TradeController();
-	}
 }

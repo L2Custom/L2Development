@@ -15,10 +15,11 @@ import com.l2jfrozen.gameserver.model.L2ExtractableProductItem;
 
 /**
  * @author FBIagent
+ * @author ReynalDev
  */
 public class ExtractableItemsData
 {
-	private static Logger LOGGER = Logger.getLogger(ExtractableItemsData.class);
+	private static final Logger LOGGER = Logger.getLogger(ExtractableItemsData.class);
 	
 	// Map<itemid, L2ExtractableItem>
 	private Map<Integer, L2ExtractableItem> items;
@@ -39,7 +40,7 @@ public class ExtractableItemsData
 	{
 		items = new HashMap<>();
 		
-		try (Scanner s = new Scanner(new File(Config.DATAPACK_ROOT + "/data/csv/extractable_items.csv"));)
+		try (Scanner s = new Scanner(new File(Config.DATAPACK_ROOT + "/data/csv/extractable_items.csv")))
 		{
 			int lineCount = 0;
 			while (s.hasNextLine())
@@ -66,13 +67,9 @@ public class ExtractableItemsData
 				}
 				catch (Exception e)
 				{
-					if (Config.ENABLE_ALL_EXCEPTIONS)
-					{
-						e.printStackTrace();
-					}
-					
-					LOGGER.info("Extractable items data: Error in line " + lineCount + " -> invalid item id or wrong seperator after item id!");
-					LOGGER.info("		" + line);
+					LOGGER.error("Extractable items data: Error in line " + lineCount + " -> invalid item id or wrong seperator after item id!");
+					LOGGER.info("Line: " + line);
+					LOGGER.error(e);
 					return;
 				}
 				
@@ -96,15 +93,11 @@ public class ExtractableItemsData
 						chance = Integer.parseInt(lineSplit2[2]);
 						lineSplit2 = null;
 					}
-					catch (final Exception e)
+					catch (Exception e)
 					{
-						if (Config.ENABLE_ALL_EXCEPTIONS)
-						{
-							e.printStackTrace();
-						}
-						
 						LOGGER.info("Extractable items data: Error in line " + lineCount + " -> incomplete/invalid production data or wrong seperator!");
-						LOGGER.info("		" + line);
+						LOGGER.info("Line: " + line);
+						LOGGER.error(e);
 						continue;
 					}
 					

@@ -499,7 +499,7 @@ public class AdminTeleport implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
@@ -542,13 +542,13 @@ public class AdminTeleport implements IAdminCommandHandler
 			 */
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
 		if (player.getObjectId() == activeChar.getObjectId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.CANNOT_USE_ON_YOURSELF));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF));
 		}
 		else
 		{

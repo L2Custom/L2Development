@@ -37,23 +37,25 @@ import com.l2jfrozen.gameserver.network.serverpackets.RelationChanged;
 import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
 import com.l2jfrozen.gameserver.network.serverpackets.UserInfo;
 import com.l2jfrozen.gameserver.thread.ThreadPoolManager;
-import com.l2jfrozen.util.CloseUtil;
-import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 /**
- * The Class FortSiege.
  * @author programmos
+ * @author ReynalDev
  */
 public class FortSiege
 {
-	
-	/** The Constant LOGGER. */
 	protected static final Logger LOGGER = Logger.getLogger(FortSiege.class);
 	
-	/**
-	 * The Enum TeleportWhoType.
-	 */
+	private static final String DELETE_FORT_SIEGE_CLAN_BY_FORT_ID = "DELETE FROM fortsiege_clans WHERE fort_id=?";
+	private static final String DELETE_FOR_SIEGE_CLAN_BY_CLAN_ID = "DELETE FROM fortsiege_clans WHERE clan_id=?";
+	private static final String DELETE_FORT_SIEGE_CLAN_BY_FORT_ID_AND_TYPE_2 = "DELETE FROM fortsiege_clans WHERE fort_id=? AND type=2";
+	private static final String DELETE_FORT_SIEGE_CLAN_BY_FORT_ID_AND_CLAN_ID = "DELETE FROM fortsiege_clans WHERE fort_id=? AND clan_id=?";
+	private static final String SELECT_FORT_SIEGE_CLAN_BY_FORT_ID = "SELECT clan_id,type FROM fortsiege_clans WHERE fort_id=?";
+	private static final String UPDATE_FORT_SIEGE_BY_FORT_ID = "UPDATE fort SET siegeDate=? WHERE id=?";
+	private static final String INSERT_FORT_SIEGE_CLAN = "INSERT INTO fortsiege_clans (clan_id,fort_id,type,fort_owner) VALUES (?,?,?,0)";
+	private static final String UPDATE_FORT_SIEGE_CLAN_BY_FORT_ID_AND_CLAN_ID = "UPDATE fortsiege_clans SET type=? WHERE fort_id=? AND clan_id=?";
+	
 	public static enum TeleportWhoType
 	{
 		
@@ -407,7 +409,7 @@ public class FortSiege
 				}
 				else
 				{
-					sm = new SystemMessage(SystemMessageId.S1_SIEGE_WAS_CANCELED_BECAUSE_NO_CLANS_PARTICIPATED);
+					sm = new SystemMessage(SystemMessageId.S1S_SIEGE_WAS_CANCELED_BECAUSE_THERE_WERE_NO_CLANS_THAT_PARTICIPATED);
 				}
 				
 				sm.addString(getFort().getName());
@@ -493,7 +495,7 @@ public class FortSiege
 		for (final L2SiegeClan siegeclan : getAttackerClans())
 		{
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-			for (final L2PcInstance member : clan.getOnlineMembers(""))
+			for (final L2PcInstance member : clan.getOnlineMembers())
 			{
 				if (clear)
 				{
@@ -516,7 +518,7 @@ public class FortSiege
 		for (final L2SiegeClan siegeclan : getDefenderClans())
 		{
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-			for (final L2PcInstance member : clan.getOnlineMembers(""))
+			for (final L2PcInstance member : clan.getOnlineMembers())
 			{
 				if (clear)
 				{
@@ -613,38 +615,30 @@ public class FortSiege
 	 */
 	public void clearSiegeClan()
 	{
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("DELETE FROM fortsiege_clans WHERE fort_id=?");
-			statement.setInt(1, getFort().getFortId());
-			statement.execute();
-			DatabaseUtils.close(statement);
-			statement = null;
+			try(PreparedStatement statement = con.prepareStatement(DELETE_FORT_SIEGE_CLAN_BY_FORT_ID))
+			{
+				statement.setInt(1, getFort().getFortId());
+				statement.executeUpdate();
+			}
 			
 			if (getFort().getOwnerId() > 0)
 			{
-				PreparedStatement statement2 = con.prepareStatement("DELETE FROM fortsiege_clans WHERE clan_id=?");
-				statement2.setInt(1, getFort().getOwnerId());
-				statement2.execute();
-				statement2.close();
-				statement2 = null;
+				try(PreparedStatement statement2 = con.prepareStatement(DELETE_FOR_SIEGE_CLAN_BY_CLAN_ID))
+				{
+					statement2.setInt(1, getFort().getOwnerId());
+					statement2.executeUpdate();
+				}
 			}
 			
 			getAttackerClans().clear();
 			getDefenderClans().clear();
 			getDefenderWaitingClans().clear();
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("Exception: clearSiegeClan(): " + e.getMessage());
-			e.printStackTrace();
-		}
-		finally
-		{
-			CloseUtil.close(con);
-			con = null;
+			LOGGER.error("Exception: clearSiegeClan", e);
 		}
 	}
 	
@@ -660,27 +654,16 @@ public class FortSiege
 	 */
 	public void clearSiegeWaitingClan()
 	{
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(DELETE_FORT_SIEGE_CLAN_BY_FORT_ID_AND_TYPE_2))
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("DELETE FROM fortsiege_clans WHERE fort_id=? and type = 2");
 			statement.setInt(1, getFort().getFortId());
-			statement.execute();
-			DatabaseUtils.close(statement);
-			statement = null;
-			
+			statement.executeUpdate();
 			getDefenderWaitingClans().clear();
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("Exception: clearSiegeWaitingClan(): " + e.getMessage());
-			e.printStackTrace();
-		}
-		finally
-		{
-			CloseUtil.close(con);
-			con = null;
+			LOGGER.error("Exception: clearSiegeWaitingClan", e);
 		}
 	}
 	
@@ -697,7 +680,7 @@ public class FortSiege
 		{
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 			
-			for (final L2PcInstance player : clan.getOnlineMembers(""))
+			for (final L2PcInstance player : clan.getOnlineMembers())
 			{
 				if (checkIfInZone(player.getX(), player.getY(), player.getZ()))
 				{
@@ -729,7 +712,7 @@ public class FortSiege
 				continue;
 			}
 			
-			for (final L2PcInstance player : clan.getOnlineMembers(""))
+			for (final L2PcInstance player : clan.getOnlineMembers())
 			{
 				if (checkIfInZone(player.getX(), player.getY(), player.getZ()))
 				{
@@ -770,7 +753,7 @@ public class FortSiege
 				continue;
 			}
 			
-			for (final L2PcInstance player : clan.getOnlineMembers(""))
+			for (final L2PcInstance player : clan.getOnlineMembers())
 			{
 				if (checkIfInZone(player.getX(), player.getY(), player.getZ()))
 				{
@@ -961,45 +944,33 @@ public class FortSiege
 	 * .
 	 * @param clanId The int of player's clan id
 	 */
-	public void removeSiegeClan(final int clanId)
+	public void removeSiegeClan(int clanId)
 	{
-		
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement;
-			
 			if (clanId != 0)
 			{
-				statement = con.prepareStatement("DELETE FROM fortsiege_clans WHERE fort_id=? and clan_id=?");
+				try(PreparedStatement statement = con.prepareStatement(DELETE_FORT_SIEGE_CLAN_BY_FORT_ID_AND_CLAN_ID))
+				{
+					statement.setInt(1, getFort().getFortId());
+					statement.setInt(2, clanId);
+					statement.executeUpdate();
+				}
 			}
 			else
 			{
-				statement = con.prepareStatement("DELETE FROM fortsiege_clans WHERE fort_id=?");
+				try(PreparedStatement statement = con.prepareStatement(DELETE_FORT_SIEGE_CLAN_BY_FORT_ID))
+				{
+					statement.setInt(1, getFort().getFortId());
+					statement.executeUpdate();
+				}
 			}
-			
-			statement.setInt(1, getFort().getFortId());
-			
-			if (clanId != 0)
-			{
-				statement.setInt(2, clanId);
-			}
-			
-			statement.execute();
-			DatabaseUtils.close(statement);
-			statement = null;
 			
 			loadSiegeClan();
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			e.printStackTrace();
-		}
-		finally
-		{
-			CloseUtil.close(con);
-			con = null;
+			LOGGER.error(e);
 		}
 	}
 	
@@ -1189,7 +1160,7 @@ public class FortSiege
 		}
 		else if (player.getClan().getClanId() == getFort().getOwnerId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.CLAN_THAT_OWNS_CASTLE_IS_AUTOMATICALLY_REGISTERED_DEFENDING));
+			player.sendPacket(new SystemMessage(SystemMessageId.THE_CLAN_THAT_OWNS_THE_CASTLE_IS_AUTOMATICALLY_REGISTERED_ON_THE_DEFENDING_SIDE));
 		}
 		else if (FortSiegeManager.getInstance().checkIsRegistered(player.getClan(), getFort().getFortId()))
 		{
@@ -1215,11 +1186,9 @@ public class FortSiege
 		newDate = null;
 	}
 	
-	/** Load siege clans. */
 	private void loadSiegeClan()
 	{
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			getAttackerClans().clear();
 			getDefenderClans().clear();
@@ -1231,53 +1200,39 @@ public class FortSiege
 				addDefender(getFort().getOwnerId(), SiegeClanType.OWNER);
 			}
 			
-			PreparedStatement statement = null;
-			ResultSet rs = null;
-			
-			con = L2DatabaseFactory.getInstance().getConnection();
-			
-			statement = con.prepareStatement("SELECT clan_id,type FROM fortsiege_clans where fort_id=?");
-			statement.setInt(1, getFort().getFortId());
-			rs = statement.executeQuery();
-			
-			int typeId;
-			
-			while (rs.next())
+			try(PreparedStatement statement = con.prepareStatement(SELECT_FORT_SIEGE_CLAN_BY_FORT_ID))
 			{
-				typeId = rs.getInt("type");
+				statement.setInt(1, getFort().getFortId());
 				
-				if (typeId == 0)
+				try(ResultSet rs = statement.executeQuery();)
 				{
-					addDefender(rs.getInt("clan_id"));
+					while (rs.next())
+					{
+						int typeId = rs.getInt("type");
+						
+						if (typeId == 0)
+						{
+							addDefender(rs.getInt("clan_id"));
+						}
+						else if (typeId == 1)
+						{
+							addAttacker(rs.getInt("clan_id"));
+						}
+						else if (typeId == 2)
+						{
+							addDefenderWaiting(rs.getInt("clan_id"));
+						}
+					}
 				}
-				else if (typeId == 1)
-				{
-					addAttacker(rs.getInt("clan_id"));
-				}
-				else if (typeId == 2)
-				{
-					addDefenderWaiting(rs.getInt("clan_id"));
-				}
+				
 			}
-			
-			rs.close();
-			DatabaseUtils.close(statement);
-			statement = null;
-			rs = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("Exception: loadSiegeClan(): " + e.getMessage());
-			e.printStackTrace();
-		}
-		finally
-		{
-			CloseUtil.close(con);
-			con = null;
+			LOGGER.error("Exception: loadSiegeClan", e);
 		}
 	}
 	
-	/** Remove artifacts spawned. */
 	private void removeCommander()
 	{
 		if (commanders != null)
@@ -1313,7 +1268,6 @@ public class FortSiege
 		}
 	}
 	
-	/** Save fort siege related to database. */
 	private void saveFortSiege()
 	{
 		clearSiegeDate(); // clear siege date
@@ -1321,30 +1275,18 @@ public class FortSiege
 		setIsScheduled(false);
 	}
 	
-	/** Save siege date to database. */
 	private void saveSiegeDate()
 	{
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(UPDATE_FORT_SIEGE_BY_FORT_ID))
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("Update fort set siegeDate = ? where id = ?");
 			statement.setLong(1, getSiegeDate().getTimeInMillis());
 			statement.setInt(2, getFort().getFortId());
-			statement.execute();
-			
-			DatabaseUtils.close(statement);
-			statement = null;
+			statement.executeUpdate();
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("Exception: saveSiegeDate(): " + e.getMessage());
-			e.printStackTrace();
-		}
-		finally
-		{
-			CloseUtil.close(con);
-			con = null;
+			LOGGER.error("Exception: saveSiegeDate", e);
 		}
 	}
 	
@@ -1355,15 +1297,14 @@ public class FortSiege
 	 * @param typeId               -1 = owner 0 = defender, 1 = attacker, 2 = defender waiting
 	 * @param isUpdateRegistration the is update registration
 	 */
-	private void saveSiegeClan(final L2Clan clan, final int typeId, final boolean isUpdateRegistration)
+	private void saveSiegeClan(L2Clan clan, int typeId, boolean isUpdateRegistration)
 	{
 		if (clan.getHasFort() > 0)
 		{
 			return;
 		}
 		
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			if (typeId == 0 || typeId == 2 || typeId == -1)
 			{
@@ -1380,27 +1321,25 @@ public class FortSiege
 				}
 			}
 			
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement;
 			if (!isUpdateRegistration)
 			{
-				statement = con.prepareStatement("INSERT INTO fortsiege_clans (clan_id,fort_id,type,fort_owner) values (?,?,?,0)");
-				statement.setInt(1, clan.getClanId());
-				statement.setInt(2, getFort().getFortId());
-				statement.setInt(3, typeId);
-				statement.execute();
-				DatabaseUtils.close(statement);
-				statement = null;
+				try(PreparedStatement statement = con.prepareStatement(INSERT_FORT_SIEGE_CLAN))
+				{
+					statement.setInt(1, clan.getClanId());
+					statement.setInt(2, getFort().getFortId());
+					statement.setInt(3, typeId);
+					statement.executeUpdate();
+				}
 			}
 			else
 			{
-				statement = con.prepareStatement("Update fortsiege_clans set type = ? where fort_id = ? and clan_id = ?");
-				statement.setInt(1, typeId);
-				statement.setInt(2, getFort().getFortId());
-				statement.setInt(3, clan.getClanId());
-				statement.execute();
-				DatabaseUtils.close(statement);
-				statement = null;
+				try(PreparedStatement statement = con.prepareStatement(UPDATE_FORT_SIEGE_CLAN_BY_FORT_ID_AND_CLAN_ID))
+				{
+					statement.setInt(1, typeId);
+					statement.setInt(2, getFort().getFortId());
+					statement.setInt(3, clan.getClanId());
+					statement.executeUpdate();
+				}
 			}
 			
 			if (typeId == 0 || typeId == -1)
@@ -1419,15 +1358,9 @@ public class FortSiege
 				announceToPlayer(clan.getName() + " has requested to defend " + getFort().getName(), false);
 			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("Exception: saveSiegeClan(L2Clan clan, int typeId, boolean isUpdateRegistration): " + e.getMessage());
-			e.printStackTrace();
-		}
-		finally
-		{
-			CloseUtil.close(con);
-			con = null;
+			LOGGER.error("Exception: saveSiegeClan(L2Clan clan, int typeId, boolean isUpdateRegistration)", e);
 		}
 	}
 	

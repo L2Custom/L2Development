@@ -101,7 +101,7 @@ public class GmListTable
 		{
 			List<L2PcInstance> gmPlayers = getAllGms(true);
 			
-			SystemMessage sm = new SystemMessage(SystemMessageId.GM_LIST);
+			SystemMessage sm = new SystemMessage(SystemMessageId.GM_LIST_HEAD);
 			player.sendPacket(sm);
 			
 			for (L2PcInstance gmPlayer : gmPlayers)
@@ -117,7 +117,7 @@ public class GmListTable
 			
 			if (gmPlayers == null || gmPlayers.isEmpty())
 			{
-				SystemMessage sm2 = new SystemMessage(SystemMessageId.NO_GM_PROVIDING_SERVICE_NOW);
+				SystemMessage sm2 = new SystemMessage(SystemMessageId.THERE_ARE_NOT_GMS_CURRENTLY_VISIBLE_IN_THE_PUBLIC_LIST_AS_THEY_MAY_BE_PERFORMING_OTHER_FUNCTIONS_AT_THE_MOMENT);
 				player.sendPacket(sm2);
 			}
 			else

@@ -389,9 +389,9 @@ public class Auction
 	 * @param bidder the bidder
 	 * @param bid    the bid
 	 */
-	private void updateInDB(final L2PcInstance bidder, final int bid)
+	private void updateInDB(L2PcInstance bidder, int bid)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();)
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			if (getBidders().get(bidder.getClanId()) != null)
 			{
@@ -408,7 +408,7 @@ public class Auction
 			}
 			else
 			{
-				try (PreparedStatement statement = con.prepareStatement(INSERT_AUCTION_BID);)
+				try (PreparedStatement statement = con.prepareStatement(INSERT_AUCTION_BID))
 				{
 					statement.setInt(1, IdFactory.getInstance().getNextId());
 					statement.setInt(2, getId());
@@ -483,7 +483,7 @@ public class Auction
 		AuctionManager.getInstance().getAuctions().remove(this);
 		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(DELETE_AUCTION_BY_ITEM_ID);)
+			PreparedStatement statement = con.prepareStatement(DELETE_AUCTION_BY_ITEM_ID))
 		{
 			statement.setInt(1, itemId);
 			statement.executeUpdate();

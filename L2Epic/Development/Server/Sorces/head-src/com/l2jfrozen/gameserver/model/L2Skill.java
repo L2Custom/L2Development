@@ -1327,7 +1327,7 @@ public abstract class L2Skill
 		{
 			return true;
 		}
-		final SystemMessage message = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+		final SystemMessage message = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 		message.addSkillName(getId());
 		activeChar.sendPacket(message);
 		
@@ -1450,7 +1450,7 @@ public abstract class L2Skill
 			
 			if (isOffensive() && (((L2PcInstance) activeChar).isInOlympiadMode() && !((L2PcInstance) activeChar).isInOlympiadFight()))
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				return null;
 			}
 			
@@ -1522,7 +1522,7 @@ public abstract class L2Skill
 					case WARRIOR_BANE:
 						if (checkPartyClan(activeChar, target))
 						{
-							activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+							activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 							return null;
 						}
 						break;
@@ -1550,7 +1550,7 @@ public abstract class L2Skill
 						// Like L2OFF if the skills is TARGET_ONE (skillType) can't be used on Npc
 						if (target instanceof L2NpcInstance && !(target instanceof L2MonsterInstance))
 						{
-							activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+							activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 							return null;
 						}
 						break;
@@ -1559,14 +1559,14 @@ public abstract class L2Skill
 				// Like L2OFF Shield stun can't be used on Npc
 				if (getId() == 92 && target instanceof L2NpcInstance && !(target instanceof L2MonsterInstance))
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 					return null;
 				}
 				
 				// Check for null target or any other invalid target
 				if (target == null || target.isDead() || target == activeChar && !canTargetSelf)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 					return null;
 				}
 				
@@ -1804,7 +1804,7 @@ public abstract class L2Skill
 				if (!(target instanceof L2Attackable || target instanceof L2PlayableInstance || target instanceof L2NpcInstance) || // Target is not L2Attackable or L2PlayableInstance or L2NpcInstance
 					getCastRange() >= 0 && (target == activeChar || target.isAlikeDead())) // target is null or self or dead/faking
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 					return null;
 				}
 				
@@ -2018,7 +2018,7 @@ public abstract class L2Skill
 			{
 				if (!(target instanceof L2Attackable) && !(target instanceof L2PcInstance))
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 					return null;
 				}
 				
@@ -2088,7 +2088,7 @@ public abstract class L2Skill
 					
 					if (targetList.size() == 0)
 					{
-						activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_CANT_FOUND));
+						activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_TARGET_CANNOT_BE_FOUND));
 						return null;
 					}
 				}
@@ -2176,7 +2176,7 @@ public abstract class L2Skill
 					};
 					
 				}
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				return null;
 			}
 			case TARGET_PARTY_OTHER:
@@ -2189,7 +2189,7 @@ public abstract class L2Skill
 						target
 					};
 				}
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				return null;
 			}
 			case TARGET_CORPSE_ALLY:
@@ -2561,7 +2561,7 @@ public abstract class L2Skill
 					targetPlayer = null;
 					targetPet = null;
 				}
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				
 				return null;
 			}
@@ -2569,7 +2569,7 @@ public abstract class L2Skill
 			{
 				if (!(target instanceof L2Attackable) || !target.isDead())
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 					return null;
 				}
 				
@@ -2589,7 +2589,7 @@ public abstract class L2Skill
 			{
 				if (!(target instanceof L2Attackable) || !target.isDead())
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 					return null;
 				}
 				
@@ -2737,7 +2737,7 @@ public abstract class L2Skill
 				if (!(target instanceof L2DoorInstance) && !(target instanceof L2ChestInstance))
 				{
 					// Like L2OFF if target isn't door or chest send message of incorrect target
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 					return null;
 				}
 				
@@ -2767,7 +2767,7 @@ public abstract class L2Skill
 				{
 					if (!target.isUndead() || target.isDead())
 					{
-						activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+						activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 						return null;
 					}
 					
@@ -2785,7 +2785,7 @@ public abstract class L2Skill
 					
 					return targetList.toArray(new L2Object[targetList.size()]);
 				}
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 				return null;
 			}
 			case TARGET_AREA_UNDEAD:
@@ -2911,7 +2911,7 @@ public abstract class L2Skill
 			{
 				if (target instanceof L2PcInstance)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 					return null;
 				}
 				
@@ -3261,7 +3261,7 @@ public abstract class L2Skill
 							if (env.target instanceof L2PcInstance)
 							{
 								env.target.sendPacket(new EtcStatusUpdate((L2PcInstance) env.target));
-								SystemMessage sm = new SystemMessage(SystemMessageId.FORCE_INCREASED_TO_S1);
+								SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FORCE_HAS_INCREASED_TO_S1_LEVEL);
 								sm.addNumber(effectcharge);
 								env.target.sendPacket(sm);
 								sm = null;

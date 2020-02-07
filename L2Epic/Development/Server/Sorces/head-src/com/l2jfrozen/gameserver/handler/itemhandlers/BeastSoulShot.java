@@ -16,8 +16,9 @@ import com.l2jfrozen.gameserver.templates.L2Weapon;
 import com.l2jfrozen.gameserver.util.Broadcast;
 
 /**
- * Beast SoulShot Handler
- * @author programmos, scoria dev
+ * @author programmos
+ * @author scoria dev
+ * @author ReynalDev
  */
 public class BeastSoulShot implements IItemHandler
 {
@@ -40,7 +41,7 @@ public class BeastSoulShot implements IItemHandler
 		if (playable instanceof L2Summon)
 		{
 			activeOwner = ((L2Summon) playable).getOwner();
-			activeOwner.sendPacket(new SystemMessage(SystemMessageId.PET_CANNOT_USE_ITEM));
+			activeOwner.sendPacket(new SystemMessage(SystemMessageId.THIS_PET_CANNOT_USE_THIS_ITEM));
 			
 			return;
 		}
@@ -58,7 +59,7 @@ public class BeastSoulShot implements IItemHandler
 		
 		if (activePet == null)
 		{
-			activeOwner.sendPacket(new SystemMessage(SystemMessageId.PETS_ARE_NOT_AVAILABLE_AT_THIS_TIME));
+			activeOwner.sendPacket(new SystemMessage(SystemMessageId.PETS_AND_SERVITORS_ARE_NOT_AVAILABLE_AT_THIS_TIME));
 			return;
 		}
 		
@@ -127,7 +128,7 @@ public class BeastSoulShot implements IItemHandler
 		{
 			if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
 			{
-				if (activeOwner.getAutoSoulShot().containsKey(itemId))
+				if (activeOwner.getAutoSoulShot().contains(itemId))
 				{
 					activeOwner.removeAutoSoulShot(itemId);
 					activeOwner.sendPacket(new ExAutoSoulShot(itemId, 0));
@@ -138,18 +139,14 @@ public class BeastSoulShot implements IItemHandler
 					
 					return;
 				}
-				activeOwner.sendPacket(new SystemMessage(SystemMessageId.NOT_ENOUGH_SOULSHOTS));
+				activeOwner.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SOULSHOTS_FOR_THAT));
 				return;
 			}
 		}
 		
 		// Pet uses the power of spirit.
 		activeOwner.sendPacket(new SystemMessage(SystemMessageId.PET_USE_THE_POWER_OF_SPIRIT));
-		Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUser(activePet, activePet, 2033, 1, 0, 0), 360000/* 600 */);
-		
-		activeOwner = null;
-		activePet = null;
-		weaponInst = null;
+		Broadcast.toSelfAndKnownPlayers(activeOwner, new MagicSkillUser(activePet, activePet, 2033, 1, 0, 0));
 	}
 	
 	@Override

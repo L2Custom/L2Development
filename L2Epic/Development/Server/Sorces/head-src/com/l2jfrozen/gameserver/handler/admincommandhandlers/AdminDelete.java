@@ -48,7 +48,7 @@ public class AdminDelete implements IAdminCommandHandler
 		// Admin can't delete Players --> L2PcInstances
 		if (obj instanceof L2PcInstance)
 		{
-			activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
+			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
 		
@@ -90,7 +90,7 @@ public class AdminDelete implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
+			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 		}
 	}
 }

@@ -36,6 +36,9 @@ import com.l2jfrozen.gameserver.util.Util;
 
 import javolution.text.TextBuilder;
 
+/**
+ * @author ReynalDev
+ */
 public class AdminEditChar implements IAdminCommandHandler
 {
 	protected static final Logger LOGGER = Logger.getLogger(AdminEditChar.class);
@@ -60,7 +63,8 @@ public class AdminEditChar implements IAdminCommandHandler
 		"admin_setclass",
 		"admin_settitle",
 		"admin_setsex",
-		"admin_setcolor",
+		"admin_setnamecolor",
+		"admin_settitlecolor",
 		"admin_fullfood",
 		"admin_remclanwait",
 		"admin_setcp",
@@ -92,7 +96,8 @@ public class AdminEditChar implements IAdminCommandHandler
 		admin_setclass,
 		admin_settitle,
 		admin_setsex,
-		admin_setcolor,
+		admin_setnamecolor,
+		admin_settitlecolor,
 		admin_fullfood,
 		admin_remclanwait,
 		admin_setcp,
@@ -194,7 +199,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				
 				if (oldName == null)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 					return false;
 				}
 				activeChar.sendMessage("Name changed from " + oldName + " to " + val);
@@ -662,7 +667,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				
 				return true;
 			}
-			case admin_setcolor:
+			case admin_setnamecolor:
 			{
 				String val = "";
 				
@@ -673,7 +678,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				}
 				else
 				{
-					activeChar.sendMessage("Usage: //setcolor <new_color>");
+					activeChar.sendMessage("Usage: //setnamecolor <new_color>");
 					return false;
 				}
 				
@@ -695,9 +700,41 @@ public class AdminEditChar implements IAdminCommandHandler
 				player.getAppearance().setNameColor(Integer.decode("0x" + val));
 				player.sendMessage("Your name color has been changed by a GM");
 				player.broadcastUserInfo();
-				st = null;
-				player = null;
-				target = null;
+				return true;
+			}
+			case admin_settitlecolor:
+			{
+				String val = "";
+				
+				if (st.hasMoreTokens())
+				{
+					
+					val = st.nextToken();
+				}
+				else
+				{
+					activeChar.sendMessage("Usage: //settitlecolor <new_color>");
+					return false;
+				}
+				
+				L2Object target = activeChar.getTarget();
+				
+				if (target == null)
+				{
+					activeChar.sendMessage("You have to select a player!");
+					return false;
+				}
+				
+				if (!(target instanceof L2PcInstance))
+				{
+					activeChar.sendMessage("Your target is not a player!");
+					return false;
+				}
+				
+				L2PcInstance player = (L2PcInstance) target;
+				player.getAppearance().setTitleColor(Integer.decode("0x" + val));
+				player.sendMessage("Your title color has been changed by a GM");
+				player.broadcastUserInfo();
 				return true;
 			}
 			case admin_fullfood:
@@ -713,7 +750,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				}
 				else
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 					return false;
 				}
 				
@@ -1068,7 +1105,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	public static void gatherCharacterInfo(final L2PcInstance activeChar, final L2PcInstance player, final String filename)
+	public static void gatherCharacterInfo(L2PcInstance activeChar, L2PcInstance player, String filename)
 	{
 		String ip = "null";
 		String account = "null";
@@ -1082,14 +1119,10 @@ public class AdminEditChar implements IAdminCommandHandler
 			account = clientinfo.nextToken();
 			clientinfo.nextToken();
 			ip = clientinfo.nextToken();
-			clientinfo = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
+			LOGGER.error("Error while gathering character information", e);
 		}
 		
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);

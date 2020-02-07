@@ -6,8 +6,8 @@ import com.l2jfrozen.gameserver.network.L2GameClient;
 import com.l2jfrozen.netcore.SendablePacket;
 
 /**
- * The Class L2GameServerPacket.
  * @author ProGramMoS
+ * @author ReynalDev
  */
 public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 {
@@ -20,28 +20,20 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 		{
 			writeImpl();
 		}
-		catch (final Throwable t)
+		catch (Exception e)
 		{
-			LOGGER.error("Client: " + getClient().toString() + " - Failed writing: " + getType(), t);
-			t.printStackTrace();
+			LOGGER.error("Client: " + getClient().toString() + " - Failed writing: " + getType(), e);
 		}
 	}
 	
-	/**
-	 * Run impl.
-	 */
 	public void runImpl()
 	{
 		
 	}
 	
-	/**
-	 * Write impl.
-	 */
 	protected abstract void writeImpl();
 	
 	/**
-	 * Gets the type.
 	 * @return A String with this packet name for debuging purposes
 	 */
 	public abstract String getType();

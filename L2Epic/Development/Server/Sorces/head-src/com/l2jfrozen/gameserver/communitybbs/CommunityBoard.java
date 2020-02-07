@@ -154,7 +154,7 @@ public class CommunityBoard
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CB_OFFLINE));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_COMMUNITY_SERVER_IS_CURRENTLY_OFFLINE));
 		}
 		
 		activeChar = null;

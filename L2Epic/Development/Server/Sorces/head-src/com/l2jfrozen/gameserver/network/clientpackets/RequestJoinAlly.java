@@ -52,7 +52,7 @@ public final class RequestJoinAlly extends L2GameClientPacket
 			return;
 		}
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.S2_ALLIANCE_LEADER_OF_S1_REQUESTED_ALLIANCE);
+		SystemMessage sm = new SystemMessage(SystemMessageId.S1_LEADER_S2_HAS_REQUESTED_AN_ALLIANCE);
 		sm.addString(activeChar.getClan().getAllyName());
 		sm.addString(activeChar.getName());
 		target.sendPacket(sm);

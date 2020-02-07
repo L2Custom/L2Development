@@ -1,7 +1,6 @@
 package com.l2jfrozen.gameserver.network.clientpackets;
 
 import com.l2jfrozen.Config;
-import com.l2jfrozen.gameserver.model.L2Character;
 import com.l2jfrozen.gameserver.model.TradeList;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jfrozen.gameserver.network.SystemMessageId;
@@ -106,14 +105,6 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 		if (player.isMovementDisabled() || player.inObserverMode() || player.getActiveEnchantItem() != null)
 		{
 			player.sendMessage("You cannot start store now..");
-			player.sendPacket(new PrivateStoreManageListSell(player));
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (player.isInsideZone(L2Character.ZONE_NOSTORE))
-		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_OPEN_A_PRIVATE_STORE_HERE);
 			player.sendPacket(new PrivateStoreManageListSell(player));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

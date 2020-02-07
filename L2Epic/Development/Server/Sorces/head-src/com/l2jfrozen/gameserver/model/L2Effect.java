@@ -479,7 +479,7 @@ public abstract class L2Effect
 			
 			if (skill.isPvpSkill() && getEffected() != null && getEffected() instanceof L2PcInstance && getShowIcon())
 			{
-				SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+				SystemMessage smsg = new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU);
 				smsg.addString(skill.getName());
 				getEffected().sendPacket(smsg);
 				smsg = null;
@@ -534,7 +534,7 @@ public abstract class L2Effect
 				}
 				else if (cancelEffect)
 				{
-					SystemMessage smsg3 = new SystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED);
+					SystemMessage smsg3 = new SystemMessage(SystemMessageId.THE_EFFECT_OF_S1_HAS_BEEN_REMOVED);
 					smsg3.addString(getSkill().getName());
 					getEffected().sendPacket(smsg3);
 					smsg3 = null;

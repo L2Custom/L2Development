@@ -10,15 +10,22 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.l2jfrozen.Config;
 import com.l2jfrozen.gameserver.communitybbs.Manager.ForumsBBSManager;
 import com.l2jfrozen.gameserver.communitybbs.Manager.TopicBBSManager;
-import com.l2jfrozen.util.CloseUtil;
-import com.l2jfrozen.util.database.DatabaseUtils;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
+/**
+ * @author ReynalDev
+ */
 public class Forum
 {
+	private static final Logger LOGGER = Logger.getLogger(Forum.class);
+	
+	private static final String SELECT_FORUMS = "SELECT forum_id,forum_name,forum_parent,forum_post,forum_type,forum_perm,forum_owner_id FROM forums WHERE forum_id=?";
+	private static final String SELECT_TOPICS = "SELECT topic_id,topic_forum_id,topic_name,topic_date,topic_ownername,topic_ownerid,topic_type,topic_reply FROM topic WHERE topic_forum_id=? ORDER BY topic_id DESC";
+	private static final String SELECT_FORUM_BY_FORUM_PARENT = "SELECT forum_id FROM forums WHERE forum_parent=?";
+	private static final String INSERT_FORUM = "INSERT INTO forums (forum_id,forum_name,forum_parent,forum_post,forum_type,forum_perm,forum_owner_id) VALUES (?,?,?,?,?,?,?)";
+	
 	// type
 	public static final int ROOT = 0;
 	public static final int NORMAL = 1;
@@ -31,7 +38,6 @@ public class Forum
 	public static final int CLANMEMBERONLY = 2;
 	public static final int OWNERONLY = 3;
 	
-	private static Logger LOGGER = Logger.getLogger(Forum.class);
 	private final List<Forum> children;
 	private final Map<Integer, Topic> topic;
 	private final int forumId;
@@ -44,10 +50,6 @@ public class Forum
 	private int ownerID;
 	private boolean loaded = false;
 	
-	/**
-	 * @param Forumid
-	 * @param FParent
-	 */
 	public Forum(final int Forumid, final Forum FParent)
 	{
 		forumId = Forumid;
@@ -56,13 +58,6 @@ public class Forum
 		topic = new HashMap<>();
 	}
 	
-	/**
-	 * @param name
-	 * @param parent
-	 * @param type
-	 * @param perm
-	 * @param OwnerID
-	 */
 	public Forum(final String name, final Forum parent, final int type, final int perm, final int OwnerID)
 	{
 		forumName = name;
@@ -82,104 +77,74 @@ public class Forum
 	
 	private void load()
 	{
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(SELECT_FORUMS))
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM forums WHERE forum_id=?");
 			statement.setInt(1, forumId);
-			ResultSet result = statement.executeQuery();
 			
-			if (result.next())
+			try(ResultSet result = statement.executeQuery())
 			{
-				forumName = result.getString("forum_name");
-				// forumParent = Integer.parseInt(result.getString("forum_parent"));
-				forumPost = Integer.parseInt(result.getString("forum_post"));
-				forumType = Integer.parseInt(result.getString("forum_type"));
-				forumPerm = Integer.parseInt(result.getString("forum_perm"));
-				ownerID = Integer.parseInt(result.getString("forum_owner_id"));
-			}
-			result.close();
-			DatabaseUtils.close(statement);
-			
-			result = null;
-			statement = null;
-		}
-		catch (final Exception e)
-		{
-			LOGGER.warn("data error on Forum " + forumId + " : " + e);
-			e.printStackTrace();
-		}
-		finally
-		{
-			CloseUtil.close(con);
-		}
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM topic WHERE topic_forum_id=? ORDER BY topic_id DESC");
-			statement.setInt(1, forumId);
-			ResultSet result = statement.executeQuery();
-			
-			while (result.next())
-			{
-				Topic t = new Topic(Topic.ConstructorType.RESTORE, Integer.parseInt(result.getString("topic_id")), Integer.parseInt(result.getString("topic_forum_id")), result.getString("topic_name"), Long.parseLong(result.getString("topic_date")), result.getString("topic_ownername"), Integer.parseInt(result.getString("topic_ownerid")), Integer.parseInt(result.getString("topic_type")), Integer.parseInt(result.getString("topic_reply")));
-				topic.put(t.getID(), t);
-				if (t.getID() > TopicBBSManager.getInstance().getMaxID(this))
+				if (result.next())
 				{
-					TopicBBSManager.getInstance().setMaxID(t.getID(), this);
+					forumName = result.getString("forum_name");
+					// forumParent = Integer.parseInt(result.getString("forum_parent"));
+					forumPost = Integer.parseInt(result.getString("forum_post"));
+					forumType = Integer.parseInt(result.getString("forum_type"));
+					forumPerm = Integer.parseInt(result.getString("forum_perm"));
+					ownerID = Integer.parseInt(result.getString("forum_owner_id"));
 				}
-				t = null;
 			}
-			result.close();
-			DatabaseUtils.close(statement);
+		}
+		catch (Exception e)
+		{
+			LOGGER.error("data error on Forum id " + forumId, e);
+		}
+		
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(SELECT_TOPICS))
+		{
+			statement.setInt(1, forumId);
 			
-			result = null;
-			statement = null;
+			try(ResultSet result = statement.executeQuery())
+			{
+				while (result.next())
+				{
+					Topic t = new Topic(Topic.ConstructorType.RESTORE, Integer.parseInt(result.getString("topic_id")), Integer.parseInt(result.getString("topic_forum_id")), result.getString("topic_name"), Long.parseLong(result.getString("topic_date")), result.getString("topic_ownername"), Integer.parseInt(result.getString("topic_ownerid")), Integer.parseInt(result.getString("topic_type")), Integer.parseInt(result.getString("topic_reply")));
+					topic.put(t.getID(), t);
+					if (t.getID() > TopicBBSManager.getInstance().getMaxID(this))
+					{
+						TopicBBSManager.getInstance().setMaxID(t.getID(), this);
+					}
+				}
+			}
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("data error on Forum " + forumId + " : " + e);
-			e.printStackTrace();
-		}
-		finally
-		{
-			CloseUtil.close(con);
+			LOGGER.error("data error on Forum id " + forumId, e);
 		}
 	}
 	
 	private void getChildren()
 	{
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(SELECT_FORUM_BY_FORUM_PARENT))
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT forum_id FROM forums WHERE forum_parent=?");
 			statement.setInt(1, forumId);
-			ResultSet result = statement.executeQuery();
-			
-			while (result.next())
+
+			try(ResultSet result = statement.executeQuery())
 			{
-				final Forum f = new Forum(result.getInt("forum_id"), this);
-				children.add(f);
-				ForumsBBSManager.getInstance().addForum(f);
+				while (result.next())
+				{
+					Forum f = new Forum(result.getInt("forum_id"), this);
+					children.add(f);
+					ForumsBBSManager.getInstance().addForum(f);
+				}
 			}
-			result.close();
-			DatabaseUtils.close(statement);
-			
-			result = null;
-			statement = null;
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			LOGGER.warn("data error on Forum (children): " + e);
-			e.printStackTrace();
+			LOGGER.error("data error on Forum (children)", e);
 		}
-		finally
-		{
-			CloseUtil.close(con);
-		}
-		
 	}
 	
 	public int getTopicSize()
@@ -217,10 +182,6 @@ public class Forum
 		return forumType;
 	}
 	
-	/**
-	 * @param  name
-	 * @return
-	 */
 	public Forum getChildByName(final String name)
 	{
 		vload();
@@ -247,11 +208,9 @@ public class Forum
 	
 	public void insertindb()
 	{
-		Connection con = null;
-		try
+		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(INSERT_FORUM))
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("INSERT INTO forums (forum_id,forum_name,forum_parent,forum_post,forum_type,forum_perm,forum_owner_id) values (?,?,?,?,?,?,?)");
 			statement.setInt(1, forumId);
 			statement.setString(2, forumName);
 			statement.setInt(3, fParent.getID());
@@ -259,24 +218,12 @@ public class Forum
 			statement.setInt(5, forumType);
 			statement.setInt(6, forumPerm);
 			statement.setInt(7, ownerID);
-			statement.execute();
-			DatabaseUtils.close(statement);
-			
-			statement = null;
+			statement.executeUpdate();
 			
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.warn("error while saving new Forum to db " + e);
-		}
-		finally
-		{
-			CloseUtil.close(con);
+			LOGGER.warn("error while saving new Forum to db", e);
 		}
 	}
 	

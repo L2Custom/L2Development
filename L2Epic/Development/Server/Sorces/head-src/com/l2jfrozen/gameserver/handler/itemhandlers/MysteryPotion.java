@@ -46,7 +46,7 @@ public class MysteryPotion implements IItemHandler
 		activeChar.startAbnormalEffect(BIGHEAD_EFFECT);
 		activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false);
 		
-		SystemMessage sm = new SystemMessage(SystemMessageId.USE_S1);
+		SystemMessage sm = new SystemMessage(SystemMessageId.YOU_USE_S1);
 		sm.addSkillName(MYSTERY_POTION_SKILL);
 		activeChar.sendPacket(sm);
 		

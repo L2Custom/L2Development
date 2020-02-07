@@ -81,14 +81,9 @@ public class DynamicExtension
 			fis = new FileInputStream(CONFIG);
 			prop.load(fis);
 		}
-		catch (final FileNotFoundException ex)
+		catch (FileNotFoundException e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				ex.printStackTrace();
-			}
-			
-			LOGGER.info(ex.getMessage() + ": no extensions to load");
+			LOGGER.error("No extensions to load", e);
 		}
 		catch (final Exception ex)
 		{

@@ -575,7 +575,7 @@ public class QuestState
 		// If item for reward is gold, send message of gold reward to client
 		if (itemId == 57)
 		{
-			SystemMessage smsg = new SystemMessage(SystemMessageId.EARNED_ADENA);
+			SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1_ADENA);
 			smsg.addNumber(count);
 			getPlayer().sendPacket(smsg);
 		}
@@ -584,14 +584,14 @@ public class QuestState
 		{
 			if (count > 1)
 			{
-				SystemMessage smsg = new SystemMessage(SystemMessageId.EARNED_S2_S1_S);
+				SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S);
 				smsg.addItemName(item.getItemId());
 				smsg.addNumber(count);
 				getPlayer().sendPacket(smsg);
 			}
 			else
 			{
-				SystemMessage smsg = new SystemMessage(SystemMessageId.EARNED_ITEM);
+				SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1);
 				smsg.addItemName(item.getItemId());
 				getPlayer().sendPacket(smsg);
 			}
@@ -1025,7 +1025,7 @@ public class QuestState
 	
 	public void dropItem(final L2MonsterInstance npc, final L2PcInstance player, final int itemId, final int count)
 	{
-		npc.DropItem(player, itemId, count);
+		npc.dropItem(player, itemId, count);
 	}
 	
 	public L2NpcInstance getNpc()

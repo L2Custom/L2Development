@@ -21,9 +21,12 @@ import com.l2jfrozen.gameserver.model.entity.ClanHall;
 import com.l2jfrozen.gameserver.templates.L2CharTemplate;
 import com.l2jfrozen.gameserver.templates.StatsSet;
 
+/**
+ * @author ReynalDev
+ */
 public class DoorTable
 {
-	private static Logger LOGGER = Logger.getLogger(DoorTable.class);
+	private static final Logger LOGGER = Logger.getLogger(DoorTable.class);
 	
 	private Map<Integer, L2DoorInstance> staticItems;
 	
@@ -291,13 +294,9 @@ public class DoorTable
 		{
 			region = MapRegionTable.getInstance().getMapRegion(x, y);
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
+			LOGGER.error("DoorTable.checkIfDoorsBetween : Error while getting map region", e);
 			return false;
 		}
 		

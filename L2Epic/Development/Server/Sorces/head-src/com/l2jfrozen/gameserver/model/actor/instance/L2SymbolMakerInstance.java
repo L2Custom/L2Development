@@ -33,7 +33,7 @@ public class L2SymbolMakerInstance extends L2FolkInstance
 			if (hasHennas)
 				player.sendPacket(new HennaRemoveList(player));
 			else
-				player.sendPacket(SystemMessageId.SYMBOL_NOT_FOUND);
+				player.sendPacket(SystemMessageId.THE_SYMBOL_INFORMATION_CANNOT_BE_FOUND);
 		}
 		else
 		{

@@ -83,13 +83,13 @@ public class Sweep implements ISkillHandler
 						
 						if (ritem.getRewardCount() > 1)
 						{
-							smsg = new SystemMessage(SystemMessageId.EARNED_S2_S1_S); // earned $s2$s1
+							smsg = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1S); // earned $s2$s1
 							smsg.addItemName(ritem.getRewardId());
 							smsg.addNumber(ritem.getRewardCount());
 						}
 						else
 						{
-							smsg = new SystemMessage(SystemMessageId.EARNED_ITEM); // earned $s1
+							smsg = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1); // earned $s1
 							smsg.addItemName(ritem.getRewardId());
 						}
 						player.sendPacket(smsg);

@@ -20,8 +20,7 @@ import com.l2jfrozen.gameserver.thread.LoginServerThread;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 /**
- * This class handles following admin commands: - handles every admin menu command
- * @version $Revision: 1.3.2.6.2.4 $ $Date: 2005/04/11 10:06:06 $
+ * @author ReynalDev
  */
 public class AdminMenu implements IAdminCommandHandler
 {
@@ -101,7 +100,7 @@ public class AdminMenu implements IAdminCommandHandler
 				
 				if (player == null)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 					return true;
 				}
 				
@@ -138,7 +137,7 @@ public class AdminMenu implements IAdminCommandHandler
 				
 				if (player == null)
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 					return true;
 				}
 				
@@ -151,17 +150,7 @@ public class AdminMenu implements IAdminCommandHandler
 					return true;
 				}
 				
-				L2PcInstance[] members = clan.getOnlineMembers("");
-				
-				for (final L2PcInstance member : members)
-				{
-					teleportCharacter(member, x, y, z, activeChar, "Your clan is being teleported by an Admin.");
-				}
-				
-				targetName = null;
-				player = null;
-				clan = null;
-				members = null;
+				clan.getOnlineMembers().forEach(member -> teleportCharacter(member, x, y, z, activeChar, "Your clan is being teleported by an Admin."));
 			}
 			catch (final Exception e)
 			{
@@ -309,7 +298,7 @@ public class AdminMenu implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 		}
 		
 		AdminHelpPage.showHelpPage(activeChar, filename);
@@ -340,13 +329,13 @@ public class AdminMenu implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
 		if (player.getObjectId() == activeChar.getObjectId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.CANNOT_USE_ON_YOURSELF));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF));
 		}
 		else
 		{

@@ -68,7 +68,7 @@ public class SkillTreeTable
 					
 				classId = class_id.getId();
 				
-				try(PreparedStatement statement2 = con.prepareStatement(SELECT_SKILL_TREES);)
+				try(PreparedStatement statement2 = con.prepareStatement(SELECT_SKILL_TREES))
 				{
 					statement2.setInt(1, classId);
 					
@@ -117,7 +117,7 @@ public class SkillTreeTable
 	{
 		try(Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(SELECT_FISHING_SKILL_TREES);
-			ResultSet skilltree2 = statement.executeQuery();)
+			ResultSet skilltree2 = statement.executeQuery())
 		{
 			int prevSkillId = -1;
 			

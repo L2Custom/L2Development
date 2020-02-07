@@ -160,11 +160,11 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			su.addAttribute(StatusUpdate.SP, player.getSp());
 			player.sendPacket(su);
 			
-			final SystemMessage ep = new SystemMessage(SystemMessageId.EXP_DECREASED_BY_S1);
+			final SystemMessage ep = new SystemMessage(SystemMessageId.YOU_EXPERIENCE_HAS_DECREASED_BY_S1);
 			ep.addNumber(requiredExp);
 			sendPacket(ep);
 			
-			final SystemMessage sp = new SystemMessage(SystemMessageId.SP_DECREASED_S1);
+			final SystemMessage sp = new SystemMessage(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
 			sp.addNumber(requiredSp);
 			sendPacket(sp);
 			

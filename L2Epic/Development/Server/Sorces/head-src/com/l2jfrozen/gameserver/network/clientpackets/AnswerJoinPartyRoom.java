@@ -34,14 +34,14 @@ public final class AnswerJoinPartyRoom extends L2GameClientPacket
 		if (partner == null)
 		{
 			// Partner hasn't be found, cancel the invitation
-			player.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
+			player.sendPacket(new SystemMessage(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE));
 			player.setActiveRequester(null);
 			return;
 		}
 		else if (L2World.getInstance().getPlayer(partner.getObjectId()) == null)
 		{
 			// Partner hasn't be found, cancel the invitation
-			player.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
+			player.sendPacket(new SystemMessage(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE));
 			player.setActiveRequester(null);
 			return;
 		}

@@ -73,13 +73,13 @@ public final class RequestDropItem extends L2GameClientPacket
 		
 		if (item == null || count == 0 || !activeChar.validateItemManipulation(objectId, "drop"))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THIS_ITEM_CANNOT_BE_DISCARDED));
 			return;
 		}
 		
 		if ((!Config.ALLOW_DISCARDITEM && !activeChar.isGM()) || (!item.isDropable()))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THIS_ITEM_CANNOT_BE_DISCARDED));
 			return;
 		}
 		
@@ -112,13 +112,7 @@ public final class RequestDropItem extends L2GameClientPacket
 		
 		if (count > item.getCount())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
-			return;
-		}
-		
-		if (Config.PLAYER_SPAWN_PROTECTION > 0 && activeChar.isInvul() && !activeChar.isGM())
-		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THIS_ITEM_CANNOT_BE_DISCARDED));
 			return;
 		}
 		
@@ -160,7 +154,7 @@ public final class RequestDropItem extends L2GameClientPacket
 		{
 			if (activeChar.getCurrentSkill() != null && activeChar.getCurrentSkill().getSkill().getItemConsumeId() == item.getItemId())
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.THIS_ITEM_CANNOT_BE_DISCARDED));
 				return;
 			}
 		}
@@ -171,7 +165,7 @@ public final class RequestDropItem extends L2GameClientPacket
 			{
 				LOGGER.debug(activeChar.getObjectId() + ":player tried to drop quest item");
 			}
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_DISCARD_EXCHANGE_ITEM));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THIS_ITEMM_CANNOT_BE_DISCARDED_OR_EXCHANGED));
 			return;
 		}
 		
@@ -181,7 +175,7 @@ public final class RequestDropItem extends L2GameClientPacket
 			{
 				LOGGER.debug(activeChar.getObjectId() + ": trying to drop too far away");
 			}
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_DISCARD_DISTANCE_TOO_FAR));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_TOO_FAR_FROM_YOU_TO_DISCARD));
 			return;
 		}
 		

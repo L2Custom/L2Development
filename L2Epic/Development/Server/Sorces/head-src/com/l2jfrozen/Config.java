@@ -2,10 +2,8 @@ package com.l2jfrozen;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.InputStream;
 import java.io.LineNumberReader;
 import java.io.OutputStream;
 import java.math.BigInteger;
@@ -51,10 +49,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties AccessSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			AccessSettings.load(is);
-			is.close();
+			L2Properties AccessSettings = new L2Properties(filePath);
 			
 			GM_STARTUP_AUTO_LIST = Boolean.parseBoolean(AccessSettings.getProperty("GMStartupAutoList", "true"));
 			GM_HERO_AURA = Boolean.parseBoolean(AccessSettings.getProperty("GMHeroAura", "false"));
@@ -105,6 +100,7 @@ public final class Config
 	public static int SAVE_DROPPED_ITEM_INTERVAL;
 	public static boolean CLEAR_DROPPED_ITEM_TABLE;
 	public static boolean ALLOW_DISCARDITEM;
+	public static List<Integer> ITEM_IDS_IGNORED_IN_DROP_LIST;
 	public static boolean ALLOW_FREIGHT;
 	public static boolean ALLOW_WAREHOUSE;
 	public static boolean WAREHOUSE_CACHE;
@@ -141,7 +137,6 @@ public final class Config
 	public static boolean GRIDS_ALWAYS_ON;
 	public static int GRID_NEIGHBOR_TURNON_TIME;
 	public static int GRID_NEIGHBOR_TURNOFF_TIME;
-	public static boolean BYPASS_VALIDATION;
 	
 	public static boolean HIGH_RATE_SERVER_DROPS;
 	
@@ -154,10 +149,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties optionsSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			optionsSettings.load(is);
-			is.close();
+			L2Properties optionsSettings = new L2Properties(filePath);
 			
 			AUTODESTROY_ITEM_AFTER = Integer.parseInt(optionsSettings.getProperty("AutoDestroyDroppedItemAfter", "0"));
 			HERB_AUTO_DESTROY_TIME = Integer.parseInt(optionsSettings.getProperty("AutoDestroyHerbTime", "15")) * 1000;
@@ -189,6 +181,27 @@ public final class Config
 			ALLOW_RACE = Boolean.valueOf(optionsSettings.getProperty("AllowRace", "False"));
 			ALLOW_RENTPET = Boolean.valueOf(optionsSettings.getProperty("AllowRentPet", "False"));
 			ALLOW_DISCARDITEM = Boolean.valueOf(optionsSettings.getProperty("AllowDiscardItem", "True"));
+			
+			String itemsIgnoredInDropListData = optionsSettings.getProperty("ItemsIgnoredInDropList", "");
+			ITEM_IDS_IGNORED_IN_DROP_LIST = new ArrayList<>();
+			
+			if(!itemsIgnoredInDropListData.isEmpty())
+			{
+				for(String sItemId : itemsIgnoredInDropListData.split(","))
+				{
+					try
+					{
+						int itemId = Integer.parseInt(sItemId.trim());
+						ITEM_IDS_IGNORED_IN_DROP_LIST.add(itemId);	
+					}
+					catch (Exception e)
+					{
+						LOGGER.error("Possible invalid number format exception", e);
+					}
+				}
+			}
+			
+				
 			ALLOWFISHING = Boolean.valueOf(optionsSettings.getProperty("AllowFishing", "False"));
 			ALLOW_MANOR = Boolean.parseBoolean(optionsSettings.getProperty("AllowManor", "False"));
 			ALLOW_BOAT = Boolean.valueOf(optionsSettings.getProperty("AllowBoat", "False"));
@@ -287,10 +300,8 @@ public final class Config
 		
 		try
 		{
-			L2Properties serverSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			serverSettings.load(is);
-			is.close();
+			L2Properties serverSettings = new L2Properties(filePath);
+			
 			GAMESERVER_HOSTNAME = serverSettings.getProperty("GameserverHostname");
 			PORT_GAME = Integer.parseInt(serverSettings.getProperty("GameserverPort", "7777"));
 			
@@ -357,10 +368,7 @@ public final class Config
 		
 		try
 		{
-			final L2Properties idSettings = new L2Properties();
-			final InputStream is = new FileInputStream(new File(filePath));
-			idSettings.load(is);
-			is.close();
+			L2Properties idSettings = new L2Properties(filePath);
 			
 			MAP_TYPE = ObjectMapType.valueOf(idSettings.getProperty("L2Map", "WorldObjectMap"));
 			SET_TYPE = ObjectSetType.valueOf(idSettings.getProperty("L2Set", "WorldObjectSet"));
@@ -408,7 +416,6 @@ public final class Config
 	public static boolean DEEPBLUE_DROP_RULES;
 	public static int UNSTUCK_INTERVAL;
 	public static int DEATH_PENALTY_CHANCE;
-	public static int PLAYER_SPAWN_PROTECTION;
 	public static int PLAYER_TELEPORT_PROTECTION;
 	public static int PLAYER_FAKEDEATH_UP_PROTECTION;
 	public static String PARTY_XP_CUTOFF_METHOD;
@@ -450,10 +457,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties otherSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			otherSettings.load(is);
-			is.close();
+			L2Properties otherSettings = new L2Properties(filePath);
 			
 			DEEPBLUE_DROP_RULES = Boolean.parseBoolean(otherSettings.getProperty("UseDeepBlueDropRules", "True"));
 			ALLOW_GUARDS = Boolean.valueOf(otherSettings.getProperty("AllowGuards", "False"));
@@ -556,11 +560,7 @@ public final class Config
 			
 			UNSTUCK_INTERVAL = Integer.parseInt(otherSettings.getProperty("UnstuckInterval", "300"));
 			
-			/* Player protection after teleport or login */
-			PLAYER_SPAWN_PROTECTION = Integer.parseInt(otherSettings.getProperty("PlayerSpawnProtection", "0"));
 			PLAYER_TELEPORT_PROTECTION = Integer.parseInt(otherSettings.getProperty("PlayerTeleportProtection", "0"));
-			
-			/* Player protection after recovering from fake death (works against mobs only) */
 			PLAYER_FAKEDEATH_UP_PROTECTION = Integer.parseInt(otherSettings.getProperty("PlayerFakeDeathUpProtection", "0"));
 			
 			/* Defines some Party XP related values */
@@ -718,10 +718,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties ratesSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			ratesSettings.load(is);
-			is.close();
+			L2Properties ratesSettings = new L2Properties(filePath);
 			
 			RATE_XP = Float.parseFloat(ratesSettings.getProperty("RateXp", "1.00"));
 			RATE_SP = Float.parseFloat(ratesSettings.getProperty("RateSp", "1.00"));
@@ -782,6 +779,7 @@ public final class Config
 	public static double ALT_WEIGHT_LIMIT;
 	public static boolean ALT_GAME_SKILL_LEARN;
 	public static boolean AUTO_LEARN_SKILLS;
+	public static boolean SP_BOOK_NEEDED;
 	public static boolean ALT_GAME_CANCEL_BOW;
 	public static boolean ALT_GAME_CANCEL_CAST;
 	public static int ALT_PARTY_RANGE;
@@ -806,7 +804,6 @@ public final class Config
 	public static int ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED;
 	public static int ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED;
 	public static int ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED;
-	public static boolean REMOVE_CASTLE_CIRCLETS;
 	public static boolean LIFE_CRYSTAL_NEEDED;
 	public static int CLAN_LEADER_COLOR;
 	public static int CLAN_LEADER_COLOR_CLAN_LEVEL;
@@ -815,7 +812,6 @@ public final class Config
 	public static boolean ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE;
 	public static boolean ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH;
 	public static int ALT_MAX_NUM_OF_CLANS_IN_ALLY;
-	public static boolean SP_BOOK_NEEDED;
 	public static boolean ES_SP_BOOK_NEEDED;
 	public static boolean ALT_PRIVILEGES_SECURE_CHECK;
 	public static int ALT_PRIVILEGES_DEFAULT_LEVEL;
@@ -832,18 +828,6 @@ public final class Config
 	public static float ALT_LOTTERY_4_NUMBER_RATE;
 	public static float ALT_LOTTERY_3_NUMBER_RATE;
 	public static int ALT_LOTTERY_2_AND_1_NUMBER_PRIZE;
-	public static int RIFT_MIN_PARTY_SIZE;
-	public static int RIFT_SPAWN_DELAY;
-	public static int RIFT_MAX_JUMPS;
-	public static int RIFT_AUTO_JUMPS_TIME_MIN;
-	public static int RIFT_AUTO_JUMPS_TIME_MAX;
-	public static int RIFT_ENTER_COST_RECRUIT;
-	public static int RIFT_ENTER_COST_SOLDIER;
-	public static int RIFT_ENTER_COST_OFFICER;
-	public static int RIFT_ENTER_COST_CAPTAIN;
-	public static int RIFT_ENTER_COST_COMMANDER;
-	public static int RIFT_ENTER_COST_HERO;
-	public static float RIFT_BOSS_ROOM_TIME_MUTIPLY;
 	public static float ALT_GAME_EXPONENT_XP;
 	public static float ALT_GAME_EXPONENT_SP;
 	public static boolean FORCE_INVENTORY_UPDATE;
@@ -900,14 +884,14 @@ public final class Config
 		
 		try
 		{
-			L2Properties altSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			altSettings.load(is);
-			is.close();
+			L2Properties altSettings = new L2Properties(filePath);
 			
 			ALT_WEIGHT_LIMIT = Double.parseDouble(altSettings.getProperty("AltWeightLimit", "1"));
 			ALT_GAME_SKILL_LEARN = Boolean.parseBoolean(altSettings.getProperty("AltGameSkillLearn", "false"));
+			
 			AUTO_LEARN_SKILLS = Boolean.parseBoolean(altSettings.getProperty("AutoLearnSkills", "false"));
+			SP_BOOK_NEEDED = Boolean.parseBoolean(altSettings.getProperty("SpBookNeeded", "true"));
+			
 			ALT_GAME_CANCEL_BOW = altSettings.getProperty("AltGameCancelByHit", "Cast").equalsIgnoreCase("bow") || altSettings.getProperty("AltGameCancelByHit", "Cast").equalsIgnoreCase("all");
 			ALT_GAME_CANCEL_CAST = altSettings.getProperty("AltGameCancelByHit", "Cast").equalsIgnoreCase("cast") || altSettings.getProperty("AltGameCancelByHit", "Cast").equalsIgnoreCase("all");
 			ALT_GAME_SHIELD_BLOCKS = Boolean.parseBoolean(altSettings.getProperty("AltShieldBlocks", "false"));
@@ -925,7 +909,6 @@ public final class Config
 			ALT_GAME_FREIGHT_PRICE = Integer.parseInt(altSettings.getProperty("AltGameFreightPrice", "1000"));
 			ALT_PARTY_RANGE = Integer.parseInt(altSettings.getProperty("AltPartyRange", "1600"));
 			ALT_PARTY_RANGE2 = Integer.parseInt(altSettings.getProperty("AltPartyRange2", "1400"));
-			SP_BOOK_NEEDED = Boolean.parseBoolean(altSettings.getProperty("SpBookNeeded", "true"));
 			ES_SP_BOOK_NEEDED = Boolean.parseBoolean(altSettings.getProperty("EnchantSkillSpBookNeeded", "true"));
 			AUTO_LOOT = altSettings.getProperty("AutoLoot").equalsIgnoreCase("True");
 			AUTO_LOOT_HERBS = altSettings.getProperty("AutoLootHerbs").equalsIgnoreCase("True");
@@ -944,7 +927,6 @@ public final class Config
 			ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED = Integer.parseInt(altSettings.getProperty("DaysBeforeJoinAllyWhenDismissed", "1"));
 			ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED = Integer.parseInt(altSettings.getProperty("DaysBeforeAcceptNewClanWhenDismissed", "1"));
 			ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED = Integer.parseInt(altSettings.getProperty("DaysBeforeCreateNewAllyWhenDissolved", "10"));
-			REMOVE_CASTLE_CIRCLETS = Boolean.parseBoolean(altSettings.getProperty("RemoveCastleCirclets", "true"));
 			LIFE_CRYSTAL_NEEDED = Boolean.parseBoolean(altSettings.getProperty("LifeCrystalNeeded", "true"));
 			CLAN_LEADER_COLOR_ENABLED = Boolean.parseBoolean(altSettings.getProperty("ClanLeaderNameColorEnabled", "true"));
 			CLAN_LEADER_COLORED = Integer.parseInt(altSettings.getProperty("ClanLeaderColored", "1"));
@@ -967,20 +949,6 @@ public final class Config
 			ALT_LOTTERY_2_AND_1_NUMBER_PRIZE = Integer.parseInt(altSettings.getProperty("AltLottery2and1NumberPrize", "200"));
 			BUFFS_MAX_AMOUNT = Byte.parseByte(altSettings.getProperty("MaxBuffAmount", "24"));
 			DEBUFFS_MAX_AMOUNT = Byte.parseByte(altSettings.getProperty("MaxDebuffAmount", "6"));
-			
-			// Dimensional Rift Config
-			RIFT_MIN_PARTY_SIZE = Integer.parseInt(altSettings.getProperty("RiftMinPartySize", "5"));
-			RIFT_MAX_JUMPS = Integer.parseInt(altSettings.getProperty("MaxRiftJumps", "4"));
-			RIFT_SPAWN_DELAY = Integer.parseInt(altSettings.getProperty("RiftSpawnDelay", "10000"));
-			RIFT_AUTO_JUMPS_TIME_MIN = Integer.parseInt(altSettings.getProperty("AutoJumpsDelayMin", "480"));
-			RIFT_AUTO_JUMPS_TIME_MAX = Integer.parseInt(altSettings.getProperty("AutoJumpsDelayMax", "600"));
-			RIFT_ENTER_COST_RECRUIT = Integer.parseInt(altSettings.getProperty("RecruitCost", "18"));
-			RIFT_ENTER_COST_SOLDIER = Integer.parseInt(altSettings.getProperty("SoldierCost", "21"));
-			RIFT_ENTER_COST_OFFICER = Integer.parseInt(altSettings.getProperty("OfficerCost", "24"));
-			RIFT_ENTER_COST_CAPTAIN = Integer.parseInt(altSettings.getProperty("CaptainCost", "27"));
-			RIFT_ENTER_COST_COMMANDER = Integer.parseInt(altSettings.getProperty("CommanderCost", "30"));
-			RIFT_ENTER_COST_HERO = Integer.parseInt(altSettings.getProperty("HeroCost", "33"));
-			RIFT_BOSS_ROOM_TIME_MUTIPLY = Float.parseFloat(altSettings.getProperty("BossRoomTimeMultiply", "1.5"));
 			
 			// Destroy ss
 			DONT_DESTROY_SS = Boolean.parseBoolean(altSettings.getProperty("DontDestroySS", "false"));
@@ -1061,6 +1029,19 @@ public final class Config
 	public static long ALT_FESTIVAL_SECOND_SWARM;
 	public static long ALT_FESTIVAL_CHEST_SPAWN;
 	
+	public static int RIFT_MIN_PARTY_SIZE;
+	public static int RIFT_SPAWN_DELAY;
+	public static int RIFT_MAX_JUMPS;
+	public static int RIFT_AUTO_JUMPS_TIME_MIN;
+	public static int RIFT_AUTO_JUMPS_TIME_MAX;
+	public static int RIFT_ENTER_COST_RECRUIT;
+	public static int RIFT_ENTER_COST_SOLDIER;
+	public static int RIFT_ENTER_COST_OFFICER;
+	public static int RIFT_ENTER_COST_CAPTAIN;
+	public static int RIFT_ENTER_COST_COMMANDER;
+	public static int RIFT_ENTER_COST_HERO;
+	public static float RIFT_BOSS_ROOM_TIME_MUTIPLY;
+	
 	// ============================================================
 	public static void load7sConfig()
 	{
@@ -1068,10 +1049,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties sevenSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			sevenSettings.load(is);
-			is.close();
+			L2Properties sevenSettings = new L2Properties(filePath);
 			
 			ALT_GAME_REQUIRE_CASTLE_DAWN = Boolean.parseBoolean(sevenSettings.getProperty("AltRequireCastleForDawn", "False"));
 			ALT_GAME_REQUIRE_CLAN_CASTLE = Boolean.parseBoolean(sevenSettings.getProperty("AltRequireClanCastle", "False"));
@@ -1087,6 +1065,20 @@ public final class Config
 			ALT_FESTIVAL_SECOND_SPAWN = Long.parseLong(sevenSettings.getProperty("AltFestivalSecondSpawn", "540000"));
 			ALT_FESTIVAL_SECOND_SWARM = Long.parseLong(sevenSettings.getProperty("AltFestivalSecondSwarm", "720000"));
 			ALT_FESTIVAL_CHEST_SPAWN = Long.parseLong(sevenSettings.getProperty("AltFestivalChestSpawn", "900000"));
+			
+			// Dimensional Rift Config
+			RIFT_MIN_PARTY_SIZE = Integer.parseInt(sevenSettings.getProperty("RiftMinPartySize", "5"));
+			RIFT_MAX_JUMPS = Integer.parseInt(sevenSettings.getProperty("MaxRiftJumps", "4"));
+			RIFT_SPAWN_DELAY = Integer.parseInt(sevenSettings.getProperty("RiftSpawnDelay", "10000"));
+			RIFT_AUTO_JUMPS_TIME_MIN = Integer.parseInt(sevenSettings.getProperty("AutoJumpsDelayMin", "480"));
+			RIFT_AUTO_JUMPS_TIME_MAX = Integer.parseInt(sevenSettings.getProperty("AutoJumpsDelayMax", "600"));
+			RIFT_ENTER_COST_RECRUIT = Integer.parseInt(sevenSettings.getProperty("RecruitCost", "18"));
+			RIFT_ENTER_COST_SOLDIER = Integer.parseInt(sevenSettings.getProperty("SoldierCost", "21"));
+			RIFT_ENTER_COST_OFFICER = Integer.parseInt(sevenSettings.getProperty("OfficerCost", "24"));
+			RIFT_ENTER_COST_CAPTAIN = Integer.parseInt(sevenSettings.getProperty("CaptainCost", "27"));
+			RIFT_ENTER_COST_COMMANDER = Integer.parseInt(sevenSettings.getProperty("CommanderCost", "30"));
+			RIFT_ENTER_COST_HERO = Integer.parseInt(sevenSettings.getProperty("HeroCost", "33"));
+			RIFT_BOSS_ROOM_TIME_MUTIPLY = Float.parseFloat(sevenSettings.getProperty("BossRoomTimeMultiply", "1.5"));
 		}
 		catch (Exception e)
 		{
@@ -1153,10 +1145,8 @@ public final class Config
 		
 		try
 		{
-			L2Properties clanhallSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			clanhallSettings.load(is);
-			is.close();
+			L2Properties clanhallSettings = new L2Properties(filePath);
+			
 			CH_TELE_FEE_RATIO = Long.valueOf(clanhallSettings.getProperty("ClanHallTeleportFunctionFeeRation", "86400000"));
 			CH_TELE1_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallTeleportFunctionFeeLvl1", "86400000"));
 			CH_TELE2_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallTeleportFunctionFeeLvl2", "86400000"));
@@ -1229,10 +1219,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties elitchSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			elitchSettings.load(is);
-			is.close();
+			L2Properties elitchSettings = new L2Properties(filePath);
 			
 			DEVASTATED_DAY = Integer.valueOf(elitchSettings.getProperty("DevastatedDay", "1"));
 			DEVASTATED_HOUR = Integer.valueOf(elitchSettings.getProperty("DevastatedHour", "18"));
@@ -1270,10 +1257,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties WeddingSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			WeddingSettings.load(is);
-			is.close();
+			L2Properties WeddingSettings = new L2Properties(filePath);
 			
 			L2JMOD_ALLOW_WEDDING = Boolean.valueOf(WeddingSettings.getProperty("AllowWedding", "False"));
 			L2JMOD_WEDDING_PRICE = Integer.parseInt(WeddingSettings.getProperty("WeddingPrice", "250000000"));
@@ -1312,10 +1296,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties TWSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			TWSettings.load(is);
-			is.close();
+			L2Properties TWSettings = new L2Properties(filePath);
 			
 			TW_TOWN_ID = Integer.parseInt(TWSettings.getProperty("TWTownId", "9"));
 			
@@ -1355,10 +1336,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties pcbpSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			pcbpSettings.load(is);
-			is.close();
+			L2Properties pcbpSettings = new L2Properties(filePath);
 			
 			PCB_ENABLE = Boolean.parseBoolean(pcbpSettings.getProperty("PcBangPointEnable", "true"));
 			PCB_MIN_LEVEL = Integer.parseInt(pcbpSettings.getProperty("PcBangPointMinLevel", "20"));
@@ -1396,7 +1374,6 @@ public final class Config
 	public static boolean ACCEPT_ALTERNATE_ID;
 	public static boolean GMAUDIT;
 	public static boolean LOG_CHAT;
-	public static boolean LOG_ITEMS;
 	public static boolean LOG_HIGH_DAMAGES;
 	public static boolean GAMEGUARD_L2NET_CHECK;
 	
@@ -1416,10 +1393,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties devSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			devSettings.load(is);
-			is.close();
+			L2Properties devSettings = new L2Properties(filePath);
 			
 			ENABLE_OLYMPIAD_DEBUG = Boolean.parseBoolean(devSettings.getProperty("EnableOlympiadDebug", "false"));
 			SKILLSDEBUG = Boolean.parseBoolean(devSettings.getProperty("SkillsDebug", "false"));
@@ -1439,7 +1413,6 @@ public final class Config
 			
 			GMAUDIT = Boolean.valueOf(devSettings.getProperty("GMAudit", "False"));
 			LOG_CHAT = Boolean.valueOf(devSettings.getProperty("LogChat", "false"));
-			LOG_ITEMS = Boolean.valueOf(devSettings.getProperty("LogItems", "false"));
 			LOG_HIGH_DAMAGES = Boolean.valueOf(devSettings.getProperty("LogHighDamages", "false"));
 			
 			GAMEGUARD_L2NET_CHECK = Boolean.valueOf(devSettings.getProperty("GameGuardL2NetCheck", "False"));
@@ -1476,10 +1449,7 @@ public final class Config
 		
 		try
 		{
-			final L2Properties craftSettings = new L2Properties();
-			final InputStream is = new FileInputStream(new File(filePath));
-			craftSettings.load(is);
-			is.close();
+			final L2Properties craftSettings = new L2Properties(filePath);
 			
 			DWARF_RECIPE_LIMIT = Integer.parseInt(craftSettings.getProperty("DwarfRecipeLimit", "50"));
 			COMMON_RECIPE_LIMIT = Integer.parseInt(craftSettings.getProperty("CommonRecipeLimit", "50"));
@@ -1511,10 +1481,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties AWAYSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			AWAYSettings.load(is);
-			is.close();
+			L2Properties AWAYSettings = new L2Properties(filePath);
 			
 			ALLOW_AWAY_STATUS = Boolean.parseBoolean(AWAYSettings.getProperty("AllowAwayStatus", "False"));
 			AWAY_PLAYER_TAKE_AGGRO = Boolean.parseBoolean(AWAYSettings.getProperty("AwayPlayerTakeAggro", "False"));
@@ -1541,10 +1508,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties BANKSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			BANKSettings.load(is);
-			is.close();
+			L2Properties BANKSettings = new L2Properties(filePath);
 			
 			BANKING_SYSTEM_ENABLED = Boolean.parseBoolean(BANKSettings.getProperty("BankingEnabled", "false"));
 			BANKING_SYSTEM_GOLDBARS = Integer.parseInt(BANKSettings.getProperty("BankingGoldbarCount", "1"));
@@ -1577,7 +1541,6 @@ public final class Config
 	public static boolean CLANHALL_SHIELD;
 	public static boolean APELLA_ARMORS;
 	public static boolean OATH_ARMORS;
-	public static boolean CASTLE_CROWN;
 	public static boolean CASTLE_CIRCLETS;
 	public static boolean NOBLE_CUSTOM_ITEMS;
 	public static boolean HERO_CUSTOM_ITEMS;
@@ -1616,10 +1579,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties L2JFrozenSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			L2JFrozenSettings.load(is);
-			is.close();
+			L2Properties L2JFrozenSettings = new L2Properties(filePath);
 			
 			ONLINE_PLAYERS_ON_LOGIN = Boolean.valueOf(L2JFrozenSettings.getProperty("OnlineOnLogin", "False"));
 			
@@ -1650,7 +1610,6 @@ public final class Config
 			CLANHALL_SHIELD = Boolean.parseBoolean(L2JFrozenSettings.getProperty("ClanHallShieldRestriction", "true"));
 			APELLA_ARMORS = Boolean.parseBoolean(L2JFrozenSettings.getProperty("ApellaArmorsRestriction", "true"));
 			OATH_ARMORS = Boolean.parseBoolean(L2JFrozenSettings.getProperty("OathArmorsRestriction", "true"));
-			CASTLE_CROWN = Boolean.parseBoolean(L2JFrozenSettings.getProperty("CastleLordsCrownRestriction", "true"));
 			CASTLE_CIRCLETS = Boolean.parseBoolean(L2JFrozenSettings.getProperty("CastleCircletsRestriction", "true"));
 			
 			NOBLE_CUSTOM_ITEMS = Boolean.parseBoolean(L2JFrozenSettings.getProperty("EnableNobleCustomItem", "true"));
@@ -1746,10 +1705,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties pvpSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			pvpSettings.load(is);
-			is.close();
+			L2Properties pvpSettings = new L2Properties(filePath);
 			
 			/* KARMA SYSTEM */
 			KARMA_MIN_KARMA = Integer.parseInt(pvpSettings.getProperty("MinKarma", "240"));
@@ -1875,10 +1831,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties OLYMPSetting = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			OLYMPSetting.load(is);
-			is.close();
+			L2Properties OLYMPSetting = new L2Properties(filePath);
 			
 			ALLOW_DUALBOX_OLY = Boolean.valueOf(OLYMPSetting.getProperty("AllowDualBoxInOly", "True"));
 			ALT_OLY_ENCHANT_LIMIT = Integer.parseInt(OLYMPSetting.getProperty("AltOlyMaxEnchant", "-1"));
@@ -1998,10 +1951,7 @@ public final class Config
 		
 		try
 		{
-			final L2Properties ENCHANTSetting = new L2Properties();
-			final InputStream is = new FileInputStream(new File(filePath));
-			ENCHANTSetting.load(is);
-			is.close();
+			L2Properties ENCHANTSetting = new L2Properties(filePath);
 			
 			String[] propertySplit = ENCHANTSetting.getProperty("NormalWeaponEnchantLevel", "").split(";");
 			for (final String readData : propertySplit)
@@ -2314,12 +2264,9 @@ public final class Config
 			// Load FloodProtector L2Properties file
 			try
 			{
-				final L2Properties security = new L2Properties();
-				final FileInputStream is = new FileInputStream(new File(filePath));
-				security.load(is);
+				L2Properties security = new L2Properties(filePath);
 				
 				loadFloodProtectorConfigs(security);
-				is.close();
 				
 			}
 			catch (Exception e)
@@ -2396,10 +2343,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties PacketSetting = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			PacketSetting.load(is);
-			is.close();
+			L2Properties PacketSetting = new L2Properties(filePath);
 			
 			ENABLE_UNK_PACKET_PROTECTION = Boolean.parseBoolean(PacketSetting.getProperty("UnknownPacketProtection", "true"));
 			MAX_UNKNOWN_PACKETS = Integer.parseInt(PacketSetting.getProperty("UnknownPacketsBeforeBan", "5"));
@@ -2429,10 +2373,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties POtherSetting = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			POtherSetting.load(is);
-			is.close();
+			L2Properties POtherSetting = new L2Properties(filePath);
 			
 			CHECK_NAME_ON_LOGIN = Boolean.parseBoolean(POtherSetting.getProperty("CheckNameOnEnter", "True"));
 			CHECK_SKILLS_ON_ENTER = Boolean.parseBoolean(POtherSetting.getProperty("CheckSkillsOnEnter", "True"));
@@ -2447,8 +2388,6 @@ public final class Config
 			
 			/** l2walker protection **/
 			L2WALKER_PROTEC = Boolean.parseBoolean(POtherSetting.getProperty("L2WalkerProtection", "False"));
-			
-			BYPASS_VALIDATION = Boolean.parseBoolean(POtherSetting.getProperty("BypassValidation", "True"));
 			
 			DUALBOX_AMOUNT_ALLOWED = Integer.parseInt(POtherSetting.getProperty("DualBoxAmountAllowed", "99"));
 		}
@@ -2529,10 +2468,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties physicSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			physicSettings.load(is);
-			is.close();
+			L2Properties physicSettings = new L2Properties(filePath);
 			
 			ENABLE_CLASS_DAMAGES = Boolean.parseBoolean(physicSettings.getProperty("EnableClassDamagesSettings", "true"));
 			ENABLE_CLASS_DAMAGES_IN_OLY = Boolean.parseBoolean(physicSettings.getProperty("EnableClassDamagesSettingsInOly", "true"));
@@ -2664,10 +2600,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties geodataSetting = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			geodataSetting.load(is);
-			is.close();
+			L2Properties geodataSetting = new L2Properties(filePath);
 			
 			GEODATA = Integer.parseInt(geodataSetting.getProperty("GeoData", "0"));
 			GEODATA_CELLFINDING = Boolean.parseBoolean(geodataSetting.getProperty("CellPathFinding", "False"));
@@ -2803,10 +2736,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties bossSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			bossSettings.load(is);
-			is.close();
+			L2Properties bossSettings = new L2Properties(filePath);
 			
 			ALT_RAIDS_STATS_BONUS = Boolean.parseBoolean(bossSettings.getProperty("AltRaidsStatsBonus", "True"));
 			
@@ -3035,10 +2965,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties scriptSetting = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			scriptSetting.load(is);
-			is.close();
+			L2Properties scriptSetting = new L2Properties(filePath);
 			
 			SCRIPT_DEBUG = Boolean.valueOf(scriptSetting.getProperty("EnableScriptDebug", "false"));
 			SCRIPT_ALLOW_COMPILATION = Boolean.valueOf(scriptSetting.getProperty("AllowCompilation", "true"));
@@ -3087,7 +3014,7 @@ public final class Config
 		
 		if (f.exists())
 		{
-			try(LineNumberReader lineReader = new LineNumberReader(new BufferedReader(new FileReader(f)));)
+			try(LineNumberReader lineReader = new LineNumberReader(new BufferedReader(new FileReader(f))))
 			{
 				String line;
 				while ((line = lineReader.readLine()) != null)
@@ -3143,16 +3070,16 @@ public final class Config
 		
 		try
 		{
-			L2Properties p = new L2Properties(filePath);
+			L2Properties properties = new L2Properties(filePath);
 			
-			CHECK_CONNECTION_INITIAL_TIME = Long.parseLong(p.getProperty("CheckConnectionInitial", "300000"));
-			CHECK_CONNECTION_DELAY_TIME = Long.parseLong(p.getProperty("CheckConnectionDelay", "900000"));
-			CHECK_CONNECTION_INACTIVITY_TIME = Long.parseLong(p.getProperty("CheckConnectionInactivityTime", "90000"));
-			CLEANDB_INITIAL_TIME = Long.parseLong(p.getProperty("CleanDBInitial", "300000"));
-			CLEANDB_DELAY_TIME = Long.parseLong(p.getProperty("CleanDBDelay", "900000"));
-			CHECK_TELEPORT_ZOMBIE_DELAY_TIME = Long.parseLong(p.getProperty("CheckTeleportZombiesDelay", "90000"));
-			DEADLOCKCHECK_INTIAL_TIME = Long.parseLong(p.getProperty("DeadLockCheck", "0"));
-			DEADLOCKCHECK_DELAY_TIME = Long.parseLong(p.getProperty("DeadLockDelay", "0"));
+			CHECK_CONNECTION_INITIAL_TIME = Long.parseLong(properties.getProperty("CheckConnectionInitial", "300000"));
+			CHECK_CONNECTION_DELAY_TIME = Long.parseLong(properties.getProperty("CheckConnectionDelay", "900000"));
+			CHECK_CONNECTION_INACTIVITY_TIME = Long.parseLong(properties.getProperty("CheckConnectionInactivityTime", "90000"));
+			CLEANDB_INITIAL_TIME = Long.parseLong(properties.getProperty("CleanDBInitial", "300000"));
+			CLEANDB_DELAY_TIME = Long.parseLong(properties.getProperty("CleanDBDelay", "900000"));
+			CHECK_TELEPORT_ZOMBIE_DELAY_TIME = Long.parseLong(properties.getProperty("CheckTeleportZombiesDelay", "90000"));
+			DEADLOCKCHECK_INTIAL_TIME = Long.parseLong(properties.getProperty("DeadLockCheck", "0"));
+			DEADLOCKCHECK_DELAY_TIME = Long.parseLong(properties.getProperty("DeadLockDelay", "0"));
 		}
 		catch (Exception e)
 		{
@@ -3200,10 +3127,7 @@ public final class Config
 	{
 		try
 		{
-			L2Properties Settings = new L2Properties();
-			InputStream is = new FileInputStream(new File(HEXID_FILE));
-			Settings.load(is);
-			is.close();
+			L2Properties Settings = new L2Properties(HEXID_FILE);
 			SERVER_ID = Integer.parseInt(Settings.getProperty("ServerID"));
 			HEX_ID = new BigInteger(Settings.getProperty("HexID"), 16).toByteArray();
 		}
@@ -3244,10 +3168,7 @@ public final class Config
 		
 		try
 		{
-			L2Properties serverSettings = new L2Properties();
-			InputStream is = new FileInputStream(new File(filePath));
-			serverSettings.load(is);
-			is.close();
+			L2Properties serverSettings = new L2Properties(filePath);
 			
 			GAME_SERVER_LOGIN_HOST = serverSettings.getProperty("LoginHostname", "*");
 			GAME_SERVER_LOGIN_PORT = Integer.parseInt(serverSettings.getProperty("LoginPort", "9013"));
@@ -3395,49 +3316,36 @@ public final class Config
 		}
 		else
 		{
-			LOGGER.fatal("Could not Load Config: server mode was not set");
+			LOGGER.error("Could not Load Config: server mode was not set");
 		}
 	}
 	
-	public static void saveHexid(final int serverId, final String string)
+	public static void saveHexid(int serverId, String string)
 	{
 		Config.saveHexid(serverId, string, HEXID_FILE);
 	}
 	
-	public static void saveHexid(final int serverId, final String hexId, final String fileName)
+	public static void saveHexid(int serverId, String hexId, String fileName)
 	{
-		OutputStream out = null;
 		try
 		{
-			final L2Properties hexSetting = new L2Properties();
-			final File file = new File(fileName);
+			L2Properties hexSetting = new L2Properties();
+			File file = new File(fileName);
+			
 			if (file.createNewFile())
 			{
-				out = new FileOutputStream(file);
-				hexSetting.setProperty("ServerID", String.valueOf(serverId));
-				hexSetting.setProperty("HexID", hexId);
-				hexSetting.store(out, "the hexID to auth into login");
+				try(OutputStream out = new FileOutputStream(file))
+				{
+					hexSetting.setProperty("ServerID", String.valueOf(serverId));
+					hexSetting.setProperty("HexID", hexId);
+					hexSetting.store(out, "the hexID to auth into login");
+				}
+				
 			}
 		}
 		catch (Exception e)
 		{
 			LOGGER.error("Config : Failed to save hex id to " + fileName + " file.", e );
-		}
-		finally
-		{
-			
-			if (out != null)
-			{
-				try
-				{
-					out.close();
-				}
-				catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-			
 		}
 	}
 	
@@ -3485,21 +3393,18 @@ public final class Config
 	
 	public static void loadL2jFrozenRevision()
 	{
-		String L2JFROZEN_15_INFO_FILE = "../l2jfrozen_15.info";
+		String filePath = "../l2jfrozen_15.info";
 		
 		try
 		{
-			L2Properties serverpackInfo = new L2Properties();
-			InputStream is = new FileInputStream(new File(L2JFROZEN_15_INFO_FILE));
-			serverpackInfo.load(is);
-			is.close();
+			L2Properties serverpackInfo = new L2Properties(filePath);
 			
 			REVISION = serverpackInfo.getProperty("revision", "not found");
 			BUILD_DATE = serverpackInfo.getProperty("build-date", "not found");
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Failed to open " + L2JFROZEN_15_INFO_FILE + " file ", e);
+			LOGGER.error("Failed to open " + filePath + " file ", e);
 		}
 	}
 }

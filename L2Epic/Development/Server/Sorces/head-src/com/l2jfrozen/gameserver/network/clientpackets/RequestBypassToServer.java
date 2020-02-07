@@ -17,7 +17,7 @@ import com.l2jfrozen.gameserver.model.actor.position.L2CharPosition;
 import com.l2jfrozen.gameserver.model.entity.olympiad.Olympiad;
 import com.l2jfrozen.gameserver.network.serverpackets.ActionFailed;
 import com.l2jfrozen.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jfrozen.gameserver.util.GMAudit;
+import com.l2jfrozen.util.L2Log;
 
 import main.EngineModsManager;
 
@@ -93,7 +93,10 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				
 				if (Config.GMAUDIT)
 				{
-					GMAudit.auditGMAction(activeChar.getName() + "_" + activeChar.getObjectId(), command, activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target", bypassCommand.replace(command, ""));
+					String target = activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target";
+					String message = "GM: " + activeChar + ", Target: [" + target + "], Command: [" + command + "], Params: [" + bypassCommand.replace(command, "") + "]";
+					String fileName = activeChar.getName() + "_" + activeChar.getObjectId(); // ReynalDev_268477761
+					L2Log.add(message, "gm_commands", fileName);
 				}
 				
 				ach.useAdminCommand(bypassCommand, activeChar);

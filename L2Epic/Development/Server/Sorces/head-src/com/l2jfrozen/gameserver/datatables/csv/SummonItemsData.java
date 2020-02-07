@@ -1,9 +1,3 @@
-
-/**
- *
- * @author FBIagent
- *
- */
 package com.l2jfrozen.gameserver.datatables.csv;
 
 import java.io.File;
@@ -16,9 +10,13 @@ import org.apache.log4j.Logger;
 import com.l2jfrozen.Config;
 import com.l2jfrozen.gameserver.model.L2SummonItem;
 
+/**
+* @author FBIagent
+* @author ReynalDev 
+*/
 public class SummonItemsData
 {
-	private static Logger LOGGER = Logger.getLogger(SummonItemsData.class);
+	private static final Logger LOGGER = Logger.getLogger(SummonItemsData.class);
 	private static SummonItemsData instance;
 	private final Map<Integer, L2SummonItem> summonitems;
 	
@@ -36,7 +34,7 @@ public class SummonItemsData
 	{
 		summonitems = new HashMap<>();
 		
-		try (Scanner s = new Scanner(new File(Config.DATAPACK_ROOT + "/data/csv/summon_items.csv"));)
+		try (Scanner s = new Scanner(new File(Config.DATAPACK_ROOT + "/data/csv/summon_items.csv")))
 		{
 			int lineCount = 0;
 			
@@ -70,13 +68,9 @@ public class SummonItemsData
 				}
 				catch (Exception e)
 				{
-					if (Config.ENABLE_ALL_EXCEPTIONS)
-					{
-						e.printStackTrace();
-					}
-					
-					LOGGER.info("Summon items data: Error in line " + lineCount + " -> incomplete/invalid data or wrong seperator!");
-					LOGGER.info("		" + line);
+					LOGGER.error("Summon items data: Error in line " + lineCount + " -> incomplete/invalid data or wrong seperator!");
+					LOGGER.error("Line: " + line);
+					LOGGER.error(e);
 					ok = false;
 				}
 				

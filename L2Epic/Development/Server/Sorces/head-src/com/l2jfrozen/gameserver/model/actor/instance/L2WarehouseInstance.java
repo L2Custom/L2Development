@@ -58,7 +58,7 @@ public final class L2WarehouseInstance extends L2FolkInstance
 		
 		if (player.getActiveWarehouse().getSize() == 0)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.NO_ITEM_DEPOSITED_IN_WH));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_NOT_DEPOSITED_ANY_ITEMS_IN_YOUR_WAREHOUSE));
 			return;
 		}
 		
@@ -97,7 +97,7 @@ public final class L2WarehouseInstance extends L2FolkInstance
 		{
 			if (player.getClan().getLevel() == 0)
 			{
-				player.sendPacket(new SystemMessage(SystemMessageId.ONLY_LEVEL_1_CLAN_OR_HIGHER_CAN_USE_WAREHOUSE));
+				player.sendPacket(new SystemMessage(SystemMessageId.ONLY_CLANS_OF_CLAN_LEVEL_1_OR_HIGHER_CAN_USE_A_CLAN_WAREHOUSE));
 			}
 			else
 			{
@@ -130,7 +130,7 @@ public final class L2WarehouseInstance extends L2FolkInstance
 		
 		if (player.getClan().getLevel() == 0)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.ONLY_LEVEL_1_CLAN_OR_HIGHER_CAN_USE_WAREHOUSE));
+			player.sendPacket(new SystemMessage(SystemMessageId.ONLY_CLANS_OF_CLAN_LEVEL_1_OR_HIGHER_CAN_USE_A_CLAN_WAREHOUSE));
 		}
 		else
 		{
@@ -174,7 +174,7 @@ public final class L2WarehouseInstance extends L2FolkInstance
 			}
 			else
 			{
-				player.sendPacket(new SystemMessage(SystemMessageId.NO_ITEM_DEPOSITED_IN_WH));
+				player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_NOT_DEPOSITED_ANY_ITEMS_IN_YOUR_WAREHOUSE));
 			}
 		}
 		else

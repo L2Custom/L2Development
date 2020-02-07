@@ -31,7 +31,7 @@ public final class AllyLeave extends L2GameClientPacket
 		
 		if (!player.isClanLeader())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.ONLY_CLAN_LEADER_WITHDRAW_ALLY));
+			player.sendPacket(new SystemMessage(SystemMessageId.ONLY_THE_CLAN_LEADER_MAY_APPLY_FOR_WITHDRAWAL_FROM_THE_ALLIANCE));
 			return;
 		}
 		
@@ -39,13 +39,13 @@ public final class AllyLeave extends L2GameClientPacket
 		
 		if (clan.getAllyId() == 0)
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.NO_CURRENT_ALLIANCES));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_ARE_NOT_CURRENT_ALLIED_WITH_ANY_CLANS));
 			return;
 		}
 		
 		if (clan.getClanId() == clan.getAllyId())
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.ALLIANCE_LEADER_CANT_WITHDRAW));
+			player.sendPacket(new SystemMessage(SystemMessageId.ALLIANCE_LEADERS_CANNOT_WITHDRAW));
 			return;
 		}
 		
@@ -57,7 +57,7 @@ public final class AllyLeave extends L2GameClientPacket
 		clan.setAllyCrest(0);
 		clan.updateClanInDB();
 		
-		player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_WITHDRAWN_FROM_ALLIANCE));
+		player.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_WITHDRAWN_FROM_THE_ALLIANCE));
 	}
 	
 	@Override

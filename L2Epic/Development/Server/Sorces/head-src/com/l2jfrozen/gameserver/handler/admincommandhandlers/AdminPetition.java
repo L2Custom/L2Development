@@ -80,7 +80,7 @@ public class AdminPetition implements IAdminCommandHandler
 				
 				if (PetitionManager.getInstance().isPlayerInConsultation(activeChar))
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.ONLY_ONE_ACTIVE_PETITION_AT_TIME));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_MAY_ONLY_SUBMIT_ONE_PETITION_ACTIVE_AT_A_TIME));
 					return true;
 				}
 				

@@ -119,26 +119,16 @@ public class Zaken extends Quest implements Runnable
 							LOGGER.info("Zaken door id 21240006 closed, game time 01:00");
 							ZAKEN_SHIP_DOOR.closeMe();
 						}
-						catch (final Throwable e1)
+						catch (Exception e)
 						{
-							if (Config.ENABLE_ALL_EXCEPTIONS)
-							{
-								e1.printStackTrace();
-							}
-							
-							LOGGER.warn("Cannot close door ID: 21240006 " + e1);
+							LOGGER.error("Cannot close door ID: 21240006 " + e);
 						}
 					}, 300000L);
 				}
 			}
-			catch (final Throwable e2)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e2.printStackTrace();
-				}
-				
-				LOGGER.warn("Cannot open door ID: 21240006 " + e2);
+				LOGGER.error("Cannot open door ID: 21240006 " + e);
 			}
 		}, 1000, 1000);
 		

@@ -56,7 +56,7 @@ public final class RequestFriendDel extends L2GameClientPacket
 		
 		if (!activeChar.getFriendList().contains(name))
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_NOT_ON_YOUR_FRIENDS_LIST);
+			SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_ON_YOUR_FRIENDS_LIST);
 			sm.addString(name);
 			activeChar.sendPacket(sm);
 			return;
@@ -97,7 +97,7 @@ public final class RequestFriendDel extends L2GameClientPacket
 						else
 						{
 							// Player is not in your friendlist
-							SystemMessage sm = new SystemMessage(SystemMessageId.S1_NOT_ON_YOUR_FRIENDS_LIST);
+							SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_ON_YOUR_FRIENDS_LIST);
 							sm.addString(name);
 							activeChar.sendPacket(sm);
 							return;

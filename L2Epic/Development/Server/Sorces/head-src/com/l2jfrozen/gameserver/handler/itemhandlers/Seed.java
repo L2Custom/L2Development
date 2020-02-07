@@ -307,7 +307,7 @@ public class Seed implements IItemHandler
 		
 		if (!(target instanceof L2NpcInstance))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -324,7 +324,7 @@ public class Seed implements IItemHandler
 		
 		if (targetMob == null || targetMob.isDead())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

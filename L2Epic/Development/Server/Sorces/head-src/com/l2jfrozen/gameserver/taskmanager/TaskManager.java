@@ -84,9 +84,9 @@ public final class TaskManager
 				statement.setInt(2, id);
 				statement.executeUpdate();
 			}
-			catch (SQLException e)
+			catch (Exception e)
 			{
-				LOGGER.warn("cannot updated the Global Task " + id + ": " + e.getMessage());
+				LOGGER.warn("Cannot updated the Global Task with ID: " + id, e);
 			}
 			
 			if (type == TYPE_SHEDULED || type == TYPE_TIME)
@@ -188,7 +188,7 @@ public final class TaskManager
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(SELECT_GLOBAL_TASKS);
-			ResultSet rset = statement.executeQuery();)
+			ResultSet rset = statement.executeQuery())
 		{
 			while (rset.next())
 			{
@@ -292,13 +292,9 @@ public final class TaskManager
 				min.set(Calendar.MINUTE, Integer.valueOf(hour[1]));
 				min.set(Calendar.SECOND, Integer.valueOf(hour[2]));
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				LOGGER.warn("Bad parameter on task " + task.getId() + ": " + e.getMessage());
+				LOGGER.warn("Bad parameter on task ID: " + task.getId(), e);
 				return false;
 			}
 			
@@ -350,9 +346,9 @@ public final class TaskManager
 			
 			output = true;
 		}
-		catch (SQLException e)
+		catch (Exception e)
 		{
-			LOGGER.warn("cannot add the unique task: " + e.getMessage());
+			LOGGER.warn("cannot add the unique task", e);
 		}
 		
 		return output;
@@ -379,9 +375,9 @@ public final class TaskManager
 			statement.executeUpdate();
 			output = true;
 		}
-		catch (SQLException e)
+		catch (Exception e)
 		{
-			LOGGER.warn("cannot add the task:  " + e.getMessage());
+			LOGGER.error("cannot add the task", e);
 		}
 		
 		return output;

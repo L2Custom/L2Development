@@ -23,7 +23,7 @@ public final class SystemMessage extends L2GameServerPacket
 	
 	public SystemMessage(final SystemMessageId messageId)
 	{
-		if (Config.DEBUG && messageId == SystemMessageId.TARGET_IS_INCORRECT)
+		if (Config.DEBUG && messageId == SystemMessageId.THAT_IS_THE_INCORRECT_TARGET)
 		{
 			Thread.dumpStack();
 		}

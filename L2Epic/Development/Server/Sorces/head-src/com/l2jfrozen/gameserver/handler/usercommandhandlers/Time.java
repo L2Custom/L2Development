@@ -29,7 +29,7 @@ public class Time implements IUserCommandHandler
 		
 		minute = (time % 60 < 10 ? "0" : "") + time % 60;
 		
-		SystemMessage sm = new SystemMessage(GameTimeController.getInstance().isNowNight() ? SystemMessageId.TIME_S1_S2_IN_THE_NIGHT : SystemMessageId.TIME_S1_S2_IN_THE_DAY);
+		SystemMessage sm = new SystemMessage(GameTimeController.getInstance().isNowNight() ? SystemMessageId.THE_CURRENT_TIME_IS_S1_S2_IN_THE_NIGHT : SystemMessageId.THE_CURRENT_TIME_IS_S1_S2_IN_THE_DAY);
 		sm.addString(hour);
 		sm.addString(minute);
 		activeChar.sendPacket(sm);

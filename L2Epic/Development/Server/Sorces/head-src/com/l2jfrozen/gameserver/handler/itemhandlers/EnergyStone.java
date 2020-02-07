@@ -49,19 +49,19 @@ public class EnergyStone implements IItemHandler
 		}
 		if (activeChar.isSitting())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CANT_MOVE_SITTING));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_MOVE_WHILE_SITTING));
 			return;
 		}
 		skill = getChargeSkill(activeChar);
 		if (skill == null)
 		{
-			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 			sm.addItemName(5589);
 			activeChar.sendPacket(sm);
 			return;
 		}
 		
-		final SystemMessage sm1 = new SystemMessage(SystemMessageId.USE_S1_);
+		final SystemMessage sm1 = new SystemMessage(SystemMessageId.USE_S1);
 		sm1.addItemName(5589);
 		activeChar.sendPacket(sm1);
 		
@@ -82,7 +82,7 @@ public class EnergyStone implements IItemHandler
 		if (effect.numCharges < 2)
 		{
 			effect.addNumCharges(1);
-			final SystemMessage sm = new SystemMessage(SystemMessageId.FORCE_INCREASED_TO_S1);
+			final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_FORCE_HAS_INCREASED_TO_S1_LEVEL);
 			sm.addNumber(effect.getLevel());
 			activeChar.sendPacket(sm);
 		}
@@ -90,7 +90,7 @@ public class EnergyStone implements IItemHandler
 		{
 			if (effect.numCharges == 2)
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.FORCE_MAXLEVEL_REACHED));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_FORCE_HAS_REACHED_MAXIMUM_CAPACITY));
 			}
 		}
 		

@@ -64,14 +64,14 @@ public final class RequestBlock extends L2GameClientPacket
 				if (target == null)
 				{
 					// Incorrect player name.
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.FAILED_TO_REGISTER_TO_IGNORE_LIST));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_REGISTER_THE_USER_TO_YOUR_IGNORE_LIST));
 					return;
 				}
 				
 				if (target.isGM())
 				{
 					// Cannot block a GM character.
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_MAY_NOT_IMPOSE_A_BLOCK_AN_A_GM));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_MAY_NOT_IMPOSE_A_BLOCK_ON_A_GM));
 					return;
 				}
 				
@@ -81,7 +81,7 @@ public final class RequestBlock extends L2GameClientPacket
 					if (activeChar.getBlockList().isInBlockList(name))
 					{
 						// Player is already in your blocklist
-						activeChar.sendPacket(new SystemMessage(SystemMessageId.FAILED_TO_REGISTER_TO_IGNORE_LIST));
+						activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_REGISTER_THE_USER_TO_YOUR_IGNORE_LIST));
 						return;
 					}
 					

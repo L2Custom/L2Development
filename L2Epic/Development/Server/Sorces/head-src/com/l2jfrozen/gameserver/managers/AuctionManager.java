@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.l2jfrozen.Config;
 import com.l2jfrozen.gameserver.model.entity.Auction;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
@@ -197,14 +196,9 @@ public class AuctionManager
 			
 			auctions.add(new Auction(id));
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.error("Exception: Auction.initNPC(): " + e.getMessage(), e);
+			LOGGER.error("AuctionManager.initNPC: It could not init NPC", e);
 		}
 	}
 	

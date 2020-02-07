@@ -10,7 +10,6 @@ import java.util.StringTokenizer;
 
 import org.apache.log4j.Logger;
 
-import com.l2jfrozen.Config;
 import com.l2jfrozen.gameserver.datatables.SkillTable;
 import com.l2jfrozen.gameserver.datatables.sql.ItemTable;
 import com.l2jfrozen.gameserver.datatables.sql.NpcTable;
@@ -28,10 +27,11 @@ import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 /**
  * @author terry
+ * @author ReynalDev
  */
 public class AdminEditNpc implements IAdminCommandHandler
 {
-	private static Logger LOGGER = Logger.getLogger(AdminEditNpc.class);
+	private static final Logger LOGGER = Logger.getLogger(AdminEditNpc.class);
 	private static final String DELETE_DROPLIST = "DELETE FROM droplist WHERE mobId=? AND itemId=? AND category=?";
 	private static final String DELETE_CUSTOM_DROPLIST = "DELETE FROM custom_droplist WHERE mobId=? AND itemId=? AND category=?";
 	private static final String SELECT_DROPLIST_BY_MOB_ID = "SELECT mobId, itemId, min, max, category, chance FROM droplist WHERE mobId=? ORDER BY category";
@@ -66,7 +66,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(final String command, final L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.startsWith("admin_edit_npc ") || command.equals("admin_edit_npc"))
 		{
@@ -76,21 +76,13 @@ public class AdminEditNpc implements IAdminCommandHandler
 				{
 					String[] commandSplit = command.split(" ");
 					
-					final int npcId = Integer.valueOf(commandSplit[1]);
+					int npcId = Integer.valueOf(commandSplit[1]);
 					
 					L2NpcTemplate npc = NpcTable.getInstance().getTemplate(npcId);
 					showNpcProperties(activeChar, npc);
-					
-					commandSplit = null;
-					npc = null;
 				}
-				catch (final Exception e)
+				catch (Exception e)
 				{
-					if (Config.ENABLE_ALL_EXCEPTIONS)
-					{
-						e.printStackTrace();
-					}
-					
 					activeChar.sendMessage("Wrong usage: //edit_npc <npcId>");
 				}
 			}
@@ -98,14 +90,10 @@ public class AdminEditNpc implements IAdminCommandHandler
 			{
 				if (activeChar.getTarget() instanceof L2NpcInstance)
 				{
-					
-					final int npcId = Integer.valueOf(((L2NpcInstance) activeChar.getTarget()).getNpcId());
+					int npcId = Integer.valueOf(((L2NpcInstance) activeChar.getTarget()).getNpcId());
 					
 					L2NpcTemplate npc = NpcTable.getInstance().getTemplate(npcId);
 					showNpcProperties(activeChar, npc);
-					
-					npc = null;
-					
 				}
 			}
 			
@@ -335,12 +323,9 @@ public class AdminEditNpc implements IAdminCommandHandler
 						boolean isCustomDrop = Boolean.parseBoolean(st.nextToken());
 						showEditDropData(activeChar, npcId, itemId, category, isCustomDrop);
 					}
-					catch (final Exception e)
+					catch (Exception e)
 					{
-						if (Config.ENABLE_ALL_EXCEPTIONS)
-						{
-							e.printStackTrace();
-						}
+						LOGGER.error("Error while using admin command admin_edit_drop, 4 tokens expected", e);
 					}
 				}
 				else if (st.countTokens() == 7)
@@ -357,31 +342,19 @@ public class AdminEditNpc implements IAdminCommandHandler
 						
 						updateDropData(activeChar, npcId, itemId, min, max, category, chance, isCustomDrop);
 					}
-					catch (final Exception e)
+					catch (Exception e)
 					{
-						if (Config.ENABLE_ALL_EXCEPTIONS)
-						{
-							e.printStackTrace();
-						}
-						
-						LOGGER.warn("admin_edit_drop parements error: " + command);
+						LOGGER.error("Error while using admin command admin_edit_drop, 7 tokens expected", e);
 					}
 				}
 				else
 				{
 					activeChar.sendMessage("Usage: //edit_drop <npc_id> <item_id> <category> [<min> <max> <chance>]");
 				}
-				
-				st = null;
 			}
-			catch (final StringIndexOutOfBoundsException e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
-				activeChar.sendMessage("Usage: //edit_drop <npc_id> <item_id> <category> [<min> <max> <chance>]");
+				LOGGER.error("Error while using admin command admin_edit_drop", e);
 			}
 		}
 		else if (command.startsWith("admin_add_drop "))
@@ -406,10 +379,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 					}
 					catch (Exception e)
 					{
-						if (Config.ENABLE_ALL_EXCEPTIONS)
-						{
-							e.printStackTrace();
-						}
+						LOGGER.error("Error while using admin command admin_add_drop, 1 token expected", e);
 					}
 					
 					if (npcId > 0)
@@ -464,12 +434,9 @@ public class AdminEditNpc implements IAdminCommandHandler
 					isCustomDrop = Boolean.parseBoolean(input[3]);
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
+				LOGGER.error("AdminDoorControl error in command admin_del_drop", e);
 			}
 			
 			if (npcId > 0)
@@ -1129,42 +1096,40 @@ public class AdminEditNpc implements IAdminCommandHandler
 		{
 			statement.setInt(1, npcId);
 			statement.setInt(2, skillId);
-			final ResultSet skillData = statement.executeQuery();
 			
-			final NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
-			
-			final StringBuffer replyMSG = new StringBuffer("<html><title>(NPC:" + npcId + " SKILL:" + skillId + ")</title>");
-			replyMSG.append("<body>");
-			
-			if (skillData.next())
+			try(ResultSet skillData = statement.executeQuery())
 			{
-				final L2Skill skill = SkillTable.getInstance().getInfo(skillData.getInt("skillid"), skillData.getInt("level"));
+				NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 				
-				replyMSG.append("<table>");
-				replyMSG.append("<tr><td>NPC</td><td>" + NpcTable.getInstance().getTemplate(skillData.getInt("npcid")).getName() + "</td></tr>");
-				replyMSG.append("<tr><td>SKILL</td><td>" + skill.getName() + "(" + skillData.getInt("skillid") + ")</td></tr>");
-				replyMSG.append("<tr><td>Lv(" + skill.getLevel() + ")</td><td><edit var=\"level\" width=50></td></tr>");
-				replyMSG.append("</table>");
+				StringBuffer replyMSG = new StringBuffer("<html><title>(NPC:" + npcId + " SKILL:" + skillId + ")</title>");
+				replyMSG.append("<body>");
 				
-				replyMSG.append("<center>");
-				replyMSG.append("<button value=\"Edit Skill\" action=\"bypass -h admin_edit_skill_npc " + npcId + " " + skillId + " $level\"  width=100 height=20 back=\"sek.cbui94\" fore=\"sek.cbui92\">");
-				replyMSG.append("<br><button value=\"Back to Skillist\" action=\"bypass -h admin_show_skilllist_npc " + npcId + "\"  width=100 height=20 back=\"sek.cbui94\" fore=\"sek.cbui92\">");
-				replyMSG.append("</center>");
+				if (skillData.next())
+				{
+					L2Skill skill = SkillTable.getInstance().getInfo(skillData.getInt("skillid"), skillData.getInt("level"));
+					
+					replyMSG.append("<table>");
+					replyMSG.append("<tr><td>NPC</td><td>" + NpcTable.getInstance().getTemplate(skillData.getInt("npcid")).getName() + "</td></tr>");
+					replyMSG.append("<tr><td>SKILL</td><td>" + skill.getName() + "(" + skillData.getInt("skillid") + ")</td></tr>");
+					replyMSG.append("<tr><td>Lv(" + skill.getLevel() + ")</td><td><edit var=\"level\" width=50></td></tr>");
+					replyMSG.append("</table>");
+					
+					replyMSG.append("<center>");
+					replyMSG.append("<button value=\"Edit Skill\" action=\"bypass -h admin_edit_skill_npc " + npcId + " " + skillId + " $level\"  width=100 height=20 back=\"sek.cbui94\" fore=\"sek.cbui92\">");
+					replyMSG.append("<br><button value=\"Back to Skillist\" action=\"bypass -h admin_show_skilllist_npc " + npcId + "\"  width=100 height=20 back=\"sek.cbui94\" fore=\"sek.cbui92\">");
+					replyMSG.append("</center>");
+				}
+				
+				
+				replyMSG.append("</body></html>");
+				adminReply.setHtml(replyMSG.toString());
+				
+				activeChar.sendPacket(adminReply);
 			}
-			
-			skillData.close();
-			
-			replyMSG.append("</body></html>");
-			adminReply.setHtml(replyMSG.toString());
-			
-			activeChar.sendPacket(adminReply);
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
+			LOGGER.error("AdminEditNpc.showNpcSkillEdit : Error while selecting data from npcskills", e);
 		}
 	}
 	
@@ -1288,7 +1253,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		if (npcId > 0)
 		{
 			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-				PreparedStatement statement2 = con.prepareStatement(DELETE_NPC_SKILL);)
+				PreparedStatement statement2 = con.prepareStatement(DELETE_NPC_SKILL))
 			{
 				statement2.setInt(1, npcId);
 				statement2.setInt(2, skillId);
@@ -1315,7 +1280,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 	private void reLoadNpcSkillList(int npcId)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(SELECT_NPC_SKILL_LIST);)
+			PreparedStatement statement = con.prepareStatement(SELECT_NPC_SKILL_LIST))
 		{
 			L2NpcTemplate npcData = NpcTable.getInstance().getTemplate(npcId);
 			npcData.getSkills().clear();

@@ -14,9 +14,8 @@ import com.l2jfrozen.gameserver.templates.L2Weapon;
 import com.l2jfrozen.gameserver.util.Broadcast;
 
 /**
- * This class ...
- * @version $Revision: 1.1.2.1.3 $ $Date: 2009/04/13 03:10:07 $
- * @author  programmos
+ * @author programmos
+ * @author ReynalDev
  */
 
 public class SpiritShot implements IItemHandler
@@ -58,9 +57,9 @@ public class SpiritShot implements IItemHandler
 		// Check if Spiritshot can be used
 		if (weaponInst == null || weaponItem.getSpiritShotCount() == 0)
 		{
-			if (!activeChar.getAutoSoulShot().containsKey(itemId))
+			if (!activeChar.getAutoSoulShot().contains(itemId))
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.CANNOT_USE_SPIRITSHOTS));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_MAY_NOT_USE_SPIRITSHOTS));
 			}
 			return;
 		}
@@ -75,9 +74,9 @@ public class SpiritShot implements IItemHandler
 		final int weaponGrade = weaponItem.getCrystalType();
 		if (weaponGrade == L2Item.CRYSTAL_NONE && itemId != 5790 && itemId != 2509 || weaponGrade == L2Item.CRYSTAL_D && itemId != 2510 || weaponGrade == L2Item.CRYSTAL_C && itemId != 2511 || weaponGrade == L2Item.CRYSTAL_B && itemId != 2512 || weaponGrade == L2Item.CRYSTAL_A && itemId != 2513 || weaponGrade == L2Item.CRYSTAL_S && itemId != 2514)
 		{
-			if (!activeChar.getAutoSoulShot().containsKey(itemId))
+			if (!activeChar.getAutoSoulShot().contains(itemId))
 			{
-				activeChar.sendPacket(new SystemMessage(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH));
+				activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_SPIRITSHOT_DOES_NOT_MATCH_THE_WEAPONS_GRADE));
 			}
 			return;
 		}
@@ -88,7 +87,7 @@ public class SpiritShot implements IItemHandler
 		{
 			if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null, false))
 			{
-				if (activeChar.getAutoSoulShot().containsKey(itemId))
+				if (activeChar.getAutoSoulShot().contains(itemId))
 				{
 					activeChar.removeAutoSoulShot(itemId);
 					activeChar.sendPacket(new ExAutoSoulShot(itemId, 0));
@@ -99,23 +98,18 @@ public class SpiritShot implements IItemHandler
 				}
 				else
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SPIRITSHOTS_FOR_THAT));
 				}
 				return;
 			}
 		}
-		weaponItem = null;
 		
 		// Charge Spiritshot
 		weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_SPIRITSHOT);
 		
-		weaponInst = null;
-		
 		// Send message to client
-		activeChar.sendPacket(new SystemMessage(SystemMessageId.ENABLED_SPIRITSHOT));
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUser(activeChar, activeChar, SKILL_IDS[weaponGrade], 1, 0, 0), 360000/* 600 */);
-		
-		activeChar = null;
+		activeChar.sendPacket(new SystemMessage(SystemMessageId.POWER_OF_MANA_ENABLED));
+		Broadcast.toSelfAndKnownPlayers(activeChar, new MagicSkillUser(activeChar, activeChar, SKILL_IDS[weaponGrade], 1, 0, 0));
 	}
 	
 	@Override

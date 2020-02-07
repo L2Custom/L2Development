@@ -1,5 +1,7 @@
 package com.l2jfrozen.gameserver.handler.admincommandhandlers;
 
+import org.apache.log4j.Logger;
+
 import com.l2jfrozen.gameserver.datatables.csv.DoorTable;
 import com.l2jfrozen.gameserver.handler.IAdminCommandHandler;
 import com.l2jfrozen.gameserver.managers.CastleManager;
@@ -9,26 +11,12 @@ import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jfrozen.gameserver.model.entity.siege.Castle;
 
 /**
- * This class handles following admin commands:<br>
- * - open1 = open coloseum door 24190001<br>
- * - open2 = open coloseum door 24190002<br>
- * - open3 = open coloseum door 24190003<br>
- * - open4 = open coloseum door 24190004<br>
- * - openall = open all coloseum door<br>
- * - close1 = close coloseum door 24190001<br>
- * - close2 = close coloseum door 24190002<br>
- * - close3 = close coloseum door 24190003<br>
- * - close4 = close coloseum door 24190004<br>
- * - closeall = close all coloseum door<br>
- * <br>
- * - open = open selected door<br>
- * - close = close selected door<br>
- * @version $Revision: 1.3 $
- * @author  ProGramMoS
+ * @author ProGramMoS
+ * @author ReynalDev
  */
 public class AdminDoorControl implements IAdminCommandHandler
 {
-	// private static Logger LOGGER = Logger.getLogger(AdminDoorControl.class);
+	private static final Logger LOGGER = Logger.getLogger(AdminDoorControl.class);
 	private static DoorTable doorTable;
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -49,7 +37,7 @@ public class AdminDoorControl implements IAdminCommandHandler
 		{
 			try
 			{
-				final int doorId = Integer.parseInt(command.substring(12));
+				int doorId = Integer.parseInt(command.substring(12));
 				
 				if (doorTable.getDoor(doorId) != null)
 				{
@@ -57,7 +45,7 @@ public class AdminDoorControl implements IAdminCommandHandler
 				}
 				else
 				{
-					for (final Castle castle : CastleManager.getInstance().getCastles())
+					for (Castle castle : CastleManager.getInstance().getCastles())
 					{
 						if (castle.getDoor(doorId) != null)
 						{
@@ -66,10 +54,9 @@ public class AdminDoorControl implements IAdminCommandHandler
 					}
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				activeChar.sendMessage("Wrong ID door.");
-				e.printStackTrace();
+				LOGGER.error("Something went wrong for the admin command admin_close", e);
 				return false;
 			}
 		}
@@ -109,10 +96,10 @@ public class AdminDoorControl implements IAdminCommandHandler
 					}
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
 				activeChar.sendMessage("Wrong ID door.");
-				e.printStackTrace();
+				LOGGER.error("AdminDoorControl error in command admin_open", e);
 				return false;
 			}
 		}
@@ -138,22 +125,22 @@ public class AdminDoorControl implements IAdminCommandHandler
 		{
 			try
 			{
-				for (final L2DoorInstance door : doorTable.getDoors())
+				for (L2DoorInstance door : doorTable.getDoors())
 				{
 					door.closeMe();
 				}
 				
-				for (final Castle castle : CastleManager.getInstance().getCastles())
+				for (Castle castle : CastleManager.getInstance().getCastles())
 				{
-					for (final L2DoorInstance door : castle.getDoors())
+					for (L2DoorInstance door : castle.getDoors())
 					{
 						door.closeMe();
 					}
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				e.printStackTrace();
+				LOGGER.error("Something went wrong for the admin command admin_closeall", e);
 				return false;
 			}
 		}
@@ -163,22 +150,22 @@ public class AdminDoorControl implements IAdminCommandHandler
 			// set limits on the PH door to do a cycle of opening doors.
 			try
 			{
-				for (final L2DoorInstance door : doorTable.getDoors())
+				for (L2DoorInstance door : doorTable.getDoors())
 				{
 					door.openMe();
 				}
 				
-				for (final Castle castle : CastleManager.getInstance().getCastles())
+				for (Castle castle : CastleManager.getInstance().getCastles())
 				{
-					for (final L2DoorInstance door : castle.getDoors())
+					for (L2DoorInstance door : castle.getDoors())
 					{
 						door.openMe();
 					}
 				}
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				e.printStackTrace();
+				LOGGER.error("Something went wrong for the admin command admin_openall", e);
 				return false;
 			}
 		}

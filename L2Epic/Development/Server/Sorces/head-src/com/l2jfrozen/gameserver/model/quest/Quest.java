@@ -1305,10 +1305,10 @@ public class Quest extends ManagedScript
 	 * @param var   : String designating the name of the variable for quest
 	 * @param value : String designating the value of the variable for quest
 	 */
-	public static void updateQuestVarInDb(final QuestState qs, final String var, final String value)
+	public static void updateQuestVarInDb(QuestState qs, String var, String value)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(UPDATE_CHARACTER_QUEST);)
+			PreparedStatement statement = con.prepareStatement(UPDATE_CHARACTER_QUEST))
 		{
 			statement.setString(1, value);
 			statement.setInt(2, qs.getPlayer().getObjectId());
@@ -1316,7 +1316,7 @@ public class Quest extends ManagedScript
 			statement.setString(4, var);
 			statement.executeUpdate();
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
 			LOGGER.error("could not update char quest:", e);
 		}

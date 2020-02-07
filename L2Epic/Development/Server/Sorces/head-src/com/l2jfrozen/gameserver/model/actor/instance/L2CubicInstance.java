@@ -725,7 +725,7 @@ public class L2CubicInstance
 				final boolean acted = Formulas.calcCubicSkillSuccess(activeCubic, target, skill);
 				if (!acted)
 				{
-					activeCubic.getOwner().sendPacket(new SystemMessage(SystemMessageId.ATTACK_FAILED));
+					activeCubic.getOwner().sendPacket(new SystemMessage(SystemMessageId.YOUR_ATTACK_HAS_FAILED));
 					continue;
 				}
 				

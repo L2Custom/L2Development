@@ -21,3 +21,22 @@
 29/01/2020 21:55:52,176  INFO GameServerThread:601 - Server name: Sieghardt
 29/01/2020 21:55:52,177  INFO GameServerThread:605 - Internal IP address: 192.168.100.150:7777
 29/01/2020 21:55:52,177  INFO GameServerThread:610 - External IP address: 25.75.151.11:7777
+07/02/2020 20:34:46,763  INFO Util:121 - =======================================================-[ Database ]
+07/02/2020 20:34:46,853  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+07/02/2020 20:34:46,853  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+07/02/2020 20:34:46,861  INFO Util:121 - ================================================-[ LoginController ]
+07/02/2020 20:34:47,437  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+07/02/2020 20:34:47,457  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+07/02/2020 20:34:47,468  INFO GameServerTable:75 - Loaded 127 server names
+07/02/2020 20:34:47,490  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+07/02/2020 20:34:47,548  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+07/02/2020 20:34:47,550  INFO Util:121 - ============================================-[ Loginserver network ]
+07/02/2020 20:34:47,725  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+07/02/2020 20:34:47,726  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+07/02/2020 20:34:47,727  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+07/02/2020 20:34:47,727  INFO L2LoginServer:165 - Loginserver listening on *:2106
+07/02/2020 20:34:54,705  INFO Util:121 - ===========================================-[ Gameserver connected ]
+07/02/2020 20:34:54,707  INFO GameServerThread:595 - Server ID: 2
+07/02/2020 20:34:54,708  INFO GameServerThread:596 - Server name: Sieghardt
+07/02/2020 20:34:54,708  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+07/02/2020 20:34:54,709  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444

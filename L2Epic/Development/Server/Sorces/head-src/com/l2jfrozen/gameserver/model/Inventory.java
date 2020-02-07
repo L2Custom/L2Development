@@ -1538,64 +1538,59 @@ public abstract class Inventory extends ItemContainer
 	public void restore()
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(SELECT_ITEMS_BY_OWNER_ID);)
+			PreparedStatement statement = con.prepareStatement(SELECT_ITEMS_BY_OWNER_ID))
 		{
 			statement.setInt(1, getOwner().getObjectId());
 			statement.setString(2, getBaseLocation().name());
 			statement.setString(3, getEquipLocation().name());
-			ResultSet rset = statement.executeQuery();
 			
-			L2ItemInstance item;
-			
-			while (rset.next())
+			try(ResultSet rset = statement.executeQuery())
 			{
-				item = L2ItemInstance.restoreFromDb(rset);
-				
-				if (item == null)
+				while (rset.next())
 				{
-					continue;
-				}
-				
-				if (getOwner() instanceof L2PcInstance)
-				{
-					L2PcInstance player = (L2PcInstance) getOwner();
+					L2ItemInstance item = L2ItemInstance.restoreFromDb(rset);
 					
-					if (!player.isGM())
+					if (item == null)
 					{
-						if (!player.isHero())
+						continue;
+					}
+					
+					if (getOwner() instanceof L2PcInstance)
+					{
+						L2PcInstance player = (L2PcInstance) getOwner();
+						
+						if (!player.isGM())
 						{
-							final int itemId = item.getItemId();
-							
-							if (itemId >= 6611 && itemId <= 6621 || itemId == 6842)
+							if (!player.isHero())
 							{
-								item.setLocation(ItemLocation.INVENTORY);
+								int itemId = item.getItemId();
+								
+								if (itemId >= 6611 && itemId <= 6621 || itemId == 6842)
+								{
+									item.setLocation(ItemLocation.INVENTORY);
+								}
 							}
 						}
 					}
 					
-					player = null;
-				}
-				
-				L2World.getInstance().storeObject(item);
-				
-				// If stackable item is found in inventory just add to current quantity
-				if (item.isStackable() && getItemByItemId(item.getItemId()) != null)
-				{
-					addItem("Restore", item, null, getOwner());
-				}
-				else
-				{
-					addItem(item);
+					L2World.getInstance().storeObject(item);
+					
+					// If stackable item is found in inventory just add to current quantity
+					if (item.isStackable() && getItemByItemId(item.getItemId()) != null)
+					{
+						addItem("Restore", item, null, getOwner());
+					}
+					else
+					{
+						addItem(item);
+					}
 				}
 			}
 			
-			rset.close();
-			refreshWeight();
 			
-			rset = null;
-			item = null;
+			refreshWeight();
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
 			LOGGER.error("Could not restore inventory : ", e);
 		}

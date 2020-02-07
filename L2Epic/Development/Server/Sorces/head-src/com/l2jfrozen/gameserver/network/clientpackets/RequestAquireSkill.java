@@ -18,6 +18,7 @@ import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2VillageMasterInstance;
 import com.l2jfrozen.gameserver.network.SystemMessageId;
 import com.l2jfrozen.gameserver.network.serverpackets.ExStorageMaxCount;
+import com.l2jfrozen.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import com.l2jfrozen.gameserver.network.serverpackets.PledgeSkillList;
 import com.l2jfrozen.gameserver.network.serverpackets.ShortCutRegister;
 import com.l2jfrozen.gameserver.network.serverpackets.StatusUpdate;
@@ -25,6 +26,9 @@ import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
 import com.l2jfrozen.gameserver.util.IllegalPlayerAction;
 import com.l2jfrozen.gameserver.util.Util;
 
+/**
+ * @author ReynalDev
+ */
 public class RequestAquireSkill extends L2GameClientPacket
 {
 	private static Logger LOGGER = Logger.getLogger(RequestAquireSkill.class);
@@ -126,7 +130,7 @@ public class RequestAquireSkill extends L2GameClientPacket
 					if (spb == null)
 					{
 						// Haven't spellbook
-						player.sendPacket(new SystemMessage(SystemMessageId.ITEM_MISSING_TO_LEARN_SKILL));
+						player.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_NECESSARY_MATERIALS_OR_PREREQUISITES_TO_LEARN_THIS_SKILL));
 						return;
 					}
 					
@@ -136,7 +140,7 @@ public class RequestAquireSkill extends L2GameClientPacket
 			}
 			else
 			{
-				final SystemMessage sm = new SystemMessage(SystemMessageId.NOT_ENOUGH_SP_TO_LEARN_SKILL);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SP_TO_LEARN_THIS_SKILL);
 				player.sendPacket(sm);
 				
 				return;
@@ -176,18 +180,18 @@ public class RequestAquireSkill extends L2GameClientPacket
 				if (!player.destroyItemByItemId("Consume", costid, costcount, trainer, false))
 				{
 					// Haven't spellbook
-					player.sendPacket(new SystemMessage(SystemMessageId.ITEM_MISSING_TO_LEARN_SKILL));
+					player.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_NECESSARY_MATERIALS_OR_PREREQUISITES_TO_LEARN_THIS_SKILL));
 					return;
 				}
 				
-				final SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_DISSAPEARED_ITEM);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_HAS_DISAPPEARED);
 				sm.addNumber(costcount);
 				sm.addItemName(costid);
 				sendPacket(sm);
 			}
 			else
 			{
-				final SystemMessage sm = new SystemMessage(SystemMessageId.NOT_ENOUGH_SP_TO_LEARN_SKILL);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SP_TO_LEARN_THIS_SKILL);
 				player.sendPacket(sm);
 				return;
 			}
@@ -233,11 +237,11 @@ public class RequestAquireSkill extends L2GameClientPacket
 					if (!player.destroyItemByItemId("Consume", itemId, 1, trainer, false))
 					{
 						// Haven't spellbook
-						player.sendPacket(new SystemMessage(SystemMessageId.ITEM_MISSING_TO_LEARN_SKILL));
+						player.sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_NECESSARY_MATERIALS_OR_PREREQUISITES_TO_LEARN_THIS_SKILL));
 						return;
 					}
 					
-					final SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_DISSAPEARED_ITEM);
+					final SystemMessage sm = new SystemMessage(SystemMessageId.S2_S1_HAS_DISAPPEARED);
 					sm.addItemName(itemId);
 					sm.addNumber(1);
 					sendPacket(sm);
@@ -250,6 +254,7 @@ public class RequestAquireSkill extends L2GameClientPacket
 				return;
 			}
 			player.getClan().setReputationScore(player.getClan().getReputationScore() - repCost, true);
+			player.getClan().broadcastToOnlineMembers(new PledgeShowInfoUpdate(player.getClan()));
 			player.getClan().addNewSkill(skill);
 			
 			if (Config.DEBUG)
@@ -266,7 +271,7 @@ public class RequestAquireSkill extends L2GameClientPacket
 			
 			player.getClan().broadcastToOnlineMembers(new PledgeSkillList(player.getClan()));
 			
-			for (final L2PcInstance member : player.getClan().getOnlineMembers(""))
+			for (final L2PcInstance member : player.getClan().getOnlineMembers())
 			{
 				member.sendSkillList();
 			}
@@ -298,11 +303,11 @@ public class RequestAquireSkill extends L2GameClientPacket
 		su.addAttribute(StatusUpdate.SP, player.getSp());
 		player.sendPacket(su);
 		
-		final SystemMessage sp = new SystemMessage(SystemMessageId.SP_DECREASED_S1);
+		final SystemMessage sp = new SystemMessage(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
 		sp.addNumber(requiredSp);
 		sendPacket(sp);
 		
-		final SystemMessage sm = new SystemMessage(SystemMessageId.LEARNED_SKILL_S1);
+		final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1_2);
 		sm.addSkillName(id);
 		player.sendPacket(sm);
 		

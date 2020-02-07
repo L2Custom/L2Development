@@ -113,9 +113,9 @@ public final class L2CastleTeleporterInstance extends L2NpcInstance
 				oustAllPlayers();
 				setTask(false);
 			}
-			catch (final NullPointerException e)
+			catch (Exception e)
 			{
-				LOGGER.warn("" + e.getMessage(), e);
+				LOGGER.error(e);
 			}
 		}
 	}

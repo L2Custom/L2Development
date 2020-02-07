@@ -998,14 +998,9 @@ public class FourSepulchersManager extends GrandBossManager
 					final int keyNpcId = gateKeeper[i];
 					shadowSpawns.put(keyNpcId, spawnDat);
 				}
-				catch (final Exception e)
+				catch (Exception e)
 				{
-					if (Config.ENABLE_ALL_EXCEPTIONS)
-					{
-						e.printStackTrace();
-					}
-					
-					LOGGER.warn("initLocationShadowSpawns:" + e.getMessage());
+					LOGGER.error("initLocationShadowSpawns", e);
 				}
 			}
 			else
@@ -1658,7 +1653,7 @@ public class FourSepulchersManager extends GrandBossManager
 					e.printStackTrace();
 				}
 				
-				LOGGER.warn("deleteAllMobs: " + e.getMessage());
+				LOGGER.warn("deleteAllMobs", e);
 			}
 		}
 		allMobs.clear();
@@ -1682,12 +1677,7 @@ public class FourSepulchersManager extends GrandBossManager
 			}
 			catch (final Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
-				LOGGER.warn("Failed closing door " + doorId + " - " + e.getMessage());
+				LOGGER.error("Failed closing door " + doorId, e);
 			}
 		}
 	}

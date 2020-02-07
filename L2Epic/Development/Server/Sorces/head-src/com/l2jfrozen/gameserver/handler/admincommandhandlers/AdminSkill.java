@@ -16,8 +16,7 @@ import com.l2jfrozen.gameserver.network.serverpackets.PledgeSkillList;
 import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * This class handles following admin commands: - show_skills - remove_skills - skill_list - skill_index - add_skill - remove_skill - get_skills - reset_skills - give_all_skills - remove_all_skills - add_clan_skills
- * @version $Revision: 1.2.4.7 $ $Date: 2005/04/11 10:06:02 $
+ * @author ReynalDev
  */
 public class AdminSkill implements IAdminCommandHandler
 {
@@ -208,7 +207,7 @@ public class AdminSkill implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
@@ -232,7 +231,7 @@ public class AdminSkill implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 			return;
 		}
 		
@@ -338,7 +337,7 @@ public class AdminSkill implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
@@ -365,13 +364,13 @@ public class AdminSkill implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
 		if (player.getName().equals(activeChar.getName()))
 		{
-			player.sendPacket(new SystemMessage(SystemMessageId.CANNOT_USE_ON_YOURSELF));
+			player.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF));
 		}
 		else
 		{
@@ -411,7 +410,7 @@ public class AdminSkill implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
@@ -473,7 +472,7 @@ public class AdminSkill implements IAdminCommandHandler
 		if(player == null)
 		{
 			showMainPage(activeChar);
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
@@ -536,7 +535,7 @@ public class AdminSkill implements IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			return;
 		}
 		
@@ -582,7 +581,7 @@ public class AdminSkill implements IAdminCommandHandler
 		else
 		{
 			showMainPage(activeChar);
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.INVALID_TARGET));
 			
 			return;
 		}
@@ -618,7 +617,7 @@ public class AdminSkill implements IAdminCommandHandler
 			
 			activeChar.getClan().broadcastToOnlineMembers(new PledgeSkillList(activeChar.getClan()));
 			
-			for (final L2PcInstance member : activeChar.getClan().getOnlineMembers(""))
+			for (final L2PcInstance member : activeChar.getClan().getOnlineMembers())
 			{
 				member.sendSkillList();
 			}

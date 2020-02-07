@@ -77,7 +77,7 @@ public final class RequestGiveItemToPet extends L2GameClientPacket
 		
 		if (!item.isDropable() || !item.isDestroyable() || !item.isTradeable())
 		{
-			sendPacket(new SystemMessage(SystemMessageId.ITEM_NOT_FOR_PETS));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_PET_CANNOT_CARRY_THIS_ITEM));
 			return;
 		}
 		
@@ -85,7 +85,7 @@ public final class RequestGiveItemToPet extends L2GameClientPacket
 		
 		if (pet.isDead())
 		{
-			sendPacket(new SystemMessage(SystemMessageId.CANNOT_GIVE_ITEMS_TO_DEAD_PET));
+			sendPacket(new SystemMessage(SystemMessageId.YOUR_PET_IS_MOTIONLESS_AND_ANY_ATTEMPT_YOU_MAKE_TO_GIVE_IT_SOMETHING_GOES_UNRECOGNIZED));
 			return;
 		}
 		

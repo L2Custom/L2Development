@@ -261,7 +261,7 @@ public final class Say2 extends L2GameClientPacket
 				
 				if (receiver == null)
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_ONLINE);
+					SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_CURRENTLY_LOGGED_IN);
 					sm.addString(target);
 					activeChar.sendPacket(sm);
 					return;
@@ -294,12 +294,12 @@ public final class Say2 extends L2GameClientPacket
 					}
 					else
 					{
-						activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE));
+						activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_PERSON_IS_IN_MESSAGE_REFUSAL_MODE));
 					}
 				}
 				else if (receiver.getBlockList().isInBlockList(activeChar.getName()))
 				{
-					SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_ADDED_YOU_TO_IGNORE_LIST);
+					SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_PLACED_YOU_ON_HIS_HER_IGNORE_LIST);
 					sm.addString(target);
 					activeChar.sendPacket(sm);
 				}
@@ -545,7 +545,7 @@ public final class Say2 extends L2GameClientPacket
 			case PETITION_GM:
 				if (!PetitionManager.getInstance().isPlayerInConsultation(activeChar))
 				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_ARE_NOT_IN_PETITION_CHAT));
+					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_ARE_CURRENTLY_NOT_IN_PETITION_CHAT));
 					break;
 				}
 				

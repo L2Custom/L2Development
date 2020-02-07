@@ -29,13 +29,13 @@ public class Nectar implements IItemHandler
 		
 		if (!(activeChar.getTarget() instanceof L2GourdInstance))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 			return;
 		}
 		
 		if (!activeChar.getName().equalsIgnoreCase(((L2GourdInstance) activeChar.getTarget()).getOwner()))
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THAT_IS_THE_INCORRECT_TARGET));
 			return;
 		}
 		

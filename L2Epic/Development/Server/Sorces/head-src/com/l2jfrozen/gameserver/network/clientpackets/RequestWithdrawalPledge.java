@@ -1,8 +1,10 @@
 package com.l2jfrozen.gameserver.network.clientpackets;
 
 import com.l2jfrozen.Config;
+import com.l2jfrozen.gameserver.managers.CastleManager;
 import com.l2jfrozen.gameserver.model.L2Clan;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jfrozen.gameserver.model.entity.siege.Castle;
 import com.l2jfrozen.gameserver.network.SystemMessageId;
 import com.l2jfrozen.gameserver.network.serverpackets.PledgeShowMemberListDelete;
 import com.l2jfrozen.gameserver.network.serverpackets.SystemMessage;
@@ -32,7 +34,7 @@ public final class RequestWithdrawalPledge extends L2GameClientPacket
 		
 		if (activeChar.isClanLeader())
 		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.CLAN_LEADER_CANNOT_WITHDRAW));
+			activeChar.sendPacket(new SystemMessage(SystemMessageId.THE_CLAN_LEADER_CANNOT_WITHDRAW));
 			return;
 		}
 		
@@ -43,6 +45,12 @@ public final class RequestWithdrawalPledge extends L2GameClientPacket
 		}
 		
 		final L2Clan clan = activeChar.getClan();
+		
+		if(clan.hasCastle())
+		{
+			Castle castle = CastleManager.getInstance().getCastleById(clan.getCastleId());
+			castle.removeCastleCirclet(activeChar);
+		}
 		
 		clan.removeClanMember(activeChar.getName(), System.currentTimeMillis() + Config.ALT_CLAN_JOIN_DAYS * 86400000L); // 24*60*60*1000 = 86400000
 		
@@ -55,7 +63,7 @@ public final class RequestWithdrawalPledge extends L2GameClientPacket
 		clan.broadcastToOnlineMembers(new PledgeShowMemberListDelete(activeChar.getName()));
 		
 		activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_WITHDRAWN_FROM_CLAN));
-		activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_MUST_WAIT_BEFORE_JOINING_ANOTHER_CLAN));
+		activeChar.sendPacket(new SystemMessage(SystemMessageId.AFTER_LEAVING_OR_HAVING_BEEN_DISMISSED_FROM_A_CLAN_YOU_MUST_WAIT_AT_LEAST_A_DAY_B));
 		activeChar.setActiveWarehouse(null);
 	}
 	

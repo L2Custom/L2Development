@@ -2,8 +2,8 @@ package com.l2jfrozen.loginserver.network.gameserverpackets;
 
 import org.apache.log4j.Logger;
 
-import com.l2jfrozen.gameserver.datatables.GameServerTable;
-import com.l2jfrozen.gameserver.datatables.GameServerTable.GameServerInfo;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable;
+import com.l2jfrozen.loginserver.datatables.xml.GameServerTable.GameServerInfo;
 import com.l2jfrozen.loginserver.network.clientpackets.ClientBasePacket;
 
 /**

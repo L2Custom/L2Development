@@ -297,20 +297,20 @@ public final class RequestBuyItem extends L2GameClientPacket
 		
 		if (weight > Integer.MAX_VALUE || weight < 0 || !player.getInventory().validateWeight((int) weight))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_HAVE_EXCEED_THE_WEIGHT_LIMIT));
 			return;
 		}
 		
 		if (slots > Integer.MAX_VALUE || slots < 0 || !player.getInventory().validateCapacity((int) slots))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.SLOTS_FULL));
+			sendPacket(new SystemMessage(SystemMessageId.YOUR_INVENTORY_IS_FULL));
 			return;
 		}
 		
 		// Charge buyer and add tax to castle treasury if not owned by npc clan
 		if (subTotal < 0 || !player.reduceAdena("Buy", (int) (subTotal + tax), player.getLastFolkNPC(), false))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
+			sendPacket(new SystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA));
 			return;
 		}
 		

@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
 
 import org.apache.log4j.Logger;
 
@@ -39,8 +37,7 @@ import com.l2jfrozen.gameserver.util.Util;
 import com.l2jfrozen.util.database.L2DatabaseFactory;
 
 /**
- * This class manages items.
- * @version $Revision: 1.4.2.1.2.11 $ $Date: 2005/03/31 16:07:50 $
+ * @author ReynalDev
  */
 public final class L2ItemInstance extends L2Object
 {
@@ -50,8 +47,6 @@ public final class L2ItemInstance extends L2Object
 	private static final String DELETE_ITEM_BY_OBJ_ID = "DELETE FROM items WHERE object_id=?";
 	private static final String INSERT_ITEM = "INSERT INTO items (owner_id,item_id,count,loc,loc_data,enchant_level,price_sell,price_buy,object_id,custom_type1,custom_type2,mana_left) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String UPDATE_ITEM_BY_ITEM_OBJ_ID = "UPDATE items SET owner_id=?,count=?,loc=?,loc_data=?,enchant_level=?,price_sell=?,price_buy=?,custom_type1=?,custom_type2=?,mana_left=? WHERE object_id=?";
-	
-	private static final java.util.logging.Logger logItems = java.util.logging.Logger.getLogger("item");
 	
 	private final DropProtection dropProtection = new DropProtection();
 	
@@ -308,20 +303,6 @@ public final class L2ItemInstance extends L2Object
 		}
 		
 		storedInDb = false;
-		
-		if (Config.LOG_ITEMS)
-		{
-			LogRecord record = new LogRecord(Level.INFO, "CHANGE:" + process);
-			record.setLoggerName("item");
-			record.setParameters(new Object[]
-			{
-				this,
-				creator,
-				reference
-			});
-			logItems.log(record);
-			record = null;
-		}
 	}
 	
 	// No logging (function designed for shots only)

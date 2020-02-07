@@ -54,7 +54,7 @@ public class FishingSkill implements ISkillHandler
 		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		if (weaponInst == null || weaponItem == null || weaponItem.getItemType() != L2WeaponType.ROD)
 		{
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 			activeChar.sendPacket(sm);
 			sm = null;
 			return;

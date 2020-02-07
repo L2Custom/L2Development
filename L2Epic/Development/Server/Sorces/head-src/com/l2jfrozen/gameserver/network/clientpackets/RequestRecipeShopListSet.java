@@ -1,7 +1,6 @@
 package com.l2jfrozen.gameserver.network.clientpackets;
 
 import com.l2jfrozen.Config;
-import com.l2jfrozen.gameserver.model.L2Character;
 import com.l2jfrozen.gameserver.model.L2ManufactureItem;
 import com.l2jfrozen.gameserver.model.L2ManufactureList;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
@@ -61,14 +60,6 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 		
 		if (player.isTradeDisabled())
 		{
-			player.sendMessage("Private manufacture are disable here. Try in another place.");
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (player.isInsideZone(L2Character.ZONE_NOSTORE))
-		{
-			// player.sendPacket(new RecipeShopManageList(player, player.isDwarven()));
 			player.sendMessage("Private manufacture are disable here. Try in another place.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

@@ -50,7 +50,7 @@ final class EffectFakeDeath extends L2Effect
 		{
 			if (getSkill().isToggle())
 			{
-				final SystemMessage sm = new SystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
+				final SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_SKILL_WAS_REMOVED_DUE_TO_A_LACK_OF_MP);
 				getEffected().sendPacket(sm);
 				return false;
 			}

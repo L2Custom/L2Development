@@ -333,7 +333,7 @@ public class ChristmasPresents
 					CreatureSay cs = new CreatureSay(0, Say2.PARTYROOM_COMMANDER, getRandomSender(), getRandomXMasMessage());
 					pc.sendPacket(cs);
 					
-					SystemMessage sm = new SystemMessage(SystemMessageId.EARNED_ITEM);
+					SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1);
 					sm.addString(itemName + " from santa's present bag...");
 					pc.broadcastPacket(sm);
 				}

@@ -177,7 +177,7 @@ public class L2ManorManagerInstance extends L2MerchantInstance
 							if (price < (item.getReferencePrice() / 2))
 							{
 								
-								LOGGER.warn("L2TradeList " + tradeList.getListId() + " itemId  " + s.getId() + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
+								LOGGER.warn("L2TradeList " + tradeList.getListId() + " item  " + item + " has an ADENA sell price lower then reference price.. Automatically Updating it..");
 								price = item.getReferencePrice();
 							}
 							

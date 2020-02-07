@@ -115,14 +115,9 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 				{
 					getActor().broadcastChat(chat);
 				}
-				catch (final ArrayIndexOutOfBoundsException e)
+				catch (Exception e)
 				{
-					if (Config.ENABLE_ALL_EXCEPTIONS)
-					{
-						e.printStackTrace();
-					}
-					
-					LOGGER.info("L2NpcWalkerInstance: Error, " + e);
+					LOGGER.error("L2NpcWalkerInstance: Error, " + e);
 				}
 			}
 			chat = null;

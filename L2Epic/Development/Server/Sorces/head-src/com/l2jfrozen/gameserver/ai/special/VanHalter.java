@@ -222,14 +222,9 @@ public class VanHalter extends Quest implements Runnable
 			SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
 			cameraMarkerSpawn.put(5, tempSpawn);
 		}
-		catch (final Exception e)
+		catch (Exception e)
 		{
-			if (Config.ENABLE_ALL_EXCEPTIONS)
-			{
-				e.printStackTrace();
-			}
-			
-			LOGGER.warn("VanHalterManager : " + e.getMessage() + " :" + e);
+			LOGGER.error(e);
 		}
 		
 		// Set time up.
@@ -881,14 +876,9 @@ public class VanHalter extends Quest implements Runnable
 			{
 				door.openMe();
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
-				LOGGER.warn(e.getMessage() + " :" + e);
+				LOGGER.error(e);
 			}
 		}
 		
@@ -965,14 +955,9 @@ public class VanHalter extends Quest implements Runnable
 			{
 				door.openMe();
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
-				LOGGER.warn(e.getMessage() + " :" + e);
+				LOGGER.error(e);
 			}
 		}
 	}
@@ -985,14 +970,9 @@ public class VanHalter extends Quest implements Runnable
 			{
 				door.closeMe();
 			}
-			catch (final Exception e)
+			catch (Exception e)
 			{
-				if (Config.ENABLE_ALL_EXCEPTIONS)
-				{
-					e.printStackTrace();
-				}
-				
-				LOGGER.warn(e.getMessage() + " :" + e);
+				LOGGER.error(e);
 			}
 		}
 	}

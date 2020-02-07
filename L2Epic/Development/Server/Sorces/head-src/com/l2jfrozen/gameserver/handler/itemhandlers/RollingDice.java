@@ -39,7 +39,7 @@ public class RollingDice implements IItemHandler
 		
 		if (!activeChar.getFloodProtectors().getRollDice().tryPerformAction("RollDice"))
 		{
-			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_TO_UNSUITABLE_TERMS);
 			sm.addItemName(itemId);
 			activeChar.sendPacket(sm);
 			return;
@@ -64,7 +64,7 @@ public class RollingDice implements IItemHandler
 			Broadcast.toSelfAndKnownPlayers(activeChar, d);
 			d = null;
 			
-			SystemMessage sm = new SystemMessage(SystemMessageId.S1_ROLLED_S2);
+			SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_ROLLED_S2);
 			sm.addString(activeChar.getName());
 			sm.addNumber(number);
 			activeChar.sendPacket(sm);

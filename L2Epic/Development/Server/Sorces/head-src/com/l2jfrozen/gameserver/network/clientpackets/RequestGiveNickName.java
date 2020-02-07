@@ -44,7 +44,7 @@ public class RequestGiveNickName extends L2GameClientPacket
 		{
 			if (activeChar.getClan().getLevel() < 3)
 			{
-				SystemMessage sm = new SystemMessage(SystemMessageId.CLAN_LVL_3_NEEDED_TO_ENDOWE_TITLE);
+				SystemMessage sm = new SystemMessage(SystemMessageId.A_PLAYER_CAN_ONLY_BE_GRANTED_A_TITLE_IF_THE_CLAN_IS_LEVEL_3_OR_ABOVE);
 				activeChar.sendPacket(sm);
 				sm = null;
 				return;
