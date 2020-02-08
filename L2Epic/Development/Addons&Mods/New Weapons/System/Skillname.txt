@@ -1,0 +1,13 @@
+7100	1	a,Special Ability: Health\0	a,Increases Max HP by 30%.\0	a,none\0	a,none\0
+7101	1	a,Special Ability: Focus\0	a,Increases critical rate by 111.\0	a,none\0	a,none\0
+7102	1	a,Special Ability: Haste\0	a,Increases attack speed by 10%.\0	a,none\0	a,none\0
+7103	1	a,Special Ability: Acumen\0	a,Increases casting speed by 18%.\0	a,none\0	a,none\0
+7104	1	a,Special Ability: Focus/Health\0	a,Increases Max HP by 10% and critical rate by 109.\0	a,none\0	a,none\0
+7105	1	a,Special Ability: Mana Up\0	a,Increases Max MP by 30%.\0	a,none\0	a,none\0
+7106	1	a,Special Ability: Health\0	a,Increases Max MP by 60% and decreases max HP by 30%.\0	a,none\0	a,none\0
+7107	1	a,Special Ability: Rsk. Focus\0	a,Increases critical rate by 164 when below 60% HP.\0	a,none\0	a,none\0
+7108	1	a,Special Ability: Rsk. Haste\0	a,Increases attack speed by 18% when below 60% HP.\0	a,none\0	a,none\0
+7109	1	a,Special Ability: Critical Damage\0	a,Increases critical damage by 15%.\0	a,none\0	a,none\0
+7110	1	a,Special Ability: Guidance\0	a,Increases accurracy by 5.\0	a,none\0	a,none\0
+7111	1	a,Special Ability: Evasion\0	a,Increases evasion by 5.\0	a,none\0	a,none\0
+7112	1	a,Special Ability: Quick Recovery\0	a,Increases cooldown reduction by 15% and reduces the delay between attacks for bows.\0	a,none\0	a,none\0
