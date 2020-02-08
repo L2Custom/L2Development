@@ -1,1 +1,23 @@
-07/02/2020 20:35:04,299  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+08/02/2020 01:28:07,325  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+08/02/2020 01:28:15,669  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,671  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,672  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,673  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,675  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,676  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,678  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,679  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,681  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,683  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,684  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:15,685  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:18,668  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:28:18,669  WARN L2GamePacketHandler:166 - ATTENTION: Account hodajeu is trying to send packet with opcode 63 without enterning in the world (online status is FALSE)..
+08/02/2020 01:47:44,994  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+08/02/2020 01:55:21,557  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+08/02/2020 02:20:24,491  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+08/02/2020 02:23:08,674  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+08/02/2020 02:25:04,207  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+08/02/2020 02:30:42,522  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+08/02/2020 02:52:05,304  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+08/02/2020 03:00:25,201  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
