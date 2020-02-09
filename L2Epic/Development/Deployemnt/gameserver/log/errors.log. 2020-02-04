@@ -1,2 +1,0 @@
-04/02/2020 19:39:36,708 ERROR L2Properties:33 - java.io.FileNotFoundException: config\hexid.txt (The system cannot find the file specified)
-04/02/2020 19:39:36,710 ERROR Config:3114 - Could not load HexID file (config/hexid.txt). Remember register the gameserver.

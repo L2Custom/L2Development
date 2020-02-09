@@ -1,6 +1,0 @@
-[29/01/2020 00:09:23,772] '---': Cherub Galaxia(25450) spawned in the word
-[29/01/2020 01:40:54,627] '---': Queen Shyeed(25514) defeated, next respawn at 29-01-2020 02:12:40
-[29/01/2020 01:44:21,979] '---': Ember(25319) defeated, next respawn at 29-01-2020 02:04:13
-[29/01/2020 02:04:13,220] '---': Ember(25319) spawned in the word
-[29/01/2020 02:12:40,526] '---': Queen Shyeed(25514) spawned in the word
-[29/01/2020 20:38:44,956] '---': Death Lord Shax(25282) defeated, next respawn at 29-01-2020 21:12:03

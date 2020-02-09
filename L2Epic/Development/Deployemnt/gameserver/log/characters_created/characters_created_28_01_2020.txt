@@ -1,2 +1,0 @@
-[28/01/2020 15:34:27,864] '---': Created new character : Anvil for account: demo_craft
-[28/01/2020 20:31:44,591] '---': Created new character : Spoiles for account: demo_spoil

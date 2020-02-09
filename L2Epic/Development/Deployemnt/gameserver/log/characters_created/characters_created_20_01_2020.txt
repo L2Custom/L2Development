@@ -1,2 +1,0 @@
-[20/01/2020 18:30:45,306] '---': Created new character : Jager for account: caius
-[20/01/2020 23:45:33,823] '---': Created new character : Balauru for account: hodajeu

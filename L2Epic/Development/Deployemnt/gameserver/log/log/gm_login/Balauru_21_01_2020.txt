@@ -1,7 +1,0 @@
-[21/01/2020 00:07:48,930] '---': Balauru logs in game with Accesslevel 7
-[21/01/2020 00:18:01,371] '---': Balauru logs in game with Accesslevel 8
-[21/01/2020 11:53:27,836] '---': Balauru logs in game with Accesslevel 7
-[21/01/2020 12:25:57,303] '---': Balauru logs in game with Accesslevel 8
-[21/01/2020 17:50:35,465] '---': Balauru logs in game with Accesslevel 7
-[21/01/2020 18:29:18,396] '---': Balauru logs in game with Accesslevel 8
-[21/01/2020 18:36:54,707] '---': Balauru logs in game with Accesslevel 7

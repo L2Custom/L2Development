@@ -1,2 +1,0 @@
-[27/01/2020 20:24:22,158] '---': Arcane logs in game with Accesslevel 7
-[27/01/2020 20:25:43,881] '---': Arcane logs in game with Accesslevel 7

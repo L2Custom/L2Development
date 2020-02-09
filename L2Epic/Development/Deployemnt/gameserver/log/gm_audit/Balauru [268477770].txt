@@ -1,3 +1,0 @@
-[21/01/2020 0:27:37] --> GM: Balauru [268477770], Target: [Jager], Action: [admin_jail], Params: [] 
-[21/01/2020 0:28:08] --> GM: Balauru [268477770], Target: [fager], Action: [admin_unjail], Params: [] 
-[21/01/2020 0:28:20] --> GM: Balauru [268477770], Target: [Jager], Action: [admin_unjail], Params: [] 
