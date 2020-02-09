@@ -116,5 +116,61 @@
     <ingredient id="57" count="5000000"/>
     <production id="6377" count="1"/>
   </item>
+    <!-- Poseidon heavy set -->
+  <item id="18">
+    <ingredient id="57" count="5000000"/>
+    <production id="26000" count="1"/>
+    <production id="26001" count="1"/>
+    <production id="26002" count="1"/>
+    <production id="26003" count="1"/>
+    <production id="26012" count="1"/>
+  </item>
+    <!-- Poseidon light set -->
+    <item id="19">
+    <ingredient id="57" count="5000000"/>
+    <production id="26004" count="1"/>
+    <production id="26005" count="1"/>
+    <production id="26006" count="1"/>
+    <production id="26007" count="1"/>
+    <production id="26013" count="1"/>
+  </item>
+    <!-- Poseidon robe set -->
+      <item id="20">
+    <ingredient id="57" count="5000000"/>
+    <production id="26008" count="1"/>
+    <production id="26009" count="1"/>
+    <production id="26010" count="1"/>
+    <production id="26011" count="1"/>
+    <production id="26014" count="1"/>
+  </item>
+  <!-- Ertheia heavy set -->
+        <item id="21">
+    <ingredient id="57" count="6"/>
+    <production id="11201" count="1"/>
+    <production id="11202" count="1"/>
+    <production id="11203" count="1"/>
+    <production id="11204" count="1"/>
+    <production id="11200" count="1"/>
+    <production id="12229" count="1"/>
+  </item>
+   <!-- Ertheia light set -->
+          <item id="22">
+    <ingredient id="57" count="5"/>
+    <production id="11205" count="1"/>
+    <production id="11206" count="1"/>
+    <production id="11207" count="1"/>
+    <production id="11208" count="1"/>
+    <production id="11200" count="1"/>
+  </item>
+   <!-- Ertheia robe set -->
+            <item id="22">
+    <ingredient id="57" count="6"/>
+    <production id="11209" count="1"/>
+    <production id="11210" count="1"/>
+    <production id="11211" count="1"/>
+    <production id="11212" count="1"/>
+    <production id="11200" count="1"/>
+    <production id="12229" count="1"/>
+  </item>
 
 </list>

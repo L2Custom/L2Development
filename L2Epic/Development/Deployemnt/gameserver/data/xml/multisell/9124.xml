@@ -207,5 +207,77 @@
     <ingredient id="57" count="100000000"/>
     <production id="7578" count="1"/>
   </item>
+  
+    <!-- Ertheia Edge  -->
+  <item id="35">
+    <ingredient id="57" count="1"/>
+    <production id="12200" count="1"/>
+  </item>
+  
+      <!-- Ertheia Axe  -->
+  <item id="36">
+    <ingredient id="57" count="1"/>
+    <production id="12201" count="1"/>
+  </item>
+  
+        <!-- Ertheia Dagger  -->
+  <item id="37">
+    <ingredient id="57" count="1"/>
+    <production id="12202" count="1"/>
+  </item>
+  
+        <!-- Ertheia Spear  -->
+  <item id="38">
+    <ingredient id="57" count="1"/>
+    <production id="12203" count="1"/>
+  </item>
+  
+      <!-- Ertheia Cleaver  -->
+  <item id="39">
+    <ingredient id="57" count="1"/>
+    <production id="12204" count="1"/>
+  </item>
+  
+     <!-- Ertheia Warhammer  -->
+  <item id="40">
+    <ingredient id="57" count="1"/>
+    <production id="12205" count="1"/>
+  </item>
 
+     <!-- Ertheia Gauntlets  -->
+  <item id="41">
+    <ingredient id="57" count="1"/>
+    <production id="12206" count="1"/>
+  </item>
+
+     <!-- Ertheia Bow  -->
+  <item id="42">
+    <ingredient id="57" count="1"/>
+    <production id="12207" count="1"/>
+  </item>
+  
+     <!-- Ertheia Magic Blade  -->
+  <item id="43">
+    <ingredient id="57" count="1"/>
+    <production id="12208" count="1"/>
+  </item>
+  
+     <!-- Ertheia Wand  -->
+  <item id="44">
+    <ingredient id="57" count="1"/>
+    <production id="12209" count="1"/>
+  </item>
+  
+     <!-- Ertheia Staff  -->
+  <item id="45">
+    <ingredient id="57" count="1"/>
+    <production id="12210" count="1"/>
+  </item>
+  
+     <!-- Ertheia Dualswords  -->
+  <item id="46">
+    <ingredient id="57" count="1"/>
+    <production id="12211" count="1"/>
+  </item>
+  
 </list>
