@@ -1,1 +1,36 @@
 07/02/2020 20:35:04,299  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+08/02/2020 03:44:41,381  WARN L2ItemInstance:1015 - Item item_id=11201 not known, object_id=268477813
+08/02/2020 03:44:41,382  WARN L2ItemInstance:1015 - Item item_id=12200 not known, object_id=268477803
+08/02/2020 03:44:41,385  WARN L2ItemInstance:1015 - Item item_id=11200 not known, object_id=268477780
+08/02/2020 03:44:41,387  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+08/02/2020 03:45:48,599  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.NullPointerException
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.addItem(L2PcInstance.java:4166)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminCreateItem.createItem(AdminCreateItem.java:399)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminCreateItem.useAdminCommand(AdminCreateItem.java:78)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+08/02/2020 03:46:27,892  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.NullPointerException
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.addItem(L2PcInstance.java:4166)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminCreateItem.createItem(AdminCreateItem.java:399)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminCreateItem.useAdminCommand(AdminCreateItem.java:78)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+08/02/2020 03:50:51,539  WARN L2ItemInstance:1015 - Item item_id=11201 not known, object_id=268477813
+08/02/2020 03:50:51,662  WARN L2ItemInstance:1015 - Item item_id=11200 not known, object_id=268477780
+08/02/2020 03:50:51,665  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+08/02/2020 03:57:47,348  WARN L2ItemInstance:1015 - Item item_id=11200 not known, object_id=268477780
+08/02/2020 03:57:47,351  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+08/02/2020 17:00:08,073  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+08/02/2020 17:20:55,771  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+08/02/2020 18:06:27,898  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+08/02/2020 22:55:20,033  WARN L2Character:8305 - Jager logs in game with AccessLevel 8

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list>
+<item id='12200' name="Ertheia Edge">
+  <for>
+    <set val='504' order='0x08' stat='pAtk'/>
+    <set val='219' order='0x08' stat='mAtk'/>
+    <set val='8' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='379' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12201' name="Ertheia Axe">
+  <for>
+    <set val='504' order='0x08' stat='pAtk'/>
+    <set val='219' order='0x08' stat='mAtk'/>
+    <set val='8' order='0x04' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='379' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12202' name="Ertheia Daggere">
+  <for>
+    <set val='431' order='0x08' stat='pAtk'/>
+    <set val='219' order='0x08' stat='mAtk'/>
+    <set val='8' order='0x12' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='433' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12203' name="Ertheia Spear">
+  <for>
+    <set val='504' order='0x08' stat='pAtk'/>
+    <set val='219' order='0x08' stat='mAtk'/>
+    <set val='8' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='325' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12204' name="Ertheia Cleaver">
+  <for>
+    <set val='613' order='0x08' stat='pAtk'/>
+    <set val='219' order='0x08' stat='mAtk'/>
+    <set val='8' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='325' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12205' name="Ertheia Warhammer">
+  <for>
+    <set val='613' order='0x08' stat='pAtk'/>
+    <set val='219' order='0x08' stat='mAtk'/>
+    <set val='4' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='325' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12206' name="Ertheia Gauntlets">
+  <for>
+    <set val='613' order='0x08' stat='pAtk'/>
+    <set val='219' order='0x08' stat='mAtk'/>
+    <set val='4' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='325' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12207' name="Ertheia Bow">
+  <for>
+    <set val='922' order='0x08' stat='pAtk'/>
+    <set val='219' order='0x08' stat='mAtk'/>
+    <set val='12' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='293' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12208' name="Ertheia Magic Blade">
+  <for>
+    <set val='403' order='0x08' stat='pAtk'/>
+    <set val='293' order='0x08' stat='mAtk'/>
+    <set val='8' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='379' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12209' name="Ertheia Wand">
+  <for>
+    <set val='403' order='0x08' stat='pAtk'/>
+    <set val='293' order='0x08' stat='mAtk'/>
+    <set val='4' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='379' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12210' name="Ertheia Staff">
+  <for>
+    <set val='491' order='0x08' stat='pAtk'/>
+    <set val='322' order='0x08' stat='mAtk'/>
+    <set val='4' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='325' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12211' name="Ertheia Dualswords">
+  <for>
+    <set val='613' order='0x08' stat='pAtk'/>
+    <set val='219' order='0x08' stat='mAtk'/>
+    <set val='8' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='325' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
+<item id='12229' name="Ertheia Shield">
+  <for>
+    <sub val='8' order='0x10' stat='rEvas'/>
+    <set val='392' order='0x08' stat='sDef'/>
+    <set val='25' order='0x08' stat='rShld'/>
+  </for>
+</item>
+</list>
