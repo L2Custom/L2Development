@@ -108,6 +108,15 @@
     <set val='325' order='0x08' stat='pAtkSpd'/>
   </for>
 </item>
+<item id='12212' name="Ertheia Magic Blade - Acumen">
+  <for>
+    <set val='403' order='0x08' stat='pAtk'/>
+    <set val='293' order='0x08' stat='mAtk'/>
+    <set val='8' order='0x08' stat='rCrit'/>
+    <add val='0' order='0x10' stat='accCombat'/>
+    <set val='379' order='0x08' stat='pAtkSpd'/>
+  </for>
+</item>
 <item id='12229' name="Ertheia Shield">
   <for>
     <sub val='8' order='0x10' stat='rEvas'/>

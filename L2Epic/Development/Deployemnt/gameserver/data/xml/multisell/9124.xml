@@ -280,4 +280,9 @@
     <production id="12211" count="1"/>
   </item>
   
+         <!-- Ertheia Magic Blade-Acumen  -->
+  <item id="47">
+    <ingredient id="57" count="1"/>
+    <production id="12212" count="1"/>
+  </item>
 </list>
