@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<L2UI>
+    <Window parent="undefined" backTex="undefined" script="BoardWnd" state="GamingState" frame="1" resizeframe="-1" iconable="-1" hidden="1" alwaysFullAlpha="1" stuckable="-1" title="136" savePosition="1" saveSize="-1" draggable="0" hookKeyInput="-1" WorkingConfiguration="Game">
+        <DefaultProperty name="BoardWnd" extend="undefined" alwaysOnTop="-1" alwaysOnBack="-1" parentName="" virtual="-1" passThrough="-1" nWindowStyle="0" sized="1" isAbsolute="1" hasPosition="1">
+            <RelativeSize relativeTo="" widthRate="0.0" heightRate="0.0" offsetWidth="0" offsetHeight="0"/>
+            <AbsoluteSize width="646" height="400"/>
+            <Position relativePoint="CenterCenter" anchorPoint="CenterCenter" relativeTo="" offsetX="0" offsetY="0" anchored="-1"/>
+            <Tooltip type="undefined" text="-9999"/>
+            <TabOrder preOrder="undefined" postOrder="undefined"/>
+        </DefaultProperty>
+        <Drawer ownerWindow="" direction="None" offset="682098688" directionFixed="0"/>
+        <ShowHideAnim>
+            <ShowAnim type="None" seconds="1.31892698E9" direction="None"/>
+            <HideAnim type="None" seconds="-9999.0" direction="None"/>
+        </ShowHideAnim>
+        <Frame size="None" direction="None" exitbutton="0" expandbutton="0" expandOrgHeight="0" expandExpHeight="0"/>
+        <Iconable iconName="undefined" tooltipIdx="-9999"/>
+        <ResizeFrame x="-9999" y="-9999" width="-9999.0" height="-9999.0" direction="None" maxIncrease="33"/>
+        <Texture file="" type="Stretch" layer="Background" alpha="-9999" isAnimTex="-1">
+            <DefaultProperty name="BoardWnd" extend="undefined" alwaysOnTop="-1" alwaysOnBack="-1" parentName="BoardWnd" virtual="-1" passThrough="-1" nWindowStyle="0" sized="1" isAbsolute="0" hasPosition="1">
+                <RelativeSize relativeTo="" widthRate="1.0" heightRate="1.0" offsetWidth="0" offsetHeight="0"/>
+                <AbsoluteSize width="0" height="0"/>
+                <Position relativePoint="TopLeft" anchorPoint="TopLeft" relativeTo="" offsetX="0" offsetY="20" anchored="0"/>
+                <Tooltip type="undefined" text="-9999"/>
+                <TabOrder preOrder="undefined" postOrder="undefined"/>
+            </DefaultProperty>
+            <TextureCoords usize="0" vsize="0" u="0.0" v="0.0"/>
+        </Texture>
+        <HtmlCtrl viewType="BBS">
+            <DefaultProperty name="HtmlViewer" extend="undefined" alwaysOnTop="1" alwaysOnBack="-1" parentName="BoardWnd" virtual="-1" passThrough="-1" nWindowStyle="0" sized="1" isAbsolute="1" hasPosition="1">
+                <RelativeSize relativeTo="" widthRate="0.0" heightRate="0.0" offsetWidth="0" offsetHeight="0"/>
+                <AbsoluteSize width="620" height="440"/>
+                <Position relativePoint="TopLeft" anchorPoint="TopLeft" relativeTo="" offsetX="8" offsetY="51" anchored="0"/>
+                <Tooltip type="undefined" text="-9999"/>
+                <TabOrder preOrder="undefined" postOrder="undefined"/>
+            </DefaultProperty>
+        </HtmlCtrl>
+        <Window parent="" backTex="" script="" state="" frame="0" resizeframe="0" iconable="0" hidden="0" alwaysFullAlpha="0" stuckable="0" title="0" savePosition="0" saveSize="0" draggable="0" hookKeyInput="0" WorkingConfiguration="">
+            <DefaultProperty name="Container" extend="undefined" alwaysOnTop="1" alwaysOnBack="-1" parentName="BoardWnd" virtual="0" passThrough="1" nWindowStyle="0" sized="1" isAbsolute="1" hasPosition="1">
+                <RelativeSize relativeTo="" widthRate="0.0" heightRate="0.0" offsetWidth="0" offsetHeight="0"/>
+                <AbsoluteSize width="650" height="653"/>
+                <Position relativePoint="TopLeft" anchorPoint="TopLeft" relativeTo="" offsetX="0" offsetY="0" anchored="-1"/>
+                <Tooltip type="undefined" text="-9999"/>
+                <TabOrder preOrder="undefined" postOrder="undefined"/>
+            </DefaultProperty>
+            <Drawer ownerWindow="" direction="None" offset="0" directionFixed="0"/>
+            <ShowHideAnim>
+                <ShowAnim type="None" seconds="0.0" direction="None"/>
+                <HideAnim type="None" seconds="-9999.0" direction="None"/>
+            </ShowHideAnim>
+            <Frame size="None" direction="None" exitbutton="1" expandbutton="0" expandOrgHeight="0" expandExpHeight="0"/>
+            <Iconable iconName="" tooltipIdx="0"/>
+            <ResizeFrame x="0" y="0" width="0.0" height="0.0" direction="None" maxIncrease="0"/>
+            <Texture file="l2ui_ch3.BoardWnd.board_back2" type="Stretch" layer="Background" alpha="-9999" isAnimTex="-1">
+                <DefaultProperty name="Tex" extend="undefined" alwaysOnTop="1" alwaysOnBack="-1" parentName="BoardWnd" virtual="0" passThrough="1" nWindowStyle="0" sized="1" isAbsolute="1" hasPosition="1">
+                    <RelativeSize relativeTo="" widthRate="0.0" heightRate="0.0" offsetWidth="0" offsetHeight="0"/>
+                    <AbsoluteSize width="650" height="510"/>
+                    <Position relativePoint="TopLeft" anchorPoint="TopLeft" relativeTo="BoardWnd" offsetX="-4" offsetY="-1" anchored="1"/>
+                    <Tooltip type="undefined" text="-9999"/>
+                    <TabOrder preOrder="undefined" postOrder="undefined"/>
+                </DefaultProperty>
+                <TextureCoords usize="0" vsize="0" u="0.0" v="0.0"/>
+            </Texture>
+        </Window>
+    </Window>
+</L2UI>
