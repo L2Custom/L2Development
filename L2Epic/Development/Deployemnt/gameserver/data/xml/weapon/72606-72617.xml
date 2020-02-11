@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list>
+<item id='72606' name="Lael Mahum_shield">
+  <for>
+    <sub val='8' order='0x10' stat='rEvas'/>
+    <set val='290' order='0x08' stat='sDef'/>
+    <set val='20' order='0x08' stat='rShld'/>
+    <enchant val='0' order='0x0C' stat='sDef'/>
+  </for>
+</item>
+
+<item id='72607' name="anakazel_shield">
+  <for>
+    <sub val='8' order='0x10' stat='rEvas'/>
+    <set val='290' order='0x08' stat='sDef'/>
+    <set val='20' order='0x08' stat='rShld'/>
+    <enchant val='0' order='0x0C' stat='sDef'/>
+  </for>
+</item>
+
+<item id='72608' name="Freya_shield">
+  <for>
+    <sub val='8' order='0x10' stat='rEvas'/>
+    <set val='290' order='0x08' stat='sDef'/>
+    <set val='20' order='0x08' stat='rShld'/>
+    <enchant val='0' order='0x0C' stat='sDef'/>
+  </for>
+</item>
+
+<item id='72609' name="Marshal_shield">
+  <for>
+    <sub val='8' order='0x10' stat='rEvas'/>
+    <set val='290' order='0x08' stat='sDef'/>
+    <set val='20' order='0x08' stat='rShld'/>
+    <enchant val='0' order='0x0C' stat='sDef'/>
+  </for>
+</item>
+
+<item id='72610' name="Mask_shield">
+  <for>
+    <sub val='8' order='0x10' stat='rEvas'/>
+    <set val='290' order='0x08' stat='sDef'/>
+    <set val='20' order='0x08' stat='rShld'/>
+    <enchant val='0' order='0x0C' stat='sDef'/>
+  </for>
+</item>
+
+<item id='72611' name="Pailaka_shield">
+  <for>
+    <sub val='8' order='0x10' stat='rEvas'/>
+    <set val='290' order='0x08' stat='sDef'/>
+    <set val='20' order='0x08' stat='rShld'/>
+    <enchant val='0' order='0x0C' stat='sDef'/>
+  </for>
+</item>
+
+<item id='72616' name="Tantaar_shield">
+  <for>
+    <sub val='8' order='0x10' stat='rEvas'/>
+    <set val='290' order='0x08' stat='sDef'/>
+    <set val='20' order='0x08' stat='rShld'/>
+    <enchant val='0' order='0x0C' stat='sDef'/>
+  </for>
+</item>
+
+<item id='72617' name="Tigar_shield">
+  <for>
+    <sub val='8' order='0x10' stat='rEvas'/>
+    <set val='290' order='0x08' stat='sDef'/>
+    <set val='20' order='0x08' stat='rShld'/>
+    <enchant val='0' order='0x0C' stat='sDef'/>
+  </for>
+</item>
+
+</list>
