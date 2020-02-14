@@ -129,19 +129,19 @@
     <item id="19">
     <ingredient id="57" count="5000000"/>
     <production id="26004" count="1"/>
-    <production id="26005" count="1"/>
-    <production id="26006" count="1"/>
-    <production id="26007" count="1"/>
-    <production id="26013" count="1"/>
+    <production id="26009" count="1"/>
+    <production id="26010" count="1"/>
+    <production id="26011" count="1"/>
+    <production id="26014" count="1"/>
   </item>
     <!-- Poseidon robe set -->
       <item id="20">
     <ingredient id="57" count="5000000"/>
     <production id="26008" count="1"/>
-    <production id="26009" count="1"/>
-    <production id="26010" count="1"/>
-    <production id="26011" count="1"/>
-    <production id="26014" count="1"/>
+    <production id="26005" count="1"/>
+    <production id="26006" count="1"/>
+    <production id="26007" count="1"/>
+    <production id="26013" count="1"/>
   </item>
   <!-- Ertheia heavy set -->
         <item id="21">

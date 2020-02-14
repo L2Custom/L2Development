@@ -1,12 +1,4 @@
-09/02/2020 21:04:12,641  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
-09/02/2020 21:09:38,450  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
-java.lang.ArrayIndexOutOfBoundsException: Index 26015 out of bounds for length 26015
-	at com.l2jfrozen.gameserver.datatables.sql.ItemTable.getTemplate(ItemTable.java:647)
-	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminCreateItem.createItem(AdminCreateItem.java:397)
-	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminCreateItem.useAdminCommand(AdminCreateItem.java:78)
-	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
-	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
-	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:830)
+13/02/2020 20:23:02,669  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+13/02/2020 20:30:33,478  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+13/02/2020 20:33:20,433  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+13/02/2020 20:39:28,282  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
