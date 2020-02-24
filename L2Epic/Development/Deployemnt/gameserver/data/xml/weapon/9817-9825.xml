@@ -2,10 +2,10 @@
 <list>
 <item id='9817' name="Angel Hammer">
   <for>
-    <set val='78' order='0x08' stat='pAtk'/>
+    <set val='298' order='0x08' stat='pAtk'/>
     <set val='39' order='0x08' stat='mAtk'/>
     <set val='8' order='0x08' stat='rCrit'/>
-    <add val='0' order='0x10' stat='accCombat'/>
+    <add val='8' order='0x10' stat='accCombat'/>
     <set val='325' order='0x08' stat='pAtkSpd'/>
     <enchant val='0' order='0x0C' stat='pAtk'/>
     <enchant val='0' order='0x0C' stat='mAtk'/>
@@ -13,44 +13,44 @@
 </item>
 <item id='9818' name="Angel Caster">
   <for>
-    <set val='156' order='0x08' stat='pAtk'/>
-    <set val='83' order='0x08' stat='mAtk'/>
+    <set val='235' order='0x08' stat='pAtk'/>
+    <set val='185' order='0x08' stat='mAtk'/>
     <set val='8' order='0x08' stat='rCrit'/>
-    <add val='0' order='0x10' stat='accCombat'/>
-    <set val='379' order='0x08' stat='pAtkSpd'/>
+    <add val='8' order='0x10' stat='accCombat'/>
+    <set val='384' order='0x08' stat='pAtkSpd'/>
     <enchant val='0' order='0x0C' stat='pAtk'/>
     <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='9819' name="Angel Blade">
   <for>
-    <set val='78' order='0x08' stat='pAtk'/>
-    <set val='39' order='0x08' stat='mAtk'/>
+    <set val='291' order='0x08' stat='pAtk'/>
+    <set val='142' order='0x08' stat='mAtk'/>
     <set val='8' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
-    <set val='325' order='0x08' stat='pAtkSpd'/>
+    <set val='384' order='0x08' stat='pAtkSpd'/>
     <enchant val='0' order='0x0C' stat='pAtk'/>
     <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='9820' name="Angel Fists">
   <for>
-    <set val='1' order='0x08' stat='pAtk'/>
-    <set val='1' order='0x08' stat='mAtk'/>
-    <set val='12' order='0x08' stat='rCrit'/>
-    <add val='-3' order='0x10' stat='accCombat'/>
-    <set val='293' order='0x08' stat='pAtkSpd'/>
+    <set val='352' order='0x08' stat='pAtk'/>
+    <set val='142' order='0x08' stat='mAtk'/>
+    <set val='8' order='0x08' stat='rCrit'/>
+    <add val='8' order='0x10' stat='accCombat'/>
+    <set val='330' order='0x08' stat='pAtkSpd'/>
     <enchant val='0' order='0x0C' stat='pAtk'/>
     <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='9821' name="Angel Dagger">
   <for>
-    <set val='1' order='0x08' stat='pAtk'/>
-    <set val='1' order='0x08' stat='mAtk'/>
+    <set val='256' order='0x08' stat='pAtk'/>
+    <set val='142' order='0x08' stat='mAtk'/>
     <set val='12' order='0x08' stat='rCrit'/>
     <add val='-3' order='0x10' stat='accCombat'/>
-    <set val='293' order='0x08' stat='pAtkSpd'/>
+    <set val='438' order='0x08' stat='pAtkSpd'/>
     <enchant val='0' order='0x0C' stat='pAtk'/>
     <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
