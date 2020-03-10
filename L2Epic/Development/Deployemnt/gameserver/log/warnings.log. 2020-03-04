@@ -1,0 +1,17 @@
+04/03/2020 18:34:40,795  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 22:02:49,758  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 22:03:05,114  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_sumon
+04/03/2020 22:03:05,121  WARN SendBypassBuildCmd:55 - Character Arcane tried to use admin command admin_sumon 8, but doesn't have access to it!
+04/03/2020 22:09:01,909  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 22:20:23,528  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 22:26:47,513  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 22:50:42,988  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 23:11:48,785  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 23:18:41,689  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 23:21:38,272  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 23:24:57,207  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 23:31:33,193  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 23:39:04,302  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+04/03/2020 23:44:39,979  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_SPAWN
+04/03/2020 23:44:39,981  WARN SendBypassBuildCmd:55 - Character Arcane tried to use admin command admin_SPAWN 37017, but doesn't have access to it!
+04/03/2020 23:45:39,063  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7

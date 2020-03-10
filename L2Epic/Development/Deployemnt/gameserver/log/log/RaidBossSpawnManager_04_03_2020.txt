@@ -1,0 +1,12 @@
+[04/03/2020 23:48:27,960] '---': Icy(37017) defeated, next respawn at 04-03-2020 23:48:27
+[04/03/2020 23:48:27,968] '---': Icy(37017) spawned in the word
+[04/03/2020 23:50:18,815] '---': Icy(37017) defeated, next respawn at 04-03-2020 23:50:18
+[04/03/2020 23:50:18,818] '---': Icy(37017) spawned in the word
+[04/03/2020 23:52:07,232] '---': Icy(37017) defeated, next respawn at 04-03-2020 23:52:07
+[04/03/2020 23:52:07,234] '---': Icy(37017) spawned in the word
+[04/03/2020 23:52:22,704] '---': Icy(37017) defeated, next respawn at 04-03-2020 23:52:22
+[04/03/2020 23:52:22,708] '---': Icy(37017) spawned in the word
+[04/03/2020 23:54:09,915] '---': Icy(37017) defeated, next respawn at 04-03-2020 23:54:09
+[04/03/2020 23:54:09,918] '---': Icy(37017) spawned in the word
+[04/03/2020 23:58:18,133] '---': Icy(37017) defeated, next respawn at 04-03-2020 23:58:18
+[04/03/2020 23:58:18,136] '---': Icy(37017) spawned in the word

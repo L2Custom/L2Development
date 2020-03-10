@@ -1,0 +1,13 @@
+[04/03/2020 18:34:40,800] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 22:02:49,760] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 22:09:01,912] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 22:20:23,530] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 22:26:47,516] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 22:50:42,993] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 23:11:48,788] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 23:18:41,692] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 23:21:38,274] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 23:24:57,210] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 23:31:33,196] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 23:39:04,304] '---': Arcane logs in game with AccessLevel 7
+[04/03/2020 23:45:39,067] '---': Arcane logs in game with AccessLevel 7

@@ -1,5 +1,5 @@
-09/03/2020 22:57:51,269 ERROR L2Character:9293 - L2PcInstance.storeEffect: Could not store char effect data into character_skill_effects
-java.sql.BatchUpdateException: (conn=150) Duplicate entry '268477770-1036' for key 'PRIMARY'
+18/02/2020 21:46:21,450 ERROR L2Character:9293 - L2PcInstance.storeEffect: Could not store char effect data into character_skill_effects
+java.sql.BatchUpdateException: (conn=112) Duplicate entry '268477770-1036' for key 'PRIMARY'
 	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:309)
 	at org.mariadb.jdbc.ClientSidePreparedStatement.executeBatch(ClientSidePreparedStatement.java:293)
 	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:128)
@@ -13,7 +13,7 @@ java.sql.BatchUpdateException: (conn=150) Duplicate entry '268477770-1036' for k
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:830)
-Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=150) Duplicate entry '268477770-1036' for key 'PRIMARY'
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=112) Duplicate entry '268477770-1036' for key 'PRIMARY'
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:236)
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:164)
 	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:305)

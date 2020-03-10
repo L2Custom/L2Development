@@ -1,0 +1,11 @@
+29/02/2020 00:23:47,651 ERROR SelectorThread:526 - 
+java.io.IOException: Connection reset by peer
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:50)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:484)
+	at com.l2jfrozen.netcore.MMOConnection.write(MMOConnection.java:142)
+	at com.l2jfrozen.netcore.SelectorThread.writePacket(SelectorThread.java:522)
+	at com.l2jfrozen.netcore.SelectorThread.run(SelectorThread.java:175)
