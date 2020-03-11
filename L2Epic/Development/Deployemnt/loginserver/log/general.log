@@ -31,3 +31,5 @@
 10/03/2020 21:00:28,121  INFO GameServerThread:596 - Server name: Sieghardt
 10/03/2020 21:00:28,122  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
 10/03/2020 21:00:28,123  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
+10/03/2020 21:47:14,146  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+10/03/2020 21:47:14,155  INFO GameServerThread:193 - Server [2] Sieghardt is now set as disconnected
