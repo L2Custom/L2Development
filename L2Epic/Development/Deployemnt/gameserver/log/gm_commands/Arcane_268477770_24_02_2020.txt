@@ -1,5 +1,0 @@
-[24/02/2020 22:48:13,582] '---': GM: Arcane(268477770), Target: [no-target], Command: [admin_admin], Params: []
-[24/02/2020 22:48:14,982] '---': GM: Arcane(268477770), Target: [no-target], Command: [admin_move_to], Params: []
-[24/02/2020 22:48:15,785] '---': GM: Arcane(268477770), Target: [no-target], Command: [admin_help], Params: [ tele/towns.htm]
-[24/02/2020 22:48:16,915] '---': GM: Arcane(268477770), Target: [no-target], Command: [admin_help], Params: [ tele/towns/giran.htm]
-[24/02/2020 22:48:17,634] '---': GM: Arcane(268477770), Target: [no-target], Command: [admin_move_to], Params: [ 82698 148638 -3473]

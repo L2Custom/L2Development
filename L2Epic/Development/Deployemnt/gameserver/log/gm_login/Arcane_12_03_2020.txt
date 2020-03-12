@@ -1,5 +1,0 @@
-[12/03/2020 20:12:57,860] '---': Arcane logs in game with AccessLevel 7
-[12/03/2020 20:24:45,455] '---': Arcane logs in game with AccessLevel 7
-[12/03/2020 20:52:35,458] '---': Arcane logs in game with AccessLevel 7
-[12/03/2020 21:02:10,695] '---': Arcane logs in game with AccessLevel 7
-[12/03/2020 21:53:27,605] '---': Arcane logs in game with AccessLevel 7
