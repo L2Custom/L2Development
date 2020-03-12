@@ -1,2 +1,7 @@
-10/03/2020 21:00:48,133  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
-10/03/2020 21:37:54,494  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+12/03/2020 20:12:57,855  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+12/03/2020 20:24:45,453  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+12/03/2020 20:52:35,454  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+12/03/2020 21:02:10,692  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
+12/03/2020 21:22:31,705  WARN AdminCommandAccessRights:134 - Admin Access Rights: No rights defined for admin command admin_diet_on
+12/03/2020 21:22:31,707  WARN SendBypassBuildCmd:55 - Character Arcane tried to use admin command admin_diet_on, but doesn't have access to it!
+12/03/2020 21:53:27,604  WARN L2Character:8305 - Arcane logs in game with AccessLevel 7
