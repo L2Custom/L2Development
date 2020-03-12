@@ -33,3 +33,22 @@
 10/03/2020 21:00:28,123  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
 10/03/2020 21:47:14,146  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
 10/03/2020 21:47:14,155  INFO GameServerThread:193 - Server [2] Sieghardt is now set as disconnected
+12/03/2020 21:08:35,097  INFO Util:121 - =======================================================-[ Database ]
+12/03/2020 21:08:35,221  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+12/03/2020 21:08:35,221  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+12/03/2020 21:08:35,257  INFO Util:121 - ================================================-[ LoginController ]
+12/03/2020 21:08:35,901  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+12/03/2020 21:08:35,938  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+12/03/2020 21:08:36,011  INFO GameServerTable:75 - Loaded 127 server names
+12/03/2020 21:08:36,097  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+12/03/2020 21:08:36,162  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+12/03/2020 21:08:36,184  INFO Util:121 - ============================================-[ Loginserver network ]
+12/03/2020 21:08:36,376  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+12/03/2020 21:08:36,378  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+12/03/2020 21:08:36,379  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+12/03/2020 21:08:36,379  INFO L2LoginServer:165 - Loginserver listening on *:2106
+12/03/2020 21:09:53,854  INFO Util:121 - ===========================================-[ Gameserver connected ]
+12/03/2020 21:09:53,855  INFO GameServerThread:595 - Server ID: 2
+12/03/2020 21:09:53,857  INFO GameServerThread:596 - Server name: Sieghardt
+12/03/2020 21:09:53,857  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+12/03/2020 21:09:53,857  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444

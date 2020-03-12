@@ -713,7 +713,7 @@
         <set name="skillType" val="MDAM"/>
         <set name="isMagic" val="true"/>
         <set name="operateType" val="OP_ACTIVE"/>
-        <set name="castRange" val="400"/>
+        <set name="castRange" val="600"/>
         <set name="effectRange" val="900"/>
         <for>
         </for>
