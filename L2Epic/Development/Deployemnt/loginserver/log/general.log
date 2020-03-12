@@ -1,0 +1,132 @@
+10/03/2020 20:58:03,831  INFO Util:121 - =======================================================-[ Database ]
+10/03/2020 20:58:04,053  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+10/03/2020 20:58:04,054  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+10/03/2020 20:58:04,076  INFO Util:121 - ================================================-[ LoginController ]
+10/03/2020 20:58:05,781  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+10/03/2020 20:58:05,866  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+10/03/2020 20:58:05,923  INFO GameServerTable:75 - Loaded 127 server names
+10/03/2020 20:58:06,001  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+10/03/2020 20:58:06,146  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+10/03/2020 20:58:06,162  INFO Util:121 - ============================================-[ Loginserver network ]
+10/03/2020 20:58:06,401  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+10/03/2020 20:58:06,405  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+10/03/2020 20:58:06,406  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+10/03/2020 20:58:06,407  INFO L2LoginServer:165 - Loginserver listening on *:2106
+10/03/2020 21:00:09,357  INFO Util:121 - =======================================================-[ Database ]
+10/03/2020 21:00:09,600  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+10/03/2020 21:00:09,602  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+10/03/2020 21:00:09,626  INFO Util:121 - ================================================-[ LoginController ]
+10/03/2020 21:00:11,055  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+10/03/2020 21:00:11,143  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+10/03/2020 21:00:11,169  INFO GameServerTable:75 - Loaded 127 server names
+10/03/2020 21:00:11,217  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+10/03/2020 21:00:11,457  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+10/03/2020 21:00:11,466  INFO Util:121 - ============================================-[ Loginserver network ]
+10/03/2020 21:00:11,681  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+10/03/2020 21:00:11,685  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+10/03/2020 21:00:11,687  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+10/03/2020 21:00:11,689  INFO L2LoginServer:165 - Loginserver listening on *:2106
+10/03/2020 21:00:28,111  INFO Util:121 - ===========================================-[ Gameserver connected ]
+10/03/2020 21:00:28,117  INFO GameServerThread:595 - Server ID: 2
+10/03/2020 21:00:28,121  INFO GameServerThread:596 - Server name: Sieghardt
+10/03/2020 21:00:28,122  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+10/03/2020 21:00:28,123  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
+10/03/2020 21:47:14,146  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+10/03/2020 21:47:14,155  INFO GameServerThread:193 - Server [2] Sieghardt is now set as disconnected
+12/03/2020 21:08:35,097  INFO Util:121 - =======================================================-[ Database ]
+12/03/2020 21:08:35,221  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+12/03/2020 21:08:35,221  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+12/03/2020 21:08:35,257  INFO Util:121 - ================================================-[ LoginController ]
+12/03/2020 21:08:35,901  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+12/03/2020 21:08:35,938  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+12/03/2020 21:08:36,011  INFO GameServerTable:75 - Loaded 127 server names
+12/03/2020 21:08:36,097  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+12/03/2020 21:08:36,162  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+12/03/2020 21:08:36,184  INFO Util:121 - ============================================-[ Loginserver network ]
+12/03/2020 21:08:36,376  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+12/03/2020 21:08:36,378  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+12/03/2020 21:08:36,379  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+12/03/2020 21:08:36,379  INFO L2LoginServer:165 - Loginserver listening on *:2106
+12/03/2020 21:09:53,854  INFO Util:121 - ===========================================-[ Gameserver connected ]
+12/03/2020 21:09:53,855  INFO GameServerThread:595 - Server ID: 2
+12/03/2020 21:09:53,857  INFO GameServerThread:596 - Server name: Sieghardt
+12/03/2020 21:09:53,857  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+12/03/2020 21:09:53,857  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
+12/03/2020 21:55:18,046  INFO Util:121 - =======================================================-[ Database ]
+12/03/2020 21:55:18,136  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+12/03/2020 21:55:18,137  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+12/03/2020 21:55:18,147  INFO Util:121 - ================================================-[ LoginController ]
+12/03/2020 21:55:18,988  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+12/03/2020 21:55:19,029  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+12/03/2020 21:55:19,075  INFO GameServerTable:75 - Loaded 127 server names
+12/03/2020 21:55:19,120  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+12/03/2020 21:55:19,206  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+12/03/2020 21:55:19,208  INFO Util:121 - ============================================-[ Loginserver network ]
+12/03/2020 21:55:19,458  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+12/03/2020 21:55:19,460  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+12/03/2020 21:55:19,461  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+12/03/2020 21:55:19,461  INFO L2LoginServer:165 - Loginserver listening on *:2106
+12/03/2020 21:55:36,475  INFO Util:121 - ===========================================-[ Gameserver connected ]
+12/03/2020 21:55:36,477  INFO GameServerThread:595 - Server ID: 2
+12/03/2020 21:55:36,478  INFO GameServerThread:596 - Server name: Sieghardt
+12/03/2020 21:55:36,478  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+12/03/2020 21:55:36,479  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
+12/03/2020 21:59:01,067  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+12/03/2020 21:59:01,070  INFO GameServerThread:193 - Server [2] Sieghardt is now set as disconnected
+12/03/2020 22:10:06,382  INFO Util:121 - =======================================================-[ Database ]
+12/03/2020 22:10:06,462  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+12/03/2020 22:10:06,463  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+12/03/2020 22:10:06,473  INFO Util:121 - ================================================-[ LoginController ]
+12/03/2020 22:10:07,017  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+12/03/2020 22:10:07,049  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+12/03/2020 22:10:07,060  INFO GameServerTable:75 - Loaded 127 server names
+12/03/2020 22:10:07,112  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+12/03/2020 22:10:07,184  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+12/03/2020 22:10:07,185  INFO Util:121 - ============================================-[ Loginserver network ]
+12/03/2020 22:10:07,355  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+12/03/2020 22:10:07,357  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+12/03/2020 22:10:07,358  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+12/03/2020 22:10:07,358  INFO L2LoginServer:165 - Loginserver listening on *:2106
+12/03/2020 22:10:20,606  INFO Util:121 - ===========================================-[ Gameserver connected ]
+12/03/2020 22:10:20,607  INFO GameServerThread:595 - Server ID: 2
+12/03/2020 22:10:20,609  INFO GameServerThread:596 - Server name: Sieghardt
+12/03/2020 22:10:20,610  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+12/03/2020 22:10:20,610  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
+12/03/2020 22:21:10,108  INFO Util:121 - =======================================================-[ Database ]
+12/03/2020 22:21:10,193  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+12/03/2020 22:21:10,194  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+12/03/2020 22:21:10,201  INFO Util:121 - ================================================-[ LoginController ]
+12/03/2020 22:21:10,883  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+12/03/2020 22:21:10,919  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+12/03/2020 22:21:10,933  INFO GameServerTable:75 - Loaded 127 server names
+12/03/2020 22:21:10,985  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+12/03/2020 22:21:11,041  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+12/03/2020 22:21:11,048  INFO Util:121 - ============================================-[ Loginserver network ]
+12/03/2020 22:21:11,225  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+12/03/2020 22:21:11,227  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+12/03/2020 22:21:11,227  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+12/03/2020 22:21:11,228  INFO L2LoginServer:165 - Loginserver listening on *:2106
+12/03/2020 22:21:29,823  INFO Util:121 - ===========================================-[ Gameserver connected ]
+12/03/2020 22:21:29,825  INFO GameServerThread:595 - Server ID: 2
+12/03/2020 22:21:29,826  INFO GameServerThread:596 - Server name: Sieghardt
+12/03/2020 22:21:29,827  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+12/03/2020 22:21:29,827  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
+12/03/2020 22:26:27,768  INFO Util:121 - =======================================================-[ Database ]
+12/03/2020 22:26:27,866  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+12/03/2020 22:26:27,866  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+12/03/2020 22:26:27,875  INFO Util:121 - ================================================-[ LoginController ]
+12/03/2020 22:26:28,535  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+12/03/2020 22:26:28,566  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+12/03/2020 22:26:28,576  INFO GameServerTable:75 - Loaded 127 server names
+12/03/2020 22:26:28,611  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+12/03/2020 22:26:28,665  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+12/03/2020 22:26:28,667  INFO Util:121 - ============================================-[ Loginserver network ]
+12/03/2020 22:26:28,851  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+12/03/2020 22:26:28,853  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+12/03/2020 22:26:28,853  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+12/03/2020 22:26:28,854  INFO L2LoginServer:165 - Loginserver listening on *:2106
+12/03/2020 22:26:37,179  INFO Util:121 - ===========================================-[ Gameserver connected ]
+12/03/2020 22:26:37,182  INFO GameServerThread:595 - Server ID: 2
+12/03/2020 22:26:37,183  INFO GameServerThread:596 - Server name: Sieghardt
+12/03/2020 22:26:37,184  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+12/03/2020 22:26:37,184  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
