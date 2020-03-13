@@ -29,7 +29,7 @@
   </for>
 </item>
 
-<item id='26004' name="Poseidon Leather Armor">
+<item id='26008' name="Poseidon Leather Armor">
   <for>
     <add val='272' order='0x10' stat='pDef'/>
     <add val='120' order='0x10' stat='pAtkSpd'/>
@@ -58,7 +58,7 @@
   </for>
 </item>
 
-<item id='26008' name="Poseidon Tunic">
+<item id='26004' name="Poseidon Tunic">
   <for>
     <add val='195' order='0x10' stat='pDef'/>
     <add val='305' order='0x10' stat='mAtkSpd'/>

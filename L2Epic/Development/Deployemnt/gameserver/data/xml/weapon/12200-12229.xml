@@ -7,6 +7,8 @@
     <set val='8' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='379' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12201' name="Ertheia Axe">
@@ -16,6 +18,8 @@
     <set val='8' order='0x04' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='379' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12202' name="Ertheia Daggere">
@@ -25,6 +29,8 @@
     <set val='8' order='0x12' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='433' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12203' name="Ertheia Spear">
@@ -34,6 +40,8 @@
     <set val='8' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='325' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12204' name="Ertheia Cleaver">
@@ -43,6 +51,8 @@
     <set val='8' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='325' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12205' name="Ertheia Warhammer">
@@ -52,6 +62,8 @@
     <set val='4' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='325' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12206' name="Ertheia Gauntlets">
@@ -61,6 +73,8 @@
     <set val='4' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='325' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12207' name="Ertheia Bow">
@@ -70,6 +84,8 @@
     <set val='12' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='293' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12208' name="Ertheia Magic Blade">
@@ -79,6 +95,8 @@
     <set val='8' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='379' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12209' name="Ertheia Wand">
@@ -88,6 +106,8 @@
     <set val='4' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='379' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12210' name="Ertheia Staff">
@@ -97,6 +117,8 @@
     <set val='4' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='325' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12211' name="Ertheia Dualswords">
@@ -106,6 +128,8 @@
     <set val='8' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='325' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12212' name="Ertheia Magic Blade - Acumen">
@@ -115,6 +139,8 @@
     <set val='8' order='0x08' stat='rCrit'/>
     <add val='0' order='0x10' stat='accCombat'/>
     <set val='379' order='0x08' stat='pAtkSpd'/>
+    <enchant val='0' order='0x0C' stat='pAtk'/>
+    <enchant val='0' order='0x0C' stat='mAtk'/>
   </for>
 </item>
 <item id='12229' name="Ertheia Shield">
@@ -122,6 +148,7 @@
     <sub val='8' order='0x10' stat='rEvas'/>
     <set val='392' order='0x08' stat='sDef'/>
     <set val='25' order='0x08' stat='rShld'/>
+    <enchant val='0' order='0x0C' stat='sDef'/>
   </for>
 </item>
 </list>

@@ -1,0 +1,10 @@
+50000	a,Kunda Watchman\0	a,Munch <3\0	0	7A	D0	-1
+50001	a,Kunda Guardian\0	a,Munch <3\0	0	7A	D0	-1
+50002	a,Kunda Executioner\0	a,Munch <3\0	0	7A	D0	-1
+50003	a,Zofan Engineer\0	a,Munch <3\0	0	7A	D0	-1
+50004	a,Zofan Worker\0	a,Munch <3\0	0	7A	D0	-1
+50005	a,Zofan Worker\0	a,Munch <3\0	0	7A	D0	-1
+50006	a,Zofan Beggar\0	a,Munch <3\0	0	7A	D0	-1
+50007	a,Zofan Beggar\0	a,Munch <3\0	0	7A	D0	-1
+50008	a,Zahak\0	a,Munch <3\0	0	7A	D0	-1
+50009	a,Zahak\0	a,Munch <3\0	0	7A	D0	-1
