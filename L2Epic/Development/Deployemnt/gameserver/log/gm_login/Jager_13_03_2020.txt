@@ -1,0 +1,6 @@
+[13/03/2020 13:25:17,728] '---': Jager logs in game with AccessLevel 8
+[13/03/2020 13:34:11,925] '---': Jager logs in game with AccessLevel 8
+[13/03/2020 15:23:02,418] '---': Jager logs in game with AccessLevel 8
+[13/03/2020 17:07:25,093] '---': Jager logs in game with AccessLevel 8
+[13/03/2020 17:34:52,873] '---': Jager logs in game with AccessLevel 8
+[13/03/2020 17:52:01,648] '---': Jager logs in game with AccessLevel 8

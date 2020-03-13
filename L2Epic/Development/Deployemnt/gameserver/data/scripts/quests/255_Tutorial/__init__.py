@@ -4,7 +4,8 @@ from com.l2jfrozen.gameserver.model.quest        import QuestState
 from com.l2jfrozen.gameserver.model.quest.jython import QuestJython as JQuest
  
 qn = "255_Tutorial"
- 
+# Adena item ID
+req_item = 57 
 # table for Quest Timer ( Ex == -2 ) [voice, html]
 QTEXMTWO = {
     0  : ["tutorial_voice_001a","tutorial_human_fighter001.htm"],
@@ -65,6 +66,40 @@ QMCc = {
     49 : "tutorial_21e.htm",
     53 : "tutorial_21f.htm"
     }
+# table for Question Mark Clicked (36) Direct 1st class transfer [html]
+QMCd = {
+    0  : "tutorial_23.htm",
+    10 : "tutorial_23a.htm",
+    18 : "tutorial_23b.htm",
+    25 : "tutorial_23c.htm",
+    31 : "tutorial_23g.htm",
+    38 : "tutorial_23h.htm",
+    44 : "tutorial_23d.htm",
+    49 : "tutorial_23e.htm",
+    53 : "tutorial_23f.htm"
+    }
+# class mapping table for direct 1st class transfer [html]
+FCTT = {
+    "WA" : 1,
+    "HK" : 4,
+    "HR" : 7,
+    "HW" : 11,
+    "HC" : 15,
+    "EK" : 19,
+    "ES" : 22,
+    "EW" : 26,
+    "EO" : 29,
+    "PK" : 32,
+    "AS" : 35,
+    "DW" : 39,
+    "SO" : 42,
+    "RA" : 45,
+    "MO" : 47,
+    "SA" : 50,
+    "SC" : 54,
+    "AR" : 56
+    }
+
 # table for Tutorial Close Link (26) 2nd class transfer [html]
 TCLa = {
     1  : "tutorial_22w.htm",
@@ -114,6 +149,67 @@ TCLc = {
     39 : "tutorial_22pb.htm",
     50 : "tutorial_22kb.htm"
     }
+# class table for direct 2nd class transfer [html]
+QMCe = {
+    1  : "tutorial_25w.htm",
+    4  : "tutorial_25.htm",
+    7  : "tutorial_25b.htm",
+    11 : "tutorial_25c.htm",
+    15 : "tutorial_25d.htm",
+    19 : "tutorial_25e.htm",
+    22 : "tutorial_25f.htm",
+    26 : "tutorial_25g.htm",
+    29 : "tutorial_25h.htm",
+    32 : "tutorial_25n.htm",
+    35 : "tutorial_25o.htm",
+    39 : "tutorial_25p.htm",
+    42 : "tutorial_25q.htm",
+    45 : "tutorial_25i.htm",
+    47 : "tutorial_25j.htm",
+    50 : "tutorial_25k.htm",
+    54 : "tutorial_25l.htm",
+    56 : "tutorial_25m.htm"
+    }
+# class mapping table for direct 2st class transfer [html]
+SCTT = {
+    "GL" : 2,
+    "WL" : 3,
+    "PA" : 5,
+    "DA" : 6,
+    "TH" : 8,
+    "HE" : 9,
+    "SO" : 12,
+    "NE" : 13,
+    "WLK" : 14,
+    "BI" : 16,
+    "PP" : 17,
+    "TK" : 20,
+    "SS" : 21,
+    "PW" : 23,
+    "SR" : 24,
+    "SPS" : 27,
+    "ES" : 28,
+    "EE" : 30,
+    "SK" : 33,
+    "BD" : 34,
+    "AW" : 36,
+    "PR" : 37,
+    "SH" : 40,
+    "PS" : 41,
+    "SE" : 43,
+    "DE" : 46,
+    "TY" : 48,
+    "OV" : 51,
+    "WC" : 52,
+    "BH" : 55,
+    "WS" : 57
+    }
+def change(st,player,newclass) :
+   st.playSound("ItemSound.quest_fanfare_2")
+   player.setClassId(newclass)
+   player.setBaseClass(newclass)
+   player.broadcastUserInfo()
+   return
 class Quest (JQuest) :
  
     def __init__(self,id,name,descr): JQuest.__init__(self,id,name,descr)
@@ -123,10 +219,31 @@ class Quest (JQuest) :
         classId = int(player.getClassId().getId())
         string = event[0:2]
         htmltext = ""
+        playerLevel = player.getLevel()
+        # Check for direct first class transfer
+        print "Debug Tutorial print event ID ",event
+        if playerLevel >=20 and string in FCTT.keys():
+            item = st.getQuestItemsCount(req_item)
+            if item >=100000:
+                st.takeItems(req_item,100000)
+                change(st,player,FCTT[string])
+                st.closeTutorialHtml()
+                return
+            else:
+                htmltext = "tutorial_23na.htm"
+         # Check for direct second class transfer
+        if playerLevel >=40 and string in SCTT.keys():
+            item = st.getQuestItemsCount(req_item)
+            if item >=2100000:
+                st.takeItems(req_item,2100000)
+                change(st,player,SCTT[string])
+                st.closeTutorialHtml()
+                return
+            else:
+                htmltext = "tutorial_25na.htm"
         # USER CONNECTED #
  
         if string == "UC" :
-            playerLevel = player.getLevel()
             if playerLevel < 6 and st.getInt("onlyone") == 0 :
                 uc = st.getInt("ucMemo")
                 if uc == 0 :
@@ -303,15 +420,33 @@ class Quest (JQuest) :
                            st.playSound("ItemSound.quest_tutorial")
                            st.set("lvl","19")
                            st.showQuestionMark(35)
-                elif playerLevel == 35 :
+                elif playerLevel >= 20 and player.getClassId().level() == 0 :
+                   if st.getInt("lvl") <= 19:
+                      race = player.getRace().ordinal()
+                      if race != 5:
+                         if classId in [0,10,18,25,31,38,44,49,52]:
+                           #st.playTutorialVoice("tutorial_voice_???")
+                           st.playSound("ItemSound.quest_tutorial")
+                           st.set("lvl","19")
+                           st.showQuestionMark(36)
+                elif playerLevel == 35 and player.getClassId().level() == 1 :
                    if st.getInt("lvl") < 35:
+                      race = player.getRace().ordinal()
+                      if race != 5:
+                         if classId in [1,4,7,11,15,19,22,26,29,32,35,39,42,45,47,50,54,56]:
+                           #st.playTutorialVoice("tutorial_voice_???")
+                           st.playSound("ItemSound.quest_tutorial")
+                           st.set("lvl","35")
+                           st.showQuestionMark(34)
+                elif playerLevel >= 40 :
+                   if st.getInt("lvl") <= 35:
                       race = player.getRace().ordinal()
                       if race != 5 and player.getClassId().level() == 1 :
                          if classId in [1,4,7,11,15,19,22,26,29,32,35,39,42,45,47,50,54,56]:
                            #st.playTutorialVoice("tutorial_voice_???")
                            st.playSound("ItemSound.quest_tutorial")
                            st.set("lvl","35")
-                           st.showQuestionMark(34)
+                           st.showQuestionMark(37)
             elif event_id == 45 :
                 if playerLevel < 6 :
                    if st.getInt("HP") == 0:
@@ -337,6 +472,10 @@ class Quest (JQuest) :
         # QUESTION MARK CLICKED [N] #
  
         elif string == "QM" :
+          if playerLevel >=20 and classId in QMCd.keys():
+             htmltext = QMCd[classId]
+          if playerLevel >=40 and classId in QMCe.keys():
+             htmltext = QMCe[classId]  
           if event[2:].isdigit() :
             MarkId = int(event[2:])
             if MarkId == 1 :
@@ -391,6 +530,12 @@ class Quest (JQuest) :
             elif MarkId == 35 :
                 if classId in QMCc.keys():
                    htmltext = QMCc[classId]
+            elif MarkId == 36 :
+                if classId in QMCd.keys():
+                   htmltext = QMCd[classId]
+            elif MarkId == 37 :
+                if classId in QMCe.keys():
+                   htmltext = QMCe[classId]
         if htmltext == "": return
         st.showTutorialHTML(str(htmltext))
         return
