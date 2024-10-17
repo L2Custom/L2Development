@@ -1,0 +1,219 @@
+14/10/2024 21:15:52,063  INFO Util:121 - =======================================================-[ Database ]
+14/10/2024 21:15:52,209  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+14/10/2024 21:15:52,210  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+14/10/2024 21:15:52,210  INFO Util:121 - ========================================================-[ Threads ]
+14/10/2024 21:15:52,307  INFO Util:121 - ================================================-[ EngineMods Data ]
+14/10/2024 21:15:52,372  INFO StringUtil:154 - ------------------------------------=[ ObjectData: Loaded players info -> 21 ]
+14/10/2024 21:15:52,520  INFO StringUtil:154 - ----------------------------------------------------=[ IconData: Loaded 7838 ]
+14/10/2024 21:15:52,849  INFO StringUtil:154 - -----------------------------------=[ SkillInfoData: Loaded skill info 29811 ]
+14/10/2024 21:15:53,137  INFO StringUtil:154 - -----------------------------=[ SchemeBufferPredefinedData: Loaded buffs 102 ]
+14/10/2024 21:15:53,138  INFO StringUtil:154 - ----------------------=[ SchemeBufferPredefinedData: Loaded warrior buffs 23 ]
+14/10/2024 21:15:53,138  INFO StringUtil:154 - -------------------------=[ SchemeBufferPredefinedData: Loaded mage buffs 18 ]
+14/10/2024 21:15:53,152  INFO HtmCache:62 - Cache[HTML]: Running lazy cache
+14/10/2024 21:15:53,169  INFO CrestCache:112 - Cache[Crest]: 0.000MB on 1 files loaded. (Forget Time: 300s , Capacity: 50)
+14/10/2024 21:15:53,179  INFO L2ScriptEngineManager:68 - Initializing Script Engine Manager
+14/10/2024 21:15:53,820  INFO L2ScriptEngineManager:97 - Script Engine: jython 2.2.1 - Language: python - Language Version: 2.2.1
+14/10/2024 21:15:53,874  INFO Util:121 - ==========================================================-[ World ]
+14/10/2024 21:15:53,926  INFO Announcements:128 - Announcements: Loaded 1 Announcements.
+14/10/2024 21:15:54,570  INFO BitSetIDFactory:42 - IDFactory: 102912 id's available.
+14/10/2024 21:15:54,588  INFO StaticObjectsTable:38 - StaticObject: Loaded 30 StaticObject Templates.
+14/10/2024 21:15:54,594  INFO TeleportLocationTable:66 - TeleportLocationTable: Loaded 828 Teleport Location Templates
+14/10/2024 21:15:54,596  INFO TeleportLocationTable:98 - CustomTeleportLocationTable: Loaded 180 Custom Teleport Location Templates.
+14/10/2024 21:15:54,659  INFO TerritoryTable:66 - TerritoryTable: Loaded 3960 territories
+14/10/2024 21:15:54,678  INFO ExperienceData:79 - ExperienceData: Loaded 81 levels
+14/10/2024 21:15:54,679  INFO ExperienceData:80 - ExperienceData: Max Player Level is: 80
+14/10/2024 21:15:54,680  INFO ExperienceData:81 - ExperienceData: Max Pet Level is: 80
+14/10/2024 21:15:54,711  INFO Util:121 - =========================================================-[ Skills ]
+14/10/2024 21:15:54,909  INFO SkillTreeTable:108 - SkillTreeTable: Loaded 35875 class skills.
+14/10/2024 21:15:54,926  INFO SkillTreeTable:152 - SkillTreeTable: Loaded 109 fishing skills.
+14/10/2024 21:15:54,926  INFO SkillTreeTable:153 - SkillTreeTable: Loaded 8 fishing dwarven skills.
+14/10/2024 21:15:55,324  INFO SkillTreeTable:192 - SkillTreeTable: Loaded 14520 enchant skills.
+14/10/2024 21:15:55,326  INFO SkillTreeTable:225 - SkillTreeTable: Loaded 64 clan skills
+14/10/2024 21:15:56,804  INFO SkillsEngine:102 - SkillsEngine: Loaded 29915 Skill templates from XML files.
+14/10/2024 21:15:56,870  INFO SkillTreeTable:73 - SkillSpellbookTable: Loaded 334 spellbooks
+14/10/2024 21:15:56,871  INFO Util:121 - ==========================================================-[ Items ]
+14/10/2024 21:15:57,236  INFO ItemTable:260 - ItemTable: Loaded 1042 Armors.
+14/10/2024 21:15:57,246  INFO ItemTable:267 - ItemTable: Loaded 6882 Items.
+14/10/2024 21:15:57,669  INFO ItemTable:274 - ItemTable: Loaded 1344 Weapons.
+14/10/2024 21:15:57,671  INFO ItemTable:613 - Highest item id used: 72618
+14/10/2024 21:15:57,713  INFO ArmorSetsTable:67 - Loaded: 51 armor sets.
+14/10/2024 21:15:57,777  INFO ExtractableItemsData:123 - Extractable items data: Loaded 334 extractable items!
+14/10/2024 21:15:57,802  INFO SummonItemsData:93 - Summon items data: Loaded 13 summon items.
+14/10/2024 21:15:57,844  INFO FishTable:107 - FishTable: Loaded 270 Fishes.
+14/10/2024 21:15:57,844  INFO Util:121 - ============================================================-[ Npc ]
+14/10/2024 21:15:57,947  INFO NpcWalkerRoutesTable:91 - WalkerRoutesTable: Loaded 167 Npc Walker Routes.
+14/10/2024 21:15:58,207  INFO NpcTable:692 - NpcTable: Loaded 7402 NPCs templates.
+14/10/2024 21:15:58,225  INFO NpcTable:688 - NpcTable: Loaded 33 Custom NPCs templates.
+14/10/2024 21:15:58,317  INFO NpcTable:278 - CustomDropList : Added 1 custom droplist
+14/10/2024 21:15:58,436  INFO NpcTable:412 - NpcTable: Loaded 445 Minions.
+14/10/2024 21:15:58,437  INFO Util:121 - =====================================================-[ Characters ]
+14/10/2024 21:15:58,522  INFO ForumsBBSManager:78 - Loaded 5 forums. Last forum id used: 5
+14/10/2024 21:15:58,624  INFO ClanTable:141 - Restored 2 clans from the database.
+14/10/2024 21:15:58,658  INFO CharTemplateTable:227 - CharTemplateTable: Loaded 89 Character Templates.
+14/10/2024 21:15:58,661  INFO LevelUpData:78 - LevelUpData: Loaded 89 Character Level Up Templates.
+14/10/2024 21:15:58,683  INFO HennaTable:160 - HennaTable: Loaded 180 Templates.
+14/10/2024 21:15:58,684  INFO HennaTable:161 - HennaTable: Loaded 7092 Henna Tree.
+14/10/2024 21:15:58,695  INFO NewbieGuideBuffTable:104 - NewbieGuideBuffTable: Loaded 11 templates
+14/10/2024 21:15:58,695  INFO Util:121 - ========================================================-[ Geodata ]
+14/10/2024 21:15:58,699  INFO GeoData:641 - Geo Engine: - Loading Geodata...
+14/10/2024 21:16:01,002  INFO Util:121 - ========================================================-[ Economy ]
+14/10/2024 21:16:01,291  INFO TradeController:233 - TradeController: Loaded 508 Buylists.
+14/10/2024 21:16:01,292  INFO TradeController:234 - TradeController: Loaded 132 Limited Buylists.
+14/10/2024 21:16:02,547  INFO L2Multisell:334 - Multisell : Loaded 123 multisell lists.
+14/10/2024 21:16:02,547  INFO Util:121 - =====================================================-[ Clan Halls ]
+14/10/2024 21:16:02,791  INFO ClanHallManager:89 - Loaded: 1 busy clan halls
+14/10/2024 21:16:02,792  INFO ClanHallManager:90 - Loaded: 43 free clan halls
+14/10/2024 21:16:02,862  INFO FortressOfResistance:129 - Fortress of Resistanse: siege will start the 10/18/24, 9:00 PM
+14/10/2024 21:16:02,877  INFO DevastatedCastle:140 - Devastated Castle: siege will start the 10/21/24, 6:00 PM
+14/10/2024 21:16:02,963  INFO BanditStrongholdSiege:59 - SiegeManager of Bandits Stronghold
+14/10/2024 21:16:03,042  INFO AuctionManager:129 - Loaded: 37 auction(s)
+14/10/2024 21:16:03,043  INFO Util:121 - ===========================================================-[ Zone ]
+14/10/2024 21:16:04,733  INFO FortManager:79 - Loaded: 21 fortress
+14/10/2024 21:16:05,350  INFO ZoneData:294 - ZoneData: loaded 563 zones.
+14/10/2024 21:16:05,350  INFO Util:121 - ======================================================-[ Spawnlist ]
+14/10/2024 21:16:06,169  INFO Siege:1139 - Siege of Dion: Sat Oct 26 20:00:00 EEST 2024
+14/10/2024 21:16:06,268  INFO Siege:1139 - Siege of Oren: Sun Oct 20 16:00:00 EEST 2024
+14/10/2024 21:16:07,391  INFO Siege:1139 - Siege of Gludio: Sat Oct 26 20:00:00 EEST 2024
+14/10/2024 21:16:07,398  INFO Siege:1139 - Siege of Giran: Sun Oct 20 16:00:00 EEST 2024
+14/10/2024 21:16:07,399  INFO Siege:1139 - Siege of Innadril: Sun Oct 20 16:00:00 EEST 2024
+14/10/2024 21:16:07,417  INFO Siege:1139 - Siege of Aden: Sat Oct 26 20:00:00 EEST 2024
+14/10/2024 21:16:07,490  INFO Siege:1139 - Siege of Goddard: Sun Oct 20 16:00:00 EEST 2024
+14/10/2024 21:16:07,517  INFO DayNightSpawnManager:49 - DayNightSpawnManager: Day/Night handler initialised
+14/10/2024 21:16:07,558  INFO Siege:1139 - Siege of Rune: Sat Oct 26 20:00:00 EEST 2024
+14/10/2024 21:16:07,590  INFO Siege:1139 - Siege of Schuttgart: Sat Oct 26 20:00:00 EEST 2024
+14/10/2024 21:16:07,900  INFO SpawnTable:131 - SpawnTable: Loaded 37235 NPC spawn locations. 
+14/10/2024 21:16:07,911  INFO SpawnTable:200 - CustomSpawnTable: Loaded 10 Npc Spawn Locations. 
+14/10/2024 21:16:07,911  INFO SpawnTable:203 - SpawnTable: Spawning completed, total number of NPCs in the world: 37245
+14/10/2024 21:16:07,963  INFO RaidBossSpawnManager:104 - RaidBossSpawnManager: Loaded 183 raid bosses
+14/10/2024 21:16:07,964  INFO RaidBossSpawnManager:105 - RaidBossSpawnManager: Scheduled 0 raid boss spawns
+14/10/2024 21:16:08,006  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 0 night creatures
+14/10/2024 21:16:08,010  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+14/10/2024 21:16:08,011  INFO Util:121 - ===============================================-[ Dimensional Rift ]
+14/10/2024 21:16:08,030  INFO DimensionalRiftManager:218 - DimensionalRiftManager: Loaded 7 room types with 56 rooms.
+14/10/2024 21:16:08,031  INFO DimensionalRiftManager:220 - DimensionalRiftManager: Loaded 462 dimensional rift spawns.
+14/10/2024 21:16:08,031  INFO Util:121 - ===========================================================-[ Misc ]
+14/10/2024 21:16:08,126  INFO RecipeTable:111 - Loaded: 870 recipes
+14/10/2024 21:16:08,134  INFO AugmentationData:71 - Initializing AugmentationData.
+14/10/2024 21:16:08,182  INFO AugmentationData:92 - AugmentationData: Loaded: 52 augmentation stats.
+14/10/2024 21:16:08,184  INFO MercTicketManager:42 - Initializing MercTicketManager
+14/10/2024 21:16:08,200  INFO MercTicketManager:718 - Loaded: 30 Mercenary Tickets
+14/10/2024 21:16:08,202  INFO PetitionManager:67 - Initializing PetitionManager
+14/10/2024 21:16:08,203  INFO CursedWeaponsManager:87 - Initializing CursedWeaponsManager
+14/10/2024 21:16:08,214  INFO CursedWeaponsManager:66 - Loaded: 2 cursed weapon(s).
+14/10/2024 21:16:08,236  INFO ItemsAutoDestroy:39 - Initializing ItemsAutoDestroy.
+14/10/2024 21:16:08,236  INFO Util:121 - ==========================================================-[ Manor ]
+14/10/2024 21:16:08,255  INFO L2Manor:393 - ManorManager: Loaded 256 seeds
+14/10/2024 21:16:08,266  INFO CastleManorManager:59 - Initializing CastleManorManager
+14/10/2024 21:16:08,280  INFO CastleManorManager:225 - Castle Rune seed production loaded
+14/10/2024 21:16:08,281  INFO CastleManorManager:260 - Castle Rune procure loaded
+14/10/2024 21:16:08,283  INFO Util:121 - ========================================================-[ Castles ]
+14/10/2024 21:16:08,284  INFO SiegeManager:179 - Initializing SiegeManager
+14/10/2024 21:16:08,301  INFO FortSiegeManager:164 - Initializing FortSiegeManager
+14/10/2024 21:16:08,319  INFO Util:121 - ===========================================================-[ Boat ]
+14/10/2024 21:16:08,344  INFO BoatManager:33 - Initializing BoatManager
+14/10/2024 21:16:08,368  INFO Util:121 - ==========================================================-[ Doors ]
+14/10/2024 21:16:08,406  INFO DoorTable:70 - Searching clan halls doors:
+14/10/2024 21:16:08,454  INFO DoorTable:97 - DoorTable: Loaded 1001 Door Templates.
+14/10/2024 21:16:08,454  INFO Util:121 - ================================================-[ Four Sepulchers ]
+14/10/2024 21:16:08,531  INFO GrandBossManager:328 - FourSepulchersManager: Beginning in Attack time
+14/10/2024 21:16:08,532  INFO Util:121 - ====================================================-[ Seven Signs ]
+14/10/2024 21:16:08,791  INFO SevenSigns:182 - SevenSigns: Currently in the Seal Validation period!
+14/10/2024 21:16:08,792  INFO SevenSigns:1344 - SevenSigns: The Seal of Avarice remains unclaimed.
+14/10/2024 21:16:08,793  INFO SevenSigns:1335 - SevenSigns: The Lords of Dawn have won the Seal of Gnosis.
+14/10/2024 21:16:08,794  INFO SevenSigns:1344 - SevenSigns: The Seal of Strife remains unclaimed.
+14/10/2024 21:16:08,795  INFO SevenSigns:193 - SevenSigns: The Lords of Dawn were victorious last week.
+14/10/2024 21:16:08,800  INFO SevenSigns:222 - SevenSigns: Next period begins in 6 days, 20 hours and 43 mins.
+14/10/2024 21:16:08,949  INFO SevenSignsFestival:3205 - SevenSignsFestival: Initialization bypassed due to Seal Validation in effect.
+14/10/2024 21:16:08,949  INFO Util:121 - ======================================================-[ Olympiads ]
+14/10/2024 21:16:08,969  INFO Olympiad:291 - Olympiad cycle: 3
+14/10/2024 21:16:08,970  INFO Olympiad:295 - Olympiad period: NORMAL
+14/10/2024 21:16:08,971  INFO Olympiad:304 - Olympiad end: Fri 01/11/2024 12:00:00
+14/10/2024 21:16:08,971  INFO Olympiad:311 - Olympiad weekly change: Sat 19/10/2024 14:53:37
+14/10/2024 21:16:08,973  INFO Olympiad:731 - Olympiad game started: 18:00:00
+14/10/2024 21:16:08,973  INFO Util:121 - =========================================================-[ Heroes ]
+14/10/2024 21:16:08,980  INFO Util:121 - ==================================================-[ Access Levels ]
+14/10/2024 21:16:08,985  INFO Olympiad:749 - Olympiad System: Olympiad Game Started
+14/10/2024 21:16:08,997  INFO AccessLevels:89 - AccessLevels: User Access Level is 0
+14/10/2024 21:16:08,997  INFO AccessLevels:90 - AccessLevels: Master Access Level is 8
+14/10/2024 21:16:09,011  INFO AdminCommandAccessRights:65 - AdminCommandAccessRights: Loaded 359
+14/10/2024 21:16:09,012  INFO Util:121 - =======================================================-[ Handlers ]
+14/10/2024 21:16:09,040  INFO GameServer:141 - ItemHandler: Loaded 2046 handlers.
+14/10/2024 21:16:09,053  INFO SkillHandler:103 - SkillHandler: Loaded 76 handlers.
+14/10/2024 21:16:09,095  INFO AdminCommandHandler:156 - AdminCommandHandler: Loaded 359 handlers.
+14/10/2024 21:16:09,105  INFO GameServer:56 - UserCommandHandler: Loaded 15 handlers.
+14/10/2024 21:16:09,107  INFO GameServer:65 - VoicedCommandHandler: Loaded 2 handlers.
+14/10/2024 21:16:09,108  INFO GameServer:408 - AutoChatHandler : Loaded 32 handlers in total.
+14/10/2024 21:16:09,108  INFO GameServer:409 - AutoSpawnHandler : Loaded 129 handlers in total.
+14/10/2024 21:16:09,110  INFO Util:121 - =============================================================-[ AI ]
+14/10/2024 21:16:09,114  INFO QuestManager:31 - Initializing QuestManager
+14/10/2024 21:16:09,128  INFO GrandBossManager:168 - GrandBossManager: Updated Queen Ant(29001) status to 0
+14/10/2024 21:16:09,165  INFO GrandBossManager:168 - GrandBossManager: Updated High Priestess van Halter(29062) status to 1
+14/10/2024 21:16:09,173  INFO QuestManager:103 - Replaced quest: Hot Springs with a new version
+14/10/2024 21:16:09,174  INFO Util:121 - ========================================================-[ Scripts ]
+14/10/2024 21:16:11,756  INFO QuestManager:103 - Replaced quest: SagasSuperclass with a new version
+14/10/2024 21:16:19,122  INFO GameServer:468 - Compiled Scripts Cache is disabled.
+14/10/2024 21:16:19,123  INFO Util:121 - =========================================================-[ Quests ]
+14/10/2024 21:16:19,124  INFO QuestManager:69 - Loaded: 450 quests
+14/10/2024 21:16:19,125  INFO Util:121 - ====================================================-[ Game Server ]
+14/10/2024 21:16:19,125  INFO GameServer:506 - Maximum players allowed: 1000
+14/10/2024 21:16:19,126  INFO GameServer:507 - IdFactory: Free ObjectID's remaining: 1879004853
+14/10/2024 21:16:19,133  INFO Util:121 - =============================================-[ EngineMods Scripts ]
+14/10/2024 21:16:19,143  INFO StringUtil:154 - -----------------------------------=[ ModsData: Loaded info StatsPlayer -> 0 ]
+14/10/2024 21:16:19,177  INFO StringUtil:154 - -------------------------------------=[ ModsData: Loaded info SystemAio -> 0 ]
+14/10/2024 21:16:19,192  INFO StringUtil:154 - -------------------------------------=[ ModsData: Loaded info SystemVip -> 0 ]
+14/10/2024 21:16:19,203  INFO StringUtil:154 - -----------------------------------=[ ModsData: Loaded info OfflineShop -> 0 ]
+14/10/2024 21:16:19,268  INFO StringUtil:154 - ------------------------------=[ ModsData: Loaded info NpcBufferScheme -> 24 ]
+14/10/2024 21:16:19,283  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardHopzone -> 0 ]
+14/10/2024 21:16:19,284  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardNetwork -> 0 ]
+14/10/2024 21:16:19,302  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardTopzone -> 0 ]
+14/10/2024 21:16:19,318  INFO StringUtil:154 - ---------------------------=[ ModsData: Loaded info MemoCommunityBoard -> 87 ]
+14/10/2024 21:16:19,320  INFO Util:121 - ===================================================-[ Project info ]
+14/10/2024 21:16:19,321  INFO GameServer:542 - Your revision: ${l2jfrozen.revision}
+14/10/2024 21:16:19,321  INFO GameServer:543 - Your build date: 04-02-2020 07:24:14 PM
+14/10/2024 21:16:19,322  INFO Util:121 - ========================================================-[ OS info ]
+14/10/2024 21:16:19,324  INFO GameServer:553 - Operating system: Windows 10 10.0 amd64
+14/10/2024 21:16:19,324  INFO GameServer:554 - Available CPUs: 12
+14/10/2024 21:16:19,326  INFO GameServer:555 - Free memory: 433 MB of 1024 MB
+14/10/2024 21:16:19,327  INFO GameServer:556 - Used memory: 590 MB of 1024 MB
+14/10/2024 21:16:19,327  INFO Util:121 - ======================================================-[ Java Info ]
+14/10/2024 21:16:19,328  INFO GameServer:559 - JRE name: Oracle Corporation
+14/10/2024 21:16:19,328  INFO GameServer:560 - JRE version: 21.0.1
+14/10/2024 21:16:19,329  INFO GameServer:561 - --- Detecting Java Virtual Machine (JVM)
+14/10/2024 21:16:19,329  INFO GameServer:562 - JVM implementation name: Java HotSpot(TM) 64-Bit Server VM
+14/10/2024 21:16:19,330  INFO GameServer:563 - JVM installation directory: C:\Program Files\Java\jdk-21
+14/10/2024 21:16:19,331  INFO Util:121 - ==========================================================-[ Login ]
+14/10/2024 21:16:19,350  INFO LoginServerThread:134 - Connecting to login on 127.0.0.1:9014
+14/10/2024 21:16:19,366  INFO LoginServerThread:267 - Registered on login as Server 2 : Sieghardt
+14/10/2024 21:17:55,231  INFO ProtocolVersion:25 - Client: [IP: 127.0.0.1] -> Protocol Revision: 65534 is invalid. Minimum is 740 and Maximum is 746 are supported. Closing connection.
+14/10/2024 21:17:55,232  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+14/10/2024 21:18:00,445  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+14/10/2024 21:22:35,598  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.IllegalArgumentException: named capturing group is missing trailing '}'
+	at java.base/java.util.regex.Matcher.appendExpandedReplacement(Matcher.java:1096)
+	at java.base/java.util.regex.Matcher.appendReplacement(Matcher.java:1043)
+	at java.base/java.util.regex.Matcher.replaceAll(Matcher.java:1229)
+	at java.base/java.lang.String.replaceAll(String.java:3065)
+	at com.l2jfrozen.gameserver.network.serverpackets.NpcHtmlMessage.replace(NpcHtmlMessage.java:204)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminServerUpdates.useAdminCommand(AdminServerUpdates.java:25)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+14/10/2024 21:41:23,078  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.IllegalArgumentException: named capturing group is missing trailing '}'
+	at java.base/java.util.regex.Matcher.appendExpandedReplacement(Matcher.java:1096)
+	at java.base/java.util.regex.Matcher.appendReplacement(Matcher.java:1043)
+	at java.base/java.util.regex.Matcher.replaceAll(Matcher.java:1229)
+	at java.base/java.lang.String.replaceAll(String.java:3065)
+	at com.l2jfrozen.gameserver.network.serverpackets.NpcHtmlMessage.replace(NpcHtmlMessage.java:204)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminServerUpdates.useAdminCommand(AdminServerUpdates.java:25)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+14/10/2024 21:42:06,675  WARN RequestBypassToServer:83 - No handler registered for admin command 'admin_zone_reload'
+14/10/2024 21:46:08,266  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.

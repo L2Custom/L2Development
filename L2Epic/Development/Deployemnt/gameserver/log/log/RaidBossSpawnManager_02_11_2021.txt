@@ -1,0 +1,12 @@
+[02/11/2021 00:21:11,916] '---': Flame Lord Shadar(25152) defeated, next respawn at 02-11-2021 01:02:55
+[02/11/2021 01:02:55,130] '---': Flame Lord Shadar(25152) spawned in the word
+[02/11/2021 19:35:36,795] '---': Zombie Lord Farakelsus(25375) defeated, next respawn at 02-11-2021 19:48:51
+[02/11/2021 19:48:51,914] '---': Zombie Lord Farakelsus(25375) spawned in the word
+[02/11/2021 19:50:33,469] '---': Madness Beast(25378) defeated, next respawn at 02-11-2021 20:09:09
+[02/11/2021 20:09:09,685] '---': Madness Beast(25378) spawned in the word
+[02/11/2021 20:37:32,634] '---': Malex Herald of Dagoniel(25373) defeated, next respawn at 02-11-2021 21:09:02
+[02/11/2021 21:09:02,098] '---': Malex Herald of Dagoniel(25373) spawned in the word
+[02/11/2021 21:59:12,057] '---': Flame Lord Shadar(25152) defeated, next respawn at 02-11-2021 22:23:47
+[02/11/2021 22:23:47,951] '---': Flame Lord Shadar(25152) spawned in the word
+[02/11/2021 23:15:29,919] '---': Shaman King Selu(25155) defeated, next respawn at 02-11-2021 23:35:02
+[02/11/2021 23:35:02,984] '---': Shaman King Selu(25155) spawned in the word

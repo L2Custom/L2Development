@@ -1,0 +1,734 @@
+14/03/2020 11:24:45,321  INFO Util:121 - =======================================================-[ Database ]
+14/03/2020 11:24:45,464  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+14/03/2020 11:24:45,465  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+14/03/2020 11:24:45,465  INFO Util:121 - ========================================================-[ Threads ]
+14/03/2020 11:24:45,652  INFO Util:121 - ================================================-[ EngineMods Data ]
+14/03/2020 11:24:45,757  INFO StringUtil:154 - ------------------------------------=[ ObjectData: Loaded players info -> 12 ]
+14/03/2020 11:24:45,859  INFO StringUtil:154 - ----------------------------------------------------=[ IconData: Loaded 7838 ]
+14/03/2020 11:24:46,149  INFO StringUtil:154 - -----------------------------------=[ SkillInfoData: Loaded skill info 29811 ]
+14/03/2020 11:24:46,463  INFO StringUtil:154 - -----------------------------=[ SchemeBufferPredefinedData: Loaded buffs 102 ]
+14/03/2020 11:24:46,463  INFO StringUtil:154 - ----------------------=[ SchemeBufferPredefinedData: Loaded warrior buffs 23 ]
+14/03/2020 11:24:46,464  INFO StringUtil:154 - -------------------------=[ SchemeBufferPredefinedData: Loaded mage buffs 18 ]
+14/03/2020 11:24:46,476  INFO HtmCache:61 - Cache[HTML]: Running lazy cache
+14/03/2020 11:24:46,492  INFO CrestCache:133 - Cache[Crest]: 0.000MB on 1 files loaded. (Forget Time: 300s , Capacity: 50)
+14/03/2020 11:24:46,541  INFO L2ScriptEngineManager:68 - Initializing Script Engine Manager
+14/03/2020 11:24:46,784  INFO L2ScriptEngineManager:97 - Script Engine: Oracle Nashorn 13.0.1 - Language: ECMAScript - Language Version: ECMA - 262 Edition 5.1
+14/03/2020 11:24:47,313  INFO L2ScriptEngineManager:97 - Script Engine: jython 2.2.1 - Language: python - Language Version: 2.2.1
+14/03/2020 11:24:47,354  INFO Util:121 - ==========================================================-[ World ]
+14/03/2020 11:24:47,459  INFO Announcements:128 - Announcements: Loaded 1 Announcements.
+14/03/2020 11:24:48,879  INFO BitSetIDFactory:42 - IDFactory: 102912 id's available.
+14/03/2020 11:24:48,949  INFO StaticObjectsTable:38 - StaticObject: Loaded 30 StaticObject Templates.
+14/03/2020 11:24:49,042  INFO TeleportLocationTable:66 - TeleportLocationTable: Loaded 828 Teleport Location Templates
+14/03/2020 11:24:49,095  INFO TeleportLocationTable:98 - CustomTeleportLocationTable: Loaded 180 Custom Teleport Location Templates.
+14/03/2020 11:24:49,250  INFO TerritoryTable:66 - TerritoryTable: Loaded 3960 territories
+14/03/2020 11:24:49,332  INFO ExperienceData:79 - ExperienceData: Loaded 81 levels
+14/03/2020 11:24:49,333  INFO ExperienceData:80 - ExperienceData: Max Player Level is: 80
+14/03/2020 11:24:49,333  INFO ExperienceData:81 - ExperienceData: Max Pet Level is: 80
+14/03/2020 11:24:49,358  INFO Util:121 - =========================================================-[ Skills ]
+14/03/2020 11:24:50,153  INFO SkillTreeTable:108 - SkillTreeTable: Loaded 35875 class skills.
+14/03/2020 11:24:50,203  INFO SkillTreeTable:152 - SkillTreeTable: Loaded 109 fishing skills.
+14/03/2020 11:24:50,203  INFO SkillTreeTable:153 - SkillTreeTable: Loaded 8 fishing dwarven skills.
+14/03/2020 11:24:50,451  INFO SkillTreeTable:192 - SkillTreeTable: Loaded 14520 enchant skills.
+14/03/2020 11:24:50,501  INFO SkillTreeTable:225 - SkillTreeTable: Loaded 64 clan skills
+14/03/2020 11:24:53,138  INFO SkillsEngine:102 - SkillsEngine: Loaded 29915 Skill templates from XML files.
+14/03/2020 11:24:53,207  INFO SkillTreeTable:73 - SkillSpellbookTable: Loaded 334 spellbooks
+14/03/2020 11:24:53,218  INFO Util:121 - ==========================================================-[ Items ]
+14/03/2020 11:24:54,068  INFO ItemTable:260 - ItemTable: Loaded 1042 Armors.
+14/03/2020 11:24:54,073  INFO ItemTable:267 - ItemTable: Loaded 6881 Items.
+14/03/2020 11:24:54,649  INFO ItemTable:274 - ItemTable: Loaded 1344 Weapons.
+14/03/2020 11:24:54,650  INFO ItemTable:613 - Highest item id used: 72617
+14/03/2020 11:24:54,689  INFO ArmorSetsTable:67 - Loaded: 51 armor sets.
+14/03/2020 11:24:54,800  INFO ExtractableItemsData:130 - Extractable items data: Loaded 334 extractable items!
+14/03/2020 11:24:54,806  INFO SummonItemsData:99 - Summon items data: Loaded 12 summon items.
+14/03/2020 11:24:54,827  INFO FishTable:107 - FishTable: Loaded 270 Fishes.
+14/03/2020 11:24:54,827  INFO Util:121 - ============================================================-[ Npc ]
+14/03/2020 11:24:54,846  INFO NpcWalkerRoutesTable:91 - WalkerRoutesTable: Loaded 167 Npc Walker Routes.
+14/03/2020 11:24:55,045  INFO NpcTable:683 - NpcTable: Loaded 6601 NPCs templates.
+14/03/2020 11:24:55,055  INFO NpcTable:679 - NpcTable: Loaded 33 Custom NPCs templates.
+14/03/2020 11:24:55,168  INFO NpcTable:274 - CustomDropList : Added 1 custom droplist
+14/03/2020 11:24:55,490  INFO NpcTable:403 - NpcTable: Loaded 445 Minions.
+14/03/2020 11:24:55,490  INFO Util:121 - =====================================================-[ Characters ]
+14/03/2020 11:24:55,567  INFO ForumsBBSManager:78 - Loaded 5 forums. Last forum id used: 5
+14/03/2020 11:24:55,881  INFO ClanTable:141 - Restored 2 clans from the database.
+14/03/2020 11:24:55,984  INFO CharTemplateTable:227 - CharTemplateTable: Loaded 89 Character Templates.
+14/03/2020 11:24:56,005  INFO LevelUpData:78 - LevelUpData: Loaded 89 Character Level Up Templates.
+14/03/2020 11:24:56,041  INFO HennaTable:160 - HennaTable: Loaded 180 Templates.
+14/03/2020 11:24:56,041  INFO HennaTable:161 - HennaTable: Loaded 7092 Henna Tree.
+14/03/2020 11:24:56,057  INFO NewbieGuideBuffTable:104 - NewbieGuideBuffTable: Loaded 11 templates
+14/03/2020 11:24:56,057  INFO Util:121 - ========================================================-[ Geodata ]
+14/03/2020 11:24:56,060  INFO GeoData:641 - Geo Engine: - Loading Geodata...
+14/03/2020 11:25:07,255  INFO Util:121 - ========================================================-[ Economy ]
+14/03/2020 11:25:07,806  INFO TradeController:238 - TradeController: Loaded 508 Buylists.
+14/03/2020 11:25:07,806  INFO TradeController:239 - TradeController: Loaded 132 Limited Buylists.
+14/03/2020 11:25:09,559  INFO L2Multisell:334 - Multisell : Loaded 123 multisell lists.
+14/03/2020 11:25:09,559  INFO Util:121 - =====================================================-[ Clan Halls ]
+14/03/2020 11:25:09,841  INFO ClanHallManager:89 - Loaded: 1 busy clan halls
+14/03/2020 11:25:09,842  INFO ClanHallManager:90 - Loaded: 43 free clan halls
+14/03/2020 11:25:09,875  INFO FortressOfResistance:129 - Fortress of Resistanse: siege will start the 3/20/20, 9:00 PM
+14/03/2020 11:25:09,931  INFO DevastatedCastle:140 - Devastated Castle: siege will start the 3/16/20, 6:00 PM
+14/03/2020 11:25:10,093  INFO BanditStrongholdSiege:59 - SiegeManager of Bandits Stronghold
+14/03/2020 11:25:10,464  INFO AuctionManager:129 - Loaded: 37 auction(s)
+14/03/2020 11:25:10,464  INFO Util:121 - ===========================================================-[ Zone ]
+14/03/2020 11:25:11,586  INFO FortManager:79 - Loaded: 21 fortress
+14/03/2020 11:25:11,986  INFO ZoneData:294 - ZoneData: loaded 563 zones.
+14/03/2020 11:25:11,987  INFO Util:121 - ======================================================-[ Spawnlist ]
+14/03/2020 11:25:12,583  INFO Siege:1139 - Siege of Dion: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 11:25:12,679  INFO Siege:1139 - Siege of Oren: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 11:25:13,102  INFO Siege:1139 - Siege of Gludio: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 11:25:13,105  INFO Siege:1139 - Siege of Giran: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 11:25:13,106  INFO Siege:1139 - Siege of Innadril: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 11:25:13,107  INFO Siege:1139 - Siege of Aden: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 11:25:13,148  INFO Siege:1139 - Siege of Goddard: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 11:25:13,157  INFO DayNightSpawnManager:49 - DayNightSpawnManager: Day/Night handler initialised
+14/03/2020 11:25:13,169  INFO Siege:1139 - Siege of Rune: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 11:25:13,171  INFO Siege:1139 - Siege of Schuttgart: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 11:25:13,313  INFO SpawnTable:131 - SpawnTable: Loaded 37235 NPC spawn locations. 
+14/03/2020 11:25:13,353  INFO SpawnTable:200 - CustomSpawnTable: Loaded 9 Npc Spawn Locations. 
+14/03/2020 11:25:13,353  INFO SpawnTable:203 - SpawnTable: Spawning completed, total number of NPCs in the world: 37244
+14/03/2020 11:25:13,410  INFO RaidBossSpawnManager:104 - RaidBossSpawnManager: Loaded 183 raid bosses
+14/03/2020 11:25:13,411  INFO RaidBossSpawnManager:105 - RaidBossSpawnManager: Scheduled 0 raid boss spawns
+14/03/2020 11:25:13,461  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 0 night creatures
+14/03/2020 11:25:13,464  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+14/03/2020 11:25:13,465  INFO Util:121 - ===============================================-[ Dimensional Rift ]
+14/03/2020 11:25:13,491  INFO DimensionalRiftManager:218 - DimensionalRiftManager: Loaded 7 room types with 56 rooms.
+14/03/2020 11:25:13,491  INFO DimensionalRiftManager:220 - DimensionalRiftManager: Loaded 462 dimensional rift spawns.
+14/03/2020 11:25:13,492  INFO Util:121 - ===========================================================-[ Misc ]
+14/03/2020 11:25:13,558  INFO RecipeTable:111 - Loaded: 870 recipes
+14/03/2020 11:25:13,568  INFO AugmentationData:68 - Initializing AugmentationData.
+14/03/2020 11:25:13,646  INFO AugmentationData:89 - AugmentationData: Loaded: 52 augmentation stats.
+14/03/2020 11:25:13,658  INFO MercTicketManager:42 - Initializing MercTicketManager
+14/03/2020 11:25:13,710  INFO MercTicketManager:718 - Loaded: 30 Mercenary Tickets
+14/03/2020 11:25:13,712  INFO PetitionManager:67 - Initializing PetitionManager
+14/03/2020 11:25:13,713  INFO CursedWeaponsManager:87 - Initializing CursedWeaponsManager
+14/03/2020 11:25:13,738  INFO CursedWeaponsManager:66 - Loaded: 2 cursed weapon(s).
+14/03/2020 11:25:13,804  INFO ItemsAutoDestroy:39 - Initializing ItemsAutoDestroy.
+14/03/2020 11:25:13,804  INFO Util:121 - ==========================================================-[ Manor ]
+14/03/2020 11:25:13,828  INFO L2Manor:393 - ManorManager: Loaded 256 seeds
+14/03/2020 11:25:13,845  INFO CastleManorManager:59 - Initializing CastleManorManager
+14/03/2020 11:25:13,890  INFO CastleManorManager:225 - Castle Rune seed production loaded
+14/03/2020 11:25:13,891  INFO CastleManorManager:260 - Castle Rune procure loaded
+14/03/2020 11:25:13,892  INFO Util:121 - ========================================================-[ Castles ]
+14/03/2020 11:25:13,893  INFO SiegeManager:179 - Initializing SiegeManager
+14/03/2020 11:25:13,908  INFO FortSiegeManager:164 - Initializing FortSiegeManager
+14/03/2020 11:25:13,925  INFO Util:121 - ===========================================================-[ Boat ]
+14/03/2020 11:25:13,926  INFO BoatManager:33 - Initializing BoatManager
+14/03/2020 11:25:13,941  INFO Util:121 - ==========================================================-[ Doors ]
+14/03/2020 11:25:13,955  INFO DoorTable:67 - Searching clan halls doors:
+14/03/2020 11:25:13,988  INFO DoorTable:94 - DoorTable: Loaded 1001 Door Templates.
+14/03/2020 11:25:13,989  INFO Util:121 - ================================================-[ Four Sepulchers ]
+14/03/2020 11:25:14,066  INFO GrandBossManager:328 - FourSepulchersManager: Beginning in Attack time
+14/03/2020 11:25:14,067  INFO Util:121 - ====================================================-[ Seven Signs ]
+14/03/2020 11:25:14,201  INFO SevenSigns:182 - SevenSigns: Currently in the Competition (Quest Event) period!
+14/03/2020 11:25:14,202  INFO SevenSigns:1344 - SevenSigns: The Seal of Avarice remains unclaimed.
+14/03/2020 11:25:14,202  INFO SevenSigns:1344 - SevenSigns: The Seal of Gnosis remains unclaimed.
+14/03/2020 11:25:14,202  INFO SevenSigns:1344 - SevenSigns: The Seal of Strife remains unclaimed.
+14/03/2020 11:25:14,203  INFO SevenSigns:202 - SevenSigns: The Lords of Dawn are in the lead this week.
+14/03/2020 11:25:14,205  INFO SevenSigns:222 - SevenSigns: Next period begins in 2 days, 6 hours and 34 mins.
+14/03/2020 11:25:14,557  INFO SevenSignsFestival:3338 - SevenSignsFestival: The first Festival of Darkness cycle begins in 2 minute(s).
+14/03/2020 11:25:14,558  INFO Util:121 - ======================================================-[ Olympiads ]
+14/03/2020 11:25:14,617  INFO Olympiad:291 - Olympiad cycle: 3
+14/03/2020 11:25:14,617  INFO Olympiad:295 - Olympiad period: NORMAL
+14/03/2020 11:25:14,618  INFO Olympiad:304 - Olympiad end: Wed 01/04/2020 12:00:00
+14/03/2020 11:25:14,619  INFO Olympiad:311 - Olympiad weekly change: Mon 16/03/2020 19:20:55
+14/03/2020 11:25:14,619  INFO Olympiad:735 - Olympiad game starts: 18:00:00
+14/03/2020 11:25:14,620  INFO Util:121 - =========================================================-[ Heroes ]
+14/03/2020 11:25:14,636  INFO Util:121 - ==================================================-[ Access Levels ]
+14/03/2020 11:25:14,667  INFO AccessLevels:89 - AccessLevels: User Access Level is 0
+14/03/2020 11:25:14,667  INFO AccessLevels:90 - AccessLevels: Master Access Level is 8
+14/03/2020 11:25:14,690  INFO AdminCommandAccessRights:65 - AdminCommandAccessRights: Loaded 359
+14/03/2020 11:25:14,691  INFO Util:121 - =======================================================-[ Handlers ]
+14/03/2020 11:25:14,707  INFO GameServer:141 - ItemHandler: Loaded 2045 handlers.
+14/03/2020 11:25:14,715  INFO SkillHandler:103 - SkillHandler: Loaded 76 handlers.
+14/03/2020 11:25:14,780  INFO AdminCommandHandler:156 - AdminCommandHandler: Loaded 359 handlers.
+14/03/2020 11:25:14,782  INFO GameServer:56 - UserCommandHandler: Loaded 15 handlers.
+14/03/2020 11:25:14,783  INFO GameServer:65 - VoicedCommandHandler: Loaded 2 handlers.
+14/03/2020 11:25:14,784  INFO GameServer:409 - AutoChatHandler : Loaded 32 handlers in total.
+14/03/2020 11:25:14,784  INFO GameServer:410 - AutoSpawnHandler : Loaded 129 handlers in total.
+14/03/2020 11:25:14,785  INFO Util:121 - =============================================================-[ AI ]
+14/03/2020 11:25:14,787  INFO QuestManager:31 - Initializing QuestManager
+14/03/2020 11:25:14,827  INFO GrandBossManager:168 - GrandBossManager: Updated Queen Ant(29001) status to 0
+14/03/2020 11:25:14,884  INFO GrandBossManager:168 - GrandBossManager: Updated High Priestess van Halter(29062) status to 1
+14/03/2020 11:25:14,893  INFO QuestManager:103 - Replaced quest: Hot Springs with a new version
+14/03/2020 11:25:14,893  INFO Util:121 - ========================================================-[ Scripts ]
+14/03/2020 11:25:17,113  INFO QuestManager:103 - Replaced quest: SagasSuperclass with a new version
+14/03/2020 11:25:22,294  INFO GameServer:469 - Compiled Scripts Cache is disabled.
+14/03/2020 11:25:22,295  INFO Util:121 - =========================================================-[ Quests ]
+14/03/2020 11:25:22,296  INFO QuestManager:69 - Loaded: 450 quests
+14/03/2020 11:25:22,296  INFO Util:121 - ====================================================-[ Game Server ]
+14/03/2020 11:25:22,297  INFO GameServer:507 - Maximum players allowed: 1000
+14/03/2020 11:25:22,298  INFO GameServer:508 - IdFactory: Free ObjectID's remaining: 1879005181
+14/03/2020 11:25:22,305  INFO Util:121 - =============================================-[ EngineMods Scripts ]
+14/03/2020 11:25:22,385  INFO StringUtil:154 - -----------------------------------=[ ModsData: Loaded info StatsPlayer -> 0 ]
+14/03/2020 11:25:22,442  INFO StringUtil:154 - -------------------------------------=[ ModsData: Loaded info SystemAio -> 0 ]
+14/03/2020 11:25:22,494  INFO StringUtil:154 - -------------------------------------=[ ModsData: Loaded info SystemVip -> 0 ]
+14/03/2020 11:25:22,522  INFO StringUtil:154 - -----------------------------------=[ ModsData: Loaded info OfflineShop -> 0 ]
+14/03/2020 11:25:22,553  INFO StringUtil:154 - ------------------------------=[ ModsData: Loaded info NpcBufferScheme -> 13 ]
+14/03/2020 11:25:22,577  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardHopzone -> 0 ]
+14/03/2020 11:25:22,586  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardNetwork -> 0 ]
+14/03/2020 11:25:22,629  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardTopzone -> 0 ]
+14/03/2020 11:25:22,652  INFO StringUtil:154 - ---------------------------=[ ModsData: Loaded info MemoCommunityBoard -> 54 ]
+14/03/2020 11:25:22,654  INFO Util:121 - ===================================================-[ Project info ]
+14/03/2020 11:25:22,654  INFO GameServer:543 - Your revision: ${l2jfrozen.revision}
+14/03/2020 11:25:22,655  INFO GameServer:544 - Your build date: 04-02-2020 07:24:14 PM
+14/03/2020 11:25:22,655  INFO Util:121 - ================================-[ Last project revision available ]
+14/03/2020 11:25:22,656  INFO GameServer:549 - Last revision: 2479
+14/03/2020 11:25:22,656  INFO GameServer:550 - Last revision publication date: Tue, 11 Feb 2020 00:27:00 GMT
+14/03/2020 11:25:22,656  INFO Util:121 - ========================================================-[ OS info ]
+14/03/2020 11:25:22,657  INFO GameServer:554 - Operating system: Windows 10 10.0 amd64
+14/03/2020 11:25:22,658  INFO GameServer:555 - Available CPUs: 12
+14/03/2020 11:25:22,659  INFO GameServer:556 - Free memory: 555 MB of 1024 MB
+14/03/2020 11:25:22,659  INFO GameServer:557 - Used memory: 468 MB of 1024 MB
+14/03/2020 11:25:22,660  INFO Util:121 - ======================================================-[ Java Info ]
+14/03/2020 11:25:22,660  INFO GameServer:560 - JRE name: Oracle Corporation
+14/03/2020 11:25:22,660  INFO GameServer:561 - JRE version: 13.0.1
+14/03/2020 11:25:22,661  INFO GameServer:562 - --- Detecting Java Virtual Machine (JVM)
+14/03/2020 11:25:22,662  INFO GameServer:563 - JVM implementation name: Java HotSpot(TM) 64-Bit Server VM
+14/03/2020 11:25:22,663  INFO GameServer:564 - JVM installation directory: C:\Program Files\Java\jdk-13.0.1
+14/03/2020 11:25:22,665  INFO Util:121 - ==========================================================-[ Login ]
+14/03/2020 11:25:22,674  INFO LoginServerThread:134 - Connecting to login on 127.0.0.1:9014
+14/03/2020 11:25:22,703  INFO LoginServerThread:267 - Registered on login as Server 2 : Sieghardt
+14/03/2020 11:31:45,706  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+14/03/2020 11:55:13,825  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 12:04:42,633  WARN RequestDropItem:221 - Character (Jager) has dropped (3,000,000)adena at -81454,246228,-3723 coordinates
+14/03/2020 12:25:13,785  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 12:25:22,665  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 12:25:22,665  INFO ServerStatusTask:25 - Players Online: 5
+14/03/2020 12:25:22,666  INFO ServerStatusTask:26 - Threads: 14
+14/03/2020 12:25:22,667  INFO ServerStatusTask:27 - Free memory: 549 MB of 1024 MB
+14/03/2020 12:25:22,667  INFO ServerStatusTask:28 - Used memory: 474 MB of 1024 MB
+14/03/2020 12:25:22,667  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 12:55:13,784  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 12:59:05,125  WARN RequestDropItem:221 - Character (Jager) has dropped (3,500,000)adena at 27355,74955,-3834 coordinates
+14/03/2020 13:00:00,768  INFO TaskRecom:35 - [GlobalTask] Restart Recommendation launched.
+14/03/2020 13:25:13,836  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 13:25:22,667  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 13:25:22,667  INFO ServerStatusTask:25 - Players Online: 2
+14/03/2020 13:25:22,668  INFO ServerStatusTask:26 - Threads: 14
+14/03/2020 13:25:22,668  INFO ServerStatusTask:27 - Free memory: 324 MB of 1024 MB
+14/03/2020 13:25:22,668  INFO ServerStatusTask:28 - Used memory: 699 MB of 1024 MB
+14/03/2020 13:25:22,668  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 13:29:35,102  WARN RequestDropItem:221 - Character (Jager) has dropped (3,500,000)adena at 78747,149359,-3623 coordinates
+14/03/2020 13:30:33,929  WARN RequestDropItem:221 - Character (Jager) has dropped (3,000,000)adena at 78758,149365,-3623 coordinates
+14/03/2020 13:55:13,798  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 14:24:49,891  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+14/03/2020 14:24:50,288  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+14/03/2020 14:24:50,306  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+14/03/2020 14:25:13,775  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 14:25:22,665  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 14:25:22,665  INFO ServerStatusTask:25 - Players Online: 1
+14/03/2020 14:25:22,665  INFO ServerStatusTask:26 - Threads: 14
+14/03/2020 14:25:22,666  INFO ServerStatusTask:27 - Free memory: 587 MB of 1024 MB
+14/03/2020 14:25:22,666  INFO ServerStatusTask:28 - Used memory: 436 MB of 1024 MB
+14/03/2020 14:25:22,666  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 14:29:49,893  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+14/03/2020 14:55:13,776  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 15:16:21,128  WARN RequestDropItem:221 - Character (Jager) has dropped (3,500,000)adena at 84599,148569,-3428 coordinates
+14/03/2020 15:36:55,870  INFO Util:121 - =======================================================-[ Database ]
+14/03/2020 15:36:55,950  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+14/03/2020 15:36:55,951  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+14/03/2020 15:36:55,951  INFO Util:121 - ========================================================-[ Threads ]
+14/03/2020 15:36:55,994  INFO Util:121 - ================================================-[ EngineMods Data ]
+14/03/2020 15:36:56,040  INFO StringUtil:154 - ------------------------------------=[ ObjectData: Loaded players info -> 16 ]
+14/03/2020 15:36:56,140  INFO StringUtil:154 - ----------------------------------------------------=[ IconData: Loaded 7838 ]
+14/03/2020 15:36:56,362  INFO StringUtil:154 - -----------------------------------=[ SkillInfoData: Loaded skill info 29811 ]
+14/03/2020 15:36:56,375  INFO StringUtil:154 - -----------------------------=[ SchemeBufferPredefinedData: Loaded buffs 102 ]
+14/03/2020 15:36:56,375  INFO StringUtil:154 - ----------------------=[ SchemeBufferPredefinedData: Loaded warrior buffs 23 ]
+14/03/2020 15:36:56,376  INFO StringUtil:154 - -------------------------=[ SchemeBufferPredefinedData: Loaded mage buffs 18 ]
+14/03/2020 15:36:56,377  INFO HtmCache:61 - Cache[HTML]: Running lazy cache
+14/03/2020 15:36:56,385  INFO CrestCache:133 - Cache[Crest]: 0.000MB on 1 files loaded. (Forget Time: 300s , Capacity: 50)
+14/03/2020 15:36:56,392  INFO L2ScriptEngineManager:68 - Initializing Script Engine Manager
+14/03/2020 15:36:56,600  INFO L2ScriptEngineManager:97 - Script Engine: Oracle Nashorn 13.0.1 - Language: ECMAScript - Language Version: ECMA - 262 Edition 5.1
+14/03/2020 15:36:56,773  INFO L2ScriptEngineManager:97 - Script Engine: jython 2.2.1 - Language: python - Language Version: 2.2.1
+14/03/2020 15:36:56,810  INFO Util:121 - ==========================================================-[ World ]
+14/03/2020 15:36:56,824  INFO Announcements:128 - Announcements: Loaded 1 Announcements.
+14/03/2020 15:36:57,942  INFO BitSetIDFactory:42 - IDFactory: 102912 id's available.
+14/03/2020 15:36:57,946  INFO StaticObjectsTable:38 - StaticObject: Loaded 30 StaticObject Templates.
+14/03/2020 15:36:57,971  INFO TeleportLocationTable:66 - TeleportLocationTable: Loaded 828 Teleport Location Templates
+14/03/2020 15:36:57,983  INFO TeleportLocationTable:98 - CustomTeleportLocationTable: Loaded 180 Custom Teleport Location Templates.
+14/03/2020 15:36:58,056  INFO TerritoryTable:66 - TerritoryTable: Loaded 3960 territories
+14/03/2020 15:36:58,060  INFO ExperienceData:79 - ExperienceData: Loaded 81 levels
+14/03/2020 15:36:58,060  INFO ExperienceData:80 - ExperienceData: Max Player Level is: 80
+14/03/2020 15:36:58,061  INFO ExperienceData:81 - ExperienceData: Max Pet Level is: 80
+14/03/2020 15:36:58,066  INFO Util:121 - =========================================================-[ Skills ]
+14/03/2020 15:36:58,361  INFO SkillTreeTable:108 - SkillTreeTable: Loaded 35875 class skills.
+14/03/2020 15:36:58,575  INFO SkillTreeTable:152 - SkillTreeTable: Loaded 109 fishing skills.
+14/03/2020 15:36:58,576  INFO SkillTreeTable:153 - SkillTreeTable: Loaded 8 fishing dwarven skills.
+14/03/2020 15:36:58,921  INFO SkillTreeTable:192 - SkillTreeTable: Loaded 14520 enchant skills.
+14/03/2020 15:36:58,944  INFO SkillTreeTable:225 - SkillTreeTable: Loaded 64 clan skills
+14/03/2020 15:36:59,545  INFO SkillsEngine:102 - SkillsEngine: Loaded 29915 Skill templates from XML files.
+14/03/2020 15:36:59,550  INFO SkillTreeTable:73 - SkillSpellbookTable: Loaded 334 spellbooks
+14/03/2020 15:36:59,550  INFO Util:121 - ==========================================================-[ Items ]
+14/03/2020 15:36:59,933  INFO ItemTable:260 - ItemTable: Loaded 1042 Armors.
+14/03/2020 15:36:59,939  INFO ItemTable:267 - ItemTable: Loaded 6881 Items.
+14/03/2020 15:37:00,037  INFO ItemTable:274 - ItemTable: Loaded 1344 Weapons.
+14/03/2020 15:37:00,038  INFO ItemTable:613 - Highest item id used: 72617
+14/03/2020 15:37:00,055  INFO ArmorSetsTable:67 - Loaded: 51 armor sets.
+14/03/2020 15:37:00,091  INFO ExtractableItemsData:130 - Extractable items data: Loaded 334 extractable items!
+14/03/2020 15:37:00,093  INFO SummonItemsData:99 - Summon items data: Loaded 12 summon items.
+14/03/2020 15:37:00,096  INFO FishTable:107 - FishTable: Loaded 270 Fishes.
+14/03/2020 15:37:00,096  INFO Util:121 - ============================================================-[ Npc ]
+14/03/2020 15:37:00,099  INFO NpcWalkerRoutesTable:91 - WalkerRoutesTable: Loaded 167 Npc Walker Routes.
+14/03/2020 15:37:00,266  INFO NpcTable:683 - NpcTable: Loaded 6601 NPCs templates.
+14/03/2020 15:37:00,269  INFO NpcTable:679 - NpcTable: Loaded 33 Custom NPCs templates.
+14/03/2020 15:37:00,379  INFO NpcTable:274 - CustomDropList : Added 1 custom droplist
+14/03/2020 15:37:00,629  INFO NpcTable:403 - NpcTable: Loaded 445 Minions.
+14/03/2020 15:37:00,630  INFO Util:121 - =====================================================-[ Characters ]
+14/03/2020 15:37:00,667  INFO ForumsBBSManager:78 - Loaded 5 forums. Last forum id used: 5
+14/03/2020 15:37:00,831  INFO ClanTable:141 - Restored 2 clans from the database.
+14/03/2020 15:37:00,911  INFO CharTemplateTable:227 - CharTemplateTable: Loaded 89 Character Templates.
+14/03/2020 15:37:00,913  INFO LevelUpData:78 - LevelUpData: Loaded 89 Character Level Up Templates.
+14/03/2020 15:37:00,923  INFO HennaTable:160 - HennaTable: Loaded 180 Templates.
+14/03/2020 15:37:00,923  INFO HennaTable:161 - HennaTable: Loaded 7092 Henna Tree.
+14/03/2020 15:37:00,925  INFO NewbieGuideBuffTable:104 - NewbieGuideBuffTable: Loaded 11 templates
+14/03/2020 15:37:00,925  INFO Util:121 - ========================================================-[ Geodata ]
+14/03/2020 15:37:00,927  INFO GeoData:641 - Geo Engine: - Loading Geodata...
+14/03/2020 15:37:01,338  INFO Util:121 - ========================================================-[ Economy ]
+14/03/2020 15:37:01,631  INFO TradeController:238 - TradeController: Loaded 508 Buylists.
+14/03/2020 15:37:01,632  INFO TradeController:239 - TradeController: Loaded 132 Limited Buylists.
+14/03/2020 15:37:01,944  INFO L2Multisell:334 - Multisell : Loaded 123 multisell lists.
+14/03/2020 15:37:01,944  INFO Util:121 - =====================================================-[ Clan Halls ]
+14/03/2020 15:37:02,029  INFO ClanHallManager:89 - Loaded: 1 busy clan halls
+14/03/2020 15:37:02,029  INFO ClanHallManager:90 - Loaded: 43 free clan halls
+14/03/2020 15:37:02,032  INFO FortressOfResistance:129 - Fortress of Resistanse: siege will start the 3/20/20, 9:00 PM
+14/03/2020 15:37:02,034  INFO DevastatedCastle:140 - Devastated Castle: siege will start the 3/16/20, 6:00 PM
+14/03/2020 15:37:02,036  INFO BanditStrongholdSiege:59 - SiegeManager of Bandits Stronghold
+14/03/2020 15:37:02,069  INFO AuctionManager:129 - Loaded: 37 auction(s)
+14/03/2020 15:37:02,069  INFO Util:121 - ===========================================================-[ Zone ]
+14/03/2020 15:37:03,014  INFO FortManager:79 - Loaded: 21 fortress
+14/03/2020 15:37:03,407  INFO ZoneData:294 - ZoneData: loaded 563 zones.
+14/03/2020 15:37:03,407  INFO Util:121 - ======================================================-[ Spawnlist ]
+14/03/2020 15:37:03,759  INFO Siege:1139 - Siege of Dion: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 15:37:03,827  INFO Siege:1139 - Siege of Oren: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 15:37:04,180  INFO Siege:1139 - Siege of Gludio: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 15:37:04,183  INFO Siege:1139 - Siege of Giran: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 15:37:04,184  INFO Siege:1139 - Siege of Innadril: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 15:37:04,185  INFO Siege:1139 - Siege of Aden: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 15:37:04,223  INFO Siege:1139 - Siege of Goddard: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 15:37:04,232  INFO DayNightSpawnManager:49 - DayNightSpawnManager: Day/Night handler initialised
+14/03/2020 15:37:04,245  INFO Siege:1139 - Siege of Rune: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 15:37:04,246  INFO Siege:1139 - Siege of Schuttgart: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 15:37:04,385  INFO SpawnTable:131 - SpawnTable: Loaded 37235 NPC spawn locations. 
+14/03/2020 15:37:04,422  INFO SpawnTable:200 - CustomSpawnTable: Loaded 9 Npc Spawn Locations. 
+14/03/2020 15:37:04,422  INFO SpawnTable:203 - SpawnTable: Spawning completed, total number of NPCs in the world: 37244
+14/03/2020 15:37:04,464  INFO RaidBossSpawnManager:104 - RaidBossSpawnManager: Loaded 183 raid bosses
+14/03/2020 15:37:04,465  INFO RaidBossSpawnManager:105 - RaidBossSpawnManager: Scheduled 0 raid boss spawns
+14/03/2020 15:37:04,496  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 0 night creatures
+14/03/2020 15:37:04,499  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+14/03/2020 15:37:04,500  INFO Util:121 - ===============================================-[ Dimensional Rift ]
+14/03/2020 15:37:04,504  INFO DimensionalRiftManager:218 - DimensionalRiftManager: Loaded 7 room types with 56 rooms.
+14/03/2020 15:37:04,504  INFO DimensionalRiftManager:220 - DimensionalRiftManager: Loaded 462 dimensional rift spawns.
+14/03/2020 15:37:04,504  INFO Util:121 - ===========================================================-[ Misc ]
+14/03/2020 15:37:04,529  INFO RecipeTable:111 - Loaded: 870 recipes
+14/03/2020 15:37:04,532  INFO AugmentationData:68 - Initializing AugmentationData.
+14/03/2020 15:37:04,547  INFO AugmentationData:89 - AugmentationData: Loaded: 52 augmentation stats.
+14/03/2020 15:37:04,548  INFO MercTicketManager:42 - Initializing MercTicketManager
+14/03/2020 15:37:04,601  INFO MercTicketManager:718 - Loaded: 30 Mercenary Tickets
+14/03/2020 15:37:04,601  INFO PetitionManager:67 - Initializing PetitionManager
+14/03/2020 15:37:04,606  INFO CursedWeaponsManager:87 - Initializing CursedWeaponsManager
+14/03/2020 15:37:04,618  INFO CursedWeaponsManager:66 - Loaded: 2 cursed weapon(s).
+14/03/2020 15:37:04,663  INFO ItemsAutoDestroy:39 - Initializing ItemsAutoDestroy.
+14/03/2020 15:37:04,663  INFO Util:121 - ==========================================================-[ Manor ]
+14/03/2020 15:37:04,665  INFO L2Manor:393 - ManorManager: Loaded 256 seeds
+14/03/2020 15:37:04,666  INFO CastleManorManager:59 - Initializing CastleManorManager
+14/03/2020 15:37:04,704  INFO CastleManorManager:225 - Castle Rune seed production loaded
+14/03/2020 15:37:04,705  INFO CastleManorManager:260 - Castle Rune procure loaded
+14/03/2020 15:37:04,706  INFO Util:121 - ========================================================-[ Castles ]
+14/03/2020 15:37:04,707  INFO SiegeManager:179 - Initializing SiegeManager
+14/03/2020 15:37:04,709  INFO FortSiegeManager:164 - Initializing FortSiegeManager
+14/03/2020 15:37:04,710  INFO Util:121 - ===========================================================-[ Boat ]
+14/03/2020 15:37:04,711  INFO BoatManager:33 - Initializing BoatManager
+14/03/2020 15:37:04,715  INFO Util:121 - ==========================================================-[ Doors ]
+14/03/2020 15:37:04,715  INFO DoorTable:67 - Searching clan halls doors:
+14/03/2020 15:37:04,747  INFO DoorTable:94 - DoorTable: Loaded 1001 Door Templates.
+14/03/2020 15:37:04,747  INFO Util:121 - ================================================-[ Four Sepulchers ]
+14/03/2020 15:37:04,831  INFO GrandBossManager:328 - FourSepulchersManager: Beginning in Attack time
+14/03/2020 15:37:04,831  INFO Util:121 - ====================================================-[ Seven Signs ]
+14/03/2020 15:37:04,898  INFO SevenSigns:182 - SevenSigns: Currently in the Competition (Quest Event) period!
+14/03/2020 15:37:04,899  INFO SevenSigns:1344 - SevenSigns: The Seal of Avarice remains unclaimed.
+14/03/2020 15:37:04,900  INFO SevenSigns:1344 - SevenSigns: The Seal of Gnosis remains unclaimed.
+14/03/2020 15:37:04,901  INFO SevenSigns:1344 - SevenSigns: The Seal of Strife remains unclaimed.
+14/03/2020 15:37:04,901  INFO SevenSigns:202 - SevenSigns: The Lords of Dawn are in the lead this week.
+14/03/2020 15:37:04,904  INFO SevenSigns:222 - SevenSigns: Next period begins in 2 days, 2 hours and 22 mins.
+14/03/2020 15:37:05,161  INFO SevenSignsFestival:3338 - SevenSignsFestival: The first Festival of Darkness cycle begins in 2 minute(s).
+14/03/2020 15:37:05,162  INFO Util:121 - ======================================================-[ Olympiads ]
+14/03/2020 15:37:05,202  INFO Olympiad:291 - Olympiad cycle: 3
+14/03/2020 15:37:05,203  INFO Olympiad:295 - Olympiad period: NORMAL
+14/03/2020 15:37:05,204  INFO Olympiad:304 - Olympiad end: Wed 01/04/2020 12:00:00
+14/03/2020 15:37:05,205  INFO Olympiad:311 - Olympiad weekly change: Mon 16/03/2020 19:20:55
+14/03/2020 15:37:05,206  INFO Olympiad:735 - Olympiad game starts: 18:00:00
+14/03/2020 15:37:05,207  INFO Util:121 - =========================================================-[ Heroes ]
+14/03/2020 15:37:05,218  INFO Util:121 - ==================================================-[ Access Levels ]
+14/03/2020 15:37:05,220  INFO AccessLevels:89 - AccessLevels: User Access Level is 0
+14/03/2020 15:37:05,220  INFO AccessLevels:90 - AccessLevels: Master Access Level is 8
+14/03/2020 15:37:05,223  INFO AdminCommandAccessRights:65 - AdminCommandAccessRights: Loaded 359
+14/03/2020 15:37:05,223  INFO Util:121 - =======================================================-[ Handlers ]
+14/03/2020 15:37:05,237  INFO GameServer:141 - ItemHandler: Loaded 2045 handlers.
+14/03/2020 15:37:05,247  INFO SkillHandler:103 - SkillHandler: Loaded 76 handlers.
+14/03/2020 15:37:05,269  INFO AdminCommandHandler:156 - AdminCommandHandler: Loaded 359 handlers.
+14/03/2020 15:37:05,272  INFO GameServer:56 - UserCommandHandler: Loaded 15 handlers.
+14/03/2020 15:37:05,274  INFO GameServer:65 - VoicedCommandHandler: Loaded 2 handlers.
+14/03/2020 15:37:05,274  INFO GameServer:409 - AutoChatHandler : Loaded 32 handlers in total.
+14/03/2020 15:37:05,274  INFO GameServer:410 - AutoSpawnHandler : Loaded 129 handlers in total.
+14/03/2020 15:37:05,276  INFO Util:121 - =============================================================-[ AI ]
+14/03/2020 15:37:05,278  INFO QuestManager:31 - Initializing QuestManager
+14/03/2020 15:37:05,290  INFO GrandBossManager:168 - GrandBossManager: Updated Queen Ant(29001) status to 0
+14/03/2020 15:37:05,314  INFO GrandBossManager:168 - GrandBossManager: Updated High Priestess van Halter(29062) status to 1
+14/03/2020 15:37:05,323  INFO QuestManager:103 - Replaced quest: Hot Springs with a new version
+14/03/2020 15:37:05,323  INFO Util:121 - ========================================================-[ Scripts ]
+14/03/2020 15:37:06,028  INFO QuestManager:103 - Replaced quest: SagasSuperclass with a new version
+14/03/2020 15:37:07,732  INFO GameServer:469 - Compiled Scripts Cache is disabled.
+14/03/2020 15:37:07,732  INFO Util:121 - =========================================================-[ Quests ]
+14/03/2020 15:37:07,733  INFO QuestManager:69 - Loaded: 450 quests
+14/03/2020 15:37:07,734  INFO Util:121 - ====================================================-[ Game Server ]
+14/03/2020 15:37:07,734  INFO GameServer:507 - Maximum players allowed: 1000
+14/03/2020 15:37:07,735  INFO GameServer:508 - IdFactory: Free ObjectID's remaining: 1879005081
+14/03/2020 15:37:07,737  INFO Util:121 - =============================================-[ EngineMods Scripts ]
+14/03/2020 15:37:07,751  INFO StringUtil:154 - -----------------------------------=[ ModsData: Loaded info StatsPlayer -> 0 ]
+14/03/2020 15:37:07,776  INFO StringUtil:154 - -------------------------------------=[ ModsData: Loaded info SystemAio -> 0 ]
+14/03/2020 15:37:07,799  INFO StringUtil:154 - -------------------------------------=[ ModsData: Loaded info SystemVip -> 0 ]
+14/03/2020 15:37:07,818  INFO StringUtil:154 - -----------------------------------=[ ModsData: Loaded info OfflineShop -> 0 ]
+14/03/2020 15:37:07,869  INFO StringUtil:154 - ------------------------------=[ ModsData: Loaded info NpcBufferScheme -> 17 ]
+14/03/2020 15:37:07,911  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardHopzone -> 0 ]
+14/03/2020 15:37:07,924  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardNetwork -> 0 ]
+14/03/2020 15:37:07,959  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardTopzone -> 0 ]
+14/03/2020 15:37:07,977  INFO StringUtil:154 - ---------------------------=[ ModsData: Loaded info MemoCommunityBoard -> 54 ]
+14/03/2020 15:37:07,980  INFO Util:121 - ===================================================-[ Project info ]
+14/03/2020 15:37:07,980  INFO GameServer:543 - Your revision: ${l2jfrozen.revision}
+14/03/2020 15:37:07,980  INFO GameServer:544 - Your build date: 04-02-2020 07:24:14 PM
+14/03/2020 15:37:07,981  INFO Util:121 - ================================-[ Last project revision available ]
+14/03/2020 15:37:07,982  INFO GameServer:549 - Last revision: 2479
+14/03/2020 15:37:07,982  INFO GameServer:550 - Last revision publication date: Tue, 11 Feb 2020 00:27:00 GMT
+14/03/2020 15:37:07,982  INFO Util:121 - ========================================================-[ OS info ]
+14/03/2020 15:37:07,983  INFO GameServer:554 - Operating system: Windows 10 10.0 amd64
+14/03/2020 15:37:07,983  INFO GameServer:555 - Available CPUs: 12
+14/03/2020 15:37:07,985  INFO GameServer:556 - Free memory: 557 MB of 1024 MB
+14/03/2020 15:37:07,985  INFO GameServer:557 - Used memory: 466 MB of 1024 MB
+14/03/2020 15:37:07,986  INFO Util:121 - ======================================================-[ Java Info ]
+14/03/2020 15:37:07,986  INFO GameServer:560 - JRE name: Oracle Corporation
+14/03/2020 15:37:07,987  INFO GameServer:561 - JRE version: 13.0.1
+14/03/2020 15:37:07,989  INFO GameServer:562 - --- Detecting Java Virtual Machine (JVM)
+14/03/2020 15:37:07,989  INFO GameServer:563 - JVM implementation name: Java HotSpot(TM) 64-Bit Server VM
+14/03/2020 15:37:07,990  INFO GameServer:564 - JVM installation directory: C:\Program Files\Java\jdk-13.0.1
+14/03/2020 15:37:07,991  INFO Util:121 - ==========================================================-[ Login ]
+14/03/2020 15:37:07,994  INFO LoginServerThread:134 - Connecting to login on 127.0.0.1:9014
+14/03/2020 15:37:08,014  INFO LoginServerThread:267 - Registered on login as Server 2 : Sieghardt
+14/03/2020 15:37:45,378  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+14/03/2020 15:38:37,505  WARN RequestDropItem:221 - Character (Jager) has dropped (3,000,000)adena at 84612,148543,-3428 coordinates
+14/03/2020 16:07:04,679  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 16:22:54,206  WARN RequestDropItem:221 - Character (Jager) has dropped (3,500,000)adena at 85838,153064,-3522 coordinates
+14/03/2020 16:23:54,750 ERROR L2Character:9149 - Could not store char base data: 
+java.sql.SQLDataException: (conn=188) Out of range value for column 'subpledge' at row 1
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:232)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:164)
+	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:258)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:225)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:145)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:176)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.storeCharBase(L2PcInstance.java:9145)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9025)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9045)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestRestart.runImpl(RequestRestart.java:166)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Out of range value for column 'subpledge' at row 1
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1599)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1461)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1424)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:240)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:216)
+	... 13 more
+14/03/2020 16:26:04,412 ERROR L2Character:9149 - Could not store char base data: 
+java.sql.SQLDataException: (conn=188) Out of range value for column 'subpledge' at row 1
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:232)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:164)
+	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:258)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:225)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:145)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:176)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.storeCharBase(L2PcInstance.java:9145)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9025)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9045)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestRestart.runImpl(RequestRestart.java:166)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Out of range value for column 'subpledge' at row 1
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1599)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1461)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1424)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:240)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:216)
+	... 13 more
+14/03/2020 16:27:06,688  INFO Util:121 - =======================================================-[ Database ]
+14/03/2020 16:27:06,764  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+14/03/2020 16:27:06,765  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+14/03/2020 16:27:06,765  INFO Util:121 - ========================================================-[ Threads ]
+14/03/2020 16:27:06,799  INFO Util:121 - ================================================-[ EngineMods Data ]
+14/03/2020 16:27:06,845  INFO StringUtil:154 - ------------------------------------=[ ObjectData: Loaded players info -> 17 ]
+14/03/2020 16:27:06,925  INFO StringUtil:154 - ----------------------------------------------------=[ IconData: Loaded 7838 ]
+14/03/2020 16:27:07,133  INFO StringUtil:154 - -----------------------------------=[ SkillInfoData: Loaded skill info 29811 ]
+14/03/2020 16:27:07,150  INFO StringUtil:154 - -----------------------------=[ SchemeBufferPredefinedData: Loaded buffs 102 ]
+14/03/2020 16:27:07,151  INFO StringUtil:154 - ----------------------=[ SchemeBufferPredefinedData: Loaded warrior buffs 23 ]
+14/03/2020 16:27:07,151  INFO StringUtil:154 - -------------------------=[ SchemeBufferPredefinedData: Loaded mage buffs 18 ]
+14/03/2020 16:27:07,152  INFO HtmCache:61 - Cache[HTML]: Running lazy cache
+14/03/2020 16:27:07,163  INFO CrestCache:133 - Cache[Crest]: 0.000MB on 1 files loaded. (Forget Time: 300s , Capacity: 50)
+14/03/2020 16:27:07,171  INFO L2ScriptEngineManager:68 - Initializing Script Engine Manager
+14/03/2020 16:27:07,336  INFO L2ScriptEngineManager:97 - Script Engine: Oracle Nashorn 13.0.1 - Language: ECMAScript - Language Version: ECMA - 262 Edition 5.1
+14/03/2020 16:27:07,538  INFO L2ScriptEngineManager:97 - Script Engine: jython 2.2.1 - Language: python - Language Version: 2.2.1
+14/03/2020 16:27:07,577  INFO Util:121 - ==========================================================-[ World ]
+14/03/2020 16:27:07,591  INFO Announcements:128 - Announcements: Loaded 1 Announcements.
+14/03/2020 16:27:08,307  INFO BitSetIDFactory:42 - IDFactory: 102912 id's available.
+14/03/2020 16:27:08,311  INFO StaticObjectsTable:38 - StaticObject: Loaded 30 StaticObject Templates.
+14/03/2020 16:27:08,333  INFO TeleportLocationTable:66 - TeleportLocationTable: Loaded 828 Teleport Location Templates
+14/03/2020 16:27:08,346  INFO TeleportLocationTable:98 - CustomTeleportLocationTable: Loaded 180 Custom Teleport Location Templates.
+14/03/2020 16:27:08,413  INFO TerritoryTable:66 - TerritoryTable: Loaded 3960 territories
+14/03/2020 16:27:08,417  INFO ExperienceData:79 - ExperienceData: Loaded 81 levels
+14/03/2020 16:27:08,417  INFO ExperienceData:80 - ExperienceData: Max Player Level is: 80
+14/03/2020 16:27:08,418  INFO ExperienceData:81 - ExperienceData: Max Pet Level is: 80
+14/03/2020 16:27:08,423  INFO Util:121 - =========================================================-[ Skills ]
+14/03/2020 16:27:09,127  INFO SkillTreeTable:108 - SkillTreeTable: Loaded 35875 class skills.
+14/03/2020 16:27:09,154  INFO SkillTreeTable:152 - SkillTreeTable: Loaded 109 fishing skills.
+14/03/2020 16:27:09,154  INFO SkillTreeTable:153 - SkillTreeTable: Loaded 8 fishing dwarven skills.
+14/03/2020 16:27:09,268  INFO SkillTreeTable:192 - SkillTreeTable: Loaded 14520 enchant skills.
+14/03/2020 16:27:09,283  INFO SkillTreeTable:225 - SkillTreeTable: Loaded 64 clan skills
+14/03/2020 16:27:09,929  INFO SkillsEngine:102 - SkillsEngine: Loaded 29915 Skill templates from XML files.
+14/03/2020 16:27:09,934  INFO SkillTreeTable:73 - SkillSpellbookTable: Loaded 334 spellbooks
+14/03/2020 16:27:09,934  INFO Util:121 - ==========================================================-[ Items ]
+14/03/2020 16:27:10,478  INFO ItemTable:260 - ItemTable: Loaded 1042 Armors.
+14/03/2020 16:27:10,484  INFO ItemTable:267 - ItemTable: Loaded 6881 Items.
+14/03/2020 16:27:10,586  INFO ItemTable:274 - ItemTable: Loaded 1344 Weapons.
+14/03/2020 16:27:10,588  INFO ItemTable:613 - Highest item id used: 72617
+14/03/2020 16:27:10,592  INFO ArmorSetsTable:67 - Loaded: 51 armor sets.
+14/03/2020 16:27:10,619  INFO ExtractableItemsData:130 - Extractable items data: Loaded 334 extractable items!
+14/03/2020 16:27:10,621  INFO SummonItemsData:99 - Summon items data: Loaded 12 summon items.
+14/03/2020 16:27:10,624  INFO FishTable:107 - FishTable: Loaded 270 Fishes.
+14/03/2020 16:27:10,625  INFO Util:121 - ============================================================-[ Npc ]
+14/03/2020 16:27:10,627  INFO NpcWalkerRoutesTable:91 - WalkerRoutesTable: Loaded 167 Npc Walker Routes.
+14/03/2020 16:27:10,863  INFO NpcTable:683 - NpcTable: Loaded 6601 NPCs templates.
+14/03/2020 16:27:10,867  INFO NpcTable:679 - NpcTable: Loaded 33 Custom NPCs templates.
+14/03/2020 16:27:11,017  INFO NpcTable:274 - CustomDropList : Added 1 custom droplist
+14/03/2020 16:27:11,416  INFO NpcTable:403 - NpcTable: Loaded 445 Minions.
+14/03/2020 16:27:11,417  INFO Util:121 - =====================================================-[ Characters ]
+14/03/2020 16:27:11,490  INFO ForumsBBSManager:78 - Loaded 5 forums. Last forum id used: 5
+14/03/2020 16:27:11,695  INFO ClanTable:141 - Restored 2 clans from the database.
+14/03/2020 16:27:11,765  INFO CharTemplateTable:227 - CharTemplateTable: Loaded 89 Character Templates.
+14/03/2020 16:27:11,767  INFO LevelUpData:78 - LevelUpData: Loaded 89 Character Level Up Templates.
+14/03/2020 16:27:11,774  INFO HennaTable:160 - HennaTable: Loaded 180 Templates.
+14/03/2020 16:27:11,774  INFO HennaTable:161 - HennaTable: Loaded 7092 Henna Tree.
+14/03/2020 16:27:11,776  INFO NewbieGuideBuffTable:104 - NewbieGuideBuffTable: Loaded 11 templates
+14/03/2020 16:27:11,776  INFO Util:121 - ========================================================-[ Geodata ]
+14/03/2020 16:27:11,778  INFO GeoData:641 - Geo Engine: - Loading Geodata...
+14/03/2020 16:27:12,162  INFO Util:121 - ========================================================-[ Economy ]
+14/03/2020 16:27:12,400  INFO TradeController:238 - TradeController: Loaded 508 Buylists.
+14/03/2020 16:27:12,400  INFO TradeController:239 - TradeController: Loaded 132 Limited Buylists.
+14/03/2020 16:27:12,539  INFO L2Multisell:334 - Multisell : Loaded 123 multisell lists.
+14/03/2020 16:27:12,540  INFO Util:121 - =====================================================-[ Clan Halls ]
+14/03/2020 16:27:12,607  INFO ClanHallManager:89 - Loaded: 1 busy clan halls
+14/03/2020 16:27:12,608  INFO ClanHallManager:90 - Loaded: 43 free clan halls
+14/03/2020 16:27:12,610  INFO FortressOfResistance:129 - Fortress of Resistanse: siege will start the 3/20/20, 9:00 PM
+14/03/2020 16:27:12,612  INFO DevastatedCastle:140 - Devastated Castle: siege will start the 3/16/20, 6:00 PM
+14/03/2020 16:27:12,614  INFO BanditStrongholdSiege:59 - SiegeManager of Bandits Stronghold
+14/03/2020 16:27:12,645  INFO AuctionManager:129 - Loaded: 37 auction(s)
+14/03/2020 16:27:12,645  INFO Util:121 - ===========================================================-[ Zone ]
+14/03/2020 16:27:13,609  INFO FortManager:79 - Loaded: 21 fortress
+14/03/2020 16:27:14,011  INFO ZoneData:294 - ZoneData: loaded 563 zones.
+14/03/2020 16:27:14,011  INFO Util:121 - ======================================================-[ Spawnlist ]
+14/03/2020 16:27:14,489  INFO Siege:1139 - Siege of Dion: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 16:27:14,587  INFO Siege:1139 - Siege of Oren: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 16:27:14,993  INFO Siege:1139 - Siege of Gludio: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 16:27:14,996  INFO Siege:1139 - Siege of Giran: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 16:27:14,998  INFO Siege:1139 - Siege of Innadril: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 16:27:14,999  INFO Siege:1139 - Siege of Aden: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 16:27:15,043  INFO Siege:1139 - Siege of Goddard: Sun Mar 15 16:00:00 EET 2020
+14/03/2020 16:27:15,089  INFO DayNightSpawnManager:49 - DayNightSpawnManager: Day/Night handler initialised
+14/03/2020 16:27:15,104  INFO Siege:1139 - Siege of Rune: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 16:27:15,105  INFO Siege:1139 - Siege of Schuttgart: Sat Mar 21 20:00:00 EET 2020
+14/03/2020 16:27:15,215  INFO SpawnTable:131 - SpawnTable: Loaded 37235 NPC spawn locations. 
+14/03/2020 16:27:15,234  INFO SpawnTable:200 - CustomSpawnTable: Loaded 9 Npc Spawn Locations. 
+14/03/2020 16:27:15,235  INFO SpawnTable:203 - SpawnTable: Spawning completed, total number of NPCs in the world: 37244
+14/03/2020 16:27:15,285  INFO RaidBossSpawnManager:104 - RaidBossSpawnManager: Loaded 183 raid bosses
+14/03/2020 16:27:15,285  INFO RaidBossSpawnManager:105 - RaidBossSpawnManager: Scheduled 0 raid boss spawns
+14/03/2020 16:27:15,317  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 0 night creatures
+14/03/2020 16:27:15,322  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+14/03/2020 16:27:15,323  INFO Util:121 - ===============================================-[ Dimensional Rift ]
+14/03/2020 16:27:15,329  INFO DimensionalRiftManager:218 - DimensionalRiftManager: Loaded 7 room types with 56 rooms.
+14/03/2020 16:27:15,329  INFO DimensionalRiftManager:220 - DimensionalRiftManager: Loaded 462 dimensional rift spawns.
+14/03/2020 16:27:15,330  INFO Util:121 - ===========================================================-[ Misc ]
+14/03/2020 16:27:15,358  INFO RecipeTable:111 - Loaded: 870 recipes
+14/03/2020 16:27:15,361  INFO AugmentationData:68 - Initializing AugmentationData.
+14/03/2020 16:27:15,382  INFO AugmentationData:89 - AugmentationData: Loaded: 52 augmentation stats.
+14/03/2020 16:27:15,383  INFO MercTicketManager:42 - Initializing MercTicketManager
+14/03/2020 16:27:15,412  INFO MercTicketManager:718 - Loaded: 30 Mercenary Tickets
+14/03/2020 16:27:15,413  INFO PetitionManager:67 - Initializing PetitionManager
+14/03/2020 16:27:15,415  INFO CursedWeaponsManager:87 - Initializing CursedWeaponsManager
+14/03/2020 16:27:15,441  INFO CursedWeaponsManager:66 - Loaded: 2 cursed weapon(s).
+14/03/2020 16:27:15,554  INFO ItemsAutoDestroy:39 - Initializing ItemsAutoDestroy.
+14/03/2020 16:27:15,554  INFO Util:121 - ==========================================================-[ Manor ]
+14/03/2020 16:27:15,557  INFO L2Manor:393 - ManorManager: Loaded 256 seeds
+14/03/2020 16:27:15,559  INFO CastleManorManager:59 - Initializing CastleManorManager
+14/03/2020 16:27:15,577  INFO CastleManorManager:225 - Castle Rune seed production loaded
+14/03/2020 16:27:15,578  INFO CastleManorManager:260 - Castle Rune procure loaded
+14/03/2020 16:27:15,579  INFO Util:121 - ========================================================-[ Castles ]
+14/03/2020 16:27:15,581  INFO SiegeManager:179 - Initializing SiegeManager
+14/03/2020 16:27:15,583  INFO FortSiegeManager:164 - Initializing FortSiegeManager
+14/03/2020 16:27:15,584  INFO Util:121 - ===========================================================-[ Boat ]
+14/03/2020 16:27:15,585  INFO BoatManager:33 - Initializing BoatManager
+14/03/2020 16:27:15,592  INFO Util:121 - ==========================================================-[ Doors ]
+14/03/2020 16:27:15,592  INFO DoorTable:67 - Searching clan halls doors:
+14/03/2020 16:27:15,636  INFO DoorTable:94 - DoorTable: Loaded 1001 Door Templates.
+14/03/2020 16:27:15,636  INFO Util:121 - ================================================-[ Four Sepulchers ]
+14/03/2020 16:27:15,699  INFO GrandBossManager:328 - FourSepulchersManager: Beginning in Attack time
+14/03/2020 16:27:15,699  INFO Util:121 - ====================================================-[ Seven Signs ]
+14/03/2020 16:27:15,727  INFO SevenSigns:182 - SevenSigns: Currently in the Competition (Quest Event) period!
+14/03/2020 16:27:15,728  INFO SevenSigns:1344 - SevenSigns: The Seal of Avarice remains unclaimed.
+14/03/2020 16:27:15,728  INFO SevenSigns:1344 - SevenSigns: The Seal of Gnosis remains unclaimed.
+14/03/2020 16:27:15,729  INFO SevenSigns:1344 - SevenSigns: The Seal of Strife remains unclaimed.
+14/03/2020 16:27:15,729  INFO SevenSigns:202 - SevenSigns: The Lords of Dawn are in the lead this week.
+14/03/2020 16:27:15,732  INFO SevenSigns:222 - SevenSigns: Next period begins in 2 days, 1 hours and 32 mins.
+14/03/2020 16:27:15,833  INFO SevenSignsFestival:3338 - SevenSignsFestival: The first Festival of Darkness cycle begins in 2 minute(s).
+14/03/2020 16:27:15,833  INFO Util:121 - ======================================================-[ Olympiads ]
+14/03/2020 16:27:15,866  INFO Olympiad:291 - Olympiad cycle: 3
+14/03/2020 16:27:15,866  INFO Olympiad:295 - Olympiad period: NORMAL
+14/03/2020 16:27:15,867  INFO Olympiad:304 - Olympiad end: Wed 01/04/2020 12:00:00
+14/03/2020 16:27:15,868  INFO Olympiad:311 - Olympiad weekly change: Mon 16/03/2020 19:20:55
+14/03/2020 16:27:15,869  INFO Olympiad:735 - Olympiad game starts: 18:00:00
+14/03/2020 16:27:15,869  INFO Util:121 - =========================================================-[ Heroes ]
+14/03/2020 16:27:15,871  INFO Util:121 - ==================================================-[ Access Levels ]
+14/03/2020 16:27:15,873  INFO AccessLevels:89 - AccessLevels: User Access Level is 0
+14/03/2020 16:27:15,873  INFO AccessLevels:90 - AccessLevels: Master Access Level is 8
+14/03/2020 16:27:15,875  INFO AdminCommandAccessRights:65 - AdminCommandAccessRights: Loaded 359
+14/03/2020 16:27:15,876  INFO Util:121 - =======================================================-[ Handlers ]
+14/03/2020 16:27:15,891  INFO GameServer:141 - ItemHandler: Loaded 2045 handlers.
+14/03/2020 16:27:15,901  INFO SkillHandler:103 - SkillHandler: Loaded 76 handlers.
+14/03/2020 16:27:15,924  INFO AdminCommandHandler:156 - AdminCommandHandler: Loaded 359 handlers.
+14/03/2020 16:27:15,929  INFO GameServer:56 - UserCommandHandler: Loaded 15 handlers.
+14/03/2020 16:27:15,930  INFO GameServer:65 - VoicedCommandHandler: Loaded 2 handlers.
+14/03/2020 16:27:15,931  INFO GameServer:409 - AutoChatHandler : Loaded 32 handlers in total.
+14/03/2020 16:27:15,931  INFO GameServer:410 - AutoSpawnHandler : Loaded 129 handlers in total.
+14/03/2020 16:27:15,933  INFO Util:121 - =============================================================-[ AI ]
+14/03/2020 16:27:15,936  INFO QuestManager:31 - Initializing QuestManager
+14/03/2020 16:27:15,951  INFO GrandBossManager:168 - GrandBossManager: Updated Queen Ant(29001) status to 0
+14/03/2020 16:27:15,960  INFO GrandBossManager:168 - GrandBossManager: Updated High Priestess van Halter(29062) status to 1
+14/03/2020 16:27:15,972  INFO QuestManager:103 - Replaced quest: Hot Springs with a new version
+14/03/2020 16:27:15,972  INFO Util:121 - ========================================================-[ Scripts ]
+14/03/2020 16:27:16,738  INFO QuestManager:103 - Replaced quest: SagasSuperclass with a new version
+14/03/2020 16:27:18,695  INFO GameServer:469 - Compiled Scripts Cache is disabled.
+14/03/2020 16:27:18,696  INFO Util:121 - =========================================================-[ Quests ]
+14/03/2020 16:27:18,698  INFO QuestManager:69 - Loaded: 450 quests
+14/03/2020 16:27:18,698  INFO Util:121 - ====================================================-[ Game Server ]
+14/03/2020 16:27:18,699  INFO GameServer:507 - Maximum players allowed: 1000
+14/03/2020 16:27:18,699  INFO GameServer:508 - IdFactory: Free ObjectID's remaining: 1879005082
+14/03/2020 16:27:18,701  INFO Util:121 - =============================================-[ EngineMods Scripts ]
+14/03/2020 16:27:18,863  INFO StringUtil:154 - -----------------------------------=[ ModsData: Loaded info StatsPlayer -> 0 ]
+14/03/2020 16:27:18,888  INFO StringUtil:154 - -------------------------------------=[ ModsData: Loaded info SystemAio -> 0 ]
+14/03/2020 16:27:18,911  INFO StringUtil:154 - -------------------------------------=[ ModsData: Loaded info SystemVip -> 0 ]
+14/03/2020 16:27:18,930  INFO StringUtil:154 - -----------------------------------=[ ModsData: Loaded info OfflineShop -> 0 ]
+14/03/2020 16:27:18,998  INFO StringUtil:154 - ------------------------------=[ ModsData: Loaded info NpcBufferScheme -> 19 ]
+14/03/2020 16:27:19,172  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardHopzone -> 0 ]
+14/03/2020 16:27:19,221  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardNetwork -> 0 ]
+14/03/2020 16:27:19,231  INFO StringUtil:154 - --------------------------=[ ModsData: Loaded info NpcVoteRewardTopzone -> 0 ]
+14/03/2020 16:27:19,247  INFO StringUtil:154 - ---------------------------=[ ModsData: Loaded info MemoCommunityBoard -> 54 ]
+14/03/2020 16:27:19,250  INFO Util:121 - ===================================================-[ Project info ]
+14/03/2020 16:27:19,250  INFO GameServer:543 - Your revision: ${l2jfrozen.revision}
+14/03/2020 16:27:19,252  INFO GameServer:544 - Your build date: 04-02-2020 07:24:14 PM
+14/03/2020 16:27:19,252  INFO Util:121 - ================================-[ Last project revision available ]
+14/03/2020 16:27:19,252  INFO GameServer:549 - Last revision: 2479
+14/03/2020 16:27:19,252  INFO GameServer:550 - Last revision publication date: Tue, 11 Feb 2020 00:27:00 GMT
+14/03/2020 16:27:19,252  INFO Util:121 - ========================================================-[ OS info ]
+14/03/2020 16:27:19,253  INFO GameServer:554 - Operating system: Windows 10 10.0 amd64
+14/03/2020 16:27:19,253  INFO GameServer:555 - Available CPUs: 12
+14/03/2020 16:27:19,255  INFO GameServer:556 - Free memory: 510 MB of 1024 MB
+14/03/2020 16:27:19,255  INFO GameServer:557 - Used memory: 513 MB of 1024 MB
+14/03/2020 16:27:19,256  INFO Util:121 - ======================================================-[ Java Info ]
+14/03/2020 16:27:19,256  INFO GameServer:560 - JRE name: Oracle Corporation
+14/03/2020 16:27:19,257  INFO GameServer:561 - JRE version: 13.0.1
+14/03/2020 16:27:19,257  INFO GameServer:562 - --- Detecting Java Virtual Machine (JVM)
+14/03/2020 16:27:19,257  INFO GameServer:563 - JVM implementation name: Java HotSpot(TM) 64-Bit Server VM
+14/03/2020 16:27:19,258  INFO GameServer:564 - JVM installation directory: C:\Program Files\Java\jdk-13.0.1
+14/03/2020 16:27:19,260  INFO Util:121 - ==========================================================-[ Login ]
+14/03/2020 16:27:19,264  INFO LoginServerThread:134 - Connecting to login on 127.0.0.1:9014
+14/03/2020 16:27:19,283  INFO LoginServerThread:267 - Registered on login as Server 2 : Sieghardt
+14/03/2020 16:27:23,642  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+14/03/2020 16:57:15,625  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 17:27:15,479  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 17:27:19,263  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 17:27:19,263  INFO ServerStatusTask:25 - Players Online: 2
+14/03/2020 17:27:19,264  INFO ServerStatusTask:26 - Threads: 14
+14/03/2020 17:27:19,265  INFO ServerStatusTask:27 - Free memory: 642 MB of 1024 MB
+14/03/2020 17:27:19,265  INFO ServerStatusTask:28 - Used memory: 381 MB of 1024 MB
+14/03/2020 17:27:19,266  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 17:57:14,423  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 17:59:58,947  INFO Olympiad:749 - Olympiad System: Olympiad Game Started
+14/03/2020 18:27:14,422  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 18:27:18,206  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 18:27:18,206  INFO ServerStatusTask:25 - Players Online: 2
+14/03/2020 18:27:18,208  INFO ServerStatusTask:26 - Threads: 15
+14/03/2020 18:27:18,208  INFO ServerStatusTask:27 - Free memory: 547 MB of 1024 MB
+14/03/2020 18:27:18,208  INFO ServerStatusTask:28 - Used memory: 476 MB of 1024 MB
+14/03/2020 18:27:18,209  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 18:57:14,424  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 19:27:08,913  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+14/03/2020 19:27:09,375  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+14/03/2020 19:27:09,395  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+14/03/2020 19:27:14,422  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 19:27:18,208  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 19:27:18,208  INFO ServerStatusTask:25 - Players Online: 2
+14/03/2020 19:27:18,209  INFO ServerStatusTask:26 - Threads: 15
+14/03/2020 19:27:18,209  INFO ServerStatusTask:27 - Free memory: 446 MB of 1024 MB
+14/03/2020 19:27:18,210  INFO ServerStatusTask:28 - Used memory: 577 MB of 1024 MB
+14/03/2020 19:27:18,210  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 19:32:08,914  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+14/03/2020 19:57:14,423  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 20:00:58,946  INFO CastleManorManager:527 - Manor System: Under maintenance mode started
+14/03/2020 20:06:58,946  INFO CastleManorManager:535 - Manor System: Next period started
+14/03/2020 20:27:09,421  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+14/03/2020 20:27:09,424  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+14/03/2020 20:27:09,425  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+14/03/2020 20:27:14,490  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 20:27:18,206  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 20:27:18,206  INFO ServerStatusTask:25 - Players Online: 2
+14/03/2020 20:27:18,206  INFO ServerStatusTask:26 - Threads: 15
+14/03/2020 20:27:18,207  INFO ServerStatusTask:27 - Free memory: 348 MB of 1024 MB
+14/03/2020 20:27:18,207  INFO ServerStatusTask:28 - Used memory: 675 MB of 1024 MB
+14/03/2020 20:27:18,207  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 20:28:14,886  INFO GrandBossManager:168 - GrandBossManager: Updated Antharas(29019) status to 0
+14/03/2020 20:57:14,430  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 21:27:14,467  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 21:27:18,206  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 21:27:18,206  INFO ServerStatusTask:25 - Players Online: 2
+14/03/2020 21:27:18,207  INFO ServerStatusTask:26 - Threads: 15
+14/03/2020 21:27:18,207  INFO ServerStatusTask:27 - Free memory: 606 MB of 1024 MB
+14/03/2020 21:27:18,207  INFO ServerStatusTask:28 - Used memory: 417 MB of 1024 MB
+14/03/2020 21:27:18,208  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 21:57:14,440  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 22:27:14,433  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 22:27:14,932  INFO GrandBossManager:168 - GrandBossManager: Updated High Priestess van Halter(29062) status to 0
+14/03/2020 22:27:18,207  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 22:27:18,207  INFO ServerStatusTask:25 - Players Online: 2
+14/03/2020 22:27:18,208  INFO ServerStatusTask:26 - Threads: 15
+14/03/2020 22:27:18,208  INFO ServerStatusTask:27 - Free memory: 513 MB of 1024 MB
+14/03/2020 22:27:18,209  INFO ServerStatusTask:28 - Used memory: 510 MB of 1024 MB
+14/03/2020 22:27:18,209  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 22:57:14,422  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 23:27:08,912  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+14/03/2020 23:27:09,369  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+14/03/2020 23:27:09,388  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+14/03/2020 23:27:09,388  INFO DayNightSpawnManager:255 - DayNightSpawnManager: It is MIDNIGHT (00:00), spawning Eilhalder Von Hellmann raidboss.
+14/03/2020 23:27:14,422  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+14/03/2020 23:27:18,206  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 23:27:18,206  INFO ServerStatusTask:25 - Players Online: 2
+14/03/2020 23:27:18,207  INFO ServerStatusTask:26 - Threads: 15
+14/03/2020 23:27:18,207  INFO ServerStatusTask:27 - Free memory: 413 MB of 1024 MB
+14/03/2020 23:27:18,207  INFO ServerStatusTask:28 - Used memory: 610 MB of 1024 MB
+14/03/2020 23:27:18,208  INFO Util:121 - ==================================================-[ Server Status ]
+14/03/2020 23:32:08,914  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+14/03/2020 23:57:14,423  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.

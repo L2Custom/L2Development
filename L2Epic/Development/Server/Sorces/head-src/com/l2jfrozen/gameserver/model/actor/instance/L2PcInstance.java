@@ -10662,11 +10662,11 @@ public class L2PcInstance extends L2PlayableInstance
 		// Like L2OFF if you have a summon you can't summon another one (ignore cubics)
 		if (sklType == L2Skill.SkillType.SUMMON && skill instanceof L2SkillSummon && !((L2SkillSummon) skill).isCubic())
 		{
-			if (getPet() != null || isMounted())
-			{
-				sendPacket(new SystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
-				return;
-			}
+			//if (getPet() != null || isMounted())
+			//{
+			//	sendPacket(new SystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
+			//	return;
+			//}
 		}
 		
 		if (skill.getNumCharges() > 0 && skill.getSkillType() != SkillType.CHARGE && skill.getSkillType() != SkillType.CHARGEDAM && skill.getSkillType() != SkillType.CHARGE_EFFECT && skill.getSkillType() != SkillType.PDAM)

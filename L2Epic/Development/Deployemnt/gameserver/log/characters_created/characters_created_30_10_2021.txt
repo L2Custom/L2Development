@@ -1,0 +1,1 @@
+[30/10/2021 19:57:12,956] '---': Created new character : MyPet for account: test_char_1

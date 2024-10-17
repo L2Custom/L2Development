@@ -1,0 +1,38 @@
+30/10/2021 00:23:10,194  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+30/10/2021 02:03:20,732  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 02:29:42,108  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 10:23:08,180  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 10:32:54,947  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 10:34:28,471  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 10:49:03,979  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 10:57:27,161  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 12:08:25,595  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 12:45:24,840  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 13:13:09,216  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+30/10/2021 13:13:11,974  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 13:16:56,444  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 17:10:46,505  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 17:45:40,628  WARN SendBypassBuildCmd:78 - No handler registered for admin command 'admin_edit'
+30/10/2021 17:46:25,157  WARN SendBypassBuildCmd:78 - No handler registered for admin command 'admin_inspect'
+30/10/2021 18:20:14,426  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 19:07:14,211  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 19:43:56,231  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 19:45:40,280  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 19:49:04,330  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 21:19:49,133  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 22:13:17,779  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 22:16:13,399  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 22:19:19,697  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 22:53:36,115  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+30/10/2021 23:04:49,373  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.NullPointerException: Cannot invoke "com.l2jfrozen.gameserver.model.actor.instance.L2ItemInstance.getItemType()" because the return value of "com.l2jfrozen.gameserver.datatables.sql.ItemTable.createDummyItem(int)" is null
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.addItem(L2PcInstance.java:4166)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminCreateItem.createItem(AdminCreateItem.java:399)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminCreateItem.useAdminCommand(AdminCreateItem.java:78)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+30/10/2021 23:15:39,749  WARN L2Character:8305 - Jager logs in game with AccessLevel 8

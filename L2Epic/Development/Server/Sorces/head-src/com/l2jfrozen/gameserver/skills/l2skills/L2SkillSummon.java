@@ -89,11 +89,11 @@ public class L2SkillSummon extends L2Skill
 				{
 					return false;
 				}
-				if (player.getPet() != null)
-				{
-					activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
-					return false;
-				}
+				//if (player.getPet() != null)
+				//{
+				//	activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
+				//	return false;
+				//}
 			}
 		}
 		return super.checkCondition(activeChar, null, false);

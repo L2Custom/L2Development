@@ -15,6 +15,10 @@ public class JVM
 		{
 			return true;
 		}
+		else if (Integer.parseInt(System.getProperty("java.specification.version")) >= 11)
+		{
+			return true;
+		}
 		
 		LOGGER.warn("Looks like you are not using OpenJDK 11, please make sure is installed in your machine.");
 		LOGGER.warn("Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs");

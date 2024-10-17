@@ -1,0 +1,47 @@
+31/10/2021 00:26:09,053  WARN RequestDropItem:221 - Character (Jager) has dropped (2,000,000)adena at 18803,145452,-3153 coordinates
+31/10/2021 00:26:54,551  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 00:29:46,958  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 13:08:24,380  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+31/10/2021 13:08:26,471  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 13:12:11,906  WARN L2Character:9213 - 
+java.lang.NullPointerException: Cannot invoke "com.l2jfrozen.gameserver.model.L2PetData.getPetMaxExp()" because the return value of "com.l2jfrozen.gameserver.datatables.sql.L2PetDataTable.getPetData(int, int)" is null
+	at com.l2jfrozen.gameserver.model.actor.stat.PetStat.getExpForLevel(PetStat.java:99)
+	at com.l2jfrozen.gameserver.model.actor.stat.PlayableStat.addExp(PlayableStat.java:24)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PetInstance.restoreExp(L2PetInstance.java:1099)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PetInstance.doRevive(L2PetInstance.java:665)
+	at com.l2jfrozen.gameserver.handler.skillhandlers.Resurrect.useSkill(Resurrect.java:97)
+	at com.l2jfrozen.gameserver.model.L2Character.callSkill(L2Character.java:9147)
+	at com.l2jfrozen.gameserver.model.L2Character.onMagicHitTimer(L2Character.java:8381)
+	at com.l2jfrozen.gameserver.model.L2Character$MagicUseTask.run(L2Character.java:3231)
+	at com.l2jfrozen.gameserver.thread.ThreadPoolManager$RunnableWrapper.run(ThreadPoolManager.java:71)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+31/10/2021 13:12:36,425  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 13:13:46,010  WARN L2Character:9213 - 
+java.lang.NullPointerException: Cannot invoke "com.l2jfrozen.gameserver.model.L2PetData.getPetMaxExp()" because the return value of "com.l2jfrozen.gameserver.datatables.sql.L2PetDataTable.getPetData(int, int)" is null
+	at com.l2jfrozen.gameserver.model.actor.stat.PetStat.getExpForLevel(PetStat.java:99)
+	at com.l2jfrozen.gameserver.model.actor.stat.PlayableStat.addExp(PlayableStat.java:24)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PetInstance.restoreExp(L2PetInstance.java:1099)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PetInstance.doRevive(L2PetInstance.java:665)
+	at com.l2jfrozen.gameserver.handler.skillhandlers.Resurrect.useSkill(Resurrect.java:97)
+	at com.l2jfrozen.gameserver.model.L2Character.callSkill(L2Character.java:9147)
+	at com.l2jfrozen.gameserver.model.L2Character.onMagicHitTimer(L2Character.java:8381)
+	at com.l2jfrozen.gameserver.model.L2Character$MagicUseTask.run(L2Character.java:3231)
+	at com.l2jfrozen.gameserver.thread.ThreadPoolManager$RunnableWrapper.run(ThreadPoolManager.java:71)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+31/10/2021 13:39:49,165  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 20:27:42,285  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 20:29:49,287  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 21:45:10,139  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 21:50:29,648  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 22:08:05,281  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+31/10/2021 22:42:16,684  WARN L2Character:8305 - Jager logs in game with AccessLevel 8

@@ -1,0 +1,350 @@
+02/11/2021 00:00:00,001  INFO Olympiad:768 - Olympiad System: Olympiad Game Ended
+02/11/2021 00:00:00,126  INFO Olympiad:1132 - Olympiad System: Data saved!!
+02/11/2021 00:00:00,126  INFO Olympiad:735 - Olympiad game starts: 18:00:00
+02/11/2021 00:21:11,915  INFO RaidBossSpawnManager:189 - Flame Lord Shadar(25152) defeated, next respawn at 02-11-2021 01:02:55
+02/11/2021 00:22:41,847  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 00:31:08,319  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+02/11/2021 00:52:41,769  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 00:52:45,110  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 00:52:45,111  INFO ServerStatusTask:25 - Players Online: 1
+02/11/2021 00:52:45,111  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 00:52:45,112  INFO ServerStatusTask:27 - Free memory: 507 MB of 1024 MB
+02/11/2021 00:52:45,113  INFO ServerStatusTask:28 - Used memory: 516 MB of 1024 MB
+02/11/2021 00:52:45,113  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 01:02:55,129  INFO RaidBossSpawnManager:147 - Spawning Raid Boss Flame Lord Shadar (25152).
+02/11/2021 01:08:03,173 ERROR L2Character:9149 - Could not store char base data: 
+java.sql.SQLDataException: (conn=2621) Out of range value for column 'subpledge' at row 1
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:232)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:164)
+	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:258)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:225)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:145)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:176)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.storeCharBase(L2PcInstance.java:9145)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9025)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9045)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestRestart.runImpl(RequestRestart.java:166)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLException: Out of range value for column 'subpledge' at row 1
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1599)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1461)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1424)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:240)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:216)
+	... 13 more
+02/11/2021 01:22:42,030  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 01:52:36,246  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+02/11/2021 01:52:36,423  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+02/11/2021 01:52:36,447  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+02/11/2021 01:52:41,747  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 01:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 01:52:45,108  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 01:52:45,109  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 01:52:45,111  INFO ServerStatusTask:27 - Free memory: 297 MB of 1024 MB
+02/11/2021 01:52:45,111  INFO ServerStatusTask:28 - Used memory: 726 MB of 1024 MB
+02/11/2021 01:52:45,113  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 01:57:36,247  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+02/11/2021 02:22:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 02:52:36,435  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+02/11/2021 02:52:36,438  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+02/11/2021 02:52:36,438  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+02/11/2021 02:52:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 02:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 02:52:45,108  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 02:52:45,109  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 02:52:45,109  INFO ServerStatusTask:27 - Free memory: 179 MB of 1024 MB
+02/11/2021 02:52:45,110  INFO ServerStatusTask:28 - Used memory: 844 MB of 1024 MB
+02/11/2021 02:52:45,111  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 03:22:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 03:52:41,787  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 03:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 03:52:45,109  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 03:52:45,110  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 03:52:45,111  INFO ServerStatusTask:27 - Free memory: 581 MB of 1024 MB
+02/11/2021 03:52:45,111  INFO ServerStatusTask:28 - Used memory: 442 MB of 1024 MB
+02/11/2021 03:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 04:22:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 04:52:41,746  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 04:52:42,254  INFO GrandBossManager:168 - GrandBossManager: Updated High Priestess van Halter(29062) status to 0
+02/11/2021 04:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 04:52:45,109  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 04:52:45,110  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 04:52:45,110  INFO ServerStatusTask:27 - Free memory: 459 MB of 1024 MB
+02/11/2021 04:52:45,110  INFO ServerStatusTask:28 - Used memory: 564 MB of 1024 MB
+02/11/2021 04:52:45,111  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 05:22:41,747  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 05:52:36,246  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+02/11/2021 05:52:36,420  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+02/11/2021 05:52:36,429  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+02/11/2021 05:52:36,430  INFO DayNightSpawnManager:255 - DayNightSpawnManager: It is MIDNIGHT (00:00), spawning Eilhalder Von Hellmann raidboss.
+02/11/2021 05:52:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 05:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 05:52:45,108  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 05:52:45,110  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 05:52:45,112  INFO ServerStatusTask:27 - Free memory: 334 MB of 1024 MB
+02/11/2021 05:52:45,112  INFO ServerStatusTask:28 - Used memory: 689 MB of 1024 MB
+02/11/2021 05:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 05:57:36,247  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+02/11/2021 06:00:00,001  INFO CastleManorManager:562 - Manor System: Next period approved
+02/11/2021 06:00:00,325  INFO CastleManorManager:440 - Rune|-48445000|ManorManager
+02/11/2021 06:22:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 06:52:36,433  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+02/11/2021 06:52:36,435  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+02/11/2021 06:52:36,435  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+02/11/2021 06:52:41,747  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 06:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 06:52:45,109  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 06:52:45,110  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 06:52:45,111  INFO ServerStatusTask:27 - Free memory: 210 MB of 1024 MB
+02/11/2021 06:52:45,111  INFO ServerStatusTask:28 - Used memory: 813 MB of 1024 MB
+02/11/2021 06:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 07:22:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 07:52:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 07:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 07:52:45,108  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 07:52:45,109  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 07:52:45,114  INFO ServerStatusTask:27 - Free memory: 623 MB of 1024 MB
+02/11/2021 07:52:45,115  INFO ServerStatusTask:28 - Used memory: 401 MB of 1024 MB
+02/11/2021 07:52:45,115  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 08:22:41,749  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 08:52:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 08:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 08:52:45,108  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 08:52:45,109  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 08:52:45,111  INFO ServerStatusTask:27 - Free memory: 501 MB of 1024 MB
+02/11/2021 08:52:45,111  INFO ServerStatusTask:28 - Used memory: 522 MB of 1024 MB
+02/11/2021 08:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 09:22:41,747  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 09:52:36,245  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+02/11/2021 09:52:36,420  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+02/11/2021 09:52:36,428  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+02/11/2021 09:52:36,428  INFO DayNightSpawnManager:255 - DayNightSpawnManager: It is MIDNIGHT (00:00), spawning Eilhalder Von Hellmann raidboss.
+02/11/2021 09:52:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 09:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 09:52:45,108  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 09:52:45,109  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 09:52:45,111  INFO ServerStatusTask:27 - Free memory: 380 MB of 1024 MB
+02/11/2021 09:52:45,111  INFO ServerStatusTask:28 - Used memory: 643 MB of 1024 MB
+02/11/2021 09:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 09:57:36,247  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+02/11/2021 10:22:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 10:52:36,434  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+02/11/2021 10:52:36,436  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+02/11/2021 10:52:36,437  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+02/11/2021 10:52:41,749  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 10:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 10:52:45,109  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 10:52:45,111  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 10:52:45,111  INFO ServerStatusTask:27 - Free memory: 258 MB of 1024 MB
+02/11/2021 10:52:45,112  INFO ServerStatusTask:28 - Used memory: 765 MB of 1024 MB
+02/11/2021 10:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 11:22:41,747  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 11:52:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 11:52:45,110  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 11:52:45,110  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 11:52:45,111  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 11:52:45,112  INFO ServerStatusTask:27 - Free memory: 677 MB of 1024 MB
+02/11/2021 11:52:45,112  INFO ServerStatusTask:28 - Used memory: 346 MB of 1024 MB
+02/11/2021 11:52:45,113  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 12:22:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 12:52:42,033  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 12:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 12:52:45,111  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 12:52:45,111  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 12:52:45,111  INFO ServerStatusTask:27 - Free memory: 557 MB of 1024 MB
+02/11/2021 12:52:45,112  INFO ServerStatusTask:28 - Used memory: 466 MB of 1024 MB
+02/11/2021 12:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 13:00:00,750  INFO TaskRecom:35 - [GlobalTask] Restart Recommendation launched.
+02/11/2021 13:22:41,752  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 13:52:36,246  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+02/11/2021 13:52:36,424  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+02/11/2021 13:52:36,439  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+02/11/2021 13:52:36,440  INFO DayNightSpawnManager:255 - DayNightSpawnManager: It is MIDNIGHT (00:00), spawning Eilhalder Von Hellmann raidboss.
+02/11/2021 13:52:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 13:52:45,110  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 13:52:45,110  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 13:52:45,111  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 13:52:45,111  INFO ServerStatusTask:27 - Free memory: 433 MB of 1024 MB
+02/11/2021 13:52:45,112  INFO ServerStatusTask:28 - Used memory: 590 MB of 1024 MB
+02/11/2021 13:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 13:57:36,247  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+02/11/2021 14:22:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 14:52:36,436  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+02/11/2021 14:52:36,439  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+02/11/2021 14:52:36,440  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+02/11/2021 14:52:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 14:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 14:52:45,109  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 14:52:45,109  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 14:52:45,110  INFO ServerStatusTask:27 - Free memory: 310 MB of 1024 MB
+02/11/2021 14:52:45,111  INFO ServerStatusTask:28 - Used memory: 713 MB of 1024 MB
+02/11/2021 14:52:45,111  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 15:22:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 15:52:41,748  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 15:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 15:52:45,109  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 15:52:45,110  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 15:52:45,110  INFO ServerStatusTask:27 - Free memory: 189 MB of 1024 MB
+02/11/2021 15:52:45,111  INFO ServerStatusTask:28 - Used memory: 834 MB of 1024 MB
+02/11/2021 15:52:45,111  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 16:22:41,749  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 16:52:41,749  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 16:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 16:52:45,109  INFO ServerStatusTask:25 - Players Online: 0
+02/11/2021 16:52:45,110  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 16:52:45,111  INFO ServerStatusTask:27 - Free memory: 613 MB of 1024 MB
+02/11/2021 16:52:45,112  INFO ServerStatusTask:28 - Used memory: 410 MB of 1024 MB
+02/11/2021 16:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 17:22:41,747  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 17:44:24,183  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+02/11/2021 17:52:36,246  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+02/11/2021 17:52:36,420  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+02/11/2021 17:52:36,430  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+02/11/2021 17:52:36,431  INFO DayNightSpawnManager:255 - DayNightSpawnManager: It is MIDNIGHT (00:00), spawning Eilhalder Von Hellmann raidboss.
+02/11/2021 17:52:41,747  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 17:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 17:52:45,109  INFO ServerStatusTask:25 - Players Online: 1
+02/11/2021 17:52:45,111  INFO ServerStatusTask:26 - Threads: 14
+02/11/2021 17:52:45,111  INFO ServerStatusTask:27 - Free memory: 474 MB of 1024 MB
+02/11/2021 17:52:45,111  INFO ServerStatusTask:28 - Used memory: 549 MB of 1024 MB
+02/11/2021 17:52:45,111  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 17:56:42,229  WARN RequestDropItem:221 - Character (Jager) has dropped (5,000,000)adena at -83985,243417,-3755 coordinates
+02/11/2021 17:57:36,247  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+02/11/2021 18:00:00,001  INFO Olympiad:749 - Olympiad System: Olympiad Game Started
+02/11/2021 18:22:41,784  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 18:32:27,711  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+02/11/2021 18:52:36,435  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+02/11/2021 18:52:36,438  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+02/11/2021 18:52:36,438  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+02/11/2021 18:52:41,787  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 18:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 18:52:45,108  INFO ServerStatusTask:25 - Players Online: 1
+02/11/2021 18:52:45,109  INFO ServerStatusTask:26 - Threads: 15
+02/11/2021 18:52:45,110  INFO ServerStatusTask:27 - Free memory: 546 MB of 1024 MB
+02/11/2021 18:52:45,111  INFO ServerStatusTask:28 - Used memory: 477 MB of 1024 MB
+02/11/2021 18:52:45,111  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 19:22:41,789  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 19:35:36,795  INFO RaidBossSpawnManager:189 - Zombie Lord Farakelsus(25375) defeated, next respawn at 02-11-2021 19:48:51
+02/11/2021 19:48:51,913  INFO RaidBossSpawnManager:147 - Spawning Raid Boss Zombie Lord Farakelsus (25375).
+02/11/2021 19:50:33,468  INFO RaidBossSpawnManager:189 - Madness Beast(25378) defeated, next respawn at 02-11-2021 20:09:09
+02/11/2021 19:52:42,025  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 19:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 19:52:45,109  INFO ServerStatusTask:25 - Players Online: 1
+02/11/2021 19:52:45,110  INFO ServerStatusTask:26 - Threads: 15
+02/11/2021 19:52:45,112  INFO ServerStatusTask:27 - Free memory: 567 MB of 1024 MB
+02/11/2021 19:52:45,112  INFO ServerStatusTask:28 - Used memory: 456 MB of 1024 MB
+02/11/2021 19:52:45,113  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 20:00:00,002  INFO CastleManorManager:527 - Manor System: Under maintenance mode started
+02/11/2021 20:06:00,001  INFO CastleManorManager:535 - Manor System: Next period started
+02/11/2021 20:09:09,685  INFO RaidBossSpawnManager:147 - Spawning Raid Boss Madness Beast (25378).
+02/11/2021 20:13:40,625  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+02/11/2021 20:22:42,027  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 20:37:32,633  INFO RaidBossSpawnManager:189 - Malex Herald of Dagoniel(25373) defeated, next respawn at 02-11-2021 21:09:02
+02/11/2021 20:52:41,762  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 20:52:45,109  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 20:52:45,109  INFO ServerStatusTask:25 - Players Online: 1
+02/11/2021 20:52:45,110  INFO ServerStatusTask:26 - Threads: 15
+02/11/2021 20:52:45,110  INFO ServerStatusTask:27 - Free memory: 150 MB of 1024 MB
+02/11/2021 20:52:45,111  INFO ServerStatusTask:28 - Used memory: 873 MB of 1024 MB
+02/11/2021 20:52:45,111  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 21:09:02,098  INFO RaidBossSpawnManager:147 - Spawning Raid Boss Malex Herald of Dagoniel (25373).
+02/11/2021 21:22:42,030  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 21:52:36,247  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+02/11/2021 21:52:36,420  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+02/11/2021 21:52:36,436  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+02/11/2021 21:52:36,437  INFO DayNightSpawnManager:255 - DayNightSpawnManager: It is MIDNIGHT (00:00), spawning Eilhalder Von Hellmann raidboss.
+02/11/2021 21:52:41,791  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 21:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 21:52:45,108  INFO ServerStatusTask:25 - Players Online: 1
+02/11/2021 21:52:45,109  INFO ServerStatusTask:26 - Threads: 15
+02/11/2021 21:52:45,110  INFO ServerStatusTask:27 - Free memory: 163 MB of 1024 MB
+02/11/2021 21:52:45,110  INFO ServerStatusTask:28 - Used memory: 860 MB of 1024 MB
+02/11/2021 21:52:45,111  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 21:57:36,248  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+02/11/2021 21:59:12,056  INFO RaidBossSpawnManager:189 - Flame Lord Shadar(25152) defeated, next respawn at 02-11-2021 22:23:47
+02/11/2021 22:10:17,236  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+02/11/2021 22:18:29,545 ERROR L2Character:9293 - L2PcInstance.storeEffect: Could not store char effect data into character_skill_effects
+java.sql.BatchUpdateException: (conn=3477) Duplicate entry '268494703-1036' for key 'PRIMARY'
+	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:309)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeBatch(ClientSidePreparedStatement.java:293)
+	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:128)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.storeEffect(L2PcInstance.java:9260)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9031)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9045)
+	at com.l2jfrozen.gameserver.network.L2GameClient$DisconnectTask.run(L2GameClient.java:883)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=3477) Duplicate entry '268494703-1036' for key 'PRIMARY'
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:236)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:164)
+	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:305)
+	... 10 more
+Caused by: java.sql.SQLException: Duplicate entry '268494703-1036' for key 'PRIMARY'
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1599)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1461)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1424)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeBatchRewrite(AbstractQueryProtocol.java:889)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeBatchClient(AbstractQueryProtocol.java:323)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternalBatch(ClientSidePreparedStatement.java:362)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeBatch(ClientSidePreparedStatement.java:288)
+	... 9 more
+02/11/2021 22:22:41,785  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 22:23:47,951  INFO RaidBossSpawnManager:147 - Spawning Raid Boss Flame Lord Shadar (25152).
+02/11/2021 22:52:36,433  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+02/11/2021 22:52:36,436  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+02/11/2021 22:52:36,436  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+02/11/2021 22:52:41,762  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 22:52:45,108  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 22:52:45,108  INFO ServerStatusTask:25 - Players Online: 1
+02/11/2021 22:52:45,109  INFO ServerStatusTask:26 - Threads: 15
+02/11/2021 22:52:45,109  INFO ServerStatusTask:27 - Free memory: 330 MB of 1024 MB
+02/11/2021 22:52:45,110  INFO ServerStatusTask:28 - Used memory: 693 MB of 1024 MB
+02/11/2021 22:52:45,110  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 23:15:29,918  INFO RaidBossSpawnManager:189 - Shaman King Selu(25155) defeated, next respawn at 02-11-2021 23:35:02
+02/11/2021 23:22:41,756  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 23:24:20,546  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+02/11/2021 23:35:02,984  INFO RaidBossSpawnManager:147 - Spawning Raid Boss Shaman King Selu (25155).
+02/11/2021 23:40:23,013 ERROR L2Character:9293 - L2PcInstance.storeEffect: Could not store char effect data into character_skill_effects
+java.sql.BatchUpdateException: (conn=3537) Duplicate entry '268494703-1036' for key 'PRIMARY'
+	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:309)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeBatch(ClientSidePreparedStatement.java:293)
+	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:128)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.storeEffect(L2PcInstance.java:9260)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9031)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.store(L2PcInstance.java:9045)
+	at com.l2jfrozen.gameserver.network.L2GameClient$DisconnectTask.run(L2GameClient.java:883)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=3537) Duplicate entry '268494703-1036' for key 'PRIMARY'
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:236)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:164)
+	at org.mariadb.jdbc.MariaDbStatement.executeBatchExceptionEpilogue(MariaDbStatement.java:305)
+	... 10 more
+Caused by: java.sql.SQLException: Duplicate entry '268494703-1036' for key 'PRIMARY'
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1599)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1461)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1424)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeBatchRewrite(AbstractQueryProtocol.java:889)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeBatchClient(AbstractQueryProtocol.java:323)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternalBatch(ClientSidePreparedStatement.java:362)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeBatch(ClientSidePreparedStatement.java:288)
+	... 9 more
+02/11/2021 23:52:41,881  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+02/11/2021 23:52:45,110  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 23:52:45,110  INFO ServerStatusTask:25 - Players Online: 1
+02/11/2021 23:52:45,111  INFO ServerStatusTask:26 - Threads: 15
+02/11/2021 23:52:45,111  INFO ServerStatusTask:27 - Free memory: 388 MB of 1024 MB
+02/11/2021 23:52:45,112  INFO ServerStatusTask:28 - Used memory: 635 MB of 1024 MB
+02/11/2021 23:52:45,112  INFO Util:121 - ==================================================-[ Server Status ]
+02/11/2021 23:55:53,613  WARN RequestDropItem:221 - Character (Jager) has dropped (10,000,000)adena at 77499,148190,-3622 coordinates
+02/11/2021 23:56:54,814  WARN L2Character:8305 - Jager logs in game with AccessLevel 8

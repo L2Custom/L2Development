@@ -180,14 +180,14 @@ SCTT = {
     "HE" : 9,
     "SO" : 12,
     "NE" : 13,
-    "WLK" : 14,
+    "WO" : 14,
     "BI" : 16,
     "PP" : 17,
     "TK" : 20,
     "SS" : 21,
     "PW" : 23,
     "SR" : 24,
-    "SPS" : 27,
+    "SP" : 27,
     "ES" : 28,
     "EE" : 30,
     "SK" : 33,
@@ -222,7 +222,7 @@ class Quest (JQuest) :
         playerLevel = player.getLevel()
         # Check for direct first class transfer
         print "Debug Tutorial print event ID ",event
-        if playerLevel >=20 and string in FCTT.keys():
+        if playerLevel >=20 and string in FCTT.keys() and player.getClassId().level() == 0:
             item = st.getQuestItemsCount(req_item)
             if item >=100000:
                 st.takeItems(req_item,100000)

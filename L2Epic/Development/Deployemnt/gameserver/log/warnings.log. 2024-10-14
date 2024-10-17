@@ -1,0 +1,31 @@
+14/10/2024 21:17:55,232  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+14/10/2024 21:18:00,445  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+14/10/2024 21:22:35,598  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.IllegalArgumentException: named capturing group is missing trailing '}'
+	at java.base/java.util.regex.Matcher.appendExpandedReplacement(Matcher.java:1096)
+	at java.base/java.util.regex.Matcher.appendReplacement(Matcher.java:1043)
+	at java.base/java.util.regex.Matcher.replaceAll(Matcher.java:1229)
+	at java.base/java.lang.String.replaceAll(String.java:3065)
+	at com.l2jfrozen.gameserver.network.serverpackets.NpcHtmlMessage.replace(NpcHtmlMessage.java:204)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminServerUpdates.useAdminCommand(AdminServerUpdates.java:25)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+14/10/2024 21:41:23,078  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.IllegalArgumentException: named capturing group is missing trailing '}'
+	at java.base/java.util.regex.Matcher.appendExpandedReplacement(Matcher.java:1096)
+	at java.base/java.util.regex.Matcher.appendReplacement(Matcher.java:1043)
+	at java.base/java.util.regex.Matcher.replaceAll(Matcher.java:1229)
+	at java.base/java.lang.String.replaceAll(String.java:3065)
+	at com.l2jfrozen.gameserver.network.serverpackets.NpcHtmlMessage.replace(NpcHtmlMessage.java:204)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminServerUpdates.useAdminCommand(AdminServerUpdates.java:25)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+14/10/2024 21:42:06,675  WARN RequestBypassToServer:83 - No handler registered for admin command 'admin_zone_reload'

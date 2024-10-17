@@ -1,0 +1,4 @@
+[29/03/2020 10:17:05,568] '---': GM: Jager(268477835), Target: [no-target], Command: [admin_admin], Params: []
+[29/03/2020 10:17:07,702] '---': GM: Jager(268477835), Target: [no-target], Command: [admin_admin], Params: []
+[29/03/2020 10:17:10,673] '---': GM: Jager(268477835), Target: [no-target], Command: [admin_spawn_monster], Params: []
+[29/03/2020 10:17:17,683] '---': GM: Jager(268477835), Target: [no-target], Command: [admin_spawn_monster], Params: [ 35657]

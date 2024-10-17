@@ -102,6 +102,12 @@ public final class RequestPetUseItem extends L2GameClientPacket
 				useItem(pet, item, activeChar);
 				return;
 			}
+			else if (L2PetDataTable.isGardMeele(pet.getNpcId()) && // Gard Meele pet
+				(item.getItem().isGardMeelePet_Weapon() || item.getItem().isGardMeelePet_Armor() ))
+			{
+				useItem(pet, item, activeChar);
+				return;
+			}
 			else
 			{
 				activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_PET_CANNOT_CARRY_THIS_ITEM));
@@ -137,6 +143,11 @@ public final class RequestPetUseItem extends L2GameClientPacket
 				return;
 			}
 			else if (L2PetDataTable.isBaby(pet.getNpcId()) && L2PetDataTable.isBabyFood(itemId))
+			{
+				feed(activeChar, pet, item);
+				return;
+			}
+			else if (L2PetDataTable.isGardMeele(pet.getNpcId()) && L2PetDataTable.isWolfFood(itemId))
 			{
 				feed(activeChar, pet, item);
 				return;

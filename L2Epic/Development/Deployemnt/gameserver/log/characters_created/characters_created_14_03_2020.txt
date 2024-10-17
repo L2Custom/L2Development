@@ -1,0 +1,5 @@
+[14/03/2020 11:56:48,759] '---': Created new character : Hayha for account: demo_he
+[14/03/2020 12:54:31,528] '---': Created new character : Revi for account: demo_sr
+[14/03/2020 13:24:20,760] '---': Created new character : Revi for account: demo_pr
+[14/03/2020 15:10:47,511] '---': Created new character : CatLover for account: demo_wlk
+[14/03/2020 16:19:38,127] '---': Created new character : Kindred for account: demo_es

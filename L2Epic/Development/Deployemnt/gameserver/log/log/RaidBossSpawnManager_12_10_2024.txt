@@ -1,0 +1,4 @@
+[12/10/2024 21:51:52,021] '---': Messenger of Fairy Queen Berun(25119) defeated, next respawn at 12-10-2024 22:14:39
+[12/10/2024 22:14:39,920] '---': Messenger of Fairy Queen Berun(25119) spawned in the word
+[12/10/2024 23:05:46,507] '---': Captain of Red Flag Shaka(25067) defeated, next respawn at 12-10-2024 23:29:34
+[12/10/2024 23:29:34,981] '---': Captain of Red Flag Shaka(25067) spawned in the word

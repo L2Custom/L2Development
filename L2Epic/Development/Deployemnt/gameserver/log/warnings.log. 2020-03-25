@@ -1,0 +1,55 @@
+25/03/2020 16:50:23,690  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+25/03/2020 16:52:45,592  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.NullPointerException
+	at com.l2jfrozen.gameserver.model.actor.stat.NpcStat.<init>(NpcStat.java:16)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2NpcInstance.getStat(L2NpcInstance.java:341)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2NpcInstance.<init>(L2NpcInstance.java:309)
+	at com.l2jfrozen.gameserver.model.L2Attackable.<init>(L2Attackable.java:219)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2CommanderInstance.<init>(L2CommanderInstance.java:23)
+	at com.l2jfrozen.gameserver.model.entity.siege.FortSiege.spawnCommander(FortSiege.java:1383)
+	at com.l2jfrozen.gameserver.model.entity.siege.FortSiege.startSiege(FortSiege.java:434)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminFortSiege.useAdminCommand(AdminFortSiege.java:142)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+25/03/2020 17:18:31,801  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+25/03/2020 17:21:45,975  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+25/03/2020 17:22:32,219  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.NullPointerException
+	at com.l2jfrozen.gameserver.model.actor.stat.NpcStat.<init>(NpcStat.java:16)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2NpcInstance.getStat(L2NpcInstance.java:341)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2NpcInstance.<init>(L2NpcInstance.java:309)
+	at com.l2jfrozen.gameserver.model.L2Attackable.<init>(L2Attackable.java:219)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2CommanderInstance.<init>(L2CommanderInstance.java:23)
+	at com.l2jfrozen.gameserver.model.entity.siege.FortSiege.spawnCommander(FortSiege.java:1383)
+	at com.l2jfrozen.gameserver.model.entity.siege.FortSiege.startSiege(FortSiege.java:434)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminFortSiege.useAdminCommand(AdminFortSiege.java:142)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+25/03/2020 18:53:56,855  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+25/03/2020 18:54:52,077  WARN RequestBypassToServer:204 - Bad RequestBypassToServer: 
+java.lang.NullPointerException
+	at com.l2jfrozen.gameserver.model.actor.stat.NpcStat.<init>(NpcStat.java:16)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2NpcInstance.getStat(L2NpcInstance.java:341)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2NpcInstance.<init>(L2NpcInstance.java:309)
+	at com.l2jfrozen.gameserver.model.L2Attackable.<init>(L2Attackable.java:219)
+	at com.l2jfrozen.gameserver.model.actor.instance.L2CommanderInstance.<init>(L2CommanderInstance.java:23)
+	at com.l2jfrozen.gameserver.model.entity.siege.FortSiege.spawnCommander(FortSiege.java:1383)
+	at com.l2jfrozen.gameserver.model.entity.siege.FortSiege.startSiege(FortSiege.java:434)
+	at com.l2jfrozen.gameserver.handler.admincommandhandlers.AdminFortSiege.useAdminCommand(AdminFortSiege.java:142)
+	at com.l2jfrozen.gameserver.network.clientpackets.RequestBypassToServer.runImpl(RequestBypassToServer.java:102)
+	at com.l2jfrozen.gameserver.network.clientpackets.L2GameClientPacket.run(L2GameClientPacket.java:67)
+	at com.l2jfrozen.gameserver.network.L2GameClient.run(L2GameClient.java:1097)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+25/03/2020 18:57:15,198  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+25/03/2020 18:59:00,259  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+25/03/2020 20:10:52,148  WARN L2Character:8305 - Jager logs in game with AccessLevel 8

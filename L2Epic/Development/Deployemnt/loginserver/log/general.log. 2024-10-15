@@ -1,0 +1,65 @@
+15/10/2024 21:31:51,235  INFO Util:121 - =======================================================-[ Database ]
+15/10/2024 21:31:51,365  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+15/10/2024 21:31:51,365  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+15/10/2024 21:31:51,408  INFO Util:121 - ================================================-[ LoginController ]
+15/10/2024 21:31:51,730  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+15/10/2024 21:31:51,768  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+15/10/2024 21:31:51,900  INFO GameServerTable:74 - Loaded 127 server names
+15/10/2024 21:31:51,966  INFO GameServerTable:77 - Loaded 2 registered Game Servers
+15/10/2024 21:31:52,021  INFO GameServerTable:80 - Cached 10 RSA keys for Game Server communication.
+15/10/2024 21:31:52,051  INFO Util:121 - ============================================-[ Loginserver network ]
+15/10/2024 21:31:52,084  INFO L2LoginServer:143 - Listening for GameServers on 127.0.0.1:9014
+15/10/2024 21:31:52,086  INFO L2LoginServer:156 - Loginserver using external IP address: 35.246.137.155:2106
+15/10/2024 21:31:52,086  INFO L2LoginServer:157 - Loginserver using internal IP address: 127.0.0.1:2106
+15/10/2024 21:31:52,087  INFO L2LoginServer:158 - Loginserver listening on *:2106
+15/10/2024 21:32:24,306  INFO Util:121 - ===========================================-[ Gameserver connected ]
+15/10/2024 21:32:24,307  INFO GameServerThread:595 - Server ID: 2
+15/10/2024 21:32:24,307  INFO GameServerThread:596 - Server name: Sieghardt
+15/10/2024 21:32:24,307  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+15/10/2024 21:32:24,307  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
+15/10/2024 22:11:16,173  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+15/10/2024 22:11:16,187  INFO GameServerThread:193 - Server [2] Sieghardt is now set as disconnected
+15/10/2024 22:13:37,117  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+15/10/2024 22:13:37,121  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+15/10/2024 22:13:37,156  INFO Util:121 - =======================================================-[ Database ]
+15/10/2024 22:13:37,247  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+15/10/2024 22:13:37,248  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+15/10/2024 22:13:37,256  INFO Util:121 - ================================================-[ LoginController ]
+15/10/2024 22:13:37,564  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+15/10/2024 22:13:37,601  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+15/10/2024 22:13:37,614  INFO GameServerTable:75 - Loaded 127 server names
+15/10/2024 22:13:37,671  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+15/10/2024 22:13:37,728  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+15/10/2024 22:13:37,731  INFO Util:121 - ============================================-[ Loginserver network ]
+15/10/2024 22:13:37,765  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+15/10/2024 22:13:37,769  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+15/10/2024 22:13:37,769  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+15/10/2024 22:13:37,770  INFO L2LoginServer:165 - Loginserver listening on *:2106
+15/10/2024 22:14:14,167  INFO Util:121 - ===========================================-[ Gameserver connected ]
+15/10/2024 22:14:14,168  INFO GameServerThread:600 - Server ID: 2
+15/10/2024 22:14:14,168  INFO GameServerThread:601 - Server name: Sieghardt
+15/10/2024 22:14:14,169  INFO GameServerThread:605 - Internal IP address: 127.0.0.1:8444
+15/10/2024 22:14:14,169  INFO GameServerThread:610 - External IP address: 35.246.137.155:8444
+15/10/2024 22:40:34,841  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+15/10/2024 22:40:34,844  INFO GameServerThread:198 - Server [2] Sieghardt is now set as disconnected
+15/10/2024 22:40:59,940  INFO Util:121 - =======================================================-[ Database ]
+15/10/2024 22:41:00,067  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+15/10/2024 22:41:00,068  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+15/10/2024 22:41:00,078  INFO Util:121 - ================================================-[ LoginController ]
+15/10/2024 22:41:00,619  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+15/10/2024 22:41:00,659  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+15/10/2024 22:41:00,706  INFO GameServerTable:74 - Loaded 127 server names
+15/10/2024 22:41:00,730  INFO GameServerTable:77 - Loaded 2 registered Game Servers
+15/10/2024 22:41:00,800  INFO GameServerTable:80 - Cached 10 RSA keys for Game Server communication.
+15/10/2024 22:41:00,802  INFO Util:121 - ============================================-[ Loginserver network ]
+15/10/2024 22:41:00,834  INFO L2LoginServer:143 - Listening for GameServers on 127.0.0.1:9014
+15/10/2024 22:41:00,837  INFO L2LoginServer:156 - Loginserver using external IP address: 35.246.137.155:2106
+15/10/2024 22:41:00,838  INFO L2LoginServer:157 - Loginserver using internal IP address: 127.0.0.1:2106
+15/10/2024 22:41:00,838  INFO L2LoginServer:158 - Loginserver listening on *:2106
+15/10/2024 22:41:02,876  INFO Util:121 - ===========================================-[ Gameserver connected ]
+15/10/2024 22:41:02,876  INFO GameServerThread:595 - Server ID: 2
+15/10/2024 22:41:02,877  INFO GameServerThread:596 - Server name: Sieghardt
+15/10/2024 22:41:02,877  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+15/10/2024 22:41:02,877  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444
+15/10/2024 22:45:10,325  INFO GameServerThread:111 - LoginServerThread: Login terminated the connection.
+15/10/2024 22:45:10,329  INFO GameServerThread:193 - Server [2] Sieghardt is now set as disconnected

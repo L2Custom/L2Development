@@ -1,0 +1,84 @@
+[30/10/2021 02:31:47,549] '---': [Successful] Player Yiria(268478314), item Clan Oath Brigandine(7854) from +0 to +1
+[30/10/2021 02:31:50,641] '---': [Successful] Player Yiria(268478314), item Clan Oath Brigandine(7854) from +1 to +2
+[30/10/2021 02:31:53,699] '---': [Successful] Player Yiria(268478314), item Clan Oath Brigandine(7854) from +2 to +3
+[30/10/2021 02:31:56,591] '---': [Successful] Player Yiria(268478314), item Clan Oath Brigandine(7854) from +3 to +4
+[30/10/2021 02:32:01,513] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +0 to +1
+[30/10/2021 02:32:04,196] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +1 to +2
+[30/10/2021 02:32:07,038] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +2 to +3
+[30/10/2021 02:32:10,083] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +3 to +4
+[30/10/2021 02:32:17,975] '---': [Successful] Player Yiria(268478314), item Clan Oath Boots - Light Armor(7856) from +0 to +1
+[30/10/2021 02:32:21,255] '---': [Successful] Player Yiria(268478314), item Clan Oath Boots - Light Armor(7856) from +1 to +2
+[30/10/2021 02:32:24,155] '---': [Successful] Player Yiria(268478314), item Clan Oath Boots - Light Armor(7856) from +2 to +3
+[30/10/2021 02:32:27,797] '---': [Successful] Player Yiria(268478314), item Clan Oath Boots - Light Armor(7856) from +3 to +4
+[30/10/2021 02:32:31,125] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +0 to +1
+[30/10/2021 02:32:34,989] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +1 to +2
+[30/10/2021 02:32:41,850] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +2 to +3
+[30/10/2021 02:32:47,456] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +3 to +4
+[30/10/2021 02:33:54,882] '---': [Successful] Player Yiria(268478314), item Clan Oath Leather Gloves - Light Armor(7855) from +0 to +1
+[30/10/2021 02:33:57,607] '---': [Successful] Player Yiria(268478314), item Clan Oath Leather Gloves - Light Armor(7855) from +1 to +2
+[30/10/2021 02:34:00,574] '---': [Successful] Player Yiria(268478314), item Clan Oath Leather Gloves - Light Armor(7855) from +2 to +3
+[30/10/2021 02:34:03,625] '---': [Successful] Player Yiria(268478314), item Clan Oath Leather Gloves - Light Armor(7855) from +3 to +4
+[30/10/2021 02:34:14,016] '---': [Successful] Player Yiria(268478314), item Clan Oath Brigandine(7854) from +4 to +5
+[30/10/2021 02:34:16,845] '---': [Successful] Player Yiria(268478314), item Clan Oath Brigandine(7854) from +5 to +6
+[30/10/2021 02:34:25,162] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +4 to +5
+[30/10/2021 02:34:28,578] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +5 to +6
+[30/10/2021 02:34:35,470] '---': [Successful] Player Yiria(268478314), item Clan Oath Leather Gloves - Light Armor(7855) from +4 to +5
+[30/10/2021 02:34:39,316] '---': [Successful] Player Yiria(268478314), item Clan Oath Leather Gloves - Light Armor(7855) from +5 to +6
+[30/10/2021 02:34:47,417] '---': [Successful] Player Yiria(268478314), item Clan Oath Boots - Light Armor(7856) from +4 to +5
+[30/10/2021 02:34:50,800] '---': [Successful] Player Yiria(268478314), item Clan Oath Boots - Light Armor(7856) from +5 to +6
+[30/10/2021 02:35:22,576] '---': [Successful] Player Yiria(268478314), item Tattoo of Soul(492) from +0 to +1
+[30/10/2021 02:35:26,618] '---': [Successful] Player Yiria(268478314), item Tattoo of Soul(492) from +1 to +2
+[30/10/2021 02:35:37,434] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +0 to +1
+[30/10/2021 02:35:40,668] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +1 to +2
+[30/10/2021 02:35:45,002] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +2 to +3
+[30/10/2021 02:35:51,127] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +0 to +1
+[30/10/2021 02:35:54,769] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +1 to +2
+[30/10/2021 02:35:58,739] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +2 to +3
+[30/10/2021 02:36:03,777] '---': [Successful] Player Yiria(268478314), item Necklace of Darkness(914) from +0 to +1
+[30/10/2021 02:36:08,319] '---': [Successful] Player Yiria(268478314), item Necklace of Darkness(914) from +1 to +2
+[30/10/2021 02:36:12,028] '---': [Successful] Player Yiria(268478314), item Necklace of Darkness(914) from +2 to +3
+[30/10/2021 02:36:16,136] '---': [Successful] Player Yiria(268478314), item Necklace of Darkness(914) from +3 to +4
+[30/10/2021 02:36:22,894] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +0 to +1
+[30/10/2021 02:36:26,415] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +1 to +2
+[30/10/2021 02:36:31,070] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +2 to +3
+[30/10/2021 02:36:35,165] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +0 to +1
+[30/10/2021 02:36:38,603] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +1 to +2
+[30/10/2021 02:36:44,003] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +2 to +3
+[30/10/2021 02:36:52,582] '---': [Successful] Player Yiria(268478314), item Tattoo of Soul(492) from +2 to +3
+[30/10/2021 02:36:56,211] '---': [Successful] Player Yiria(268478314), item Tattoo of Soul(492) from +3 to +4
+[30/10/2021 02:37:02,854] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +3 to +4
+[30/10/2021 02:37:07,379] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +3 to +4
+[30/10/2021 02:37:13,987] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +3 to +4
+[30/10/2021 02:37:18,324] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +3 to +4
+[30/10/2021 02:40:55,709] '---': [Successful] Player Yiria(268478314), item Clan Oath Brigandine(7854) from +6 to +7
+[30/10/2021 02:42:36,362] '---': [Fail] Player Yiria(268478314), item Clan Oath Helm(7850) from +6
+[30/10/2021 10:38:07,006] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +0 to +1
+[30/10/2021 10:38:17,839] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +1 to +2
+[30/10/2021 10:38:21,922] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +2 to +3
+[30/10/2021 10:38:25,514] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +3 to +4
+[30/10/2021 10:38:33,997] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +4 to +5
+[30/10/2021 10:38:38,789] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +5 to +6
+[30/10/2021 10:38:48,989] '---': [Successful] Player Yiria(268478314), item Clan Oath Helm(7850) from +6 to +7
+[30/10/2021 10:46:03,475] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +4 to +5
+[30/10/2021 10:46:19,426] '---': [Successful] Player Yiria(268478314), item Necklace of Darkness(914) from +4 to +5
+[30/10/2021 10:46:35,835] '---': [Fail] Player Yiria(268478314), item Black Pearl Ring(880) from +4
+[30/10/2021 10:47:30,961] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +4 to +5
+[30/10/2021 10:47:37,503] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +4 to +5
+[30/10/2021 10:47:49,345] '---': [Successful] Player Yiria(268478314), item Necklace of Darkness(914) from +5 to +6
+[30/10/2021 10:48:08,903] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +5 to +6
+[30/10/2021 10:48:14,754] '---': [Successful] Player Yiria(268478314), item Omen Beast's Eye Earring(851) from +5 to +6
+[30/10/2021 10:48:21,345] '---': [Successful] Player Yiria(268478314), item Black Pearl Ring(880) from +5 to +6
+[30/10/2021 10:48:30,412] '---': [Successful] Player Yiria(268478314), item Clan Oath Brigandine(7854) from +7 to +8
+[30/10/2021 10:48:38,729] '---': [Fail] Player Yiria(268478314), item Clan Oath Helm(7850) from +7
+[30/10/2021 10:58:29,888] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +4 to +5
+[30/10/2021 10:58:35,302] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +5 to +6
+[30/10/2021 10:58:39,263] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +5 to +6
+[30/10/2021 10:58:43,210] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +6 to +7
+[30/10/2021 10:58:47,010] '---': [Fail] Player Yiria(268478314), item Light Crossbow(280) from +6
+[30/10/2021 10:58:52,094] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +7 to +8
+[30/10/2021 10:58:58,611] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +8 to +9
+[30/10/2021 10:59:07,945] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +9 to +10
+[30/10/2021 10:59:15,886] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +10 to +11
+[30/10/2021 10:59:29,223] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +11 to +12
+[30/10/2021 10:59:36,762] '---': [Fail] Player Yiria(268478314), item Light Crossbow(280) from +12
+[30/10/2021 11:03:00,845] '---': [Successful] Player Yiria(268478314), item Light Crossbow(280) from +15 to +16

@@ -37,6 +37,7 @@ public abstract class L2Item
 	public static final int TYPE2_PET_HATCHLING = 7;
 	public static final int TYPE2_PET_STRIDER = 8;
 	public static final int TYPE2_PET_BABY = 9;
+	public static final int TYPE2_PET_GARD_MELEE = 10;
 	
 	public static final int SLOT_NONE = 0x0000;
 	public static final int SLOT_UNDERWEAR = 0x0001;
@@ -427,6 +428,24 @@ public abstract class L2Item
 	public boolean isForBabyPet()
 	{
 		return type2 == TYPE2_PET_BABY;
+	}
+	
+	/**
+	 * Returns if item is for gard meele
+	 * @return boolean
+	 */
+	public boolean isGardMeelePet_Weapon()
+	{
+		return type2 == TYPE2_WEAPON;
+	}
+	
+	/**
+	 * Returns if item is for gard meele
+	 * @return boolean
+	 */
+	public boolean isGardMeelePet_Armor()
+	{
+		return type2 == TYPE2_SHIELD_ARMOR;
 	}
 	
 	/**

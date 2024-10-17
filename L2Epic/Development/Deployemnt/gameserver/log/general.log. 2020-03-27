@@ -1,0 +1,135 @@
+27/03/2020 00:00:00,001  INFO Olympiad:768 - Olympiad System: Olympiad Game Ended
+27/03/2020 00:00:00,177  INFO Olympiad:1132 - Olympiad System: Data saved!!
+27/03/2020 00:00:00,177  INFO Olympiad:735 - Olympiad game starts: 18:00:00
+27/03/2020 00:28:48,538  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 00:58:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 00:58:51,491  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 00:58:51,491  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 00:58:51,491  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 00:58:51,492  INFO ServerStatusTask:27 - Free memory: 613 MB of 1024 MB
+27/03/2020 00:58:51,493  INFO ServerStatusTask:28 - Used memory: 410 MB of 1024 MB
+27/03/2020 00:58:51,493  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 01:28:48,442  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 01:58:45,219  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+27/03/2020 01:58:45,235  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+27/03/2020 01:58:45,238  INFO DayNightSpawnManager:255 - DayNightSpawnManager: It is MIDNIGHT (00:00), spawning Eilhalder Von Hellmann raidboss.
+27/03/2020 01:58:46,028  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+27/03/2020 01:58:48,440  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 01:58:51,493  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 01:58:51,493  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 01:58:51,493  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 01:58:51,493  INFO ServerStatusTask:27 - Free memory: 538 MB of 1024 MB
+27/03/2020 01:58:51,493  INFO ServerStatusTask:28 - Used memory: 485 MB of 1024 MB
+27/03/2020 01:58:51,494  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 02:03:46,028  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+27/03/2020 02:28:48,440  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 02:58:45,238  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+27/03/2020 02:58:45,240  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+27/03/2020 02:58:45,241  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+27/03/2020 02:58:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 02:58:51,491  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 02:58:51,492  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 02:58:51,493  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 02:58:51,494  INFO ServerStatusTask:27 - Free memory: 461 MB of 1024 MB
+27/03/2020 02:58:51,499  INFO ServerStatusTask:28 - Used memory: 562 MB of 1024 MB
+27/03/2020 02:58:51,499  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 03:28:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 03:58:48,438  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 03:58:51,493  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 03:58:51,493  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 03:58:51,493  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 03:58:51,494  INFO ServerStatusTask:27 - Free memory: 388 MB of 1024 MB
+27/03/2020 03:58:51,494  INFO ServerStatusTask:28 - Used memory: 635 MB of 1024 MB
+27/03/2020 03:58:51,494  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 04:28:48,442  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 04:58:48,441  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 04:58:51,492  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 04:58:51,492  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 04:58:51,492  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 04:58:51,494  INFO ServerStatusTask:27 - Free memory: 314 MB of 1024 MB
+27/03/2020 04:58:51,494  INFO ServerStatusTask:28 - Used memory: 709 MB of 1024 MB
+27/03/2020 04:58:51,495  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 05:28:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 05:58:45,218  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+27/03/2020 05:58:45,234  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+27/03/2020 05:58:45,235  INFO DayNightSpawnManager:255 - DayNightSpawnManager: It is MIDNIGHT (00:00), spawning Eilhalder Von Hellmann raidboss.
+27/03/2020 05:58:46,028  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+27/03/2020 05:58:48,438  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 05:58:51,493  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 05:58:51,493  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 05:58:51,494  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 05:58:51,495  INFO ServerStatusTask:27 - Free memory: 236 MB of 1024 MB
+27/03/2020 05:58:51,495  INFO ServerStatusTask:28 - Used memory: 787 MB of 1024 MB
+27/03/2020 05:58:51,496  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 06:00:58,131  INFO CastleManorManager:562 - Manor System: Next period approved
+27/03/2020 06:00:58,227  INFO CastleManorManager:440 - Rune|-48445000|ManorManager
+27/03/2020 06:03:46,031  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+27/03/2020 06:28:48,440  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 06:58:45,237  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+27/03/2020 06:58:45,239  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+27/03/2020 06:58:45,239  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+27/03/2020 06:58:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 06:58:51,491  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 06:58:51,491  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 06:58:51,492  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 06:58:51,492  INFO ServerStatusTask:27 - Free memory: 159 MB of 1024 MB
+27/03/2020 06:58:51,492  INFO ServerStatusTask:28 - Used memory: 864 MB of 1024 MB
+27/03/2020 06:58:51,492  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 07:28:48,440  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 07:58:48,461  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 07:58:51,491  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 07:58:51,491  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 07:58:51,492  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 07:58:51,492  INFO ServerStatusTask:27 - Free memory: 607 MB of 1024 MB
+27/03/2020 07:58:51,492  INFO ServerStatusTask:28 - Used memory: 416 MB of 1024 MB
+27/03/2020 07:58:51,492  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 08:28:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 08:58:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 08:58:51,493  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 08:58:51,493  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 08:58:51,495  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 08:58:51,495  INFO ServerStatusTask:27 - Free memory: 533 MB of 1024 MB
+27/03/2020 08:58:51,496  INFO ServerStatusTask:28 - Used memory: 490 MB of 1024 MB
+27/03/2020 08:58:51,497  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 09:28:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 09:58:45,219  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 232 day creatures
+27/03/2020 09:58:45,232  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 601 night creatures
+27/03/2020 09:58:45,233  INFO DayNightSpawnManager:255 - DayNightSpawnManager: It is MIDNIGHT (00:00), spawning Eilhalder Von Hellmann raidboss.
+27/03/2020 09:58:46,029  INFO Zaken:113 - Zaken door ID 21240006 opened, game time 00:00 (Midnight), will be closed at 01:00
+27/03/2020 09:58:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 09:58:51,492  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 09:58:51,492  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 09:58:51,492  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 09:58:51,493  INFO ServerStatusTask:27 - Free memory: 455 MB of 1024 MB
+27/03/2020 09:58:51,493  INFO ServerStatusTask:28 - Used memory: 568 MB of 1024 MB
+27/03/2020 09:58:51,493  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 10:03:46,029  INFO Zaken:119 - Zaken door id 21240006 closed, game time 01:00
+27/03/2020 10:28:48,438  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 10:58:45,241  INFO DayNightSpawnManager:110 - DayNightSpawnManager: Despawning 601 night creatures
+27/03/2020 10:58:45,244  INFO DayNightSpawnManager:151 - DayNightSpawnManager: Spawning 232 day creatures
+27/03/2020 10:58:45,245  INFO DayNightSpawnManager:251 - DayNightSpawnManager: It has dawned (06:00), despawning Eilhalder Von Hellmann raidboss.
+27/03/2020 10:58:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 10:58:51,492  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 10:58:51,492  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 10:58:51,493  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 10:58:51,493  INFO ServerStatusTask:27 - Free memory: 377 MB of 1024 MB
+27/03/2020 10:58:51,493  INFO ServerStatusTask:28 - Used memory: 646 MB of 1024 MB
+27/03/2020 10:58:51,494  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 11:28:48,441  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 11:58:48,439  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 11:58:51,491  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 11:58:51,491  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 11:58:51,491  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 11:58:51,491  INFO ServerStatusTask:27 - Free memory: 301 MB of 1024 MB
+27/03/2020 11:58:51,492  INFO ServerStatusTask:28 - Used memory: 722 MB of 1024 MB
+27/03/2020 11:58:51,492  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 12:28:48,446  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 12:58:48,444  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.
+27/03/2020 12:58:51,492  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 12:58:51,492  INFO ServerStatusTask:25 - Players Online: 1
+27/03/2020 12:58:51,493  INFO ServerStatusTask:26 - Threads: 14
+27/03/2020 12:58:51,493  INFO ServerStatusTask:27 - Free memory: 225 MB of 1024 MB
+27/03/2020 12:58:51,493  INFO ServerStatusTask:28 - Used memory: 798 MB of 1024 MB
+27/03/2020 12:58:51,493  INFO Util:121 - ==================================================-[ Server Status ]
+27/03/2020 12:59:58,440  INFO TaskRecom:35 - [GlobalTask] Restart Recommendation launched.
+27/03/2020 13:28:48,438  INFO TaskSevenSignsUpdate:39 - [GlobalTask] SevenSigns save launched.

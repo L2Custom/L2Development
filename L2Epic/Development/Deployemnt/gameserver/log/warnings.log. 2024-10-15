@@ -1,0 +1,6 @@
+15/10/2024 21:33:59,031  WARN ProtocolVersion:26 - Wrong Client Protocol Version 65534
+15/10/2024 21:34:04,343  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+15/10/2024 22:13:42,376  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+15/10/2024 22:13:42,380  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+15/10/2024 22:14:11,665  WARN L2ScriptEngineManager:657 - Failed executing script: D:\Company\GitRepo\L2Epic\L2Epic\Development\Deployemnt\gameserver\data\scripts\custom\5001_NewbieCoupons\__init__.py. See __init__.py.error.LOGGER for details.
+15/10/2024 22:42:09,100  WARN L2Character:8305 - Jager logs in game with AccessLevel 8

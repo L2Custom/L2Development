@@ -1,0 +1,3 @@
+[17/10/2024 09:26:23,827] '---': Jager logs in game with AccessLevel 8
+[17/10/2024 09:35:32,269] '---': Jager logs in game with AccessLevel 8
+[17/10/2024 09:45:39,340] '---': Jager logs in game with AccessLevel 8

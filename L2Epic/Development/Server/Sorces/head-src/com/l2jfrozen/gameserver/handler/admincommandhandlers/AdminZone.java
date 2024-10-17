@@ -1,5 +1,6 @@
 package com.l2jfrozen.gameserver.handler.admincommandhandlers;
 
+import com.l2jfrozen.gameserver.datatables.csv.PathGenerator;
 import java.util.StringTokenizer;
 
 import com.l2jfrozen.gameserver.datatables.csv.MapRegionTable;
@@ -50,6 +51,8 @@ public class AdminZone implements IAdminCommandHandler
 		int y = player.getY();
 		int z = player.getZ();
 		
+		PathGenerator pathgen = new PathGenerator();
+		
 		L2ZoneType zone = ZoneData.getInstance().getZoneByCoordinates(x, y, z);
 		
 		if (zone == null)
@@ -57,6 +60,9 @@ public class AdminZone implements IAdminCommandHandler
 			player.sendMessage("You are not inside a Zone");
 			return;
 		}
+		
+		
+		pathgen.writefile(x, y, z);
 		
 		NpcHtmlMessage html = new NpcHtmlMessage(5);
 		html.setFile("data/html/admin/zone.htm");

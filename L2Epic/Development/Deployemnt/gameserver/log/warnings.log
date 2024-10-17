@@ -1,9 +1,5 @@
-13/03/2020 13:25:17,726  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
-13/03/2020 13:34:11,924  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
-13/03/2020 13:37:01,927  WARN RequestDropItem:221 - Character (Jager) has dropped (3,000,000)adena at -83339,244043,-3755 coordinates
-13/03/2020 15:23:02,417  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
-13/03/2020 17:07:25,092  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
-13/03/2020 17:34:52,872  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
-13/03/2020 17:52:01,647  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
-13/03/2020 17:54:18,609  WARN RequestDropItem:221 - Character (Jager) has dropped (2,000,000)adena at 15926,143378,-2807 coordinates
-13/03/2020 17:55:14,975  WARN RequestDropItem:221 - Character (Jager) has dropped (3,000,000)adena at 15922,143393,-2809 coordinates
+17/10/2024 09:26:23,813  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+17/10/2024 09:35:32,267  WARN L2Character:8305 - Jager logs in game with AccessLevel 8
+17/10/2024 09:42:18,386  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+17/10/2024 09:42:18,389  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs
+17/10/2024 09:45:39,339  WARN L2Character:8305 - Jager logs in game with AccessLevel 8

@@ -1,0 +1,16 @@
+15/10/2024 22:13:42,438 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - LogItems
+15/10/2024 22:13:42,477 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - RemoveCastleCirclets
+15/10/2024 22:13:42,478 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - RiftMinPartySize
+15/10/2024 22:13:42,478 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - MaxRiftJumps
+15/10/2024 22:13:42,479 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - RiftSpawnDelay
+15/10/2024 22:13:42,479 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - AutoJumpsDelayMin
+15/10/2024 22:13:42,480 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - AutoJumpsDelayMax
+15/10/2024 22:13:42,480 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - RecruitCost
+15/10/2024 22:13:42,481 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - SoldierCost
+15/10/2024 22:13:42,481 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - OfficerCost
+15/10/2024 22:13:42,481 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - CaptainCost
+15/10/2024 22:13:42,482 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - CommanderCost
+15/10/2024 22:13:42,482 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - HeroCost
+15/10/2024 22:13:42,483 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - BossRoomTimeMultiply
+15/10/2024 22:13:42,491 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - CastleLordsCrownRestriction
+15/10/2024 22:13:42,514 ERROR L2Properties:112 - L2Properties.getProperty(key): Missing property for key - BypassValidation

@@ -69,11 +69,11 @@ public class SummonItems implements IItemHandler
 		
 		L2SummonItem sitem = SummonItemsData.getInstance().getSummonItem(item.getItemId());
 		
-		if ((activeChar.getPet() != null || activeChar.isMounted()) && sitem.isPetSummon())
-		{
-			activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
-			return;
-		}
+		//if ((activeChar.getPet() != null || activeChar.isMounted()) && sitem.isPetSummon())
+		//{
+		//	activeChar.sendPacket(new SystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
+		//	return;
+		//}
 		
 		// Like L2OFF you can't summon pet in combat
 		if (activeChar.isAttackingNow() || activeChar.isInCombat())

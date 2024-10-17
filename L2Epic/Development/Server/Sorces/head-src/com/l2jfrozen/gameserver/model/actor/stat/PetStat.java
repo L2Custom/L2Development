@@ -96,6 +96,7 @@ public class PetStat extends SummonStat
 	@Override
 	public final long getExpForLevel(final int level)
 	{
+		//System.out.println("Debug 6 - Aici cred ca pica");
 		return L2PetDataTable.getInstance().getPetData(getActiveChar().getNpcId(), level).getPetMaxExp();
 	}
 	

@@ -1,0 +1,2 @@
+15/10/2024 22:13:37,117  WARN JVM:18 - Looks like you are not using OpenJDK 11, please make sure is installed in your machine.
+15/10/2024 22:13:37,121  WARN JVM:19 - Guide to install Java OpenJDK 11: https://www.youtube.com/watch?v=Cr_mwn67kFs

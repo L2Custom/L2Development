@@ -50,9 +50,15 @@ public class L2PetDataTable
 				petId = rset.getInt("typeID");
 				petLevel = rset.getInt("level");
 				
+
+				
 				// build the petdata for this level
 				L2PetData petData = new L2PetData();
-				
+				//System.out.println("Debug 5");
+				//System.out.println("Pet ID:" +petId);
+				//System.out.println("Pet level:" +petLevel);
+				//System.out.println("Max level:" +rset.getInt("expMax"));
+
 				petData.setPetID(petId);
 				petData.setPetLevel(petLevel);
 				petData.setPetMaxExp(rset.getInt("expMax"));
@@ -84,6 +90,7 @@ public class L2PetDataTable
 				}
 				
 				petTable.get(petId).put(petLevel, petData);
+				//System.out.println("Max level:" +petData.getPetMaxExp());
 			}
 		}
 		catch (Exception e)
@@ -191,6 +198,11 @@ public class L2PetDataTable
 		return itemId == 7582;
 	}
 	
+	public static boolean isGardMeele(final int npcId)
+	{
+		return npcId == 100201;
+	}
+	
 	public static int getFoodItemId(final int npcId)
 	{
 		if (isWolf(npcId))
@@ -212,6 +224,10 @@ public class L2PetDataTable
 		else if (isBaby(npcId))
 		{
 			return 7582;
+		}
+		else if (isGardMeele(npcId))
+		{
+			return 2515;
 		}
 		else
 		{
@@ -259,6 +275,10 @@ public class L2PetDataTable
 			// Baby Kookaburra
 			case 6650:
 				return 12781;
+			// Gard Meele
+				// wolf pet a
+			case 72618:
+				return 100201;
 			// unknown item id.. should never happen
 			default:
 				return 0;
@@ -320,6 +340,11 @@ public class L2PetDataTable
 		return 4425;
 	}
 	
+	public static int getGardMelleId()
+	{
+		return 72618;
+	}
+	
 	public static boolean isPetItem(final int itemId)
 	{
 		return itemId == 2375 // wolf
@@ -327,7 +352,8 @@ public class L2PetDataTable
 			|| itemId == 3500 || itemId == 3501 || itemId == 3502 // hatchlings
 			|| itemId == 4422 || itemId == 4423 || itemId == 4424 // striders
 			|| itemId == 8663 // Wyvern
-			|| itemId == 6648 || itemId == 6649 || itemId == 6650; // Babies
+			|| itemId == 6648 || itemId == 6649 || itemId == 6650 // Babies
+			|| itemId == 72618; // Gard Meele
 	}
 	
 	public static int[] getPetItemsAsNpc(final int npcId)
@@ -379,6 +405,11 @@ public class L2PetDataTable
 					6648,
 					6649,
 					6650
+				};
+			case 100201:// Gard meele
+				return new int[]
+				{
+					72618
 				};
 			
 			// unknown item id.. should never happen

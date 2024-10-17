@@ -61,7 +61,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -185,14 +185,14 @@ public final class Config
 			String itemsIgnoredInDropListData = optionsSettings.getProperty("ItemsIgnoredInDropList", "");
 			ITEM_IDS_IGNORED_IN_DROP_LIST = new ArrayList<>();
 			
-			if(!itemsIgnoredInDropListData.isEmpty())
+			if (!itemsIgnoredInDropListData.isEmpty())
 			{
-				for(String sItemId : itemsIgnoredInDropListData.split(","))
+				for (String sItemId : itemsIgnoredInDropListData.split(","))
 				{
 					try
 					{
 						int itemId = Integer.parseInt(sItemId.trim());
-						ITEM_IDS_IGNORED_IN_DROP_LIST.add(itemId);	
+						ITEM_IDS_IGNORED_IN_DROP_LIST.add(itemId);
 					}
 					catch (Exception e)
 					{
@@ -201,7 +201,6 @@ public final class Config
 				}
 			}
 			
-				
 			ALLOWFISHING = Boolean.valueOf(optionsSettings.getProperty("AllowFishing", "False"));
 			ALLOW_MANOR = Boolean.parseBoolean(optionsSettings.getProperty("AllowManor", "False"));
 			ALLOW_BOAT = Boolean.valueOf(optionsSettings.getProperty("AllowBoat", "False"));
@@ -261,7 +260,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -351,7 +350,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -377,7 +376,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -663,7 +662,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -769,7 +768,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1009,7 +1008,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1082,7 +1081,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1200,7 +1199,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1230,7 +1229,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1277,7 +1276,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1317,7 +1316,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1353,7 +1352,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1428,7 +1427,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1462,7 +1461,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1492,7 +1491,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1517,7 +1516,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1605,7 +1604,6 @@ public final class Config
 			ALLOW_DETAILED_STATS_VIEW = Boolean.valueOf(L2JFrozenSettings.getProperty("AllowDetailedStatsView", "False"));
 			ALLOW_ONLINE_VIEW = Boolean.valueOf(L2JFrozenSettings.getProperty("AllowOnlineView", "False"));
 			
-			
 			CASTLE_SHIELD = Boolean.parseBoolean(L2JFrozenSettings.getProperty("CastleShieldRestriction", "true"));
 			CLANHALL_SHIELD = Boolean.parseBoolean(L2JFrozenSettings.getProperty("ClanHallShieldRestriction", "true"));
 			APELLA_ARMORS = Boolean.parseBoolean(L2JFrozenSettings.getProperty("ApellaArmorsRestriction", "true"));
@@ -1638,7 +1636,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1778,7 +1776,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1881,7 +1879,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -1915,7 +1913,7 @@ public final class Config
 	public static int DWARF_ENCHANT_MIN_LEVEL;
 	public static int DWARF_ENCHANT_BONUS;
 	
-	public static boolean LIFE_STONE_IS_STACKABLE; 
+	public static boolean LIFE_STONE_IS_STACKABLE;
 	
 	// Augment chance
 	public static int AUGMENTATION_NG_SKILL_CHANCE;
@@ -2201,7 +2199,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -2271,13 +2269,13 @@ public final class Config
 			}
 			catch (Exception e)
 			{
-				LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+				LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 			}
 			
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -2354,7 +2352,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -2393,7 +2391,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -2558,7 +2556,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -2628,7 +2626,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 		
 	}
@@ -2948,7 +2946,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -2974,7 +2972,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -3014,7 +3012,7 @@ public final class Config
 		
 		if (f.exists())
 		{
-			try(LineNumberReader lineReader = new LineNumberReader(new BufferedReader(new FileReader(f))))
+			try (LineNumberReader lineReader = new LineNumberReader(new BufferedReader(new FileReader(f))))
 			{
 				String line;
 				while ((line = lineReader.readLine()) != null)
@@ -3048,7 +3046,7 @@ public final class Config
 			}
 			catch (Exception e)
 			{
-				LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+				LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 			}
 		}
 	}
@@ -3083,7 +3081,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -3098,7 +3096,7 @@ public final class Config
 			return;
 		}
 		
-		try(LineNumberReader lnr = new LineNumberReader(new BufferedReader(new FileReader(filter_file))))
+		try (LineNumberReader lnr = new LineNumberReader(new BufferedReader(new FileReader(filter_file))))
 		{
 			String line = null;
 			while ((line = lnr.readLine()) != null)
@@ -3113,7 +3111,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to load " + filePath + " file.", e );
+			LOGGER.error("Config : Failed to load " + filePath + " file.", e);
 		}
 	}
 	
@@ -3334,7 +3332,7 @@ public final class Config
 			
 			if (file.createNewFile())
 			{
-				try(OutputStream out = new FileOutputStream(file))
+				try (OutputStream out = new FileOutputStream(file))
 				{
 					hexSetting.setProperty("ServerID", String.valueOf(serverId));
 					hexSetting.setProperty("HexID", hexId);
@@ -3345,7 +3343,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("Config : Failed to save hex id to " + fileName + " file.", e );
+			LOGGER.error("Config : Failed to save hex id to " + fileName + " file.", e);
 		}
 	}
 	

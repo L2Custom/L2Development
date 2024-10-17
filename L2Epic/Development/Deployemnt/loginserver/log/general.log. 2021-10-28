@@ -1,0 +1,33 @@
+28/10/2021 23:49:14,047  INFO Util:121 - =======================================================-[ Database ]
+28/10/2021 23:49:14,164  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+28/10/2021 23:49:14,164  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+28/10/2021 23:49:14,218  INFO Util:121 - ================================================-[ LoginController ]
+28/10/2021 23:49:14,480  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+28/10/2021 23:49:14,513  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+28/10/2021 23:49:14,554  INFO GameServerTable:75 - Loaded 127 server names
+28/10/2021 23:49:14,613  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+28/10/2021 23:49:14,669  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+28/10/2021 23:49:14,682  INFO Util:121 - ============================================-[ Loginserver network ]
+28/10/2021 23:49:14,704  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+28/10/2021 23:49:14,706  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+28/10/2021 23:49:14,706  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+28/10/2021 23:49:14,707  INFO L2LoginServer:165 - Loginserver listening on *:2106
+28/10/2021 23:49:47,695  INFO Util:121 - =======================================================-[ Database ]
+28/10/2021 23:49:47,776  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+28/10/2021 23:49:47,777  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+28/10/2021 23:49:47,784  INFO Util:121 - ================================================-[ LoginController ]
+28/10/2021 23:49:48,137  INFO LoginController:156 - Cached 10 KeyPairs for RSA communication
+28/10/2021 23:49:48,159  INFO LoginController:212 - Stored 20 keys for Blowfish communication
+28/10/2021 23:49:48,169  INFO GameServerTable:75 - Loaded 127 server names
+28/10/2021 23:49:48,187  INFO GameServerTable:78 - Loaded 2 registered Game Servers
+28/10/2021 23:49:48,234  INFO GameServerTable:81 - Cached 10 RSA keys for Game Server communication.
+28/10/2021 23:49:48,236  INFO Util:121 - ============================================-[ Loginserver network ]
+28/10/2021 23:49:48,264  INFO L2LoginServer:150 - Listening for GameServers on 127.0.0.1:9014
+28/10/2021 23:49:48,266  INFO L2LoginServer:163 - Loginserver using external IP address: 35.246.137.155:2106
+28/10/2021 23:49:48,266  INFO L2LoginServer:164 - Loginserver using internal IP address: 127.0.0.1:2106
+28/10/2021 23:49:48,267  INFO L2LoginServer:165 - Loginserver listening on *:2106
+28/10/2021 23:50:23,261  INFO Util:121 - ===========================================-[ Gameserver connected ]
+28/10/2021 23:50:23,262  INFO GameServerThread:595 - Server ID: 2
+28/10/2021 23:50:23,263  INFO GameServerThread:596 - Server name: Sieghardt
+28/10/2021 23:50:23,263  INFO GameServerThread:600 - Internal IP address: 127.0.0.1:8444
+28/10/2021 23:50:23,263  INFO GameServerThread:605 - External IP address: 35.246.137.155:8444

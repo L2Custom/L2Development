@@ -1,0 +1,30 @@
+22/03/2020 12:54:38,618  INFO Util:121 - =======================================================-[ Database ]
+22/03/2020 12:54:38,800  INFO L2DatabaseFactory:24 - You are using DBMS: MariaDB
+22/03/2020 12:54:38,800  INFO L2DatabaseFactory:25 - You are using JDBC Pool: HikariCP
+22/03/2020 12:54:38,801  INFO Util:121 - ========================================================-[ Threads ]
+22/03/2020 12:54:38,917  INFO Util:121 - ================================================-[ EngineMods Data ]
+22/03/2020 12:54:39,022  INFO StringUtil:154 - ------------------------------------=[ ObjectData: Loaded players info -> 17 ]
+22/03/2020 12:54:39,159  INFO StringUtil:154 - ----------------------------------------------------=[ IconData: Loaded 7838 ]
+22/03/2020 12:54:39,369  INFO StringUtil:154 - -----------------------------------=[ SkillInfoData: Loaded skill info 29811 ]
+22/03/2020 12:54:39,692  INFO StringUtil:154 - -----------------------------=[ SchemeBufferPredefinedData: Loaded buffs 102 ]
+22/03/2020 12:54:39,692  INFO StringUtil:154 - ----------------------=[ SchemeBufferPredefinedData: Loaded warrior buffs 23 ]
+22/03/2020 12:54:39,693  INFO StringUtil:154 - -------------------------=[ SchemeBufferPredefinedData: Loaded mage buffs 18 ]
+22/03/2020 12:54:39,705  INFO HtmCache:61 - Cache[HTML]: Running lazy cache
+22/03/2020 12:54:39,733  INFO CrestCache:133 - Cache[Crest]: 0.000MB on 1 files loaded. (Forget Time: 300s , Capacity: 50)
+22/03/2020 12:54:39,762  INFO L2ScriptEngineManager:68 - Initializing Script Engine Manager
+22/03/2020 12:54:39,972  INFO L2ScriptEngineManager:97 - Script Engine: Oracle Nashorn 13.0.1 - Language: ECMAScript - Language Version: ECMA - 262 Edition 5.1
+22/03/2020 12:54:40,428  INFO L2ScriptEngineManager:97 - Script Engine: jython 2.2.1 - Language: python - Language Version: 2.2.1
+22/03/2020 12:54:40,467  INFO Util:121 - ==========================================================-[ World ]
+22/03/2020 12:54:40,591  INFO Announcements:128 - Announcements: Loaded 1 Announcements.
+22/03/2020 12:54:41,715  INFO BitSetIDFactory:42 - IDFactory: 102912 id's available.
+22/03/2020 12:54:41,762  INFO StaticObjectsTable:38 - StaticObject: Loaded 30 StaticObject Templates.
+22/03/2020 12:54:41,784  INFO TeleportLocationTable:66 - TeleportLocationTable: Loaded 828 Teleport Location Templates
+22/03/2020 12:54:41,791  INFO TeleportLocationTable:98 - CustomTeleportLocationTable: Loaded 180 Custom Teleport Location Templates.
+22/03/2020 12:54:41,893  INFO TerritoryTable:66 - TerritoryTable: Loaded 3960 territories
+22/03/2020 12:54:41,995  INFO ExperienceData:79 - ExperienceData: Loaded 81 levels
+22/03/2020 12:54:41,996  INFO ExperienceData:80 - ExperienceData: Max Player Level is: 80
+22/03/2020 12:54:41,997  INFO ExperienceData:81 - ExperienceData: Max Pet Level is: 80
+22/03/2020 12:54:42,158  INFO Util:121 - =========================================================-[ Skills ]
+22/03/2020 12:54:42,442  INFO SkillTreeTable:108 - SkillTreeTable: Loaded 35875 class skills.
+22/03/2020 12:54:42,472  INFO SkillTreeTable:152 - SkillTreeTable: Loaded 109 fishing skills.
+22/03/2020 12:54:42,472  INFO SkillTreeTable:153 - SkillTreeTable: Loaded 8 fishing dwarven skills.
