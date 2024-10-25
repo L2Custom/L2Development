@@ -49,6 +49,7 @@ import com.l2jfrozen.gameserver.model.actor.instance.L2MinionInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2NpcWalkerInstance;
+import com.l2jfrozen.gameserver.model.actor.instance.L2NpcCaravanInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PcInstance.SkillDat;
 import com.l2jfrozen.gameserver.model.actor.instance.L2PetInstance;
@@ -6168,7 +6169,7 @@ public abstract class L2Character extends L2Object implements ISkillsHolder
 		m.onGeodataPathIndex = -1; // Initialize not on geodata path
 		m.disregardingGeodata = false;
 		
-		if (Config.GEODATA > 0 && !isFlying() && (!isInsideZone(ZONE_WATER) || isInsideZone(ZONE_SIEGE)) && !(this instanceof L2NpcWalkerInstance))
+		if (Config.GEODATA > 0 && !isFlying() && (!isInsideZone(ZONE_WATER) || isInsideZone(ZONE_SIEGE)) && !(this instanceof L2NpcWalkerInstance)  && !(this instanceof L2NpcCaravanInstance))
 		{
 			final double originalDistance = distance;
 			final int originalX = x;
