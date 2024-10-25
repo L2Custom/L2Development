@@ -104,18 +104,6 @@ def copy_if_newer_or_missing(source, dest):
 
 if __name__ == "__main__":
 	Extract_Archive(os.path.join(cfg["PATHS"]["source"],'L2JFrozen_15.zip'),cfg["PATHS"]["source"])
-	copy_if_newer_or_missing(cfg["PATHS"]["source"],
-							 cfg["PATHS"]["dest"])
+	copy_if_newer_or_missing('D:\\Company\\GitRepo\\L2Epic\\L2Epic\\Development\\Server\Sorces\\build\gameserver\\lib','D:\\Company\\GitRepo\\L2Epic\\L2Epic\\Development\\Deployemnt\\gameserver\\lib')
+	copy_if_newer_or_missing('D:\\Company\\GitRepo\\L2Epic\\L2Epic\\Development\\Server\\Sorces\\build\\gameserver\\lib','D:\\Company\\GitRepo\\L2Epic\\L2Epic\\Development\\Deployemnt\\loginserver\\lib')
 
-
-
-
-
-
-
-if __name__ == "__main__":
-	# Unzip
-
-	Extract_Archive(os.path.join(cfg["PATHS"]["source"],'L2JFrozen_15.zip'),cfg["PATHS"]["source"])
-	directories_check(cfg["PATHS"]["source"],
-					  cfg["PATHS"]["dest"])

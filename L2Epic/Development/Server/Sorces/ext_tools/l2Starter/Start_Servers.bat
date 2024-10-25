@@ -1,0 +1,2 @@
+start "" /D "D:\Company\GitRepo\L2Epic\L2Epic\Development\Deployemnt\gameserver" "startGameServer.bat"
+start "" /D "D:\Company\GitRepo\L2Epic\L2Epic\Development\Deployemnt\loginserver" "startLoginServer.bat"
